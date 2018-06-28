@@ -1,0 +1,25 @@
+{
+  "name": "webpack-config-plugins",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simplify webpack loader configuration",
+  "main": "index.js",
+  "scripts": {
+    "install": "lerna bootstrap",
+    "commit": "git-cz"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "commitizen": "2.10.1",
+    "cz-conventional-changelog": "2.1.0",
+    "lerna": "^2.11.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
