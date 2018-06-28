@@ -1,0 +1,40 @@
+# EditorConfig. Frontend. Default. Namics.
+# @see: http://EditorConfig.org
+# install a plugin to your editor: http://editorconfig.org/#download
+# mark: not all plugins supports the same EditorConfig properties
+
+# This is the top-most .editorconfig file (do not search in parent directories)
+root = true
+
+### All files
+[*]
+# Force charset utf-8
+charset = utf-8
+# Force Unix-style newlines with a newline ending every file & trim trailing whitespace
+end_of_line = lf
+# Indentation
+indent_style = tab
+indent_size = 4
+
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+### Frontend files
+[*.{css,scss,less,js,json,ts,sass,php,html,hbs,mustache,phtml,html.twig}]
+
+
+### Markdown
+[*.md]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = false
+
+### YAML
+[*.yml]
+indent_style = space
+indent_size = 2
+
+### Specific files
+[{package,bower,lerna}.json]
+indent_style = space
+indent_size = 2
