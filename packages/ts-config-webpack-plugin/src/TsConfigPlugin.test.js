@@ -35,10 +35,8 @@ beforeEach(() => {
 	jest.resetModules();
 });
 
-afterEach(async () => {
-	await new Promise((resolve, reject) => {
-		rimraf(path.join(__dirname, './fixtures/dist'), err => (err ? reject(err) : resolve()));
-	});
+afterEach(resolve => {
+	rimraf(path.join(__dirname, './fixtures/dist'), resolve);
 });
 
 describe('TsConfigPlugin', () => {
@@ -49,7 +47,7 @@ describe('TsConfigPlugin', () => {
 	describe('runnable webpack context', () => {
 		it('should finish without errors', () => {
 			runWithinWebpackContext(({ errors }) => {
-				expect(errors.length === 0).toBe(true);
+				expect(errors).toEqual([]);
 			});
 		});
 
@@ -83,25 +81,9 @@ describe('TsConfigPlugin', () => {
 					const bundlePath = path.resolve(__dirname, './fixtures/dist/bundle.js');
 					const contents = fs.readFileSync(bundlePath).toString();
 					expect(contents).toBeDefined();
-					// resolve();
 				});
 			},
 			{ mode: 'production' }
 		);
-	});
-
-	it('can be used with webpack', resolve => {
-		runWithinWebpackContext(({ options, errors }) => {
-			if (errors.length > 0) {
-				return reject(errors[0]);
-			}
-
-			expect(options.plugins.length).toBe(2);
-			expect(options.plugins[0] instanceof TsConfigPlugin).toBe(true);
-			expect(options.module.rules.length).toBe(1);
-			expect(options.module.rules[0].test.test('entry.ts')).toBe(true);
-
-			resolve();
-		});
 	});
 });
