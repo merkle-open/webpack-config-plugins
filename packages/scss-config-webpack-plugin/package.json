@@ -1,7 +1,12 @@
 {
-  "name": "scss-config-webpack-plugin",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "license": "MIT"
+    "name": "scss-config-webpack-plugin",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+        "jest": "23.2.0",
+        "typescript": "2.9.2",
+        "webpack": "4.12.2"
+    }
 }
