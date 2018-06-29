@@ -42,10 +42,10 @@
         "webpack": "4.12.2"
     },
     "jest": {
-        "rootDir": "./src",
+        "rootDir": "./",
         "browser": false,
         "watchPathIgnorePatterns": [
-            "<rootDir>/src/fixtures"
+            "<rootDir>/test/fixtures"
         ],
         "coveragePathIgnorePatterns": [
             "node_modules",

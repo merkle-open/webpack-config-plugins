@@ -21,7 +21,10 @@ class TsConfigPlugin {
 		return {
 			loader: require.resolve('cache-loader'),
 			options: {
-				cacheDirectory: path.resolve(path.dirname(require.resolve('cache-loader')), '../.cache-loader')
+				cacheDirectory: path.resolve(
+					path.dirname(require.resolve('cache-loader')),
+					'../.cache-loader'
+				),
 			},
 		};
 	}
@@ -60,7 +63,6 @@ class TsConfigPlugin {
 	 */
 	apply(compiler) {
 		const devtools = compiler.options.optimization.nodeEnv === 'development';
-		console.log(compiler.options.optimization.nodeEnv);
 
 		[
 			new ForkTsCheckerWebpackPlugin({
@@ -72,7 +74,7 @@ class TsConfigPlugin {
 		compiler.hooks.afterEnvironment.tap('TsConfigPlugin', () => {
 			compiler.options.devtool = devtools ? 'source-map' : 'inline-source-map';
 
-			if(devtools) {
+			if (devtools) {
 				compiler.options.optimization.removeAvailableModules = false;
 				compiler.options.optimization.removeEmptyChunks = false;
 				compiler.options.optimization.splitChunks = false;
@@ -88,7 +90,7 @@ class TsConfigPlugin {
 					// run compilation threaded
 					this.getThreadLoader(),
 					// main typescript compilation process
-					this.getTsLoader(devtools)
+					this.getTsLoader(devtools),
 				],
 			});
 		});

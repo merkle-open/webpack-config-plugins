@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const rimraf = require('rimraf');
 const webpack = require('webpack');
-const TsConfigPlugin = require('./TsConfigPlugin');
+const TsConfigPlugin = require('../src/TsConfigPlugin');
 
 // declare global test timeout to 10s for async tests
 jest.setTimeout(20 * 1000);
@@ -31,7 +31,6 @@ const runWithinWebpackContext = (callback, settings = {}) => {
 	});
 };
 
-
 afterEach(resolve => {
 	jest.resetModules();
 	rimraf(path.join(__dirname, 'fixtures/dist'), resolve);
@@ -51,13 +50,17 @@ describe('TsConfigPlugin', () => {
 		});
 
 		// TODO: This test throws timeout error!
-		it.skip('options should match the last options snapshot (prod)', resolve => {
-			runWithinWebpackContext(({ options }) => {
-				expect(options).toMatchSnapshot();
-				resolve();
-			});
-		}, { mode: 'production' });
-	})
+		it.skip(
+			'options should match the last options snapshot (prod)',
+			resolve => {
+				runWithinWebpackContext(({ options }) => {
+					expect(options).toMatchSnapshot();
+					resolve();
+				});
+			},
+			{ mode: 'production' }
+		);
+	});
 
 	describe('runnable webpack context', () => {
 		it('should finish without errors', () => {

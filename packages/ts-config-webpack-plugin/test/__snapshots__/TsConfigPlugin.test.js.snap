@@ -5,7 +5,7 @@ Object {
   "cache": true,
   "context": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin",
   "devtool": "source-map",
-  "entry": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/src/fixtures/entry.ts",
+  "entry": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/test/fixtures/entry.ts",
   "mode": "development",
   "module": Object {
     "defaultRules": Array [
@@ -127,7 +127,7 @@ Object {
     "jsonpScriptType": false,
     "library": "",
     "libraryTarget": "umd",
-    "path": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/src/fixtures/dist",
+    "path": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/test/fixtures/dist",
     "pathinfo": true,
     "sourceMapFilename": "[file].map[query]",
     "strictModuleExceptionHandling": false,

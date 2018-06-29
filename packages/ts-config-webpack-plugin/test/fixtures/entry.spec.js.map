@@ -1,0 +1,1 @@
+{"version":3,"file":"entry.spec.js","sourceRoot":"","sources":["entry.spec.ts"],"names":[],"mappings":";AAAA,QAAQ,CAAC,UAAU,EAAE;IACpB,MAAM,CAAC,EAAE,CAAC,CAAC,IAAI,CAAC,EAAE,CAAC,CAAC;AACrB,CAAC,CAAC,CAAA","sourcesContent":["describe('sometest', () => {\n\texpect(10).toBe(10);\n})\n"]}
