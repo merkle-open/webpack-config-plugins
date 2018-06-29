@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TsConfigPlugin runnable webpack context options should match the last options snapshot 1`] = `
+exports[`TsConfigPlugin options options should match the last options snapshot (dev) 1`] = `
 Object {
   "cache": true,
   "context": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin",
-  "devtool": "cheap-eval-source-map",
+  "devtool": "source-map",
   "entry": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/src/fixtures/entry.ts",
   "mode": "development",
   "module": Object {
@@ -42,7 +42,7 @@ Object {
           Object {
             "loader": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/node_modules/cache-loader/dist/cjs.js",
             "options": Object {
-              "cacheDirectory": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/node_modules/.cache-loader",
+              "cacheDirectory": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/node_modules/cache-loader/.cache-loader",
             },
           },
           Object {
@@ -101,30 +101,11 @@ Object {
     "occurrenceOrder": false,
     "portableRecords": false,
     "providedExports": true,
-    "removeAvailableModules": true,
-    "removeEmptyChunks": true,
+    "removeAvailableModules": false,
+    "removeEmptyChunks": false,
     "runtimeChunk": undefined,
     "sideEffects": false,
-    "splitChunks": Object {
-      "automaticNameDelimiter": "~",
-      "cacheGroups": Object {
-        "default": Object {
-          "minChunks": 2,
-          "priority": -20,
-          "reuseExistingChunk": true,
-        },
-        "vendors": Object {
-          "priority": -10,
-          "test": /\\[\\\\\\\\\\\\/\\]node_modules\\[\\\\\\\\\\\\/\\]/,
-        },
-      },
-      "chunks": "async",
-      "maxAsyncRequests": Infinity,
-      "maxInitialRequests": Infinity,
-      "minChunks": 1,
-      "minSize": 10000,
-      "name": true,
-    },
+    "splitChunks": false,
     "usedExports": false,
   },
   "output": Object {
@@ -154,68 +135,8 @@ Object {
   },
   "performance": false,
   "plugins": Array [
-    TsConfigPlugin {},
-    ForkTsCheckerWebpackPlugin {
-      "async": false,
-      "cancellationToken": undefined,
-      "checkDone": false,
-      "checkSyntacticErrors": true,
-      "colors": Chalk {
-        "enabled": true,
-      },
-      "compilationDone": false,
-      "compiler": undefined,
-      "diagnostics": Array [],
-      "doneCallback": [Function],
-      "elapsed": undefined,
-      "emitCallback": [Function],
-      "formatter": [Function],
-      "ignoreDiagnostics": Array [],
-      "ignoreLints": Array [],
-      "isWatching": false,
-      "lints": Array [],
-      "logger": CustomConsole {
-        "_counters": Object {},
-        "_formatBuffer": [Function],
-        "_groupDepth": 0,
-        "_timers": Object {},
-        "assert": [Function],
-        "clear": [Function],
-        "count": [Function],
-        "countReset": [Function],
-        "debug": [Function],
-        "dir": [Function],
-        "error": [Function],
-        "group": [Function],
-        "groupCollapsed": [Function],
-        "groupEnd": [Function],
-        "info": [Function],
-        "log": [Function],
-        "time": [Function],
-        "timeEnd": [Function],
-        "trace": [Function],
-        "warn": [Function],
-        Symbol(counts): Map {},
-        Symbol(groupIndent): "",
-      },
-      "memoryLimit": 2048,
-      "options": Object {
-        "async": false,
-        "checkSyntacticErrors": true,
-      },
-      "silent": false,
-      "started": undefined,
-      "tsconfig": "./tsconfig.json",
-      "tsconfigPath": undefined,
-      "tslint": undefined,
-      "tslintPath": undefined,
-      "tslintVersion": undefined,
-      "typescriptVersion": "2.9.2",
-      "useColors": true,
-      "vue": false,
-      "watch": Array [],
-      "watchPaths": Array [],
-      "workersNumber": 1,
+    TsConfigPlugin {
+      "options": Object {},
     },
   ],
   "resolve": Object {
@@ -226,6 +147,9 @@ Object {
       ".mjs",
       ".js",
       ".json",
+      ".ts",
+      ".tsx",
+      ".d.ts",
     ],
     "mainFields": Array [
       "module",
