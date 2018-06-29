@@ -10,6 +10,7 @@
         "lint": "lint-staged",
         "pretest": "npm run lint",
         "test": "lerna run test",
+        "clean": "lerna clean",
         "prettier": "prettier ./packages/**/*.js ./packages/*/package.json"
     },
     "keywords": [
