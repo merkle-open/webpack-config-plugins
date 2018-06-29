@@ -1,10 +1,10 @@
 {
 	"allowJs": true,
-	"noEmit": true,
 	"checkJs": true,
 	"compilerOptions": {
-		"target": "es5",
-		"lib": ["es2015"],
+		"noEmit": true,
+		"target": "es6",
+		"lib": ["es6"],
 		"rootDir": "src",
 		"module": "commonjs",
 		"moduleResolution": "node",
