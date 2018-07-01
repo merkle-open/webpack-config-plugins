@@ -1,3 +1,3 @@
-const TsConfigPlugin = require("./TsConfigPlugin");
+const TsConfigWebpackPlugin = require('./TsConfigWebpackPlugin');
 
-exports = module.exports = TsConfigPlugin;
+exports = module.exports = TsConfigWebpackPlugin;

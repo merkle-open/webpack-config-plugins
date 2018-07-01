@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TsConfigPlugin options options should match the last options snapshot (dev) 1`] = `
+exports[`TsConfigWebpackPlugin options options should match the last options snapshot (dev) 1`] = `
 Object {
   "cache": true,
-  "context": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin",
+  "context": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/ts-config-webpack-plugin",
   "devtool": "source-map",
-  "entry": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/test/fixtures/entry.ts",
+  "entry": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/ts-config-webpack-plugin/test/fixtures/entry.ts",
   "mode": "development",
   "module": Object {
     "defaultRules": Array [
@@ -40,19 +40,19 @@ Object {
         "test": /\\.\\(tsx\\?\\|d\\.ts\\)\\$/,
         "use": Array [
           Object {
-            "loader": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/node_modules/cache-loader/dist/cjs.js",
+            "loader": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/ts-config-webpack-plugin/node_modules/cache-loader/dist/cjs.js",
             "options": Object {
-              "cacheDirectory": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/node_modules/cache-loader/.cache-loader",
+              "cacheDirectory": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/ts-config-webpack-plugin/node_modules/cache-loader/.cache-loader",
             },
           },
           Object {
-            "loader": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/node_modules/thread-loader/dist/cjs.js",
+            "loader": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/ts-config-webpack-plugin/node_modules/thread-loader/dist/cjs.js",
             "options": Object {
               "workers": 7,
             },
           },
           Object {
-            "loader": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/node_modules/ts-loader/index.js",
+            "loader": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/ts-config-webpack-plugin/node_modules/ts-loader/index.js",
             "options": Object {
               "experimentalWatchApi": true,
               "happyPackMode": true,
@@ -127,7 +127,7 @@ Object {
     "jsonpScriptType": false,
     "library": "",
     "libraryTarget": "umd",
-    "path": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/ts-config-webpack-plugin/test/fixtures/dist",
+    "path": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/ts-config-webpack-plugin/test/fixtures/dist",
     "pathinfo": true,
     "sourceMapFilename": "[file].map[query]",
     "strictModuleExceptionHandling": false,
@@ -135,7 +135,7 @@ Object {
   },
   "performance": false,
   "plugins": Array [
-    TsConfigPlugin {
+    TsConfigWebpackPlugin {
       "options": Object {},
     },
   ],

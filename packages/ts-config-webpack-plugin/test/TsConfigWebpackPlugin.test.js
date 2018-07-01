@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const rimraf = require('rimraf');
 const webpack = require('webpack');
-const TsConfigPlugin = require('../src/TsConfigPlugin');
+const TsConfigWebpackPlugin = require('../src/TsConfigWebpackPlugin');
 
 // declare global test timeout to 10s for async tests
 jest.setTimeout(20 * 1000);
@@ -20,7 +20,7 @@ const runWithinWebpackContext = (callback, settings = {}) => {
 			filename: 'bundle.js',
 			libraryTarget: 'umd',
 		},
-		plugins: [new TsConfigPlugin(settings.pluginOptions)],
+		plugins: [new TsConfigWebpackPlugin(settings.pluginOptions)],
 	}).run((_, stats) => {
 		callback({
 			_,
@@ -36,9 +36,9 @@ afterEach(resolve => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), resolve);
 });
 
-describe('TsConfigPlugin', () => {
+describe('TsConfigWebpackPlugin', () => {
 	it('should be creatable without options', () => {
-		new TsConfigPlugin();
+		new TsConfigWebpackPlugin();
 	});
 
 	describe('options', () => {
@@ -72,7 +72,7 @@ describe('TsConfigPlugin', () => {
 		it('should set plugins correctly', resolve => {
 			runWithinWebpackContext(({ options }) => {
 				expect(options.plugins.length).toBe(1);
-				expect(options.plugins[0] instanceof TsConfigPlugin).toBe(true);
+				expect(options.plugins[0] instanceof TsConfigWebpackPlugin).toBe(true);
 				resolve();
 			});
 		});

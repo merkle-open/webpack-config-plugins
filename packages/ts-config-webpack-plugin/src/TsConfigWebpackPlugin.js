@@ -2,16 +2,16 @@
 /** @typedef {import("webpack/lib/Compilation.js")} WebpackCompilation */
 /** @typedef {import("webpack/lib/Compiler.js")} WebpackCompiler */
 /** @typedef {import("webpack/lib/Chunk.js")} WebpackChunk */
-/** @typedef {{ }} TsConfigPluginOptions */
+/** @typedef {{ }} TsConfigWebpackPluginOptions */
 'use strict';
 
 const os = require('os');
 const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-class TsConfigPlugin {
+class TsConfigWebpackPlugin {
 	/**
-	 * @param {TsConfigPluginOptions} options
+	 * @param {TsConfigWebpackPluginOptions} options
 	 */
 	constructor(options = {}) {
 		this.options = options;
@@ -71,7 +71,7 @@ class TsConfigPlugin {
 			}),
 		].forEach(plugin => plugin.apply(compiler));
 
-		compiler.hooks.afterEnvironment.tap('TsConfigPlugin', () => {
+		compiler.hooks.afterEnvironment.tap('TsConfigWebpackPlugin', () => {
 			compiler.options.devtool = devtools ? 'source-map' : 'inline-source-map';
 
 			if (devtools) {
@@ -97,4 +97,4 @@ class TsConfigPlugin {
 	}
 }
 
-exports = module.exports = TsConfigPlugin;
+exports = module.exports = TsConfigWebpackPlugin;
