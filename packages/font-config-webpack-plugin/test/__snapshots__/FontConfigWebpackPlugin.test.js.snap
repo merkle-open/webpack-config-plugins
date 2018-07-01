@@ -1,0 +1,408 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FontConfigWebpackPlugin options options should match the last custom options snapshot (dev) 1`] = `
+Object {
+  "cache": true,
+  "context": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/font-config-webpack-plugin",
+  "devtool": "eval",
+  "entry": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/font-config-webpack-plugin/test/fixtures/entry.js",
+  "mode": "development",
+  "module": Object {
+    "defaultRules": Array [
+      Object {
+        "resolve": Object {},
+        "type": "javascript/auto",
+      },
+      Object {
+        "resolve": Object {
+          "mainFields": Array [
+            "main",
+          ],
+        },
+        "test": /\\\\\\.mjs\\$/i,
+        "type": "javascript/esm",
+      },
+      Object {
+        "test": /\\\\\\.json\\$/i,
+        "type": "json",
+      },
+      Object {
+        "test": /\\\\\\.wasm\\$/i,
+        "type": "webassembly/experimental",
+      },
+    ],
+    "exprContextCritical": true,
+    "exprContextRecursive": true,
+    "exprContextRegExp": false,
+    "exprContextRequest": ".",
+    "rules": Array [
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          "style-loader",
+          "css-loader",
+        ],
+      },
+      Object {
+        "test": /\\\\\\.\\(woff\\(2\\)\\?\\|ttf\\|eot\\|svg\\)\\(\\\\\\?v=\\\\d\\+\\\\\\.\\\\d\\+\\\\\\.\\\\d\\+\\)\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/font-config-webpack-plugin/node_modules/cache-loader/dist/cjs.js",
+            "options": Object {
+              "cacheDirectory": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/font-config-webpack-plugin/node_modules/cache-loader/.cache-loader",
+            },
+          },
+          Object {
+            "loader": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/font-config-webpack-plugin/node_modules/file-loader/dist/cjs.js",
+            "options": Object {
+              "name": undefined,
+              "outputPath": undefined,
+            },
+          },
+        ],
+      },
+    ],
+    "strictExportPresence": false,
+    "strictThisContextOnImports": false,
+    "unknownContextCritical": true,
+    "unknownContextRecursive": true,
+    "unknownContextRegExp": false,
+    "unknownContextRequest": ".",
+    "unsafeCache": true,
+    "wrappedContextCritical": false,
+    "wrappedContextRecursive": true,
+    "wrappedContextRegExp": /\\.\\*/,
+  },
+  "node": Object {
+    "Buffer": true,
+    "__dirname": "mock",
+    "__filename": "mock",
+    "console": false,
+    "global": false,
+    "process": true,
+    "setImmediate": true,
+  },
+  "optimization": Object {
+    "checkWasmTypes": false,
+    "concatenateModules": false,
+    "flagIncludedChunks": false,
+    "mangleWasmImports": false,
+    "mergeDuplicateChunks": true,
+    "minimize": false,
+    "minimizer": Array [
+      Object {
+        "apply": [Function],
+      },
+    ],
+    "namedChunks": true,
+    "namedModules": true,
+    "noEmitOnErrors": false,
+    "nodeEnv": "development",
+    "occurrenceOrder": false,
+    "portableRecords": false,
+    "providedExports": true,
+    "removeAvailableModules": true,
+    "removeEmptyChunks": true,
+    "runtimeChunk": undefined,
+    "sideEffects": false,
+    "splitChunks": Object {
+      "automaticNameDelimiter": "~",
+      "cacheGroups": Object {
+        "default": Object {
+          "minChunks": 2,
+          "priority": -20,
+          "reuseExistingChunk": true,
+        },
+        "vendors": Object {
+          "priority": -10,
+          "test": /\\[\\\\\\\\/\\]node_modules\\[\\\\\\\\/\\]/,
+        },
+      },
+      "chunks": "async",
+      "maxAsyncRequests": Infinity,
+      "maxInitialRequests": Infinity,
+      "minChunks": 1,
+      "minSize": 10000,
+      "name": true,
+    },
+    "usedExports": false,
+  },
+  "output": Object {
+    "chunkCallbackName": "webpackChunk",
+    "chunkFilename": "[id].bundle.js",
+    "chunkLoadTimeout": 120000,
+    "crossOriginLoading": false,
+    "devtoolLineToLine": false,
+    "devtoolNamespace": "",
+    "filename": "bundle.js",
+    "globalObject": "global",
+    "hashDigest": "hex",
+    "hashDigestLength": 20,
+    "hashFunction": "md4",
+    "hotUpdateChunkFilename": "[id].[hash].hot-update.js",
+    "hotUpdateFunction": "webpackHotUpdate",
+    "hotUpdateMainFilename": "[hash].hot-update.json",
+    "jsonpFunction": "webpackJsonp",
+    "jsonpScriptType": false,
+    "library": "",
+    "libraryTarget": "umd",
+    "path": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/font-config-webpack-plugin/test/fixtures/dist",
+    "pathinfo": true,
+    "sourceMapFilename": "[file].map[query]",
+    "strictModuleExceptionHandling": false,
+    "webassemblyModuleFilename": "[modulehash].module.wasm",
+  },
+  "performance": false,
+  "plugins": Array [
+    FontConfigWebpackPlugin {
+      "options": Object {
+        "name": "[name]-[hash].[ext]",
+      },
+    },
+  ],
+  "resolve": Object {
+    "aliasFields": Array [],
+    "cacheWithContext": false,
+    "extensions": Array [
+      ".js",
+      ".css",
+      "woff",
+      "woff2",
+      "ttf",
+      "eot",
+      "svg",
+    ],
+    "mainFields": Array [
+      "module",
+      "main",
+    ],
+    "mainFiles": Array [
+      "index",
+    ],
+    "modules": Array [
+      "node_modules",
+    ],
+    "unsafeCache": true,
+  },
+  "resolveLoader": Object {
+    "cacheWithContext": false,
+    "extensions": Array [
+      ".js",
+      ".json",
+    ],
+    "mainFields": Array [
+      "loader",
+      "main",
+    ],
+    "mainFiles": Array [
+      "index",
+    ],
+    "unsafeCache": true,
+  },
+  "target": "node",
+}
+`;
+
+exports[`FontConfigWebpackPlugin options options should match the last options snapshot (dev) 1`] = `
+Object {
+  "cache": true,
+  "context": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/font-config-webpack-plugin",
+  "devtool": "eval",
+  "entry": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/font-config-webpack-plugin/test/fixtures/entry.js",
+  "mode": "development",
+  "module": Object {
+    "defaultRules": Array [
+      Object {
+        "resolve": Object {},
+        "type": "javascript/auto",
+      },
+      Object {
+        "resolve": Object {
+          "mainFields": Array [
+            "main",
+          ],
+        },
+        "test": /\\\\\\.mjs\\$/i,
+        "type": "javascript/esm",
+      },
+      Object {
+        "test": /\\\\\\.json\\$/i,
+        "type": "json",
+      },
+      Object {
+        "test": /\\\\\\.wasm\\$/i,
+        "type": "webassembly/experimental",
+      },
+    ],
+    "exprContextCritical": true,
+    "exprContextRecursive": true,
+    "exprContextRegExp": false,
+    "exprContextRequest": ".",
+    "rules": Array [
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          "style-loader",
+          "css-loader",
+        ],
+      },
+      Object {
+        "test": /\\\\\\.\\(woff\\(2\\)\\?\\|ttf\\|eot\\|svg\\)\\(\\\\\\?v=\\\\d\\+\\\\\\.\\\\d\\+\\\\\\.\\\\d\\+\\)\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/font-config-webpack-plugin/node_modules/cache-loader/dist/cjs.js",
+            "options": Object {
+              "cacheDirectory": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/font-config-webpack-plugin/node_modules/cache-loader/.cache-loader",
+            },
+          },
+          Object {
+            "loader": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/font-config-webpack-plugin/node_modules/file-loader/dist/cjs.js",
+            "options": Object {
+              "name": "[name].[ext]",
+              "outputPath": "fonts/",
+            },
+          },
+        ],
+      },
+    ],
+    "strictExportPresence": false,
+    "strictThisContextOnImports": false,
+    "unknownContextCritical": true,
+    "unknownContextRecursive": true,
+    "unknownContextRegExp": false,
+    "unknownContextRequest": ".",
+    "unsafeCache": true,
+    "wrappedContextCritical": false,
+    "wrappedContextRecursive": true,
+    "wrappedContextRegExp": /\\.\\*/,
+  },
+  "node": Object {
+    "Buffer": true,
+    "__dirname": "mock",
+    "__filename": "mock",
+    "console": false,
+    "global": false,
+    "process": true,
+    "setImmediate": true,
+  },
+  "optimization": Object {
+    "checkWasmTypes": false,
+    "concatenateModules": false,
+    "flagIncludedChunks": false,
+    "mangleWasmImports": false,
+    "mergeDuplicateChunks": true,
+    "minimize": false,
+    "minimizer": Array [
+      Object {
+        "apply": [Function],
+      },
+    ],
+    "namedChunks": true,
+    "namedModules": true,
+    "noEmitOnErrors": false,
+    "nodeEnv": "development",
+    "occurrenceOrder": false,
+    "portableRecords": false,
+    "providedExports": true,
+    "removeAvailableModules": true,
+    "removeEmptyChunks": true,
+    "runtimeChunk": undefined,
+    "sideEffects": false,
+    "splitChunks": Object {
+      "automaticNameDelimiter": "~",
+      "cacheGroups": Object {
+        "default": Object {
+          "minChunks": 2,
+          "priority": -20,
+          "reuseExistingChunk": true,
+        },
+        "vendors": Object {
+          "priority": -10,
+          "test": /\\[\\\\\\\\/\\]node_modules\\[\\\\\\\\/\\]/,
+        },
+      },
+      "chunks": "async",
+      "maxAsyncRequests": Infinity,
+      "maxInitialRequests": Infinity,
+      "minChunks": 1,
+      "minSize": 10000,
+      "name": true,
+    },
+    "usedExports": false,
+  },
+  "output": Object {
+    "chunkCallbackName": "webpackChunk",
+    "chunkFilename": "[id].bundle.js",
+    "chunkLoadTimeout": 120000,
+    "crossOriginLoading": false,
+    "devtoolLineToLine": false,
+    "devtoolNamespace": "",
+    "filename": "bundle.js",
+    "globalObject": "global",
+    "hashDigest": "hex",
+    "hashDigestLength": 20,
+    "hashFunction": "md4",
+    "hotUpdateChunkFilename": "[id].[hash].hot-update.js",
+    "hotUpdateFunction": "webpackHotUpdate",
+    "hotUpdateMainFilename": "[hash].hot-update.json",
+    "jsonpFunction": "webpackJsonp",
+    "jsonpScriptType": false,
+    "library": "",
+    "libraryTarget": "umd",
+    "path": "/Users/janbiasi/github/namics-opensource/webpack-config-plugins/packages/font-config-webpack-plugin/test/fixtures/dist",
+    "pathinfo": true,
+    "sourceMapFilename": "[file].map[query]",
+    "strictModuleExceptionHandling": false,
+    "webassemblyModuleFilename": "[modulehash].module.wasm",
+  },
+  "performance": false,
+  "plugins": Array [
+    FontConfigWebpackPlugin {
+      "options": Object {
+        "format": "[name].[ext]",
+        "output": "fonts/",
+      },
+    },
+  ],
+  "resolve": Object {
+    "aliasFields": Array [],
+    "cacheWithContext": false,
+    "extensions": Array [
+      ".js",
+      ".css",
+      "woff",
+      "woff2",
+      "ttf",
+      "eot",
+      "svg",
+    ],
+    "mainFields": Array [
+      "module",
+      "main",
+    ],
+    "mainFiles": Array [
+      "index",
+    ],
+    "modules": Array [
+      "node_modules",
+    ],
+    "unsafeCache": true,
+  },
+  "resolveLoader": Object {
+    "cacheWithContext": false,
+    "extensions": Array [
+      ".js",
+      ".json",
+    ],
+    "mainFields": Array [
+      "loader",
+      "main",
+    ],
+    "mainFiles": Array [
+      "index",
+    ],
+    "unsafeCache": true,
+  },
+  "target": "node",
+}
+`;

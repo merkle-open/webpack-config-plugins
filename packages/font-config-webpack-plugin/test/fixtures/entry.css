@@ -1,0 +1,12 @@
+@font-face {
+	font-family: 'OpenSans';
+	src: url('./fonts/open-sans/OpenSans-Regular-webfont.eot'); /* IE9 Compat Modes */
+	src: url('./fonts/open-sans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/open-sans/OpenSans-Regular-webfont.woff') format('woff'),
+		url('./fonts/open-sans/OpenSans-Regular-webfont.ttf') format('truetype'),
+		url('./fonts/open-sans/OpenSans-Regular-webfont.svg#OpenSans') format('svg');
+}
+
+body {
+	font-family: 'OpenSans', sans-serif;
+}
