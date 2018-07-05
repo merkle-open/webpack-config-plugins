@@ -1,12 +1,53 @@
 {
-    "name": "scss-config-webpack-plugin",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "license": "MIT",
-    "dependencies": {
-        "jest": "23.2.0",
-        "typescript": "2.9.2",
-        "webpack": "4.12.2"
+  "name": "scss-config-webpack-plugin",
+  "version": "1.0.0",
+  "description": "Config for SASS to CSS compilation.",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Namics AG - Technology & Application",
+  "contributors": [
+    {
+      "name": "Matthias Giger",
+      "email": "matthias.giger@namics.com",
+      "url": "https://github.com/naminho"
     }
+  ],
+  "engines": {
+    "node": ">=8 <11",
+    "npm": ">=5"
+  },
+  "scripts": {
+    "pretest": "rimraf ./src/fixtures/dist",
+    "test": "jest",
+    "update-snapshots": "jest -u"
+  },
+  "peerDependencies": {
+    "webpack": ">=4.0.0"
+  },
+  "devDependencies": {
+    "jest": "23.2.0",
+    "webpack": "4.12.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^8.6.4",
+    "css-loader": "^0.28.11",
+    "iconfont-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
+    "resolve-url-loader": "^2.3.0",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0"
+  },
+  "jest": {
+    "rootDir": "./",
+    "browser": false,
+    "watchPathIgnorePatterns": [
+      "<rootDir>/test/fixtures"
+    ],
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "fixtures",
+      "dist"
+    ]
+  }
 }
