@@ -13,7 +13,7 @@ const HOOKS = {
 
 /**
  * Unifies the config webpack plugins API to one class
- * @author jbiasi <jan.biasi@namics.com>
+ * @author Jan Biasi
  * @version 1.0
  */
 class ConfigWebpackPlugin {
@@ -58,7 +58,13 @@ class ConfigWebpackPlugin {
 	 * @param {WebpackCompiler} compiler
 	 */
 	runSingle(hookId, compiler) {
-		return (this._hooks[hookId] || []).map(hook => {
+		const hooksToRun = this._hooks[hookId] || [];
+
+		if (hooksToRun.length === 0) {
+			console.warn(`No hooks for "${hookId}" found, did you forget to attach hooks?`);
+		}
+
+		return hooksToRun.map(hook => {
 			hook(compiler);
 		});
 	}

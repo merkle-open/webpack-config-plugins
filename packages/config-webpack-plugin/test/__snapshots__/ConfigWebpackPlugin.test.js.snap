@@ -1,10 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ConfigWebpackPlugin expose should expose with hooks 1`] = `[Function]`;
+
 exports[`ConfigWebpackPlugin expose should expose without any hooks 1`] = `[Function]`;
 
 exports[`ConfigWebpackPlugin should be creatable 1`] = `
 ConfigWebpackPlugin {
   "_hooks": Array [],
   "name": "Test",
+}
+`;
+
+exports[`ConfigWebpackPlugin should be creatable with hooks 1`] = `
+ConfigWebpackPlugin {
+  "_hooks": Array [],
+  "name": "TestSnapFull",
 }
 `;

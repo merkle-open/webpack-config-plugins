@@ -9,6 +9,14 @@ describe('ConfigWebpackPlugin', () => {
 		expect(new ConfigWebpackPlugin('Test')).toMatchSnapshot();
 	});
 
+	it('should be creatable with hooks', () => {
+		const plugin = new ConfigWebpackPlugin('TestSnapFull');
+		plugin.attach(ConfigWebpackPlugin.HOOKS.ALL, () => {});
+		plugin.attach(ConfigWebpackPlugin.HOOKS.DEV, () => {});
+		plugin.attach(ConfigWebpackPlugin.HOOKS.PROD, () => {});
+		expect(plugin).toMatchSnapshot();
+	});
+
 	describe('run', () => {
 		it('should be runnable with single env', resolve => {
 			const plugin = new ConfigWebpackPlugin('TestRunSingle');
@@ -59,7 +67,15 @@ describe('ConfigWebpackPlugin', () => {
 
 	describe('expose', () => {
 		it('should expose without any hooks', () => {
-			expect(new ConfigWebpackPlugin('TestExpose').expose()).toMatchSnapshot();
+			expect(new ConfigWebpackPlugin('TestExposeSimple').expose()).toMatchSnapshot();
+		});
+
+		it('should expose with hooks', () => {
+			const plugin = new ConfigWebpackPlugin('TestExposeFull');
+			plugin.attach(ConfigWebpackPlugin.HOOKS.ALL, () => {});
+			plugin.attach(ConfigWebpackPlugin.HOOKS.DEV, () => {});
+			plugin.attach(ConfigWebpackPlugin.HOOKS.PROD, () => {});
+			expect(plugin.expose()).toMatchSnapshot();
 		});
 	});
 });
