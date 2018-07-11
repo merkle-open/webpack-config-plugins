@@ -57,6 +57,23 @@ class ConfigWebpackPlugin {
 			hook(compiler);
 		});
 	}
+
+	/**
+	 * Exposes the plugin for the Webpack API
+	 */
+	expose() {
+		const pluginId = `Expose(${this.name})`;
+		return class {
+			/**
+			 * @param {WebpackCompiler} compiler
+			 */
+			apply(compiler) {
+				compiler.hooks.afterEnvironment.tap(pluginId, () => {
+					// TODO: Add hook runs
+				});
+			}
+		};
+	}
 }
 
 module.exports = ConfigWebpackPlugin;
