@@ -56,4 +56,10 @@ describe('ConfigWebpackPlugin', () => {
 			await expect(f).toBe(true);
 		});
 	});
+
+	describe('expose', () => {
+		it('should expose without any hooks', () => {
+			expect(new ConfigWebpackPlugin('TestExpose').expose()).toMatchSnapshot();
+		});
+	});
 });
