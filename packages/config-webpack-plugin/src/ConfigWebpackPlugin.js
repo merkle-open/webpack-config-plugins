@@ -11,6 +11,11 @@ const HOOKS = {
 	PROD: 'production',
 };
 
+/**
+ * Unifies the config webpack plugins API to one class
+ * @author jbiasi <jan.biasi@namics.com>
+ * @version 1.0
+ */
 class ConfigWebpackPlugin {
 	/**
 	 * @param {string} name
@@ -62,14 +67,15 @@ class ConfigWebpackPlugin {
 	 * Exposes the plugin for the Webpack API
 	 */
 	expose() {
-		const pluginId = `Expose(${this.name})`;
+		const plugin = this;
+
 		return class {
 			/**
 			 * @param {WebpackCompiler} compiler
 			 */
 			apply(compiler) {
-				compiler.hooks.afterEnvironment.tap(pluginId, () => {
-					// TODO: Add hook runs
+				compiler.hooks.afterEnvironment.tap(plugin.name, () => {
+					plugin.run([compiler.options.mode], compiler);
 				});
 			}
 		};
