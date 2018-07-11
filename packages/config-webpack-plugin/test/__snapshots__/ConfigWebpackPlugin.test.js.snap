@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigWebpackPlugin should be creatable 1`] = `
+ConfigWebpackPlugin {
+  "_hooks": Array [],
+  "name": "Test",
+}
+`;
