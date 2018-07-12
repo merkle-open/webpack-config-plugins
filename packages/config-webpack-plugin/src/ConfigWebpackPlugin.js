@@ -100,16 +100,16 @@ class ConfigWebpackPlugin {
 			 * @param {WebpackCompiler} compiler
 			 */
 			apply(compiler) {
-				const tapableFn = compiler.hooks[tapableHook];
+				const tapableCompilerHook = compiler.hooks[tapableHook];
 				this._optionsSnapshot = compiler.options;
 
-				if (!tapableFn || typeof tapableFn.tap !== 'function') {
+				if (!tapableCompilerHook || typeof tapableCompilerHook.tap !== 'function') {
 					throw new Error(
 						`${plugin.name} taps on ${tapableHook}, but this is not a valid tapable.`
 					);
 				}
 
-				compiler.hooks.afterEnvironment.tap(plugin.name, () => {
+				tapableCompilerHook.tap(plugin.name, () => {
 					plugin.run([compiler.options.mode], compiler, this.options);
 				});
 			}
