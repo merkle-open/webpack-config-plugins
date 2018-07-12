@@ -17,3 +17,16 @@ ConfigWebpackPlugin {
   "name": "TestSnapFull",
 }
 `;
+
+exports[`ConfigWebpackPlugin webpack should modify dedicated rules depending on env 1`] = `
+Object {
+  "entry": "/Users/jbiasi/Projects/Namics OpenSource/webpack-config-plugins/packages/config-webpack-plugin/test/fixtures/index.ts",
+  "plugins": Array [
+    Object {
+      "_optionsSnapshot": null,
+      "name": "WebpackModify1",
+      "options": undefined,
+    },
+  ],
+}
+`;

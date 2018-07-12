@@ -1,4 +1,7 @@
+const path = require('path');
 const ConfigWebpackPlugin = require('../src/ConfigWebpackPlugin');
+const { runWithinWebpackContext } = require('@namics/webpack-config-plugin-helper');
+
 const webpackExampleConfig = {
 	dev: require('./fixtures/webpack.config.dev'),
 	prod: require('./fixtures/webpack.config.prod'),
@@ -76,6 +79,35 @@ describe('ConfigWebpackPlugin', () => {
 			plugin.attach(ConfigWebpackPlugin.HOOKS.DEV, () => {});
 			plugin.attach(ConfigWebpackPlugin.HOOKS.PROD, () => {});
 			expect(plugin.expose()).toMatchSnapshot();
+		});
+	});
+
+	describe('webpack', () => {
+		it('should modify dedicated rules depending on env', () => {
+			// expect.assertions(2);
+
+			const plugin = new ConfigWebpackPlugin('WebpackModify1');
+			plugin.attach(ConfigWebpackPlugin.HOOKS.ALL, (compiler, opts) => {
+				compiler.options.module.rules.push({
+					test: /.(tsx?|d.ts)$/,
+					include: [path.resolve(__dirname, 'fixtures')],
+					use: [require.resolve('ts-loader')],
+				});
+			});
+
+			const ExampleTsPlugin = plugin.expose();
+			const testWebpackConfig = {
+				entry: path.join(__dirname, './fixtures/index.ts'),
+				plugins: [new ExampleTsPlugin()],
+			};
+
+			console.log(testWebpackConfig);
+			expect(testWebpackConfig).toMatchSnapshot();
+
+			runWithinWebpackContext(async ({ options }) => {
+				console.log('runnnnn', options);
+				await expect(options).toMatchSnapshot();
+			}, testWebpackConfig);
 		});
 	});
 });
