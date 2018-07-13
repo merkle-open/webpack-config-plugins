@@ -17,14 +17,15 @@
     "npm": ">=5"
   },
   "scripts": {
-    "pretest": "rimraf ./src/fixtures/dist",
-    "test": "jest",
-    "update-snapshots": "jest -u"
+    "test": "jest --runInBand",
+    "test-watch": "jest --watch --runInBand",
+    "update-snapshots": "jest -u --runInBand"
   },
   "peerDependencies": {
     "webpack": ">=4.0.0"
   },
   "devDependencies": {
+    "glob": "^7.1.2",
     "jest": "23.2.0",
     "webpack": "4.12.2"
   },
@@ -32,7 +33,9 @@
     "autoprefixer": "^8.6.4",
     "css-loader": "^0.28.11",
     "iconfont-webpack-plugin": "^3.0.0",
+    "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.3",
     "postcss-loader": "^2.1.5",
     "resolve-url-loader": "^2.3.0",
     "sass-loader": "^7.0.3",

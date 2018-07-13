@@ -5,6 +5,106 @@
 /** @typedef {{ }} ScssConfigWebpackPluginOptions */
 'use strict';
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+const developmentConfig = () => ({
+	module: {
+		rules: [
+			{
+				test: /\.s?css$/,
+				use: [
+					{
+						loader: require.resolve('style-loader'),
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: require.resolve('css-loader'),
+						options: {
+							sourceMap: true,
+							importLoaders: 3,
+						},
+					},
+					{
+						loader: require.resolve('postcss-loader'),
+						options: {
+							plugins: loader => [
+								require('autoprefixer'),
+								require('iconfont-webpack-plugin')({
+									resolve: loader.resolve,
+								}),
+							],
+							sourceMap: true,
+						},
+					},
+					{
+						loader: require.resolve('resolve-url-loader'),
+					},
+					{
+						loader: require.resolve('sass-loader'),
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
+		],
+	},
+	plugins: [],
+});
+
+const productionConfig = () => ({
+	module: {
+		rules: [
+			{
+				test: /\.s?css$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+					},
+					{
+						loader: require.resolve('css-loader'),
+						options: {
+							sourceMap: true,
+							importLoaders: 3,
+						},
+					},
+					{
+						loader: require.resolve('postcss-loader'),
+						options: {
+							plugins: loader => [
+								require('autoprefixer'),
+								require('iconfont-webpack-plugin')({
+									resolve: loader.resolve,
+								}),
+							],
+							sourceMap: true,
+						},
+					},
+					{
+						loader: require.resolve('resolve-url-loader'),
+					},
+					{
+						loader: require.resolve('sass-loader'),
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
+		],
+	},
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: 'css/[name].min.css',
+			chunkFilename: '[id].css',
+		}),
+		new OptimizeCSSAssetsPlugin({}),
+	],
+});
+
 class ScssConfigWebpackPlugin {
 	/**
 	 * @param {ScssConfigWebpackPluginOptions} options
@@ -14,95 +114,17 @@ class ScssConfigWebpackPlugin {
 	}
 
 	/**
-	 * Returns the style loader.
-	 */
-	getStyleLoader() {
-		return {
-			loader: require.resolve('style-loader'),
-			options: {
-				sourceMap: true,
-			},
-		};
-	}
-
-	/**
-	 * Returns the CSS Loader.
-	 */
-	getCssLoader() {
-		return {
-			loader: require.resolve('css-loader'),
-			options: {
-				sourceMap: true,
-				importLoaders: 3,
-			},
-		};
-	}
-
-	/**
-	 * Returns the CSS Loader.
-	 */
-	getPostCssLoader() {
-		return {
-			loader: require.resolve('postcss-loader'),
-			options: {
-				plugins: loader => [
-					require('autoprefixer'),
-					require('iconfont-webpack-plugin')({
-						resolve: loader.resolve,
-					}),
-				],
-				sourceMap: true,
-			},
-		};
-	}
-
-	/**
-	 * Returns the Url Loader.
-	 */
-	getUrlLoader() {
-		return {
-			loader: require.resolve('resolve-url-loader'),
-		};
-	}
-
-	/**
-	 * Returns the SASS Loader.
-	 */
-	getSassLoader() {
-		return {
-			loader: require.resolve('sass-loader'),
-			options: {
-				sourceMap: true,
-			},
-		};
-	}
-
-	/**
 	 * @param {WebpackCompiler} compiler
 	 */
 	apply(compiler) {
-		const devtools = compiler.options.optimization.nodeEnv === 'development';
+		const isDevelopment = compiler.options.mode === 'development';
+
+		const config = isDevelopment ? developmentConfig() : productionConfig();
+
+		config.plugins.forEach(plugin => plugin.apply(compiler));
 
 		compiler.hooks.afterEnvironment.tap('ScssConfigWebpackPlugin', () => {
-			//compiler.options.devtool = devtools ? 'source-map' : 'inline-source-map';
-
-			compiler.options.resolve.extensions.push('.scss');
-
-			compiler.options.module.rules.push({
-				test: /\.scss$/, // scss
-				use: [
-					// Inject CSS with <style> tags.
-					this.getStyleLoader(),
-					// Resolve @import and url inside CSS
-					this.getCssLoader(),
-					// Autoprefix and transpile CSS
-					this.getPostCssLoader(),
-					// Load files inside url()
-					this.getUrlLoader(),
-					// Compiles SASS to CSS
-					this.getSassLoader(),
-				],
-			});
+			compiler.options.module.rules.push(config.module.rules[0]);
 		});
 	}
 }
