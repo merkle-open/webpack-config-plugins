@@ -1,0 +1,10 @@
+image: node:6
+
+build:
+  stage: build
+  before_script:
+    - node --version
+    - npm --version
+    - npm i
+  script:
+    - npm test
