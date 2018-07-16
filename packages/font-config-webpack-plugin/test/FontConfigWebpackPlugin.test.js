@@ -1,117 +1,118 @@
 const path = require('path');
 const rimraf = require('rimraf');
+const glob = require('glob');
 const webpack = require('webpack');
 const FontConfigWebpackPlugin = require('../src/FontConfigWebpackPlugin');
 
-// declare global test timeout to 10s for async tests
-jest.setTimeout(20 * 1000);
-
-const runWithinWebpackContext = (callback, settings = {}) => {
-	webpack({
-		mode: settings.mode || 'development',
-		entry: path.resolve(__dirname, 'fixtures/entry.js'),
-		target: 'node',
-		node: {
-			global: false,
-		},
-		output: {
-			path: path.resolve(__dirname, 'fixtures/dist'),
-			filename: 'bundle.js',
-			libraryTarget: 'umd',
-		},
-		module: {
-			rules: [
-				{
-					test: /\.css$/,
-					use: ['style-loader', 'css-loader'],
-				},
-			],
-		},
-		resolve: {
-			extensions: ['.js', '.css'],
-		},
-		plugins: [new FontConfigWebpackPlugin(settings.pluginOptions)],
-	}).run((_, stats) => {
-		callback({
-			_,
-			stats,
-			options: stats.compilation.options,
-			errors: stats.compilation.errors,
-		});
-	});
-};
-
-afterEach(resolve => {
-	jest.resetModules();
-	rimraf(path.join(__dirname, 'fixtures/dist'), resolve);
+beforeAll(done => {
+	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
 
-describe('FontConfigWebpackPlugin', () => {
+beforeEach(done => {
+	process.chdir(path.join(__dirname, 'fixtures'));
+	rimraf(path.join(__dirname, 'fixtures/dist'), done);
+});
+
+describe('FontConfigWebpackPlugin standalone', () => {
 	it('should be creatable without options', () => {
 		new FontConfigWebpackPlugin();
 	});
 
-	describe('options', () => {
-		it('options should match the last options snapshot (dev)', resolve => {
-			runWithinWebpackContext(({ options }) => {
-				expect(options).toMatchSnapshot();
-				resolve();
-			});
-		});
-
-		it('options should match the last custom options snapshot (dev)', resolve => {
-			runWithinWebpackContext(
-				({ options }) => {
-					expect(options).toMatchSnapshot();
-					resolve();
-				},
-				{
-					pluginOptions: {
-						name: '[name]-[hash].[ext]',
-					},
-				}
-			);
-		});
-
-		// TODO: This test throws timeout error!
-		it.skip(
-			'options should match the last options snapshot (prod)',
-			resolve => {
-				runWithinWebpackContext(({ options }) => {
-					expect(options).toMatchSnapshot();
-					resolve();
-				});
-			},
-			{ mode: 'production' }
-		);
+	it('should be creatable with options', () => {
+		new FontConfigWebpackPlugin({});
 	});
 
-	describe('runnable webpack context', () => {
-		it('should finish without errors', () => {
-			runWithinWebpackContext(({ errors }) => {
-				expect(errors).toEqual([]);
-			});
-		});
+	it('should return an instance with the options assigned to it', () => {
+		const options = { format: '[hash]-[name].[ext]', output: 'assets/fonts/' };
+		const instance = new FontConfigWebpackPlugin(options);
 
-		it('should set plugins correctly', resolve => {
-			runWithinWebpackContext(({ options }) => {
-				expect(options.plugins.length).toBe(1);
-				expect(options.plugins[0] instanceof FontConfigWebpackPlugin).toBe(true);
-				resolve();
-			});
-		});
+		expect(instance.options).toEqual(options);
+	});
+});
 
-		it('should set rules correctly', resolve => {
-			runWithinWebpackContext(({ options }) => {
-				const ruleToTest = options.module.rules[1];
-				expect(options.module.rules.length - 1).toBe(1); // -1 is the rule defined in the test config
-				expect(ruleToTest.test.test('webfont.eot')).toBe(true);
-				expect(ruleToTest.test.test('webfont.ttf')).toBe(true);
-				expect(ruleToTest.test.test('webfont.woff')).toBe(true);
-				expect(ruleToTest.test.test('webfont.woff2')).toBe(true);
-				expect(ruleToTest.test.test('webfont.svg')).toBe(true);
-				resolve();
-			});
+describe('FontConfigWebpackPlugin inside webpack context', () => {
+	it('should compile without errors', done => {
+		const compiler = webpack({
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new FontConfigWebpackPlugin()],
 		});
+		compiler.run((err, stats) => {
+			expect(stats.compilation.errors).toEqual([]);
+			done();
+		});
+	});
+
+	it('should compile without errors in development mode', done => {
+		const compiler = webpack({
+			mode: 'development',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new FontConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			expect(stats.compilation.errors).toEqual([]);
+			done();
+		});
+	});
+
+	it('should compile without errors in production mode', done => {
+		const compiler = webpack({
+			mode: 'production',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new FontConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			expect(stats.compilation.errors).toEqual([]);
+			done();
+		});
+	});
+
+	it('should generate the correct WOFF files in development mode', done => {
+		const compiler = webpack({
+			mode: 'development',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new FontConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			const generatedFiles = glob.sync('./fixtures/dist/**/*.woff', {
+				cwd: __dirname,
+			});
+			expect(generatedFiles).toEqual(['./fixtures/dist/fonts/OpenSans-Regular-webfont.woff']);
+			done();
+		});
+	});
+
+	it('should generate the correct WOFF files in production mode', done => {
+		const compiler = webpack({
+			mode: 'production',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new FontConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			const generatedFiles = glob.sync('./fixtures/dist/**/*.woff', {
+				cwd: __dirname,
+			});
+			expect(generatedFiles).toEqual(['./fixtures/dist/fonts/OpenSans-Regular-webfont.woff']);
+			done();
+		});
+	});
+
+	it('should set rules correctly', done => {
+		const compiler = webpack({
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new FontConfigWebpackPlugin()],
+		});
+		expect(compiler.options.module.rules.length).toBe(1);
+		done();
+	});
+
+	it('should have rules matching woff files', done => {
+		const compiler = webpack({
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new FontConfigWebpackPlugin()],
+		});
+		const ruleToTest = compiler.options.module.rules[0];
+		expect(ruleToTest.test.test('test.woff')).toBe(true);
+		expect(ruleToTest.test.test('testingwoff')).toBe(false);
+		done();
 	});
 });

@@ -1,5 +1,5 @@
 {
-  "name": "@namics/font-config-webpack-plugin",
+  "name": "font-config-webpack-plugin",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -17,10 +17,9 @@
     "npm": ">=5"
   },
   "scripts": {
-    "pretest": "rimraf ./src/fixtures/dist",
-    "test": "jest",
-    "posttest": "tsc",
-    "update-snapshots": "jest -u"
+      "test": "jest --runInBand --verbose",
+      "test-watch": "jest --watch --runInBand",
+      "update-snapshots": "jest -u --runInBand"
   },
   "peerDependencies": {
     "typescript": ">=2.0.0",
@@ -43,6 +42,7 @@
   "jest": {
     "rootDir": "./",
     "browser": false,
+    "testEnvironment": "node",
     "watchPathIgnorePatterns": [
       "<rootDir>/test/fixtures"
     ],

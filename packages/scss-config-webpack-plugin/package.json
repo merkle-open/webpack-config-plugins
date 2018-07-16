@@ -17,7 +17,7 @@
     "npm": ">=5"
   },
   "scripts": {
-    "test": "jest --runInBand",
+    "test": "jest --runInBand --verbose",
     "test-watch": "jest --watch --runInBand",
     "update-snapshots": "jest -u --runInBand"
   },
@@ -44,6 +44,7 @@
   "jest": {
     "rootDir": "./",
     "browser": false,
+    "testEnvironment": "node",
     "watchPathIgnorePatterns": [
       "<rootDir>/test/fixtures"
     ],

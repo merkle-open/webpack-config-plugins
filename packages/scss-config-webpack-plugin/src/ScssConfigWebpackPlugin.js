@@ -1,14 +1,18 @@
 // @ts-check
-/** @typedef {import("webpack/lib/Compilation.js")} WebpackCompilation */
 /** @typedef {import("webpack/lib/Compiler.js")} WebpackCompiler */
-/** @typedef {import("webpack/lib/Chunk.js")} WebpackChunk */
 /** @typedef {{ }} ScssConfigWebpackPluginOptions */
 'use strict';
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const developmentConfig = () => ({
+/**
+ * Common Development Config
+ *
+ * @param {ScssConfigWebpackPluginOptions} options
+ * @returns {any}
+ */
+const developmentConfig = options => ({
 	module: {
 		rules: [
 			{
@@ -55,7 +59,14 @@ const developmentConfig = () => ({
 	plugins: [],
 });
 
-const productionConfig = () => ({
+/**
+ *
+ * Common Production Config
+ *
+ * @param {ScssConfigWebpackPluginOptions} options
+ * @returns {any}
+ */
+const productionConfig = options => ({
 	module: {
 		rules: [
 			{
@@ -105,24 +116,31 @@ const productionConfig = () => ({
 	],
 });
 
+/**
+ * @type {ScssConfigWebpackPluginOptions}
+ */
+const defaultOptions = {};
+
 class ScssConfigWebpackPlugin {
 	/**
-	 * @param {ScssConfigWebpackPluginOptions} options
+	 * @param {Partial<ScssConfigWebpackPluginOptions>} options
 	 */
 	constructor(options = {}) {
-		this.options = options;
+		this.options = Object.assign({}, defaultOptions, options);
 	}
 
 	/**
 	 * @param {WebpackCompiler} compiler
 	 */
 	apply(compiler) {
-		const isDevelopment = compiler.options.mode === 'development';
-
-		const config = isDevelopment ? developmentConfig() : productionConfig();
-
+		// From https://github.com/webpack/webpack/blob/3366421f1784c449f415cda5930a8e445086f688/lib/WebpackOptionsDefaulter.js#L12-L14
+		const isProductionLikeMode =
+			compiler.options.mode === 'production' || !compiler.options.mode;
+		const config = isProductionLikeMode
+			? productionConfig(this.options)
+			: developmentConfig(this.options);
+		// Merge config
 		config.plugins.forEach(plugin => plugin.apply(compiler));
-
 		compiler.hooks.afterEnvironment.tap('ScssConfigWebpackPlugin', () => {
 			compiler.options.module.rules.push(config.module.rules[0]);
 		});

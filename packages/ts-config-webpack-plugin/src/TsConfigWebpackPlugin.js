@@ -1,7 +1,7 @@
 // @ts-check
-/** @typedef {import("webpack/lib/Compilation.js")} WebpackCompilation */
-/** @typedef {import("webpack/lib/Compiler.js")} WebpackCompiler */
-/** @typedef {import("webpack/lib/Chunk.js")} WebpackChunk */
+/** @typedef {import("webpack/lib/Compilation")} WebpackCompilation */
+/** @typedef {import("webpack/lib/Compiler")} WebpackCompiler */
+/** @typedef {import("webpack/lib/Chunk")} WebpackChunk */
 /** @typedef {{ }} TsConfigWebpackPluginOptions */
 'use strict';
 
@@ -83,7 +83,7 @@ class TsConfigWebpackPlugin {
 			compiler.options.resolve.extensions.push('.ts', '.tsx', '.d.ts');
 
 			compiler.options.module.rules.push({
-				test: /.(tsx?|d.ts)$/, // ts, tsx, d.ts
+				test: /\.(tsx?|d.ts)$/, // ts, tsx, d.ts
 				use: [
 					// enable cache for all inputs
 					this.getCacheLoader(),

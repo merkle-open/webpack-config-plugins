@@ -5,11 +5,11 @@
     "description": "Simplify webpack loader configuration",
     "main": "index.js",
     "scripts": {
-        "install": "lerna bootstrap",
+        "install": "lerna bootstrap --hoist",
         "commit": "git-cz",
         "lint": "lint-staged",
         "pretest": "npm run lint",
-        "test": "lerna run test",
+        "test": "lerna exec -- npm test",
         "clean": "lerna clean",
         "prettier": "prettier ./packages/**/*.js ./packages/*/package.json"
     },

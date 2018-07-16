@@ -6,5 +6,6 @@ build:
     - node --version
     - npm --version
     - npm i
+    - npm run install
   script:
     - npm test

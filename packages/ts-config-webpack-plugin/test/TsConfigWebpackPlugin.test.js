@@ -1,101 +1,119 @@
-const fs = require('fs');
 const path = require('path');
 const rimraf = require('rimraf');
+const glob = require('glob');
 const webpack = require('webpack');
 const TsConfigWebpackPlugin = require('../src/TsConfigWebpackPlugin');
 
-// declare global test timeout to 10s for async tests
-jest.setTimeout(20 * 1000);
-
-const runWithinWebpackContext = (callback, settings = {}) => {
-	webpack({
-		mode: settings.mode || 'development',
-		entry: path.resolve(__dirname, 'fixtures/entry.ts'),
-		target: 'node',
-		node: {
-			global: false,
-		},
-		output: {
-			path: path.resolve(__dirname, 'fixtures/dist'),
-			filename: 'bundle.js',
-			libraryTarget: 'umd',
-		},
-		plugins: [new TsConfigWebpackPlugin(settings.pluginOptions)],
-	}).run((_, stats) => {
-		callback({
-			_,
-			stats,
-			options: stats.compilation.options,
-			errors: stats.compilation.errors,
-		});
-	});
-};
-
-afterEach(resolve => {
-	jest.resetModules();
-	rimraf(path.join(__dirname, 'fixtures/dist'), resolve);
+beforeAll(done => {
+	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
 
-describe('TsConfigWebpackPlugin', () => {
+beforeEach(done => {
+	process.chdir(path.join(__dirname, 'fixtures'));
+	rimraf(path.join(__dirname, 'fixtures/dist'), done);
+});
+
+describe('TsConfigWebpackPlugin standalone', () => {
 	it('should be creatable without options', () => {
 		new TsConfigWebpackPlugin();
 	});
 
-	describe('options', () => {
-		it('options should match the last options snapshot (dev)', resolve => {
-			runWithinWebpackContext(({ options }) => {
-				expect(options).toMatchSnapshot();
-				resolve();
-			});
-		});
-
-		// TODO: This test throws timeout error!
-		it.skip(
-			'options should match the last options snapshot (prod)',
-			resolve => {
-				runWithinWebpackContext(({ options }) => {
-					expect(options).toMatchSnapshot();
-					resolve();
-				});
-			},
-			{ mode: 'production' }
-		);
+	it('should be creatable with options', () => {
+		new TsConfigWebpackPlugin({});
 	});
 
-	describe('runnable webpack context', () => {
-		it('should finish without errors', () => {
-			runWithinWebpackContext(({ errors }) => {
-				expect(errors).toEqual([]);
-			});
-		});
+	it('should return an instance with the options assigned to it', () => {
+		const options = {};
+		const instance = new TsConfigWebpackPlugin(options);
 
-		it('should set plugins correctly', resolve => {
-			runWithinWebpackContext(({ options }) => {
-				expect(options.plugins.length).toBe(1);
-				expect(options.plugins[0] instanceof TsConfigWebpackPlugin).toBe(true);
-				resolve();
-			});
-		});
+		expect(instance.options).toEqual(options);
+	});
+});
 
-		it('should set rules correctly', resolve => {
-			runWithinWebpackContext(({ options }) => {
-				expect(options.module.rules.length).toBe(1);
-				expect(options.module.rules[0].test.test('entry.ts')).toBe(true);
-				resolve();
-			});
+describe('TsConfigWebpackPlugin inside webpack context', () => {
+	it('should compile without errors', done => {
+		const compiler = webpack({
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new TsConfigWebpackPlugin()],
 		});
+		compiler.run((err, stats) => {
+			expect(stats.compilation.errors).toEqual([]);
+			done();
+		});
+	});
 
-		// TODO: This test throws cache-loader error!
-		it.skip(
-			'should generate correct output',
-			() => {
-				runWithinWebpackContext(() => {
-					const bundlePath = path.resolve(__dirname, './fixtures/dist/bundle.js');
-					const contents = fs.readFileSync(bundlePath).toString();
-					expect(contents).toBeDefined();
-				});
-			},
-			{ mode: 'production' }
-		);
+	it('should compile without errors in development mode', done => {
+		const compiler = webpack({
+			mode: 'development',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new TsConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			expect(stats.compilation.errors).toEqual([]);
+			done();
+		});
+	});
+
+	it('should compile without errors in production mode', done => {
+		const compiler = webpack({
+			mode: 'production',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new TsConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			expect(stats.compilation.errors).toEqual([]);
+			done();
+		});
+	});
+
+	it('should generate the correct JS files in development mode', done => {
+		const compiler = webpack({
+			mode: 'development',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new TsConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			const generatedFiles = glob.sync('./fixtures/dist/**/*.js', {
+				cwd: __dirname,
+			});
+			expect(generatedFiles).toEqual(['./fixtures/dist/main.js']);
+			done();
+		});
+	});
+
+	it('should generate the correct JS files in production mode', done => {
+		const compiler = webpack({
+			mode: 'production',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new TsConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			const generatedFiles = glob.sync('./fixtures/dist/**/*.js', {
+				cwd: __dirname,
+			});
+			expect(generatedFiles).toEqual(['./fixtures/dist/main.js']);
+			done();
+		});
+	});
+
+	it('should set rules correctly', done => {
+		const compiler = webpack({
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new TsConfigWebpackPlugin()],
+		});
+		expect(compiler.options.module.rules.length).toBe(1);
+		done();
+	});
+
+	it('should have rules matching ts and tsx files', done => {
+		const compiler = webpack({
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new TsConfigWebpackPlugin()],
+		});
+		const ruleToTest = compiler.options.module.rules[0];
+		expect(ruleToTest.test.test('test.ts')).toBe(true);
+		expect(ruleToTest.test.test('test.tsx')).toBe(true);
+		expect(ruleToTest.test.test('testingts')).toBe(false);
+		done();
 	});
 });

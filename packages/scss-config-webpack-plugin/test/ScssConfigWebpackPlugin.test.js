@@ -144,27 +144,16 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 
 	it('should set rules correctly', done => {
 		const compiler = webpack({
-			context: path.join(__dirname, 'fixtures/simple'),
-			output: {
-				path: path.join(__dirname, 'fixtures/dist'),
-			},
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
-
-		const ruleToTest = compiler.options.module.rules[0];
 		expect(compiler.options.module.rules.length).toBe(1);
 		done();
 	});
 
 	it('should have rules matching scss and css files', done => {
 		const compiler = webpack({
-			context: path.join(__dirname, 'fixtures/simple'),
-			output: {
-				path: path.join(__dirname, 'fixtures/dist'),
-			},
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
-
 		const ruleToTest = compiler.options.module.rules[0];
 		expect(ruleToTest.test.test('test.scss')).toBe(true);
 		expect(ruleToTest.test.test('test.css')).toBe(true);
