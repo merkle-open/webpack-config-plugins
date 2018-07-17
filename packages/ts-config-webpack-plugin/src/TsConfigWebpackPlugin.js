@@ -62,7 +62,9 @@ class TsConfigWebpackPlugin {
 	 * @param {WebpackCompiler} compiler
 	 */
 	apply(compiler) {
-		const devtools = compiler.options.optimization.nodeEnv === 'development';
+		// From https://github.com/webpack/webpack/blob/3366421f1784c449f415cda5930a8e445086f688/lib/WebpackOptionsDefaulter.js#L12-L14
+		const isProductionLikeMode =
+			compiler.options.mode === 'production' || !compiler.options.mode;
 
 		[
 			new ForkTsCheckerWebpackPlugin({
@@ -83,7 +85,7 @@ class TsConfigWebpackPlugin {
 					// run compilation threaded
 					this.getThreadLoader(),
 					// main typescript compilation process
-					this.getTsLoader(devtools),
+					this.getTsLoader(!isProductionLikeMode),
 				],
 			});
 		});
