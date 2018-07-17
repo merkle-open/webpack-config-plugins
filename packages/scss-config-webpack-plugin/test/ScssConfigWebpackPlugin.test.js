@@ -5,8 +5,13 @@ const glob = require('glob');
 const webpack = require('webpack');
 const ScssConfigWebpackPlugin = require('../src/ScssConfigWebpackPlugin');
 
-afterEach(resolve => {
-	rimraf(path.join(__dirname, 'fixtures/dist'), resolve);
+beforeAll(done => {
+	rimraf(path.join(__dirname, 'fixtures/dist'), done);
+});
+
+beforeEach(done => {
+	process.chdir(path.join(__dirname, 'fixtures'));
+	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
 
 describe('ScssConfigWebpackPlugin standalone', () => {
@@ -30,9 +35,6 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 	it('should compile without errors', done => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
-			output: {
-				path: path.join(__dirname, 'fixtures/dist'),
-			},
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
@@ -45,9 +47,6 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
-			output: {
-				path: path.join(__dirname, 'fixtures/dist'),
-			},
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
@@ -60,9 +59,6 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
-			output: {
-				path: path.join(__dirname, 'fixtures/dist'),
-			},
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
@@ -75,9 +71,6 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
-			output: {
-				path: path.join(__dirname, 'fixtures/dist'),
-			},
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
@@ -93,9 +86,6 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
-			output: {
-				path: path.join(__dirname, 'fixtures/dist'),
-			},
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
@@ -111,9 +101,6 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
-			output: {
-				path: path.join(__dirname, 'fixtures/dist'),
-			},
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
@@ -128,9 +115,6 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
-			output: {
-				path: path.join(__dirname, 'fixtures/dist'),
-			},
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
@@ -166,9 +150,6 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 			mode: 'production',
 			entry: path.join(__dirname, 'fixtures/simple/src/css.js'),
 			context: path.join(__dirname, 'fixtures/simple'),
-			output: {
-				path: path.join(__dirname, 'fixtures/dist'),
-			},
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
@@ -186,9 +167,6 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 			mode: 'production',
 			entry: path.join(__dirname, 'fixtures/simple/src/css.js'),
 			context: path.join(__dirname, 'fixtures/simple'),
-			output: {
-				path: path.join(__dirname, 'fixtures/dist'),
-			},
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
