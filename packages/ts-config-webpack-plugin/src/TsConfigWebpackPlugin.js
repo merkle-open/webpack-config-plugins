@@ -72,13 +72,6 @@ class TsConfigWebpackPlugin {
 		].forEach(plugin => plugin.apply(compiler));
 
 		compiler.hooks.afterEnvironment.tap('TsConfigWebpackPlugin', () => {
-			compiler.options.devtool = devtools ? 'source-map' : 'inline-source-map';
-
-			if (devtools) {
-				compiler.options.optimization.removeAvailableModules = false;
-				compiler.options.optimization.removeEmptyChunks = false;
-				compiler.options.optimization.splitChunks = false;
-			}
 
 			compiler.options.resolve.extensions.push('.ts', '.tsx', '.d.ts');
 
