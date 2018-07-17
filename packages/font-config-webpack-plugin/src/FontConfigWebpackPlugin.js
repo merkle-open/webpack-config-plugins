@@ -63,7 +63,7 @@ class FontConfigWebpackPlugin {
 		// Merge config
 		config.plugins.forEach(plugin => plugin.apply(compiler));
 		compiler.hooks.afterEnvironment.tap('FontConfigWebpackPlugin', () => {
-			compiler.options.module.rules.push(config.module.rules[0]);
+			compiler.options.module.rules.push(...config.module.rules);
 		});
 	}
 }

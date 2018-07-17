@@ -142,7 +142,7 @@ class ScssConfigWebpackPlugin {
 		// Merge config
 		config.plugins.forEach(plugin => plugin.apply(compiler));
 		compiler.hooks.afterEnvironment.tap('ScssConfigWebpackPlugin', () => {
-			compiler.options.module.rules.push(config.module.rules[0]);
+			compiler.options.module.rules.push(...config.module.rules);
 		});
 	}
 }
