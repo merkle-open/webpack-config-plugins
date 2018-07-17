@@ -22,6 +22,7 @@ const developmentConfig = options => ({
 		rules: [
 			{
 				test: /\.s?css$/,
+				exclude: /\.module\.s?css$/,
 				use: [
 					{
 						loader: require.resolve('style-loader'),
@@ -34,6 +35,46 @@ const developmentConfig = options => ({
 						options: {
 							sourceMap: true,
 							importLoaders: 3,
+						},
+					},
+					{
+						loader: require.resolve('postcss-loader'),
+						options: {
+							plugins: loader => [
+								require('autoprefixer'),
+								require('iconfont-webpack-plugin')({
+									resolve: loader.resolve,
+								}),
+							],
+							sourceMap: true,
+						},
+					},
+					{
+						loader: require.resolve('resolve-url-loader'),
+					},
+					{
+						loader: require.resolve('sass-loader'),
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
+			{
+				test: /module\.s?css$/,
+				use: [
+					{
+						loader: require.resolve('style-loader'),
+						options: {
+							sourceMap: false,
+						},
+					},
+					{
+						loader: require.resolve('css-loader'),
+						options: {
+							sourceMap: false,
+							importLoaders: 3,
+							modules: true,
 						},
 					},
 					{
@@ -76,6 +117,7 @@ const productionConfig = options => ({
 		rules: [
 			{
 				test: /\.s?css$/,
+				exclude: /\.module\.s?css$/,
 				use: [
 					{
 						loader: MiniCssExtractPlugin.loader,
@@ -85,6 +127,43 @@ const productionConfig = options => ({
 						options: {
 							sourceMap: true,
 							importLoaders: 3,
+						},
+					},
+					{
+						loader: require.resolve('postcss-loader'),
+						options: {
+							plugins: loader => [
+								require('autoprefixer'),
+								require('iconfont-webpack-plugin')({
+									resolve: loader.resolve,
+								}),
+							],
+							sourceMap: true,
+						},
+					},
+					{
+						loader: require.resolve('resolve-url-loader'),
+					},
+					{
+						loader: require.resolve('sass-loader'),
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
+			{
+				test: /module\.s?css$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+					},
+					{
+						loader: require.resolve('css-loader'),
+						options: {
+							sourceMap: true,
+							importLoaders: 3,
+							modules: true,
 						},
 					},
 					{

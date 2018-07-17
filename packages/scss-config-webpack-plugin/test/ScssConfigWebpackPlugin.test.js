@@ -165,7 +165,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		const compiler = webpack({
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
-		expect(compiler.options.module.rules.length).toBe(1);
+		expect(compiler.options.module.rules.length).toBe(2);
 		done();
 	});
 
@@ -247,6 +247,47 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 				.then(({ window, document }) => {
 					const height = window.getComputedStyle(document.querySelector('.test')).height;
 					expect(height).toBe('5px');
+				})
+				.then(done, done);
+		});
+	});
+
+	it('should load and provide CSS modules', done => {
+		const compiler = webpack({
+			mode: 'development',
+			entry: path.join(__dirname, 'fixtures/modules/src/index.js'),
+			context: path.join(__dirname, 'fixtures/modules'),
+			plugins: [new ScssConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			jsDomWindowContext({
+				js: path.resolve(__dirname, './fixtures/dist/main.js'),
+			})
+				.then(({ window, document }) => {
+					const color = window.getComputedStyle(document.getElementById('css-module'))
+						.color;
+					expect(color).toBe('red');
+				})
+				.then(done, done);
+		});
+	});
+
+	it('should load and provide CSS modules in production', done => {
+		const compiler = webpack({
+			mode: 'production',
+			entry: path.join(__dirname, 'fixtures/modules/src/index.js'),
+			context: path.join(__dirname, 'fixtures/modules'),
+			plugins: [new ScssConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			jsDomWindowContext({
+				js: path.resolve(__dirname, './fixtures/dist/main.js'),
+				css: path.resolve(__dirname, './fixtures/dist/css/main.min.css'),
+			})
+				.then(({ window, document }) => {
+					const color = window.getComputedStyle(document.getElementById('css-module'))
+						.color;
+					expect(color).toBe('red');
 				})
 				.then(done, done);
 		});
