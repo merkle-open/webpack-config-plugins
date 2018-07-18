@@ -4,6 +4,7 @@ const fs = require('fs');
 const glob = require('glob');
 const webpack = require('webpack');
 const ScssConfigWebpackPlugin = require('../src/ScssConfigWebpackPlugin');
+const jsDomWindowContext = require('./jsDomWindowContext');
 
 beforeAll(done => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
@@ -175,6 +176,45 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 			const classOccurrenceIndex = contents.search('.test');
 			expect(classOccurrenceIndex).not.toBe(-1);
 			done();
+		});
+	});
+
+	it('should generate valid css in development mode', done => {
+		const compiler = webpack({
+			mode: 'development',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new ScssConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			jsDomWindowContext({
+				html: '<div class="test"></div>',
+				js: path.resolve(__dirname, './fixtures/dist/main.js'),
+			})
+				.then(({ window, document }) => {
+					const height = window.getComputedStyle(document.querySelector('.test')).height;
+					expect(height).toBe('5px');
+				})
+				.then(done, done);
+		});
+	});
+
+	it('should generate valid css in production mode', done => {
+		const compiler = webpack({
+			mode: 'production',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new ScssConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			jsDomWindowContext({
+				html: '<div class="test"></div>',
+				js: path.resolve(__dirname, './fixtures/dist/main.js'),
+				css: path.resolve(__dirname, './fixtures/dist/css/main.min.css'),
+			})
+				.then(({ window, document }) => {
+					const height = window.getComputedStyle(document.querySelector('.test')).height;
+					expect(height).toBe('5px');
+				})
+				.then(done, done);
 		});
 	});
 });
