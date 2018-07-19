@@ -66,6 +66,40 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
+	it('should allow to set the production mode mode', done => {
+		const referenceCompiler = webpack({
+			mode: 'production',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new TsConfigWebpackPlugin()],
+		});
+		const compiler = webpack({
+			mode: 'development',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new TsConfigWebpackPlugin({ mode: 'production' })],
+		});
+		const rule = JSON.stringify(compiler.options.module.rules, null, 2);
+		const referenceRule = JSON.stringify(referenceCompiler.options.module.rules, null, 2);
+		expect(rule).toEqual(referenceRule);
+		done();
+	});
+
+	it('should allow to set the development mode mode', done => {
+		const referenceCompiler = webpack({
+			mode: 'development',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new TsConfigWebpackPlugin()],
+		});
+		const compiler = webpack({
+			mode: 'production',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new TsConfigWebpackPlugin({ mode: 'development' })],
+		});
+		const rule = JSON.stringify(compiler.options.module.rules, null, 2);
+		const referenceRule = JSON.stringify(referenceCompiler.options.module.rules, null, 2);
+		expect(rule).toEqual(referenceRule);
+		done();
+	});
+
 	it('should generate the correct JS files in development mode', done => {
 		const compiler = webpack({
 			mode: 'development',

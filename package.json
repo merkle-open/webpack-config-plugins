@@ -10,6 +10,7 @@
         "lint": "lint-staged",
         "pretest": "npm run lint",
         "test": "lerna exec -- npm test",
+        "update-snapshots": "lerna exec -- npm run update-snapshots",
         "clean": "lerna clean",
         "prettier": "prettier ./packages/**/*.js ./packages/*/package.json"
     },

@@ -13,7 +13,6 @@ const os = require('os');
 const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-
 /**
  * Common Development Config
  *
@@ -35,7 +34,7 @@ const developmentConfig = options => ({
 								path.dirname(require.resolve('cache-loader')),
 								'../.cache-loader'
 							),
-						}
+						},
 					},
 					{
 						// run compilation threaded
@@ -59,7 +58,7 @@ const developmentConfig = options => ({
 							transpileOnly: true,
 							experimentalWatchApi: true,
 						},
-					}
+					},
 				],
 			},
 		],
@@ -72,7 +71,7 @@ const developmentConfig = options => ({
 			async: false,
 			// checkSyntacticErrors is required as we use happyPackMode and the thread-loader to parallelise the builds
 			checkSyntacticErrors: true,
-		})
+		}),
 	],
 });
 
@@ -98,7 +97,7 @@ const productionConfig = options => ({
 								path.dirname(require.resolve('cache-loader')),
 								'../.cache-loader'
 							),
-						}
+						},
 					},
 					{
 						// run compilation threaded
@@ -121,7 +120,7 @@ const productionConfig = options => ({
 							happyPackMode: true,
 							transpileOnly: true,
 						},
-					}
+					},
 				],
 			},
 		],
@@ -131,10 +130,9 @@ const productionConfig = options => ({
 		new ForkTsCheckerWebpackPlugin({
 			// checkSyntacticErrors is required as we use happyPackMode and the thread-loader to parallelise the builds
 			checkSyntacticErrors: true,
-		})
+		}),
 	],
 });
-
 
 class TsConfigWebpackPlugin {
 	/**
@@ -149,9 +147,10 @@ class TsConfigWebpackPlugin {
 	 */
 	apply(compiler) {
 		// From https://github.com/webpack/webpack/blob/3366421f1784c449f415cda5930a8e445086f688/lib/WebpackOptionsDefaulter.js#L12-L14
-		const isProductionLikeMode = this.options.mode !== undefined
-			? this.options.mode === 'production'
-			: compiler.options.mode === 'production' || !compiler.options.mode;
+		const isProductionLikeMode =
+			this.options.mode !== undefined
+				? this.options.mode === 'production'
+				: compiler.options.mode === 'production' || !compiler.options.mode;
 
 		// Get Typescript config
 		const config = isProductionLikeMode
@@ -160,11 +159,12 @@ class TsConfigWebpackPlugin {
 		// Merge config
 		config.plugins.forEach(plugin => plugin.apply(compiler));
 		compiler.hooks.afterEnvironment.tap('TsConfigWebpackPlugin', () => {
-			compiler.options.module.rules.push(config.module.rules[0]);
+			compiler.options.module.rules.push(...config.module.rules);
 		});
 		// Prepend missing typescript file extensions
-		const typescriptExtensions = ['.ts', '.tsx', '.d.ts']
-			.filter((ext) => !compiler.options.resolve.extensions.includes(ext));
+		const typescriptExtensions = ['.ts', '.tsx', '.d.ts'].filter(
+			ext => !compiler.options.resolve.extensions.includes(ext)
+		);
 		compiler.options.resolve.extensions.unshift(...typescriptExtensions);
 	}
 }
