@@ -1,6 +1,13 @@
 // @ts-check
 /** @typedef {import("webpack/lib/Compiler.js")} WebpackCompiler */
-/** @typedef {{ format: string, output: string }} FontConfigWebpackPluginOptions */
+/**
+ * Plugin Options
+ * @typedef {{
+	 mode?: 'production' | 'development'
+	 format: string,
+	 output: string
+}} FontConfigWebpackPluginOptions */
+
 'use strict';
 
 /**
@@ -55,8 +62,9 @@ class FontConfigWebpackPlugin {
 	 */
 	apply(compiler) {
 		// From https://github.com/webpack/webpack/blob/3366421f1784c449f415cda5930a8e445086f688/lib/WebpackOptionsDefaulter.js#L12-L14
-		const isProductionLikeMode =
-			compiler.options.mode === 'production' || !compiler.options.mode;
+		const isProductionLikeMode = this.options.mode !== undefined
+			? this.options.mode === 'production'
+			: compiler.options.mode === 'production' || !compiler.options.mode;
 		const config = isProductionLikeMode
 			? productionConfig(this.options)
 			: developmentConfig(this.options);

@@ -1,8 +1,12 @@
 // @ts-check
-/** @typedef {import("webpack/lib/Compilation")} WebpackCompilation */
 /** @typedef {import("webpack/lib/Compiler")} WebpackCompiler */
-/** @typedef {import("webpack/lib/Chunk")} WebpackChunk */
-/** @typedef {{ }} TsConfigWebpackPluginOptions */
+/**
+ * Plugin Options
+ * @typedef {{
+	mode?: 'production' | 'development'
+}} TsConfigWebpackPluginOptions
+ */
+
 'use strict';
 
 const os = require('os');
@@ -134,7 +138,7 @@ const productionConfig = options => ({
 
 class TsConfigWebpackPlugin {
 	/**
-	 * @param {TsConfigWebpackPluginOptions} options
+	 * @param {Partial<TsConfigWebpackPluginOptions>} options
 	 */
 	constructor(options = {}) {
 		this.options = options;
@@ -145,8 +149,11 @@ class TsConfigWebpackPlugin {
 	 */
 	apply(compiler) {
 		// From https://github.com/webpack/webpack/blob/3366421f1784c449f415cda5930a8e445086f688/lib/WebpackOptionsDefaulter.js#L12-L14
-		const isProductionLikeMode =
-			compiler.options.mode === 'production' || !compiler.options.mode;
+		const isProductionLikeMode = this.options.mode !== undefined
+			? this.options.mode === 'production'
+			: compiler.options.mode === 'production' || !compiler.options.mode;
+
+		// Get Typescript config
 		const config = isProductionLikeMode
 			? productionConfig(this.options)
 			: developmentConfig(this.options);
