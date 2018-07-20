@@ -30,6 +30,7 @@
         "fork-ts-checker-webpack-plugin": "0.4.2",
         "thread-loader": "1.1.5",
         "ts-loader": "4.4.2",
+        "tsconfig": "7.0.0",
         "tslint": "5.10.0"
     },
     "devDependencies": {

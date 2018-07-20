@@ -3,14 +3,15 @@
 /**
  * Plugin Options
  * @typedef {{
-	mode?: 'production' | 'development'
+	mode?: 'production' | 'development',
+	configFile: string
 }} TsConfigWebpackPluginOptions
  */
 
 'use strict';
-
 const os = require('os');
 const path = require('path');
+const tsconfig = require('tsconfig');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 /**
@@ -57,6 +58,8 @@ const developmentConfig = options => ({
 							happyPackMode: true,
 							transpileOnly: true,
 							experimentalWatchApi: true,
+							// Set the tsconfig.json path
+							configFile: options.configFile,
 						},
 					},
 				],
@@ -71,6 +74,8 @@ const developmentConfig = options => ({
 			async: false,
 			// checkSyntacticErrors is required as we use happyPackMode and the thread-loader to parallelise the builds
 			checkSyntacticErrors: true,
+			// Set the tsconfig.json path
+			tsconfig: options.configFile,
 		}),
 	],
 });
@@ -119,6 +124,8 @@ const productionConfig = options => ({
 							 */
 							happyPackMode: true,
 							transpileOnly: true,
+							// Set the tsconfig.json path
+							configFile: options.configFile,
 						},
 					},
 				],
@@ -130,6 +137,8 @@ const productionConfig = options => ({
 		new ForkTsCheckerWebpackPlugin({
 			// checkSyntacticErrors is required as we use happyPackMode and the thread-loader to parallelise the builds
 			checkSyntacticErrors: true,
+			// Set the tsconfig.json path
+			tsconfig: options.configFile,
 		}),
 	],
 });
@@ -139,7 +148,10 @@ class TsConfigWebpackPlugin {
 	 * @param {Partial<TsConfigWebpackPluginOptions>} options
 	 */
 	constructor(options = {}) {
-		this.options = options;
+		const defaults = {
+			configFile: options.configFile || tsconfig.resolveSync(process.cwd()),
+		};
+		this.options = Object.assign(defaults, options);
 	}
 
 	/**
