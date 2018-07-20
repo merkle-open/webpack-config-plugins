@@ -7,12 +7,13 @@
     "scripts": {
         "install": "lerna bootstrap --hoist",
         "commit": "git-cz",
-        "lint": "lint-staged",
-        "pretest": "npm run lint",
+        "lint-staged": "lint-staged",
+        "lint": "prettier --list-different './packages/**/*.js'",
+        "posttest": "npm run lint",
         "test": "lerna exec -- npm test",
         "update-snapshots": "lerna exec -- npm run update-snapshots",
         "clean": "lerna clean",
-        "prettier": "prettier ./packages/**/*.js ./packages/*/package.json"
+        "prettier": "prettier --write './packages/**/*.js'"
     },
     "keywords": [
         "webpack"
@@ -25,7 +26,7 @@
         "husky": "0.14.3",
         "lerna": "2.11.0",
         "lint-staged": "7.2.0",
-        "prettier": "1.13.6"
+        "prettier": "1.13.7"
     },
     "config": {
         "commitizen": {
@@ -34,7 +35,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "npm run lint",
+            "pre-commit": "npm run lint-staged",
             "pre-push": "npm test"
         }
     },
@@ -46,8 +47,7 @@
     },
     "lint-staged": {
         "./packages/**/*.js": [
-            "prettier --write",
-            "git add"
+            "prettier --list-different"
         ]
     }
 }
