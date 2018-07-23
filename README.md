@@ -52,7 +52,7 @@ module.exports = {
 const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
 module.exports = {
     plugins: [
-        new TsConfigWebpackPlugin()
+        new ScssConfigWebpackPlugin()
     ]
 }
 ```
