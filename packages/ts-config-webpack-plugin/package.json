@@ -38,6 +38,7 @@
         "@types/node": "10.5.1",
         "rimraf": "2.6.2",
         "jest": "23.2.0",
+        "sourcemap-validator": "1.1.0",
         "typescript": "2.9.2",
         "webpack": "4.12.2"
     },
