@@ -1,25 +1,58 @@
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) 
+[![License][https://img.shields.io/badge/license-MIT-green.svg]][http://opensource.org/licenses/MIT] 
 
 # Pluggable webpack configurations
 
-## Contents
+Creating a webpack *loader* configurations can be quite time consuming.  
+This project tries to provide best practices for the most common **loader** requirements: `ts`, `js`, `css`, `fonts` and `images`.
 
-### TypeScript <small>`(@namics/ts-config-webpack-plugin)`</small>
+Instead of copying loader configs from github and stackoverflow you could just add one of the following plugins.
 
-tbd.
+## Zero Config example
 
-### CSS <small>`(@namics/css-config-webpack-plugin)`</small>
+Webpack provides many defaults so you are able to run it without any configuration:
 
-tbd.
+```bash
+npm i --save-dev webpack-cli webpack common-config-webpack-plugin
 
-### SCSS <small>`(@namics/scss-config-webpack-plugin)`</small>
+npx webpack --plugin common-config-webpack-plugin
+```
 
-tbd.
+## Webpack Config
 
-### Fonts <small>`(@namics/font-config-webpack-plugin)`</small>
+In most projects you will need to set up project specific options but you can still use all or
+some common-config-webpack-plugin parts.
 
-tbd.
+### Use them all
 
-### Images <small>`(@namics/image-config-webpack-plugin)`</small>
+```js
+const CommonConfigWebpackPlugin = require('common-config-webpack-plugin');
+module.exports = {
+    plugins: [
+        new CommonConfigWebpackPlugin()
+    ]
+}
+```
 
-tbd.
+### Use only typescript (.ts & .tsx)
+
+```js
+const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');
+module.exports = {
+    plugins: [
+        new TsConfigWebpackPlugin()
+    ]
+}
+```
+
+
+### Use only styles (.css & .scss)
+
+```js
+const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
+module.exports = {
+    plugins: [
+        new TsConfigWebpackPlugin()
+    ]
+}
+```
