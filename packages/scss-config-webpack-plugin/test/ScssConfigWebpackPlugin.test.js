@@ -252,6 +252,42 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
+	it('should avoid common flexbox bugs in older browsers in production mode', done => {
+		const compiler = webpack({
+			mode: 'production',
+			context: path.join(__dirname, 'fixtures/flexbugs'),
+			plugins: [new ScssConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			const cssFilePath = path.resolve(__dirname, './fixtures/dist/css/main.min.css');
+			const contents = fs.readFileSync(cssFilePath).toString();
+			expect(contents).toMatchSnapshot();
+			done();
+		});
+	});
+
+	it('should avoid common flexbox bugs in older browsers in development mode', done => {
+		const compiler = webpack({
+			mode: 'development',
+			context: path.join(__dirname, 'fixtures/flexbugs'),
+			plugins: [new ScssConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			jsDomWindowContext({
+				html: '<div class="test"></div>',
+				js: path.resolve(__dirname, './fixtures/dist/main.js'),
+			})
+				.then(({ window, document }) => {
+					const headHtml = document.querySelector('head').innerHTML;
+					// Exclude sourcemap from test, as it includes user specific paths.
+					const sourceMapRegex = /\/\*\#\ssourceMappingURL=.*\*\//;
+					const headHTMLWithoutSourcemap = headHtml.replace(sourceMapRegex, '');
+					expect(headHTMLWithoutSourcemap).toMatchSnapshot();
+				})
+				.then(done, done);
+		});
+	});
+
 	it('should load and provide CSS modules', done => {
 		const compiler = webpack({
 			mode: 'development',

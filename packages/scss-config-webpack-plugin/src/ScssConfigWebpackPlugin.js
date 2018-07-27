@@ -10,6 +10,7 @@
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 /**
  * Common Development Config
@@ -41,7 +42,12 @@ const developmentConfig = options => ({
 						loader: require.resolve('postcss-loader'),
 						options: {
 							plugins: loader => [
-								require('autoprefixer'),
+								require('postcss-flexbugs-fixes'),
+								autoprefixer({
+									// flexbox: "no-2009" will add prefixes only for final and IE versions of specification.
+									// @see https://github.com/postcss/autoprefixer#disabling
+									flexbox: 'no-2009',
+								}),
 								require('iconfont-webpack-plugin')({
 									resolve: loader.resolve,
 								}),
@@ -81,7 +87,12 @@ const developmentConfig = options => ({
 						loader: require.resolve('postcss-loader'),
 						options: {
 							plugins: loader => [
-								require('autoprefixer'),
+								require('postcss-flexbugs-fixes'),
+								autoprefixer({
+									// flexbox: "no-2009" will add prefixes only for final and IE versions of specification.
+									// @see https://github.com/postcss/autoprefixer#disabling
+									flexbox: 'no-2009',
+								}),
 								require('iconfont-webpack-plugin')({
 									resolve: loader.resolve,
 								}),
@@ -133,7 +144,12 @@ const productionConfig = options => ({
 						loader: require.resolve('postcss-loader'),
 						options: {
 							plugins: loader => [
-								require('autoprefixer'),
+								require('postcss-flexbugs-fixes'),
+								autoprefixer({
+									// flexbox: "no-2009" will add prefixes only for final and IE versions of specification.
+									// @see https://github.com/postcss/autoprefixer#disabling
+									flexbox: 'no-2009',
+								}),
 								require('iconfont-webpack-plugin')({
 									resolve: loader.resolve,
 								}),
@@ -170,7 +186,12 @@ const productionConfig = options => ({
 						loader: require.resolve('postcss-loader'),
 						options: {
 							plugins: loader => [
-								require('autoprefixer'),
+								require('postcss-flexbugs-fixes'),
+								autoprefixer({
+									// flexbox: "no-2009" will add prefixes only for final and IE versions of specification.
+									// @see https://github.com/postcss/autoprefixer#disabling
+									flexbox: 'no-2009',
+								}),
 								require('iconfont-webpack-plugin')({
 									resolve: loader.resolve,
 								}),
