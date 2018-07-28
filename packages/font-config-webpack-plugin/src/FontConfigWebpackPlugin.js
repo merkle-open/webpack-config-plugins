@@ -9,41 +9,6 @@
 }} FontConfigWebpackPluginOptions */
 
 'use strict';
-
-/**
- * Common Development Config
- *
- * @param {FontConfigWebpackPluginOptions} options
- * @returns {any}
- */
-const developmentConfig = options => ({
-	module: {
-		rules: [
-			{
-				test: /\.(woff2?)(\?v=\d+\.\d+\.\d+)?$/,
-				use: [
-					{
-						loader: require.resolve('file-loader'),
-						options: {
-							name: options.format,
-							outputPath: options.output,
-						},
-					},
-				],
-			},
-		],
-	},
-	plugins: [],
-});
-
-/**
- * Common Production Config
- *
- * @param {FontConfigWebpackPluginOptions} options
- * @returns {any}
- */
-const productionConfig = options => developmentConfig(options);
-
 /**
  * @type {FontConfigWebpackPluginOptions}
  */
@@ -67,8 +32,8 @@ class FontConfigWebpackPlugin {
 				? this.options.mode === 'production'
 				: compiler.options.mode === 'production' || !compiler.options.mode;
 		const config = isProductionLikeMode
-			? productionConfig(this.options)
-			: developmentConfig(this.options);
+			? require('./config/production.config')(this.options)
+			: require('./config/development.config')(this.options);
 		// Merge config
 		config.plugins.forEach(plugin => plugin.apply(compiler));
 		compiler.hooks.afterEnvironment.tap('FontConfigWebpackPlugin', () => {
