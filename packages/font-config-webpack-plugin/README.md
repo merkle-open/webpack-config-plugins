@@ -32,12 +32,12 @@ module.exports = {
 ### Changing the fonts file name
 
 By default the `font-config-webpack-plugin` adds a md5 hash of the font files content to the file name
-to allow long-term-caching:
+to allow [long-term-caching](https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching).
 
-E.g. `static/media/OpenSans-Regular-webfont.c8ffdeb3.woff` 
+For example: `static/media/OpenSans-Regular-webfont.c8ffdeb3.woff` 
 
-To change the file name path an option called 'name' can be passed to the 'font-config-webpack-plugin'.  
-The `name` option supports different [placeholders] https://github.com/webpack-contrib/file-loader#placeholders).
+To change the file name path an option called `name` can be passed to the `font-config-webpack-plugin`.  
+The `name` option supports different [placeholders](https://github.com/webpack-contrib/file-loader#placeholders).
 
 ```js
 const FontConfigWebpackPlugin = require('font-config-webpack-plugin');
