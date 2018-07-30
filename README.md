@@ -13,7 +13,7 @@ Instead of copying loader configs from github and stackoverflow you could just a
 
 ## Zero Config example
 
-Webpack provides many defaults so you are able to run it without any configuration:
+Webpack itself provides many defaults so you are able to run the `common-config-webpack-plugin` without any configuration:
 
 ```bash
 npm i --save-dev webpack-cli webpack common-config-webpack-plugin
@@ -23,13 +23,28 @@ npx webpack --plugin common-config-webpack-plugin
 
 ## Webpack Config
 
-In most projects you will need to set up project specific options but you can still use all or
-some common-config-webpack-plugin parts.
+Many projects will need some project specific options.  
+The `common-config-webpack-plugin` suite is designed to be plugable so you will be 
+able to pick only what you need and combine it with your configuration.  
+By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
+
+```
+common-config-webpack-plugin
+  ├── js-config-webpack-plugin
+  ├── ts-config-webpack-plugin
+  ├── scss-config-webpack-plugin
+  └── asset-config-webpack-plugin
+      ├── font-config-webpack-plugin
+      └── image-config-webpack-plugin
+```
 
 ### Use them all
 
+To get started you can just add all `common-config-webpack-plugin` parts at once.
+
 ```js
 const CommonConfigWebpackPlugin = require('common-config-webpack-plugin');
+
 module.exports = {
     plugins: [
         new CommonConfigWebpackPlugin()
@@ -38,6 +53,9 @@ module.exports = {
 ```
 
 ### Use only typescript (.ts & .tsx)
+
+The `ts-config-webpack-plugin` is a modified version of the [ts-loader best practices](https://github.com/TypeStrong/ts-loader/blob/master/examples/thread-loader/webpack.config.js).  
+By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
 
 ```js
 const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');
@@ -51,11 +69,42 @@ module.exports = {
 
 ### Use only styles (.css & .scss)
 
+The `scss-config-webpack-plugin` is a modified version of the [create-react-app best practices](https://github.com/facebook/create-react-app/tree/52449c34eedc53e50a2a159d38604ea7df5bd997/packages/react-scripts/config).  
+By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
+
 ```js
 const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
 module.exports = {
     plugins: [
         new ScssConfigWebpackPlugin()
+    ]
+}
+```
+
+
+### Use only assets (Font & Images)
+
+The `asset-config-webpack-plugin` is just a wrapper around the `font-config-webpack-plugin` and the `image-config-webpack-plugin`.
+
+```js
+const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin');
+module.exports = {
+    plugins: [
+        new AssetConfigWebpackPlugin()
+    ]
+}
+```
+
+
+### Use only fonts (.woff & .woff2)
+
+The `font-config-webpack-plugin` will allow you to use [woff-fonts](https://caniuse.com/#feat=woff).
+
+```js
+const FontConfigWebpackPlugin = require('font-config-webpack-plugin');
+module.exports = {
+    plugins: [
+        new FontConfigWebpackPlugin()
     ]
 }
 ```
