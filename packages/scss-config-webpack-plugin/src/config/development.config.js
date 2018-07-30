@@ -3,7 +3,7 @@ const autoprefixer = require('autoprefixer');
 /**
  * Common Development Config
  *
- * @param {ScssConfigWebpackPluginOptions} options
+ * @param {import("../ScssConfigWebpackPlugin.js").ScssConfigWebpackPluginOptions} options
  * @returns {any}
  */
 exports = module.exports = options => ({
