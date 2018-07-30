@@ -6,7 +6,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
  *
  * Common Production Config
  *
- * @param {TsConfigWebpackPluginOptions} options
+ * @param {import("../TsConfigWebpackPlugin.js").TsConfigWebpackPluginOptions} options
  * @returns {any}
  */
 exports = module.exports = options => ({
