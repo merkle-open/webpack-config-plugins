@@ -1,4 +1,4 @@
-# @namics/font-config-webpack-plugin
+# font-config-webpack-plugin
 
 ## Installation
 

@@ -2,7 +2,7 @@
   "name": "scss-config-webpack-plugin",
   "version": "1.0.0",
   "description": "Config for SASS to CSS compilation.",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "author": "Namics AG - Technology & Application",
   "contributors": [
@@ -25,7 +25,7 @@
     "webpack": ">=4.0.0"
   },
   "devDependencies": {
-    "glob": "^7.1.2",
+    "glob": "7.1.2",
     "jest": "23.2.0",
     "webpack": "4.12.2"
   },

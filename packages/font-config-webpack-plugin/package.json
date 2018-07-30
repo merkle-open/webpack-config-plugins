@@ -2,7 +2,7 @@
   "name": "font-config-webpack-plugin",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "author": "Namics AG - Technology & Application",
   "contributors": [
@@ -22,7 +22,6 @@
       "update-snapshots": "jest -u --runInBand"
   },
   "peerDependencies": {
-    "typescript": ">=2.0.0",
     "webpack": ">=4.0.0"
   },
   "dependencies": {
