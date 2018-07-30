@@ -4,15 +4,14 @@
  * Plugin Options
  * @typedef {{
 	 mode?: 'production' | 'development'
-	 format: string,
-	 output: string
+	 name: string,
 }} FontConfigWebpackPluginOptions */
 
 'use strict';
 /**
  * @type {FontConfigWebpackPluginOptions}
  */
-const defaultOptions = { format: '[name].[ext]', output: 'fonts/' };
+const defaultOptions = { name: 'static/media/[name].[hash:8].[ext]' };
 
 class FontConfigWebpackPlugin {
 	/**

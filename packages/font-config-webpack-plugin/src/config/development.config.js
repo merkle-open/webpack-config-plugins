@@ -13,8 +13,7 @@ exports = module.exports = options => ({
 					{
 						loader: require.resolve('file-loader'),
 						options: {
-							name: options.format,
-							outputPath: options.output,
+							name: options.name,
 						},
 					},
 				],

@@ -23,7 +23,7 @@ describe('FontConfigWebpackPlugin standalone', () => {
 	});
 
 	it('should return an instance with the options assigned to it', () => {
-		const options = { format: '[hash]-[name].[ext]', output: 'assets/fonts/' };
+		const options = { name: '[hash]-[name].[ext]' };
 		const instance = new FontConfigWebpackPlugin(options);
 
 		expect(instance.options).toEqual(options);
@@ -110,7 +110,9 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 			const generatedFiles = glob.sync('./fixtures/dist/**/*.woff', {
 				cwd: __dirname,
 			});
-			expect(generatedFiles).toEqual(['./fixtures/dist/fonts/OpenSans-Regular-webfont.woff']);
+			expect(generatedFiles).toEqual([
+				'./fixtures/dist/static/media/OpenSans-Regular-webfont.c8ffdeb3.woff',
+			]);
 			done();
 		});
 	});
@@ -125,7 +127,9 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 			const generatedFiles = glob.sync('./fixtures/dist/**/*.woff', {
 				cwd: __dirname,
 			});
-			expect(generatedFiles).toEqual(['./fixtures/dist/fonts/OpenSans-Regular-webfont.woff']);
+			expect(generatedFiles).toEqual([
+				'./fixtures/dist/static/media/OpenSans-Regular-webfont.c8ffdeb3.woff',
+			]);
 			done();
 		});
 	});
