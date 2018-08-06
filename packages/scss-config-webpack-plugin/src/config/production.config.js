@@ -99,10 +99,13 @@ exports = module.exports = options => ({
 		],
 	},
 	plugins: [
+		// Extract css to a custom file
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].min.css',
 			chunkFilename: '[id].css',
 		}),
-		new OptimizeCSSAssetsPlugin({}),
+		// Minify css - but use only safe css-nano transformations
+		// https://github.com/facebook/create-react-app/pull/4706
+		new OptimizeCSSAssetsPlugin({ cssProcessorOptions: { safe: true } }),
 	],
 });

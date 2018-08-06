@@ -192,7 +192,10 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 			const contentsSource = fs.readFileSync(cssSourceFilePath).toString();
 			const cssDistFilePath = path.resolve(__dirname, './fixtures/dist/css/main.min.css');
 			const contentsMinified = fs.readFileSync(cssDistFilePath).toString();
-			expect(contentsMinified.length).toBeLessThan(contentsSource.length);
+			// Original source should include white spaces
+			expect(contentsSource).toMatch(/\s+/);
+			// Minified source should not include white spaces
+			expect(contentsMinified).toMatch(/^\S+$/);
 			done();
 		});
 	});
