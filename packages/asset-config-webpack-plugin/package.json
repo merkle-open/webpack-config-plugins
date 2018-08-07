@@ -1,6 +1,6 @@
 {
   "name": "asset-config-webpack-plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Provide a common webpack config for images and fonts",
   "main": "src/index.js",
   "license": "MIT",
@@ -17,16 +17,16 @@
     "npm": ">=5"
   },
   "scripts": {
-      "test": "jest --runInBand --verbose",
-      "test-watch": "jest --watch --runInBand",
-      "update-snapshots": "jest -u --runInBand"
+    "test": "jest --runInBand --verbose",
+    "test-watch": "jest --watch --runInBand",
+    "update-snapshots": "jest -u --runInBand"
   },
   "peerDependencies": {
     "webpack": ">=4.0.0"
   },
   "dependencies": {
-    "font-config-webpack-plugin": "0.0.1",
-    "image-config-webpack-plugin": "0.0.1"
+    "font-config-webpack-plugin": "^0.1.0",
+    "image-config-webpack-plugin": "^0.1.0"
   },
   "devDependencies": {
     "@types/jest": "23.1.3",

@@ -1,6 +1,6 @@
 {
   "name": "scss-config-webpack-plugin",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Config for SASS to CSS compilation.",
   "main": "src/index.js",
   "license": "MIT",
