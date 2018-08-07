@@ -13,7 +13,8 @@
         "test": "lerna exec -- npm test",
         "update-snapshots": "lerna exec -- npm run update-snapshots",
         "clean": "lerna clean",
-        "prettier": "prettier --write './packages/**/*.js'"
+        "prettier": "prettier --write './packages/**/*.js'",
+        "release": "lerna publish --conventional-commits --reject-cycles --allow-branch master"
     },
     "keywords": [
         "webpack"
