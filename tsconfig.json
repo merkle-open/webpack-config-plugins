@@ -1,7 +1,6 @@
 {
-	"allowJs": true,
-	"checkJs": true,
 	"compilerOptions": {
+		"allowJs": true,
 		"noEmit": true,
 		"target": "es6",
 		"lib": ["es6"],
@@ -12,7 +11,12 @@
 		"declaration": true,
 		"sourceMap": true,
 		"inlineSources": true,
-		"types": ["node", "jest"]
+		"types": ["node", "jest"],
+		"maxNodeModuleJsDepth": 1
 	},
-	"lib": ["es6", "es7"]
+	"lib": ["es6", "es7"],
+	"exclude": [
+		"**/node_modules/**/*",
+		"**/test/**/*"
+	]
 }

@@ -2,7 +2,7 @@
  * Common Development Config
  *
  * @param {import("../ImageConfigWebpackPlugin.js").ImageConfigWebpackPluginOptions} options
- * @returns {any}
+ * @returns {{ module: { rules : Array<any> }, plugins: Array<(new (): any)> }}
  */
 exports = module.exports = options => ({
 	module: {

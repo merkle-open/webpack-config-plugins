@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
  * Common Production Config
  *
  * @param {import("../ScssConfigWebpackPlugin.js").ScssConfigWebpackPluginOptions} options
- * @returns {any}
+ * @returns {{ module: { rules : Array<any> }, plugins: Array<(new (): any)> }}
  */
 exports = module.exports = options => ({
 	module: {

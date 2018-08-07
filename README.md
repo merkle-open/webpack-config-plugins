@@ -108,3 +108,7 @@ module.exports = {
     ]
 }
 ```
+
+## Quality checks
+
+The `common-config-webpack-plugin` suite provides typechecks and integration tests for the loader configurations.   

@@ -6,6 +6,9 @@ const webpack = require('webpack');
 const ScssConfigWebpackPlugin = require('../src/ScssConfigWebpackPlugin');
 const jsDomWindowContext = require('./jsDomWindowContext');
 
+// Allow tests to run 10s
+jest.setTimeout(10000);
+
 beforeAll(done => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });

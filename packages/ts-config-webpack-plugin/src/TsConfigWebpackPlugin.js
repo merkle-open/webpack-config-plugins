@@ -4,7 +4,7 @@
  * Plugin Options
  * @typedef {{
 	mode?: 'production' | 'development',
-	configFile: string
+	configFile: string | undefined
 }} TsConfigWebpackPluginOptions
  */
 

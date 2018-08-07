@@ -4,6 +4,9 @@ const glob = require('glob');
 const webpack = require('webpack');
 const ImageConfigWebpackPlugin = require('../src/ImageConfigWebpackPlugin');
 
+// Allow tests to run 10s
+jest.setTimeout(10000);
+
 beforeAll(done => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });

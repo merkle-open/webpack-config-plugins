@@ -3,6 +3,9 @@ const rimraf = require('rimraf');
 const webpack = require('webpack');
 const AssetConfigWebpackPlugin = require('../src/AssetConfigWebpackPlugin');
 
+// Allow tests to run 10s
+jest.setTimeout(10000);
+
 beforeAll(done => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });

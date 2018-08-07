@@ -18,6 +18,7 @@
   },
   "scripts": {
     "test": "jest --runInBand --verbose",
+    "posttest": "tsc",
     "test-watch": "jest --watch --runInBand",
     "update-snapshots": "jest -u --runInBand"
   },
@@ -27,7 +28,7 @@
   "devDependencies": {
     "glob": "7.1.2",
     "jest": "23.2.0",
-    "webpack": "4.12.2"
+    "webpack": "4.16.5"
   },
   "dependencies": {
     "autoprefixer": "^8.6.4",

@@ -18,6 +18,7 @@
     },
     "scripts": {
         "test": "jest --runInBand --verbose",
+        "posttest": "tsc",
         "test-watch": "jest --watch --runInBand",
         "update-snapshots": "jest -u --runInBand"
     },
@@ -40,7 +41,7 @@
         "rimraf": "2.6.2",
         "sourcemap-validator": "1.1.0",
         "typescript": "2.9.2",
-        "webpack": "4.12.2"
+        "webpack": "4.16.5"
     },
     "jest": {
         "rootDir": "./",
