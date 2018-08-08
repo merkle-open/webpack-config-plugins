@@ -39,6 +39,7 @@
   "scripts": {
     "test": "jest --runInBand --verbose",
     "test-watch": "jest --watch --runInBand",
+    "posttest": "tsc",
     "update-snapshots": "jest -u --runInBand"
   },
   "peerDependencies": {

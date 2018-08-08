@@ -33,6 +33,7 @@ module.exports = {
 
 By default the `ts-config-webpack-plugin` uses the [tsconfig](https://www.npmjs.com/package/tsconfig) plugin to locate the tsconfig file.  
 To change the default location an option called `configFile` can be passed to the `ts-config-webpack-plugin`.  
+If no configuration can be determined the src/config/tsconfig.base.json file will be used as fallback.
 
 ```js
 const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');

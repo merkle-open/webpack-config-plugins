@@ -27,21 +27,11 @@ describe('TsConfigWebpackPlugin standalone', () => {
 		new TsConfigWebpackPlugin({});
 	});
 
-	it('should return an instance with the options assigned to it - including defaults', () => {
+	it('should find a relative located tsconfig.json file', () => {
 		const options = {};
 		const instance = new TsConfigWebpackPlugin(options);
-		expect(instance.options).toEqual({
-			configFile: path.resolve(__dirname, '../tsconfig.json'),
-		});
-	});
-
-	it('should allow to set a different config tsfile', () => {
-		const rootTsConfig = path.resolve(__dirname, '../../../tsconfig.json');
-		const options = { configFile: rootTsConfig };
-		const instance = new TsConfigWebpackPlugin(options);
-		expect(instance.options).toEqual({
-			configFile: rootTsConfig,
-		});
+		const resolvedPath = instance.resolveTsConfigFilePath(__dirname);
+		expect(resolvedPath).toEqual(path.resolve(__dirname, '../tsconfig.json'));
 	});
 });
 
