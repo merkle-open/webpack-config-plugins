@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const safeParser = require('postcss-safe-parser');
 
 /**
  *
@@ -106,6 +107,6 @@ exports = module.exports = options => ({
 		}),
 		// Minify css - but use only safe css-nano transformations
 		// https://github.com/facebook/create-react-app/pull/4706
-		new OptimizeCSSAssetsPlugin({ cssProcessorOptions: { safe: true } }),
+		new OptimizeCSSAssetsPlugin({ cssProcessorOptions: { parser: safeParser, safe: true } }),
 	],
 });

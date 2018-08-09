@@ -1,15 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ScssConfigWebpackPlugin inside webpack context should avoid common flexbox bugs in older browsers in development mode 1`] = `
-"<style type=\\"text/css\\">.foo {
+".foo {
   display: flex;
   flex-direction: row;
   flex: 1 1;
-}
-
-</style>"
+}"
 `;
 
-exports[`ScssConfigWebpackPlugin inside webpack context should avoid common flexbox bugs in older browsers in production mode 1`] = `".foo{display:flex;flex-direction:row;flex:1 1}"`;
+exports[`ScssConfigWebpackPlugin inside webpack context should avoid common flexbox bugs in older browsers in production mode 1`] = `".foo{display:flex;flex:1 1;flex-direction:row}"`;
 
 exports[`ScssConfigWebpackPlugin inside webpack context should generate separate CSS files with the correct contents 1`] = `".test{height:5px}"`;

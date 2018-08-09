@@ -9,6 +9,12 @@ const jsDomWindowContext = require('./jsDomWindowContext');
 // Allow tests to run 10s
 jest.setTimeout(10000);
 
+// Return the code without source map comments
+const removeSourceMapComment = sourceCode => {
+	expect(sourceCode).toMatch(/sourceMap/);
+	return sourceCode.split('/*# sourceMap')[0].replace(/\s*$/, '');
+};
+
 beforeAll(done => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
@@ -42,6 +48,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
+			expect(err).toEqual(null);
 			expect(stats.compilation.errors).toEqual([]);
 			done();
 		});
@@ -143,7 +150,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 		compiler.run((err, stats) => {
 			const cssFilePath = path.resolve(__dirname, './fixtures/dist/css/main.min.css');
-			const contents = fs.readFileSync(cssFilePath).toString();
+			const contents = removeSourceMapComment(fs.readFileSync(cssFilePath).toString());
 			expect(contents).toMatchSnapshot();
 			done();
 		});
@@ -194,7 +201,9 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 			const cssSourceFilePath = path.resolve(__dirname, './fixtures/simple/src/regular.css');
 			const contentsSource = fs.readFileSync(cssSourceFilePath).toString();
 			const cssDistFilePath = path.resolve(__dirname, './fixtures/dist/css/main.min.css');
-			const contentsMinified = fs.readFileSync(cssDistFilePath).toString();
+			const contentsMinified = removeSourceMapComment(
+				fs.readFileSync(cssDistFilePath).toString()
+			);
 			// Original source should include white spaces
 			expect(contentsSource).toMatch(/\s+/);
 			// Minified source should not include white spaces
@@ -266,7 +275,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 		compiler.run((err, stats) => {
 			const cssFilePath = path.resolve(__dirname, './fixtures/dist/css/main.min.css');
-			const contents = fs.readFileSync(cssFilePath).toString();
+			const contents = removeSourceMapComment(fs.readFileSync(cssFilePath).toString());
 			expect(contents).toMatchSnapshot();
 			done();
 		});
@@ -284,11 +293,10 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 				js: path.resolve(__dirname, './fixtures/dist/main.js'),
 			})
 				.then(({ window, document }) => {
-					const headHtml = document.querySelector('head').innerHTML;
+					const styleHtml = document.querySelector('style').innerHTML;
 					// Exclude sourcemap from test, as it includes user specific paths.
-					const sourceMapRegex = /\/\*\#\ssourceMappingURL=.*\*\//;
-					const headHTMLWithoutSourcemap = headHtml.replace(sourceMapRegex, '');
-					expect(headHTMLWithoutSourcemap).toMatchSnapshot();
+					const styleHTMLWithoutSourcemap = removeSourceMapComment(styleHtml);
+					expect(styleHTMLWithoutSourcemap).toMatchSnapshot();
 				})
 				.then(done, done);
 		});
