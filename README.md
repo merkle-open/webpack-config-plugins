@@ -1,10 +1,10 @@
+# Pluggable webpack configurations
+
 [![NPM version](https://badge.fury.io/js/common-config-webpack-plugin.svg)](https://www.npmjs.com/package/common-config-webpack-plugin) 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT) 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) 
 [![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-green.svg)](https://github.com/prettier/prettier)
-
-# Pluggable webpack configurations
 
 Creating a webpack *loader* configurations can be quite time consuming.  
 This project tries to provide best practices for the most common **loader** requirements: `ts`, `js`, `css`, `fonts` and `images`.
@@ -13,10 +13,10 @@ Instead of copying loader configs from github and stackoverflow you could just a
 
 ## Zero Config example
 
-Webpack itself provides many defaults so you are able to run the `common-config-webpack-plugin` without any configuration:
+Webpack itself provides many defaults so you are able to run the `common-config-webpack-plugin` without a webpack.config file:
 
 ```bash
-npm i --save-dev webpack-cli webpack common-config-webpack-plugin
+npm i --save-dev webpack-cli webpack typescript common-config-webpack-plugin
 
 npx webpack --plugin common-config-webpack-plugin
 ```
@@ -51,6 +51,27 @@ module.exports = {
     ]
 }
 ```
+
+Which would be exactly the same as 
+
+```js
+const JsConfigWebpackPlugin = require('js-config-webpack-plugin');
+const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');
+const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
+const FontConfigWebpackPlugin = require('font-config-webpack-plugin');
+const ImageConfigWebpackPlugin = require('image-config-webpack-plugin');
+
+module.exports = {
+    plugins: [
+        new JsConfigWebpackPlugin(),
+        new TsConfigWebpackPlugin(),
+        new ScssConfigWebpackPlugin(),
+        new FontConfigWebpackPlugin(),
+        new ImageConfigWebpackPlugin(),
+    ]
+}
+```
+
 
 ### Use only typescript (.ts & .tsx)
 
@@ -97,6 +118,20 @@ module.exports = {
 
 
 ### Use only fonts (.woff & .woff2)
+
+The `font-config-webpack-plugin` will allow you to use [woff-fonts](https://caniuse.com/#feat=woff).
+
+```js
+const FontConfigWebpackPlugin = require('font-config-webpack-plugin');
+module.exports = {
+    plugins: [
+        new FontConfigWebpackPlugin()
+    ]
+}
+```
+
+
+### Use only images (.gif & .jpg & .jpeg &. png &. svg)
 
 The `font-config-webpack-plugin` will allow you to use [woff-fonts](https://caniuse.com/#feat=woff).
 
