@@ -21,6 +21,8 @@ npm i --save-dev webpack-cli webpack typescript common-config-webpack-plugin
 npx webpack --plugin common-config-webpack-plugin
 ```
 
+![Demo](https://github.com/namics/webpack-config-plugins/blob/master/preview.gif)
+
 ## Webpack Config
 
 Many projects will need some project specific options.  
