@@ -1,41 +1,41 @@
 {
-  "description" : "Preset for typescript webpack configuration",
-  "version" : "0.1.0",
-  "peerDependencies" : {
-    "webpack" : ">=4.0.0",
-    "typescript" : ">=2.0.0"
+  "description": "Preset for typescript webpack configuration",
+  "version": "0.2.0",
+  "peerDependencies": {
+    "typescript": ">=2.0.0",
+    "webpack": ">=4.0.0"
   },
-  "author" : "Namics AG - Technology & Application",
-  "license" : "MIT",
-  "main" : "src/index.js",
-  "contributors" : [
+  "author": "Namics AG - Technology & Application",
+  "license": "MIT",
+  "main": "src/index.js",
+  "contributors": [
     {
-      "name" : "Jan Biasi",
-      "email" : "biasijan@gmail.com",
-      "url" : "https://github.com/janbiasi"
+      "name": "Jan Biasi",
+      "email": "biasijan@gmail.com",
+      "url": "https://github.com/janbiasi"
     },
     {
-      "name" : "Matthias Giger",
-      "email" : "matthias.giger@namics.com",
-      "url" : "https://github.com/naminho"
+      "name": "Matthias Giger",
+      "email": "matthias.giger@namics.com",
+      "url": "https://github.com/naminho"
     },
     {
-      "name" : "Davide De Giorgio",
-      "email" : "dave_degiorgio@hotmail.com",
-      "url" : "https://github.com/degiorgioo"
+      "name": "Davide De Giorgio",
+      "email": "dave_degiorgio@hotmail.com",
+      "url": "https://github.com/degiorgioo"
     },
     {
-      "name" : "Ernst Ammann",
-      "email" : "ernscht@gmail.com",
-      "url" : "https://github.com/ernscht"
+      "name": "Ernst Ammann",
+      "email": "ernscht@gmail.com",
+      "url": "https://github.com/ernscht"
     },
     {
-      "name" : "Jan Nicklas",
-      "email" : "j.nicklas@me.com",
-      "url" : "https://github.com/jantimon"
+      "name": "Jan Nicklas",
+      "email": "j.nicklas@me.com",
+      "url": "https://github.com/jantimon"
     }
   ],
-  "keywords" : [
+  "keywords": [
     "ts-loader",
     "typescript-loader",
     "webpack",
@@ -43,45 +43,45 @@
     "typescript",
     "ts"
   ],
-  "scripts" : {
-    "test" : "jest --runInBand --verbose",
-    "posttest" : "tsc",
-    "update-snapshots" : "jest -u --runInBand",
-    "test-watch" : "jest --watch --runInBand"
+  "scripts": {
+    "test": "jest --runInBand --verbose",
+    "posttest": "tsc",
+    "update-snapshots": "jest -u --runInBand",
+    "test-watch": "jest --watch --runInBand"
   },
-  "dependencies" : {
-    "ts-loader" : "4.4.2",
-    "tslint" : "5.10.0",
-    "cache-loader" : "1.2.2",
-    "tsconfig" : "7.0.0",
-    "thread-loader" : "1.1.5",
-    "fork-ts-checker-webpack-plugin" : "0.4.2"
+  "dependencies": {
+    "cache-loader": "1.2.2",
+    "fork-ts-checker-webpack-plugin": "0.4.2",
+    "thread-loader": "1.1.5",
+    "ts-loader": "4.4.2",
+    "tsconfig": "7.0.0",
+    "tslint": "5.10.0"
   },
-  "devDependencies" : {
-    "@types/node" : "10.5.7",
-    "rimraf" : "2.6.2",
-    "typescript" : "3.0.1",
-    "jest" : "23.4.2",
-    "webpack" : "4.16.5",
-    "@types/jest" : "23.3.1",
-    "sourcemap-validator" : "1.1.0"
+  "devDependencies": {
+    "@types/jest": "23.3.1",
+    "@types/node": "10.5.7",
+    "jest": "23.4.2",
+    "rimraf": "2.6.2",
+    "sourcemap-validator": "1.1.0",
+    "typescript": "3.0.1",
+    "webpack": "4.16.5"
   },
-  "jest" : {
-    "browser" : false,
-    "testEnvironment" : "node",
-    "rootDir" : "./",
-    "watchPathIgnorePatterns" : [
+  "jest": {
+    "browser": false,
+    "testEnvironment": "node",
+    "rootDir": "./",
+    "watchPathIgnorePatterns": [
       "<rootDir>/test/fixtures"
     ],
-    "coveragePathIgnorePatterns" : [
+    "coveragePathIgnorePatterns": [
       "node_modules",
       "fixtures",
       "dist"
     ]
   },
-  "name" : "ts-config-webpack-plugin",
-  "engines" : {
-    "npm" : ">=5",
-    "node" : ">=8 <11"
+  "name": "ts-config-webpack-plugin",
+  "engines": {
+    "npm": ">=5",
+    "node": ">=8 <11"
   }
 }

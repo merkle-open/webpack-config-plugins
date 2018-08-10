@@ -1,78 +1,78 @@
 {
-  "description" : "Preset for font and image webpack loader configurations",
-  "version" : "0.1.0",
-  "peerDependencies" : {
-    "webpack" : ">=4.0.0"
+  "description": "Preset for font and image webpack loader configurations",
+  "version": "0.2.0",
+  "peerDependencies": {
+    "webpack": ">=4.0.0"
   },
-  "author" : "Namics AG - Technology & Application",
-  "license" : "MIT",
-  "main" : "src/index.js",
-  "contributors" : [
+  "author": "Namics AG - Technology & Application",
+  "license": "MIT",
+  "main": "src/index.js",
+  "contributors": [
     {
-      "name" : "Jan Biasi",
-      "email" : "biasijan@gmail.com",
-      "url" : "https://github.com/janbiasi"
+      "name": "Jan Biasi",
+      "email": "biasijan@gmail.com",
+      "url": "https://github.com/janbiasi"
     },
     {
-      "name" : "Matthias Giger",
-      "email" : "matthias.giger@namics.com",
-      "url" : "https://github.com/naminho"
+      "name": "Matthias Giger",
+      "email": "matthias.giger@namics.com",
+      "url": "https://github.com/naminho"
     },
     {
-      "name" : "Davide De Giorgio",
-      "email" : "dave_degiorgio@hotmail.com",
-      "url" : "https://github.com/degiorgioo"
+      "name": "Davide De Giorgio",
+      "email": "dave_degiorgio@hotmail.com",
+      "url": "https://github.com/degiorgioo"
     },
     {
-      "name" : "Ernst Ammann",
-      "email" : "ernscht@gmail.com",
-      "url" : "https://github.com/ernscht"
+      "name": "Ernst Ammann",
+      "email": "ernscht@gmail.com",
+      "url": "https://github.com/ernscht"
     },
     {
-      "name" : "Jan Nicklas",
-      "email" : "j.nicklas@me.com",
-      "url" : "https://github.com/jantimon"
+      "name": "Jan Nicklas",
+      "email": "j.nicklas@me.com",
+      "url": "https://github.com/jantimon"
     }
   ],
-  "keywords" : [
+  "keywords": [
     "images",
     "fonts",
     "webpack",
     "loader"
   ],
-  "scripts" : {
-    "test-watch" : "jest --watch --runInBand",
-    "update-snapshots" : "jest -u --runInBand",
-    "test" : "jest --runInBand --verbose"
+  "scripts": {
+    "test-watch": "jest --watch --runInBand",
+    "update-snapshots": "jest -u --runInBand",
+    "test": "jest --runInBand --verbose"
   },
-  "dependencies" : {
-    "image-config-webpack-plugin" : "^0.1.0",
-    "font-config-webpack-plugin" : "^0.1.0"
+  "dependencies": {
+    "font-config-webpack-plugin": "^0.2.0",
+    "image-config-webpack-plugin": "^0.2.0"
   },
-  "devDependencies" : {
-    "@types/jest" : "23.3.1",
-    "webpack" : "4.16.5",
-    "jest" : "23.4.2",
-    "@types/node" : "10.5.7",
-    "typescript" : "3.0.1",
-    "rimraf" : "2.6.2"
+  "devDependencies": {
+    "@types/jest": "23.3.1",
+    "@types/node": "10.5.7",
+    "jest": "23.4.2",
+    "rimraf": "2.6.2",
+    "typescript": "3.0.1",
+    "webpack": "4.16.5"
   },
-  "jest" : {
-    "browser" : false,
-    "testEnvironment" : "node",
-    "rootDir" : "./",
-    "watchPathIgnorePatterns" : [
+  "jest": {
+    "browser": false,
+    "testEnvironment": "node",
+    "rootDir": "./",
+    "watchPathIgnorePatterns": [
       "<rootDir>/test/fixtures"
     ],
-    "coveragePathIgnorePatterns" : [
+    "coveragePathIgnorePatterns": [
       "node_modules",
       "fixtures",
       "dist"
     ]
   },
-  "name" : "asset-config-webpack-plugin",
-  "engines" : {
-    "npm" : ">=5",
-    "node" : ">=8 <11"
+  "name": "asset-config-webpack-plugin",
+  "engines": {
+    "npm": ">=5",
+    "node": ">=8 <11"
   }
 }
