@@ -44,7 +44,6 @@ exports = module.exports = options => ({
 							 * Requires to use the ForkTsCheckerWebpack Plugin
 							 */
 							happyPackMode: true,
-							transpileOnly: true,
 							experimentalWatchApi: true,
 							// Set the tsconfig.json path
 							configFile: options.configFile,

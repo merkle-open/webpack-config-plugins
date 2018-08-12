@@ -33,6 +33,11 @@
       "name": "Jan Nicklas",
       "email": "j.nicklas@me.com",
       "url": "https://github.com/jantimon"
+    },
+    {
+      "name": "John Reilly",
+      "email": "johnny_reilly@hotmail.com",
+      "url": "https://github.com/johnnyreilly"
     }
   ],
   "keywords": [
@@ -51,7 +56,7 @@
   },
   "dependencies": {
     "cache-loader": "1.2.2",
-    "fork-ts-checker-webpack-plugin": "0.4.2",
+    "fork-ts-checker-webpack-plugin": "0.4.8",
     "thread-loader": "1.1.5",
     "ts-loader": "4.4.2",
     "tsconfig": "7.0.0",
@@ -60,6 +65,7 @@
   "devDependencies": {
     "@types/jest": "23.3.1",
     "@types/node": "10.5.7",
+    "@types/webpack": "^4.4.9",
     "jest": "23.4.2",
     "rimraf": "2.6.2",
     "sourcemap-validator": "1.1.0",
