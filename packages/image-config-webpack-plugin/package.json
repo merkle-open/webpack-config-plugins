@@ -1,6 +1,6 @@
 {
   "description": "Preset for image webpack configuration",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "peerDependencies": {
     "webpack": ">=4.0.0"
   },

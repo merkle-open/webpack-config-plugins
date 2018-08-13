@@ -1,6 +1,6 @@
 {
   "description": "A suite of common webpack loader configurations",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "peerDependencies": {
     "webpack": ">=4.0.0"
   },
@@ -50,9 +50,9 @@
     "test-watch": "jest --watch --runInBand"
   },
   "dependencies": {
-    "asset-config-webpack-plugin": "^0.2.0",
-    "scss-config-webpack-plugin": "^0.2.0",
-    "ts-config-webpack-plugin": "^0.2.0"
+    "asset-config-webpack-plugin": "^0.3.0",
+    "scss-config-webpack-plugin": "^0.3.0",
+    "ts-config-webpack-plugin": "^0.3.0"
   },
   "devDependencies": {
     "@types/jest": "23.3.1",
