@@ -4,8 +4,8 @@ const glob = require('glob');
 const webpack = require('webpack');
 const FontConfigWebpackPlugin = require('../src/FontConfigWebpackPlugin');
 
-// Allow tests to run 10s
-jest.setTimeout(10000);
+// Allow tests to run 30s
+jest.setTimeout(30000);
 
 beforeAll(done => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);

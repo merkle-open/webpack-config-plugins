@@ -6,8 +6,8 @@ const webpack = require('webpack');
 const ScssConfigWebpackPlugin = require('../src/ScssConfigWebpackPlugin');
 const jsDomWindowContext = require('./jsDomWindowContext');
 
-// Allow tests to run 10s
-jest.setTimeout(10000);
+// Allow tests to run 30s
+jest.setTimeout(30000);
 
 // Return the code without source map comments
 const removeSourceMapComment = sourceCode => {

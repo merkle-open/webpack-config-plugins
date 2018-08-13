@@ -6,8 +6,8 @@ const TsConfigWebpackPlugin = require('../src/TsConfigWebpackPlugin');
 const fs = require('fs');
 const validateSourcemap = require('sourcemap-validator');
 
-// Allow tests to run 10s
-jest.setTimeout(10000);
+// Allow tests to run 30s
+jest.setTimeout(30000);
 
 beforeAll(done => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
