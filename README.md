@@ -6,7 +6,7 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) 
 [![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-green.svg)](https://github.com/prettier/prettier)
 
-Creating a webpack *loader* configurations can be quite time consuming.  
+Creating webpack *loader* configurations can be quite time consuming.  
 This project tries to provide best practices for the most common **loader** requirements: `ts`, `js`, `css`, `fonts` and `images`.
 
 Instead of copying loader configs from github and stackoverflow you could just add one of the following plugins.
