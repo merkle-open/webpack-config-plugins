@@ -3,7 +3,7 @@ const ImageConfigWebpackPlugin = require('image-config-webpack-plugin');
 /**
  * Shared Asset Config
  *
- * @param {import("../AssetConfigWebpackPlugin.js").AssetConfigWebpackPluginOptions} options
+ * @param {import("../src/AssetConfigWebpackPlugin.js").AssetConfigWebpackPluginOptions} options
  * @returns {{ module: { rules : Array<any> }, plugins: Array<(new (): any)> }}
  */
 exports = module.exports = options => ({

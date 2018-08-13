@@ -4,7 +4,7 @@ const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
 /**
  * Shared Common Config
  *
- * @param {import("../CommonConfigWebpackPlugin.js").CommonConfigWebpackPluginOptions} options
+ * @param {import("../src/CommonConfigWebpackPlugin.js").CommonConfigWebpackPluginOptions} options
  * @returns {{ module: { rules : Array<any> }, plugins: Array<(new (): any)> }}
  */
 exports = module.exports = options => ({
