@@ -19,7 +19,7 @@ class CommonConfigWebpackPlugin {
 	 * @param {WebpackCompiler} compiler
 	 */
 	apply(compiler) {
-		const config = require('./config/shared.config')(this.options);
+		const config = require('../config/shared.config.js')(this.options);
 		// Merge config
 		config.plugins.forEach(plugin => plugin.apply(compiler));
 		compiler.hooks.afterEnvironment.tap('CommonConfigWebpackPlugin', () => {

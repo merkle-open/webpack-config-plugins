@@ -36,7 +36,7 @@ class TsConfigWebpackPlugin {
 		console.warn(
 			"Couldn't find a tsconfig.json in the current working directory.\nYou can either set the configFile path explicitly or create a new config:\n  npx tsc --init"
 		);
-		return path.join(__dirname, 'config', 'tsconfig.base.json');
+		return path.resolve(__dirname, '../config/tsconfig.base.json');
 	}
 
 	/**
@@ -55,8 +55,8 @@ class TsConfigWebpackPlugin {
 
 		// Get Typescript config
 		const config = isProductionLikeMode
-			? require('./config/production.config')(options)
-			: require('./config/development.config')(options);
+			? require('../config/production.config')(options)
+			: require('../config/development.config')(options);
 		// Merge config
 		config.plugins.forEach(plugin => plugin.apply(compiler));
 		compiler.hooks.afterEnvironment.tap('TsConfigWebpackPlugin', () => {

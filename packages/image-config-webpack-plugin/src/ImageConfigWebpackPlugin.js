@@ -31,8 +31,8 @@ class ImageConfigWebpackPlugin {
 				? this.options.mode === 'production'
 				: compiler.options.mode === 'production' || !compiler.options.mode;
 		const config = isProductionLikeMode
-			? require('./config/production.config')(this.options)
-			: require('./config/development.config')(this.options);
+			? require('../config/production.config')(this.options)
+			: require('../config/development.config')(this.options);
 		// Merge config
 		config.plugins.forEach(plugin => plugin.apply(compiler));
 		compiler.hooks.afterEnvironment.tap('ImageConfigWebpackPlugin', () => {
