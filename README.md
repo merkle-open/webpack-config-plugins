@@ -78,6 +78,9 @@ module.exports = {
 
 ### Use only typescript (.ts & .tsx)
 
+[![NPM version](https://badge.fury.io/js/ts-config-webpack-plugin.svg)](https://www.npmjs.com/package/ts-config-webpack-plugin) 
+[![Travis](https://img.shields.io/travis/namics/webpack-config-plugins.svg)](https://travis-ci.org/namics/webpack-config-plugins)
+
 The `ts-config-webpack-plugin` is a modified version of the [ts-loader best practices](https://github.com/TypeStrong/ts-loader/blob/master/examples/thread-loader/webpack.config.js).  
 By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
 
@@ -92,6 +95,9 @@ module.exports = {
 
 
 ### Use only styles (.css & .scss)
+
+[![NPM version](https://badge.fury.io/js/scss-config-webpack-plugin.svg)](https://www.npmjs.com/package/scss-config-webpack-plugin) 
+[![Travis](https://img.shields.io/travis/namics/webpack-config-plugins.svg)](https://travis-ci.org/namics/webpack-config-plugins)
 
 The `scss-config-webpack-plugin` is a modified version of the [create-react-app best practices](https://github.com/facebook/create-react-app/tree/52449c34eedc53e50a2a159d38604ea7df5bd997/packages/react-scripts/config).  
 By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
@@ -108,6 +114,9 @@ module.exports = {
 
 ### Use only assets (Font & Images)
 
+[![NPM version](https://badge.fury.io/js/asset-config-webpack-plugin.svg)](https://www.npmjs.com/package/asset-config-webpack-plugin) 
+[![Travis](https://img.shields.io/travis/namics/webpack-config-plugins.svg)](https://travis-ci.org/namics/webpack-config-plugins)
+
 The `asset-config-webpack-plugin` is just a wrapper around the `font-config-webpack-plugin` and the `image-config-webpack-plugin`.
 
 ```js
@@ -122,6 +131,9 @@ module.exports = {
 
 ### Use only fonts (.woff & .woff2)
 
+[![NPM version](https://badge.fury.io/js/font-config-webpack-plugin.svg)](https://www.npmjs.com/package/font-config-webpack-plugin) 
+[![Travis](https://img.shields.io/travis/namics/webpack-config-plugins.svg)](https://travis-ci.org/namics/webpack-config-plugins)
+
 The `font-config-webpack-plugin` will allow you to use [woff-fonts](https://caniuse.com/#feat=woff).
 
 ```js
@@ -135,6 +147,9 @@ module.exports = {
 
 
 ### Use only images (.gif & .jpg & .jpeg &. png &. svg)
+
+[![NPM version](https://badge.fury.io/js/image-config-webpack-plugin.svg)](https://www.npmjs.com/package/image-config-webpack-plugin) 
+[![Travis](https://img.shields.io/travis/namics/webpack-config-plugins.svg)](https://travis-ci.org/namics/webpack-config-plugins)
 
 The `image-config-webpack-plugin` will allow you to use images from within js and css files.
 
