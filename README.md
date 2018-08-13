@@ -136,13 +136,13 @@ module.exports = {
 
 ### Use only images (.gif & .jpg & .jpeg &. png &. svg)
 
-The `font-config-webpack-plugin` will allow you to use [woff-fonts](https://caniuse.com/#feat=woff).
+The `image-config-webpack-plugin` will allow you to use images from within js and css files.
 
 ```js
-const FontConfigWebpackPlugin = require('font-config-webpack-plugin');
+const ImageConfigWebpackPlugin = require('image-config-webpack-plugin');
 module.exports = {
     plugins: [
-        new FontConfigWebpackPlugin()
+        new ImageConfigWebpackPlugin()
     ]
 }
 ```
