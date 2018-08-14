@@ -58,7 +58,7 @@ class TsConfigWebpackPlugin {
 			? require('../config/production.config')(options)
 			: require('../config/development.config')(options);
 		// Merge config
-		config.plugins.forEach(plugin => plugin.apply(compiler));
+		compiler.options.plugins.push(...config.plugins);
 		compiler.hooks.afterEnvironment.tap('TsConfigWebpackPlugin', () => {
 			compiler.options.module.rules.push(...config.module.rules);
 		});
