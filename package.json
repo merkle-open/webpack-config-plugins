@@ -10,7 +10,7 @@
         "lint-staged": "lint-staged",
         "lint": "prettier --list-different \"./packages/**/*.js\"",
         "posttest": "npm run lint",
-        "test": "lerna exec -- npm test",
+        "test": "lerna exec --concurrency 1 -- npm test",
         "update-snapshots": "lerna exec -- npm run update-snapshots",
         "clean": "lerna clean",
         "prettier": "prettier --write \"./packages/**/*.js\"",

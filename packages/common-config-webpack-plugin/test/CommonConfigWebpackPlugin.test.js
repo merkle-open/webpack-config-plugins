@@ -5,6 +5,8 @@ const CommonConfigWebpackPlugin = require('../src/CommonConfigWebpackPlugin');
 
 // Allow tests to run 30s
 jest.setTimeout(30000);
+// AppVeyor on Node6 will fail if the fork-ts-checker is not limited to 512 MB memory
+require('fork-ts-checker-webpack-plugin').DEFAULT_MEMORY_LIMIT = 512;
 
 beforeAll(done => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);

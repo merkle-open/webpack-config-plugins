@@ -32,7 +32,7 @@ class ScssConfigWebpackPlugin {
 			? require('../config/production.config')(this.options)
 			: require('../config/development.config')(this.options);
 		// Merge config
-		config.plugins.forEach(plugin => plugin.apply(compiler));
+		compiler.options.plugins.push(...config.plugins);
 		compiler.hooks.afterEnvironment.tap('ScssConfigWebpackPlugin', () => {
 			compiler.options.module.rules.push(...config.module.rules);
 		});
