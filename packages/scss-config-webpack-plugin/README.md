@@ -12,7 +12,10 @@ Creating a webpack *loader* configurations can be quite time consuming.
 The `scss-config-webpack-plugin` is part of the `common-config-webpack-plugin` suite which tries to provide best practices for the most common **loader** requirements.  
 
 If no mode is explicitly set for the plugin the configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
-The injected configurations are based on [create-react-app css part](https://github.com/facebook/create-react-app/tree/next/packages/react-scripts/config)
+The injected configurations are based on [create-react-app css part](https://github.com/facebook/create-react-app/tree/next/packages/react-scripts/config)  
+⚙️[development mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/blob/master/packages/scss-config-webpack-plugin/config/development.config.js)
+⚙️[production mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/blob/master/packages/scss-config-webpack-plugin/config/production.config.js)
+
 
 ## Installation
 
