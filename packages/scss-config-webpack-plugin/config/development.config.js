@@ -55,7 +55,7 @@ exports = module.exports = options => ({
 				],
 			},
 			{
-				test: /module\.s?css$/,
+				test: /\.module\.s?css$/,
 				use: [
 					{
 						loader: require.resolve('style-loader'),
