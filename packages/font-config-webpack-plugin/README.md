@@ -11,6 +11,10 @@
 Creating a webpack *loader* configurations can be quite time consuming.  
 The `font-config-webpack-plugin` is part of the `common-config-webpack-plugin` suite which tries to provide best practices for the most common **loader** requirements.  
 
+If no mode is explicitly set for the plugin the configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.  
+⚙️[development mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/blob/master/packages/font-config-webpack-plugin/config/development.config.js)
+⚙️[production mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/blob/master/packages/font-config-webpack-plugin/config/production.config.js)
+
 ## Installation
 
 ```bash
