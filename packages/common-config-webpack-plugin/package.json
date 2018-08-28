@@ -52,7 +52,8 @@
   "dependencies": {
     "asset-config-webpack-plugin": "^0.3.0",
     "scss-config-webpack-plugin": "^0.3.0",
-    "ts-config-webpack-plugin": "^0.3.0"
+    "ts-config-webpack-plugin": "^0.3.0",
+    "js-config-webpack-plugin": "^0.3.0"
   },
   "devDependencies": {
     "@types/jest": "23.3.1",

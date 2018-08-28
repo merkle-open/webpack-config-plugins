@@ -1,6 +1,7 @@
 const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin');
 const TSConfigWebpackPlugin = require('ts-config-webpack-plugin');
 const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
+const JSConfigWebpackPlugin = require('js-config-webpack-plugin');
 /**
  * Shared Common Config
  *
@@ -15,5 +16,6 @@ exports = module.exports = options => ({
 		new AssetConfigWebpackPlugin({ mode: options.mode }),
 		new ScssConfigWebpackPlugin({ mode: options.mode }),
 		new TSConfigWebpackPlugin({ mode: options.mode }),
+		new JSConfigWebpackPlugin({ mode: options.mode }),
 	],
 });
