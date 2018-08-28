@@ -1,0 +1,7 @@
+{
+  "description": "package-file-for-babel",
+  "version": "0.1.0",
+  "author": "Namics AG - Technology & Application",
+  "license": "MIT",
+  "main": "./src/index.js"
+}
