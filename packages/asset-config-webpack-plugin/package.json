@@ -73,6 +73,6 @@
   "name": "asset-config-webpack-plugin",
   "engines": {
     "npm": ">=5",
-    "node": ">=8 <11"
+    "node": ">=6"
   }
 }

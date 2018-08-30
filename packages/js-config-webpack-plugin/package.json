@@ -33,7 +33,7 @@
         }
     ],
     "engines": {
-        "node": ">=8 <11",
+        "node": ">=6",
         "npm": ">=5"
     },
     "scripts": {
@@ -44,14 +44,14 @@
     },
     "peerDependencies": {
         "webpack": ">=4.0.0",
-        "@babel/core": ">=7.0.0-rc.1",
-        "@babel/preset-env": ">=7.0.0-rc.1",
-        "@babel/preset-react": ">=7.0.0-rc.4"
+        "@babel/core": ">=7.0.0",
+        "@babel/preset-env": ">=7.0.0",
+        "@babel/preset-react": ">=7.0.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.0.0-rc.1",
-        "@babel/preset-env": "^7.0.0-rc.1",
-        "@babel/preset-react": "^7.0.0-rc.4",
+        "@babel/core": "7.0.0",
+        "@babel/preset-env": "7.0.0",
+        "@babel/preset-react": "7.0.0",
         "@types/jest": "23.3.1",
         "@types/node": "10.5.7",
         "@types/webpack": "^4.4.9",
