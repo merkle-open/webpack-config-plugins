@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/namics/webpack-config-plugins/compare/v0.3.0...v0.4.0) (2018-08-30)
+
+
+### Bug Fixes
+
+* **ts-config-webpack-plugin:** Set the maximum memory during tests to 512mb ([be11937](https://github.com/namics/webpack-config-plugins/commit/be11937))
+
+
+### Features
+
+* **common-config-webpack-plugin:** Set tyscript and babel as fixed dependency ([ee2308e](https://github.com/namics/webpack-config-plugins/commit/ee2308e))
+
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/namics/webpack-config-plugins/compare/v0.2.0...v0.3.0) (2018-08-13)
 

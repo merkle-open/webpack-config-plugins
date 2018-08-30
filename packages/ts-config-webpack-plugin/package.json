@@ -1,6 +1,6 @@
 {
   "description": "Preset for typescript webpack configuration",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "peerDependencies": {
     "typescript": ">=2.0.0",
     "webpack": ">=4.0.0"

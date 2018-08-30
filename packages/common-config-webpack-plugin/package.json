@@ -1,6 +1,6 @@
 {
   "description": "A suite of common webpack loader configurations",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "peerDependencies": {
     "webpack": ">=4.0.0"
   },
@@ -50,13 +50,13 @@
     "test-watch": "jest --watch --runInBand"
   },
   "dependencies": {
-    "asset-config-webpack-plugin": "^0.3.0",
-    "scss-config-webpack-plugin": "^0.3.0",
-    "ts-config-webpack-plugin": "^0.3.0",
-    "js-config-webpack-plugin": "^0.3.0",
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "asset-config-webpack-plugin": "^0.4.0",
+    "js-config-webpack-plugin": "^0.4.0",
+    "scss-config-webpack-plugin": "^0.4.0",
+    "ts-config-webpack-plugin": "^0.4.0",
     "typescript": "^3.0.3"
   },
   "devDependencies": {

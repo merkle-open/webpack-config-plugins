@@ -1,6 +1,6 @@
 {
   "description": "Preset for font and image webpack loader configurations",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "peerDependencies": {
     "webpack": ">=4.0.0"
   },
@@ -46,8 +46,8 @@
     "test": "jest --runInBand --verbose"
   },
   "dependencies": {
-    "font-config-webpack-plugin": "^0.3.0",
-    "image-config-webpack-plugin": "^0.3.0"
+    "font-config-webpack-plugin": "^0.4.0",
+    "image-config-webpack-plugin": "^0.4.0"
   },
   "devDependencies": {
     "@types/jest": "23.3.1",
