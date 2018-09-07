@@ -1,17 +1,29 @@
-# Pluggable webpack configurations
+<div align="center">
+    <br>
+    <br>
+    <img width="200" height="200" src="https://github.com/namics/webpack-config-plugins/blob/master/logo.png" />
+    <img width="200" height="200" src="https://github.com/namics/webpack-config-plugins/blob/master/plug.png" />
+    <br>
+    <br>
 
 [![NPM version](https://badge.fury.io/js/common-config-webpack-plugin.svg)](https://www.npmjs.com/package/common-config-webpack-plugin)
 [![Travis](https://img.shields.io/travis/namics/webpack-config-plugins.svg)](https://travis-ci.org/namics/webpack-config-plugins)
 [![Appveyor](https://ci.appveyor.com/api/projects/status/9aes52639g1uwk89/branch/master?svg=true)](https://ci.appveyor.com/project/namics/webpack-config-plugins/branch/master)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-green.svg)](https://github.com/prettier/prettier)
+<br>
+
+# Pluggable webpack configurations
 
 Creating webpack _loader_ configurations can be quite time consuming.  
 This project tries to provide best practices for the most common **loader** requirements: `ts`, `js`, `css`, `fonts` and `images`.
 
 Instead of copying loader configs from github and stackoverflow you could just add one of the following plugins.
+
+</div>
 
 ## Zero Config example
 
@@ -23,7 +35,11 @@ npm i --save-dev webpack-cli webpack typescript common-config-webpack-plugin
 npx webpack --plugin common-config-webpack-plugin
 ```
 
+<div align="center">
+
 ![Demo](https://github.com/namics/webpack-config-plugins/blob/master/preview.gif)
+
+</div>
 
 ## Webpack Config
 
@@ -82,6 +98,9 @@ module.exports = {
 🗒️[`js-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin)  
 ⚙️[development `webpack.config.js`](https://github.com/namics/webpack-config-plugins/blob/master/packages/js-config-webpack-plugin/config/development.config.js)  
 ⚙️[production `webpack.config.js`](https://github.com/namics/webpack-config-plugins/blob/master/packages/js-config-webpack-plugin/config/production.config.js)
+
+The `js-config-webpack-plugin` is a modified version of the [create-react-app best practices](https://github.com/facebook/create-react-app/tree/52449c34eedc53e50a2a159d38604ea7df5bd997/packages/react-scripts/config).  
+By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
 
 ```js
 const JsConfigWebpackPlugin = require('js-config-webpack-plugin');
