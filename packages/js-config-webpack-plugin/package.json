@@ -1,7 +1,7 @@
 {
     "name": "js-config-webpack-plugin",
     "version": "0.4.0",
-    "description": "",
+    "description": "Preset for javascript webpack configuration",
     "main": "src/index.js",
     "license": "MIT",
     "author": "Namics AG - Technology & Application",
@@ -78,5 +78,14 @@
             "fixtures",
             "dist"
         ]
-    }
+    },
+    "keywords": [
+      "babel-loader",
+      "webpack",
+      "javascript",
+      "babel",
+      "js",
+      "loader",
+      "webpack-plugin"
+    ]
 }
