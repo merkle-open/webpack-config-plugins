@@ -30,7 +30,7 @@ Instead of copying loader configs from github and stackoverflow you could just a
 Webpack itself provides many defaults so you are able to run the `common-config-webpack-plugin` without a webpack.config file:
 
 ```bash
-npm i --save-dev webpack-cli webpack typescript common-config-webpack-plugin
+npm i --save-dev webpack webpack-cli common-config-webpack-plugin
 
 npx webpack --plugin common-config-webpack-plugin
 ```
