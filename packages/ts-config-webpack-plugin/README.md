@@ -9,7 +9,7 @@
 [![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-green.svg)](https://github.com/prettier/prettier)
 
 Creating a webpack *loader* configurations can be quite time consuming.  
-The `ts-config-webpack-plugin` is part of the `common-config-webpack-plugin` suite which tries to provide best practices for the most common **loader** requirements.  
+The `ts-config-webpack-plugin` is part of the [`common-config-webpack-plugin` suite](https://github.com/namics/webpack-config-plugins) which tries to provide best practices for the most common **loader** requirements.  
 
 If no mode is explicitly set for the plugin the configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
 The injected configurations are based on [ts-loader thread-loader example](https://github.com/TypeStrong/ts-loader/tree/master/examples/thread-loader).  

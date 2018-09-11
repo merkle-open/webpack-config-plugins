@@ -1,7 +1,10 @@
 {
     "name": "js-config-webpack-plugin",
-    "version": "0.4.0",
     "description": "Preset for javascript webpack configuration",
+    "bugs": "https://github.com/namics/webpack-config-plugins/issues",
+    "homepage": "https://github.com/namics/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin",
+    "repository": "https://github.com/namics/webpack-config-plugins.git",
+    "version": "0.4.0",
     "main": "src/index.js",
     "license": "MIT",
     "author": "Namics AG - Technology & Application",

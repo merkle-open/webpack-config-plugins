@@ -1,5 +1,9 @@
 {
+  "name": "asset-config-webpack-plugin",
   "description": "Preset for font and image webpack loader configurations",
+  "bugs": "https://github.com/namics/webpack-config-plugins/issues",
+  "homepage": "https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin",
+  "repository": "https://github.com/namics/webpack-config-plugins.git",
   "version": "0.4.0",
   "peerDependencies": {
     "webpack": ">=4.0.0"
@@ -70,7 +74,6 @@
       "dist"
     ]
   },
-  "name": "asset-config-webpack-plugin",
   "engines": {
     "npm": ">=5",
     "node": ">=6"
