@@ -4,7 +4,7 @@
   "bugs": "https://github.com/namics/webpack-config-plugins/issues",
   "homepage": "https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin",
   "repository": "https://github.com/namics/webpack-config-plugins.git",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "peerDependencies": {
     "webpack": ">=4.0.0"
   },
@@ -50,8 +50,8 @@
     "test": "jest --runInBand --verbose"
   },
   "dependencies": {
-    "font-config-webpack-plugin": "^0.4.1",
-    "image-config-webpack-plugin": "^0.4.1"
+    "font-config-webpack-plugin": "^0.4.2",
+    "image-config-webpack-plugin": "^0.4.2"
   },
   "devDependencies": {
     "@types/jest": "23.3.1",
