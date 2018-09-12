@@ -13,8 +13,8 @@ The `js-config-webpack-plugin` is part of the [`common-config-webpack-plugin` su
 
 If no mode is explicitly set for the plugin the configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
 
-⚙️[development mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/blob/master/packages/js-config-webpack-plugin/config/development.config.js)
-⚙️[production mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/blob/master/packages/js-config-webpack-plugin/config/production.config.js)
+⚙️[development mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/js-config-webpack-plugin/config/development.config.js)
+⚙️[production mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/js-config-webpack-plugin/config/production.config.js)
 
 ## Installation
 
@@ -38,7 +38,7 @@ module.exports = {
 
 By default the `js-config-webpack-plugin` has defined a base .babelrc file which contains options for the babel compiler. If babel should use a specific .babelrc file, it's possible to pass the option `babelConfigFile` with the filepath to the correct .babelrc file.
 
--   `babelConfigFile`: Default `undefined`, a .babelrc file relative to the context is searched. If no option file is found the base file [`.babelrc.base.json`](https://github.com/namics/webpack-config-plugins/blob/master/packages/js-config-webpack-plugin/config/.babelrc.base.json) will be taken. When option contains a filepath, the configurations from the specified file will be used.
+-   `babelConfigFile`: Default `undefined`, a .babelrc file relative to the context is searched. If no option file is found the base file [`.babelrc.base.json`](https://github.com/namics/webpack-config-plugins/raw/master/packages/js-config-webpack-plugin/config/.babelrc.base.json) will be taken. When option contains a filepath, the configurations from the specified file will be used.
 
 ```js
 const JsConfigWebpackPlugin = require('js-config-webpack-plugin');

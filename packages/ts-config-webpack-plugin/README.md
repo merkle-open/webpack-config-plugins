@@ -13,8 +13,8 @@ The `ts-config-webpack-plugin` is part of the [`common-config-webpack-plugin` su
 
 If no mode is explicitly set for the plugin the configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
 The injected configurations are based on [ts-loader thread-loader example](https://github.com/TypeStrong/ts-loader/tree/master/examples/thread-loader).  
-⚙️[development mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/blob/master/packages/ts-config-webpack-plugin/config/development.config.js)
-⚙️[production mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/blob/master/packages/ts-config-webpack-plugin/config/production.config.js)
+⚙️[development mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/ts-config-webpack-plugin/config/development.config.js)
+⚙️[production mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/ts-config-webpack-plugin/config/production.config.js)
 
 
 ## Installation
