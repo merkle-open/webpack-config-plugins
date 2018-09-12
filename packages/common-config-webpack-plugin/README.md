@@ -17,6 +17,7 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-green.svg)](https://github.com/prettier/prettier)
 <br>
+<br>
 
 # Pluggable webpack configurations
 
@@ -25,6 +26,8 @@ This project tries to provide best practices for the most common **loader** requ
 
 Instead of copying loader configs from github and stackoverflow you could just add one of the following plugins.
 
+<br>
+<br>
 </div>
 
 ## Zero Config example
@@ -43,12 +46,28 @@ npx webpack --plugin common-config-webpack-plugin
 
 </div>
 
+
+## Zero Config [webpack-dev-server](https://github.com/webpack/webpack-dev-server) example
+
+You can even setup an entire development server without configuration:
+
+```bash
+npm i --save-dev webpack common-config-webpack-plugin html-webpack-plugin
+
+webpack-dev-server --plugin common-config-webpack-plugin --plugin html-webpack-plugin
+```
+
+<div align="center">
+
+![Demo](https://github.com/namics/webpack-config-plugins/blob/master/preview-dev-server.gif)
+
+</div>
+
+
+
 ## Webpack Config
 
-Many projects will need some project specific options.  
-the [`common-config-webpack-plugin` suite](https://github.com/namics/webpack-config-plugins)is designed to be plugable so you will be
-able to pick only what you need and combine it with your configuration.  
-By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
+Many projects will need some project specific options.  The `common-config-webpack-plugin` suite is designed to be plugable so you will be able to pick only what you need and combine it with your configuration. By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
 
 ```
 common-config-webpack-plugin
@@ -203,11 +222,13 @@ module.exports = {
 
 ## Quality checks
 
-the [`common-config-webpack-plugin` suite](https://github.com/namics/webpack-config-plugins)provides typechecks and integration tests for the loader configurations for Windows and Unix.
+The `common-config-webpack-plugin` suite provides typechecks and integration tests for the loader configurations for Windows and Unix.
 
 ## Peer dependencies
 
 The `common-config-webpack-plugin` has a direct dependencies to babel and ts.  
 However if you need to pick a specific version you can use the `js-config-webpack-plugin` or `ts-config-webpack-plugin` which use peer-dependencies instead.
 
-```
+## License
+
+The `common-config-webpack-plugin` is [MIT licensed](./LICENSE).
