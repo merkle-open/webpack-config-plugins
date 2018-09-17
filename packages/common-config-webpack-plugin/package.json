@@ -4,7 +4,7 @@
   "bugs": "https://github.com/namics/webpack-config-plugins/issues",
   "homepage": "https://github.com/namics/webpack-config-plugins",
   "repository": "https://github.com/namics/webpack-config-plugins.git",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "peerDependencies": {
     "webpack": ">=4.0.0"
   },
@@ -60,7 +60,7 @@
     "asset-config-webpack-plugin": "^0.4.2",
     "js-config-webpack-plugin": "^0.4.2",
     "scss-config-webpack-plugin": "^0.4.2",
-    "ts-config-webpack-plugin": "^0.4.2",
+    "ts-config-webpack-plugin": "^0.4.3",
     "typescript": "^3.0.3"
   },
   "devDependencies": {

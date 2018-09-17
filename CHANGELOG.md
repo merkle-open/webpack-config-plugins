@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.3"></a>
+## [0.4.3](https://github.com/namics/webpack-config-plugins/compare/v0.4.2...v0.4.3) (2018-09-17)
+
+
+### Bug Fixes
+
+* **ts-config-webpack-plugin:** Fix "Debug Failure. False expression: Output generation failed" ([cf7aba4](https://github.com/namics/webpack-config-plugins/commit/cf7aba4))
+
+
+
+
 <a name="0.4.2"></a>
 ## [0.4.2](https://github.com/namics/webpack-config-plugins/compare/v0.4.1...v0.4.2) (2018-09-12)
 
