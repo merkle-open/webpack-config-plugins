@@ -49,6 +49,17 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
+	it('should compile definition files without errors', done => {
+		const compiler = webpack({
+			context: path.join(__dirname, 'fixtures/definitions'),
+			plugins: [new TsConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			expect(stats.compilation.errors).toEqual([]);
+			done();
+		});
+	});
+
 	it('should compile without errors in development mode', done => {
 		const compiler = webpack({
 			mode: 'development',
