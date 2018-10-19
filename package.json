@@ -1,57 +1,57 @@
 {
-    "name": "webpack-config-plugins",
-    "version": "1.0.0",
-    "private": true,
-    "description": "Simplify webpack loader configuration",
-    "bugs": "https://github.com/namics/webpack-config-plugins/issues",
-    "homepage": "https://github.com/namics/webpack-config-plugins",
-    "repository": "https://github.com/namics/webpack-config-plugins.git",
-    "main": "index.js",
-    "scripts": {
-        "install": "lerna bootstrap --hoist",
-        "commit": "git-cz",
-        "lint-staged": "lint-staged",
-        "lint": "prettier --list-different \"./packages/**/*.js\"",
-        "posttest": "npm run lint",
-        "test": "lerna exec --concurrency 1 -- npm test",
-        "update-snapshots": "lerna exec -- npm run update-snapshots",
-        "clean": "lerna clean",
-        "prettier": "prettier --write \"./packages/**/*.js\"",
-        "release": "lerna publish --conventional-commits --reject-cycles --allow-branch master"
-    },
-    "keywords": [
-        "webpack"
-    ],
-    "license": "MIT",
-    "devDependencies": {
-        "commitizen": "2.10.1",
-        "cz-conventional-changelog": "2.1.0",
-        "eslint": "5.0.1",
-        "husky": "0.14.3",
-        "lerna": "2.11.0",
-        "lint-staged": "7.2.0",
-        "prettier": "1.13.7"
-    },
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
-        }
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run lint-staged",
-            "pre-push": "npm test"
-        }
-    },
-    "prettier": {
-        "singleQuote": true,
-        "tabWidth": 4,
-        "printWidth": 100,
-        "trailingComma": "es5"
-    },
-    "lint-staged": {
-        "./packages/**/*.js": [
-            "prettier --list-different"
-        ]
+  "name": "webpack-config-plugins",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simplify webpack loader configuration",
+  "bugs": "https://github.com/namics/webpack-config-plugins/issues",
+  "homepage": "https://github.com/namics/webpack-config-plugins",
+  "repository": "https://github.com/namics/webpack-config-plugins.git",
+  "main": "index.js",
+  "scripts": {
+    "install": "lerna bootstrap --hoist",
+    "commit": "git-cz",
+    "lint-staged": "lint-staged",
+    "lint": "prettier --list-different \"./packages/**/*.js\"",
+    "posttest": "npm run lint",
+    "test": "lerna exec --concurrency 1 -- npm test",
+    "update-snapshots": "lerna exec -- npm run update-snapshots",
+    "clean": "lerna clean",
+    "prettier": "prettier --write \"./packages/**/*.js\"",
+    "release": "lerna publish --conventional-commits --reject-cycles --allow-branch master"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "commitizen": "2.10.1",
+    "cz-conventional-changelog": "2.1.0",
+    "eslint": "5.0.1",
+    "husky": "0.14.3",
+    "lerna": "2.11.0",
+    "lint-staged": "7.2.0",
+    "prettier": "1.13.7"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 4,
+    "printWidth": 100,
+    "trailingComma": "es5"
+  },
+  "lint-staged": {
+    "./packages/**/*.js": [
+      "prettier --list-different"
+    ]
+  }
 }
