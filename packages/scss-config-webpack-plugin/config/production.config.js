@@ -19,6 +19,12 @@ exports = module.exports = options => ({
 				use: [
 					{
 						loader: MiniCssExtractPlugin.loader,
+						options: {
+							// The css file will be placed in a sub directory called 'css'
+							// to prevent invalid ressource urls this additional sub folder
+							// has to be taken into account for the relative path calculation
+							publicPath: '../',
+						},
 					},
 					{
 						loader: require.resolve('css-loader'),

@@ -8,6 +8,6 @@ exports[`ScssConfigWebpackPlugin inside webpack context should avoid common flex
 }"
 `;
 
-exports[`ScssConfigWebpackPlugin inside webpack context should avoid common flexbox bugs in older browsers in production mode 1`] = `".foo{display:flex;flex:1 1;flex-direction:row}"`;
+exports[`ScssConfigWebpackPlugin inside webpack context should avoid common flexbox bugs in older browsers in production mode 1`] = `".foo{display:flex;flex-direction:row;flex:1 1}"`;
 
 exports[`ScssConfigWebpackPlugin inside webpack context should generate separate CSS files with the correct contents 1`] = `".test{height:5px}"`;
