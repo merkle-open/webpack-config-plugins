@@ -108,7 +108,7 @@ exports = module.exports = options => ({
 	plugins: [
 		// Extract css to a custom file
 		new MiniCssExtractPlugin({
-			filename: 'css/[name].min.css',
+			filename: 'css/[name].[hash].css',
 			chunkFilename: '[id].css',
 		}),
 		// Minify css - but use only safe css-nano transformations
