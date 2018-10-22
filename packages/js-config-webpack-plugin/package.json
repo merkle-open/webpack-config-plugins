@@ -1,94 +1,95 @@
 {
-    "name": "js-config-webpack-plugin",
-    "description": "Preset for javascript webpack configuration",
-    "bugs": "https://github.com/namics/webpack-config-plugins/issues",
-    "homepage": "https://github.com/namics/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin",
-    "repository": "https://github.com/namics/webpack-config-plugins.git",
-    "version": "0.4.4",
-    "main": "src/index.js",
-    "license": "MIT",
-    "author": "Namics AG - Technology & Application",
-    "contributors": [
-        {
-            "name": "Jan Biasi",
-            "email": "biasijan@gmail.com",
-            "url": "https://github.com/janbiasi"
-        },
-        {
-            "name": "Matthias Giger",
-            "email": "matthias.giger@namics.com",
-            "url": "https://github.com/naminho"
-        },
-        {
-            "name": "Davide De Giorgio",
-            "email": "dave_degiorgio@hotmail.com",
-            "url": "https://github.com/degiorgioo"
-        },
-        {
-            "name": "Ernst Ammann",
-            "email": "ernscht@gmail.com",
-            "url": "https://github.com/ernscht"
-        },
-        {
-            "name": "Jan Nicklas",
-            "email": "j.nicklas@me.com",
-            "url": "https://github.com/jantimon"
-        }
+  "name": "js-config-webpack-plugin",
+  "description": "Preset for javascript webpack configuration",
+  "bugs": "https://github.com/namics/webpack-config-plugins/issues",
+  "homepage": "https://github.com/namics/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin",
+  "repository": "https://github.com/namics/webpack-config-plugins.git",
+  "version": "0.4.4",
+  "main": "src/index.js",
+  "license": "MIT",
+  "author": "Namics AG - Technology & Application",
+  "contributors": [
+    {
+      "name": "Jan Biasi",
+      "email": "biasijan@gmail.com",
+      "url": "https://github.com/janbiasi"
+    },
+    {
+      "name": "Matthias Giger",
+      "email": "matthias.giger@namics.com",
+      "url": "https://github.com/naminho"
+    },
+    {
+      "name": "Davide De Giorgio",
+      "email": "dave_degiorgio@hotmail.com",
+      "url": "https://github.com/degiorgioo"
+    },
+    {
+      "name": "Ernst Ammann",
+      "email": "ernscht@gmail.com",
+      "url": "https://github.com/ernscht"
+    },
+    {
+      "name": "Jan Nicklas",
+      "email": "j.nicklas@me.com",
+      "url": "https://github.com/jantimon"
+    }
+  ],
+  "engines": {
+    "node": ">=6",
+    "npm": ">=5"
+  },
+  "scripts": {
+    "test": "jest --runInBand --verbose --forceExit",
+    "posttest": "tsc",
+    "test-watch": "jest --watch --verbose --forceExit",
+    "update-snapshots": "jest -u --runInBand"
+  },
+  "peerDependencies": {
+    "@babel/core": ">=7.0.0",
+    "@babel/preset-env": ">=7.0.0",
+    "@babel/preset-react": ">=7.0.0",
+    "webpack": ">=4.0.0"
+  },
+  "dependencies": {
+    "babel-loader": "^8.0.0-beta.4",
+    "thread-loader": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@types/jest": "23.3.1",
+    "@types/node": "10.5.7",
+    "@types/webpack": "4.4.17",
+    "jest": "23.5.0",
+    "jsdom": "11.12.0",
+    "rimraf": "2.6.2",
+    "sourcemap-validator": "1.1.0",
+    "typescript": "3.1.3",
+    "webpack": "4.21.0"
+  },
+
+  "jest": {
+    "rootDir": "./",
+    "browser": false,
+    "testEnvironment": "node",
+    "watchPathIgnorePatterns": [
+      "<rootDir>/test/fixtures"
     ],
-    "engines": {
-        "node": ">=6",
-        "npm": ">=5"
-    },
-    "scripts": {
-        "test": "jest --runInBand --verbose --forceExit",
-        "posttest": "tsc",
-        "test-watch": "jest --watch --verbose --forceExit",
-        "update-snapshots": "jest -u --runInBand"
-    },
-    "peerDependencies": {
-        "@babel/core": ">=7.0.0",
-        "@babel/preset-env": ">=7.0.0",
-        "@babel/preset-react": ">=7.0.0",
-        "webpack": ">=4.0.0"
-    },
-    "devDependencies": {
-        "@babel/core": "7.0.0",
-        "@babel/preset-env": "7.0.0",
-        "@babel/preset-react": "7.0.0",
-        "@types/jest": "23.3.1",
-        "@types/node": "10.5.7",
-        "@types/webpack": "4.4.17",
-        "jest": "23.5.0",
-        "jsdom": "^11.12.0",
-        "rimraf": "2.6.2",
-        "sourcemap-validator": "1.1.0",
-        "typescript": "3.1.3",
-        "webpack": "^4.16.5"
-    },
-    "dependencies": {
-        "babel-loader": "^8.0.0-beta.4",
-        "thread-loader": "^1.2.0"
-    },
-    "jest": {
-        "rootDir": "./",
-        "browser": false,
-        "testEnvironment": "node",
-        "watchPathIgnorePatterns": [
-            "<rootDir>/test/fixtures"
-        ],
-        "coveragePathIgnorePatterns": [
-            "node_modules",
-            "fixtures",
-            "dist"
-        ]
-    },
-    "keywords": [
-        "babel-loader",
-        "webpack",
-        "javascript",
-        "babel",
-        "js",
-        "loader",
-        "webpack-plugin"
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "fixtures",
+      "dist"
     ]
+  },
+  "keywords": [
+    "babel-loader",
+    "webpack",
+    "javascript",
+    "babel",
+    "js",
+    "loader",
+    "webpack-plugin"
+  ]
 }

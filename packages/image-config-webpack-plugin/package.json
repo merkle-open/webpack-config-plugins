@@ -5,9 +5,6 @@
   "homepage": "https://github.com/namics/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin",
   "repository": "https://github.com/namics/webpack-config-plugins.git",
   "version": "0.4.4",
-  "peerDependencies": {
-    "webpack": ">=4.0.0"
-  },
   "author": "Namics AG - Technology & Application",
   "license": "MIT",
   "main": "src/index.js",
@@ -49,10 +46,13 @@
     "update-snapshots": "jest -u --runInBand",
     "test-watch": "jest --watch --runInBand"
   },
+  "peerDependencies": {
+    "webpack": ">=4.0.0"
+  },
   "dependencies": {
-    "cache-loader": "1.2.2",
-    "file-loader": "1.1.11",
-    "url-loader": "1.0.1"
+    "cache-loader": "^1.2.2",
+    "file-loader": "^1.1.11",
+    "url-loader": "^1.0.1"
   },
   "devDependencies": {
     "@types/jest": "23.3.1",
