@@ -5,9 +5,6 @@
   "homepage": "https://github.com/namics/webpack-config-plugins",
   "repository": "https://github.com/namics/webpack-config-plugins.git",
   "version": "0.4.4",
-  "peerDependencies": {
-    "webpack": ">=4.0.0"
-  },
   "author": "Namics AG - Technology & Application",
   "license": "MIT",
   "main": "src/index.js",
@@ -53,6 +50,9 @@
     "update-snapshots": "jest -u --runInBand",
     "test-watch": "jest --watch --runInBand"
   },
+  "peerDependencies": {
+    "webpack": ">=4.0.0"
+  },
   "dependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
@@ -61,7 +61,7 @@
     "js-config-webpack-plugin": "^0.4.4",
     "scss-config-webpack-plugin": "^0.4.4",
     "ts-config-webpack-plugin": "^0.4.4",
-    "typescript": "3.1.3"
+    "typescript": "^3.1.3"
   },
   "devDependencies": {
     "@types/jest": "23.3.1",
@@ -69,7 +69,6 @@
     "@types/webpack": "4.4.17",
     "jest": "23.5.0",
     "rimraf": "2.6.2",
-    "typescript": "3.1.3",
     "webpack": "4.21.0"
   },
   "jest": {
