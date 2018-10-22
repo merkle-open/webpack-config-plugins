@@ -6,7 +6,6 @@
   "bugs": "https://github.com/namics/webpack-config-plugins/issues",
   "homepage": "https://github.com/namics/webpack-config-plugins",
   "repository": "https://github.com/namics/webpack-config-plugins.git",
-  "main": "index.js",
   "scripts": {
     "install": "lerna bootstrap --hoist",
     "commit": "git-cz",
