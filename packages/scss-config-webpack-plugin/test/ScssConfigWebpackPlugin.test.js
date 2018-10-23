@@ -115,6 +115,9 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 	it('should generate no CSS files in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
+			output: {
+				filename: 'js/main.min.js',
+			},
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
@@ -131,6 +134,9 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
+			output: {
+				filename: 'js/main.min.js',
+			},
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
@@ -145,6 +151,9 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 	it('should generate separate CSS files with the correct contents', (done) => {
 		const compiler = webpack({
 			mode: 'production',
+			output: {
+				filename: 'js/main.min.js',
+			},
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
@@ -194,6 +203,9 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		const compiler = webpack({
 			mode: 'production',
 			entry: path.join(__dirname, 'fixtures/simple/src/css.js'),
+			output: {
+				filename: 'js/main.min.js',
+			},
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
@@ -214,6 +226,9 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		const compiler = webpack({
 			mode: 'production',
 			entry: path.join(__dirname, 'fixtures/simple/src/css.js'),
+			output: {
+				filename: 'js/main.min.js',
+			},
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
@@ -255,7 +270,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 			jsDomWindowContext({
 				html: '<div class="test"></div>',
 				js: path.resolve(__dirname, './fixtures/dist/main.js'),
-				css: path.resolve(__dirname, './fixtures/dist/css/main.min.css'),
+				css: path.resolve(__dirname, './fixtures/dist/main.css'),
 			})
 				.then(({ window, document }) => {
 					const height = window.getComputedStyle(document.querySelector('.test')).height;
@@ -272,7 +287,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
-			const cssFilePath = path.resolve(__dirname, './fixtures/dist/css/main.min.css');
+			const cssFilePath = path.resolve(__dirname, './fixtures/dist/main.css');
 			const contents = removeSourceMapComment(fs.readFileSync(cssFilePath).toString());
 			expect(contents).toMatchSnapshot();
 			done();
@@ -329,13 +344,80 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		compiler.run((err, stats) => {
 			jsDomWindowContext({
 				js: path.resolve(__dirname, './fixtures/dist/main.js'),
-				css: path.resolve(__dirname, './fixtures/dist/css/main.min.css'),
+				css: path.resolve(__dirname, './fixtures/dist/main.css'),
 			})
 				.then(({ window, document }) => {
 					const color = window.getComputedStyle(document.getElementById('css-module')).color;
 					expect(color).toBe('red');
 				})
 				.then(done, done);
+		});
+	});
+
+	it('should generate a valid font path', done => {
+		const compiler = webpack({
+			mode: 'production',
+			context: path.join(__dirname, 'fixtures/assets'),
+			output: {
+				filename: 'main.js',
+			},
+			module: {
+				rules: [
+					{
+						test: /\.woff$/,
+						use: [
+							{
+								loader: require.resolve('url-loader'),
+								options: {
+									limit: 1,
+								},
+							},
+						],
+					},
+				],
+			},
+			plugins: [new ScssConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			const cssFilePath = path.resolve(__dirname, './fixtures/dist/main.css');
+			const contents = removeSourceMapComment(fs.readFileSync(cssFilePath).toString());
+			expect(contents).toMatchSnapshot();
+			done();
+		});
+	});
+
+	it('should generate a valid font path for subfolders', done => {
+		const compiler = webpack({
+			mode: 'production',
+			context: path.join(__dirname, 'fixtures/assets'),
+			output: {
+				filename: 'font-example/js/main.js',
+			},
+			module: {
+				rules: [
+					{
+						test: /\.woff$/,
+						use: [
+							{
+								loader: require.resolve('url-loader'),
+								options: {
+									limit: 1,
+								},
+							},
+						],
+					},
+				],
+			},
+			plugins: [new ScssConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			const cssFilePath = path.resolve(
+				__dirname,
+				'./fixtures/dist/font-example/css/main.css'
+			);
+			const contents = removeSourceMapComment(fs.readFileSync(cssFilePath).toString());
+			expect(contents).toMatchSnapshot();
+			done();
 		});
 	});
 });
