@@ -34,7 +34,7 @@ class ImageConfigWebpackPlugin {
 			? require('../config/production.config')(this.options)
 			: require('../config/development.config')(this.options);
 		// Merge config
-		config.plugins.forEach(plugin => plugin.apply(compiler));
+		config.plugins.forEach((plugin) => plugin.apply(compiler));
 		compiler.hooks.afterEnvironment.tap('ImageConfigWebpackPlugin', () => {
 			compiler.options.module.rules.push(...config.module.rules);
 		});

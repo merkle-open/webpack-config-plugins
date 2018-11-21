@@ -10,16 +10,16 @@ const jsDomWindowContext = require('./jsDomWindowContext');
 jest.setTimeout(30000);
 
 // Return the code without source map comments
-const removeSourceMapComment = sourceCode => {
+const removeSourceMapComment = (sourceCode) => {
 	expect(sourceCode).toMatch(/sourceMap/);
 	return sourceCode.split('/*# sourceMap')[0].replace(/\s*$/, '');
 };
 
-beforeAll(done => {
+beforeAll((done) => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
 
-beforeEach(done => {
+beforeEach((done) => {
 	process.chdir(path.join(__dirname, 'fixtures'));
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
@@ -42,7 +42,7 @@ describe('ScssConfigWebpackPlugin standalone', () => {
 });
 
 describe('ScssConfigWebpackPlugin inside webpack context', () => {
-	it('should compile without errors', done => {
+	it('should compile without errors', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new ScssConfigWebpackPlugin()],
@@ -54,7 +54,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should compile without errors in development mode', done => {
+	it('should compile without errors in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -66,7 +66,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should compile without errors in production mode', done => {
+	it('should compile without errors in production mode', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -78,7 +78,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should allow to set the production mode mode', done => {
+	it('should allow to set the production mode mode', (done) => {
 		const referenceCompiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -95,7 +95,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should allow to set the development mode mode', done => {
+	it('should allow to set the development mode mode', (done) => {
 		const referenceCompiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -112,7 +112,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should generate no CSS files in development mode', done => {
+	it('should generate no CSS files in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -127,7 +127,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should generate the correct CSS files in production mode', done => {
+	it('should generate the correct CSS files in production mode', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -142,7 +142,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should generate separate CSS files with the correct contents', done => {
+	it('should generate separate CSS files with the correct contents', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -156,7 +156,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should generate JS with the CSS class inlined inside eval()', done => {
+	it('should generate JS with the CSS class inlined inside eval()', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -171,7 +171,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should set rules correctly', done => {
+	it('should set rules correctly', (done) => {
 		const compiler = webpack({
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
@@ -179,7 +179,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should have rules matching scss and css files', done => {
+	it('should have rules matching scss and css files', (done) => {
 		const compiler = webpack({
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
@@ -190,7 +190,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should generate css that is minified', done => {
+	it('should generate css that is minified', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			entry: path.join(__dirname, 'fixtures/simple/src/css.js'),
@@ -201,9 +201,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 			const cssSourceFilePath = path.resolve(__dirname, './fixtures/simple/src/regular.css');
 			const contentsSource = fs.readFileSync(cssSourceFilePath).toString();
 			const cssDistFilePath = path.resolve(__dirname, './fixtures/dist/css/main.min.css');
-			const contentsMinified = removeSourceMapComment(
-				fs.readFileSync(cssDistFilePath).toString()
-			);
+			const contentsMinified = removeSourceMapComment(fs.readFileSync(cssDistFilePath).toString());
 			// Original source should include white spaces
 			expect(contentsSource).toMatch(/\s+/);
 			// Minified source should not include white spaces
@@ -212,7 +210,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should generate css that contains the class', done => {
+	it('should generate css that contains the class', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			entry: path.join(__dirname, 'fixtures/simple/src/css.js'),
@@ -228,7 +226,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should generate valid css in development mode', done => {
+	it('should generate valid css in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -247,7 +245,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should generate valid css in production mode', done => {
+	it('should generate valid css in production mode', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -267,7 +265,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should avoid common flexbox bugs in older browsers in production mode', done => {
+	it('should avoid common flexbox bugs in older browsers in production mode', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/flexbugs'),
@@ -281,7 +279,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should avoid common flexbox bugs in older browsers in development mode', done => {
+	it('should avoid common flexbox bugs in older browsers in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/flexbugs'),
@@ -302,7 +300,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should load and provide CSS modules', done => {
+	it('should load and provide CSS modules', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			entry: path.join(__dirname, 'fixtures/modules/src/index.js'),
@@ -314,15 +312,14 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 				js: path.resolve(__dirname, './fixtures/dist/main.js'),
 			})
 				.then(({ window, document }) => {
-					const color = window.getComputedStyle(document.getElementById('css-module'))
-						.color;
+					const color = window.getComputedStyle(document.getElementById('css-module')).color;
 					expect(color).toBe('red');
 				})
 				.then(done, done);
 		});
 	});
 
-	it('should load and provide CSS modules in production', done => {
+	it('should load and provide CSS modules in production', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			entry: path.join(__dirname, 'fixtures/modules/src/index.js'),
@@ -335,8 +332,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 				css: path.resolve(__dirname, './fixtures/dist/css/main.min.css'),
 			})
 				.then(({ window, document }) => {
-					const color = window.getComputedStyle(document.getElementById('css-module'))
-						.color;
+					const color = window.getComputedStyle(document.getElementById('css-module')).color;
 					expect(color).toBe('red');
 				})
 				.then(done, done);
