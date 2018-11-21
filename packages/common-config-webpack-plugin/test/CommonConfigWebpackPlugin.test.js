@@ -8,11 +8,11 @@ jest.setTimeout(30000);
 // AppVeyor on Node6 will fail if the fork-ts-checker is not limited to 512 MB memory
 require('fork-ts-checker-webpack-plugin').DEFAULT_MEMORY_LIMIT = 512;
 
-beforeAll(done => {
+beforeAll((done) => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
 
-beforeEach(done => {
+beforeEach((done) => {
 	process.chdir(path.join(__dirname, 'fixtures'));
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
@@ -28,7 +28,7 @@ describe('CommonConfigWebpackPlugin standalone', () => {
 });
 
 describe('CommonConfigWebpackPlugin inside webpack context', () => {
-	it('should compile without errors', done => {
+	it('should compile without errors', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new CommonConfigWebpackPlugin()],
@@ -39,7 +39,7 @@ describe('CommonConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should compile without errors in development mode', done => {
+	it('should compile without errors in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -51,7 +51,7 @@ describe('CommonConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should compile without errors in production mode', done => {
+	it('should compile without errors in production mode', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),

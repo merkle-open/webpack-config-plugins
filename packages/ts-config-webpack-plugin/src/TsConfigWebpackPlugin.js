@@ -64,13 +64,11 @@ class TsConfigWebpackPlugin {
 		});
 		// Prepend missing typescript file extensions (high priority)
 		const typescriptPreExtensions = ['.ts', '.tsx'].filter(
-			ext => !compiler.options.resolve.extensions.includes(ext)
+			(ext) => !compiler.options.resolve.extensions.includes(ext)
 		);
 		compiler.options.resolve.extensions.unshift(...typescriptPreExtensions);
 		// Append missing definition type extensions (low priority)
-		const typescriptPostExtensions = ['.d.ts'].filter(
-			ext => !compiler.options.resolve.extensions.includes(ext)
-		);
+		const typescriptPostExtensions = ['.d.ts'].filter((ext) => !compiler.options.resolve.extensions.includes(ext));
 		compiler.options.resolve.extensions.push(...typescriptPostExtensions);
 	}
 }

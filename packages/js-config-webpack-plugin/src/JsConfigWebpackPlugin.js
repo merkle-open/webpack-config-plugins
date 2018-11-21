@@ -53,10 +53,7 @@ class JsConfigWebpackPlugin {
 		const defaultOptions = {
 			babelConfigFile:
 				this.options.babelConfigFile ||
-				this.resolveBabelConfigFilePath(
-					compiler.context,
-					compiler.options.mode || this.options.mode
-				),
+				this.resolveBabelConfigFilePath(compiler.context, compiler.options.mode || this.options.mode),
 		};
 
 		const options = Object.assign(this.options, defaultOptions);
@@ -71,13 +68,13 @@ class JsConfigWebpackPlugin {
 			? require('../config/production.config')(options)
 			: require('../config/development.config')(options);
 
-		config.plugins.forEach(plugin => plugin.apply(compiler));
+		config.plugins.forEach((plugin) => plugin.apply(compiler));
 		compiler.hooks.afterEnvironment.tap('JsConfigWebpackPlugin', () => {
 			compiler.options.module.rules.push(...config.module.rules);
 		});
 
 		const javascriptExtensions = ['.js', '.jsx', '.mjs'].filter(
-			ext => !compiler.options.resolve.extensions.includes(ext)
+			(ext) => !compiler.options.resolve.extensions.includes(ext)
 		);
 
 		compiler.options.resolve.extensions.unshift(...javascriptExtensions);

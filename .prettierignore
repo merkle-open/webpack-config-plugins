@@ -1,4 +1,14 @@
-node_modules/
-dist/
-package.json
-package-lock.json
+# Node
+**/node_modules
+**/package.json
+**/package-lock.json
+
+# Generated
+**/bower.json
+**/lerna.json
+
+# Build
+**/build
+**/dist
+**/public
+**/coverage

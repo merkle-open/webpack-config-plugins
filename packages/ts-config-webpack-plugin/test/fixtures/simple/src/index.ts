@@ -20,7 +20,5 @@ export const test = () => {
 	const b = new Entry('b', 4);
 	const c = new Entry('b', 6);
 
-	return [a, b, c]
-		.map((entry: Entry<number>) => entry.value * 2)
-		.every((value: number) => value > 0);
+	return [a, b, c].map((entry: Entry<number>) => entry.value * 2).every((value: number) => value > 0);
 };

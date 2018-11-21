@@ -8,7 +8,7 @@ const JSConfigWebpackPlugin = require('js-config-webpack-plugin');
  * @param {import("../src/CommonConfigWebpackPlugin.js").CommonConfigWebpackPluginOptions} options
  * @returns {{ module: { rules : Array<any> }, plugins: Array<(new (): any)> }}
  */
-exports = module.exports = options => ({
+exports = module.exports = (options) => ({
 	module: {
 		rules: [],
 	},

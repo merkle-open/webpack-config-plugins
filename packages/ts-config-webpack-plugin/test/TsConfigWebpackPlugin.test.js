@@ -11,11 +11,11 @@ jest.setTimeout(30000);
 // AppVeyor on Node6 will fail if the fork-ts-checker is not limited to 512 MB memory
 require('fork-ts-checker-webpack-plugin').DEFAULT_MEMORY_LIMIT = 512;
 
-beforeAll(done => {
+beforeAll((done) => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
 
-beforeEach(done => {
+beforeEach((done) => {
 	process.chdir(path.join(__dirname, 'fixtures'));
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
@@ -38,7 +38,7 @@ describe('TsConfigWebpackPlugin standalone', () => {
 });
 
 describe('TsConfigWebpackPlugin inside webpack context', () => {
-	it('should compile without errors', done => {
+	it('should compile without errors', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new TsConfigWebpackPlugin()],
@@ -49,7 +49,7 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should compile definition files without errors', done => {
+	it('should compile definition files without errors', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/definitions'),
 			plugins: [new TsConfigWebpackPlugin()],
@@ -60,7 +60,7 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should compile without errors in development mode', done => {
+	it('should compile without errors in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -72,7 +72,7 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should compile without errors in production mode', done => {
+	it('should compile without errors in production mode', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -84,7 +84,7 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should allow to set the production mode mode', done => {
+	it('should allow to set the production mode mode', (done) => {
 		const referenceCompiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -101,7 +101,7 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should allow to set the development mode mode', done => {
+	it('should allow to set the development mode mode', (done) => {
 		const referenceCompiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -118,7 +118,7 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should generate the correct JS files in development mode', done => {
+	it('should generate the correct JS files in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -133,7 +133,7 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should generate the correct JS files in production mode', done => {
+	it('should generate the correct JS files in production mode', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -148,7 +148,7 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should set rules correctly', done => {
+	it('should set rules correctly', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new TsConfigWebpackPlugin()],
@@ -157,7 +157,7 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should have rules matching ts and tsx files', done => {
+	it('should have rules matching ts and tsx files', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new TsConfigWebpackPlugin()],
@@ -171,13 +171,13 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 });
 
 describe('TsConfigWebpackPlugin sourcemaps', () => {
-	const extractEval = evalStatement => {
+	const extractEval = (evalStatement) => {
 		const start = evalStatement.indexOf('"') + 1;
 		const end = evalStatement.lastIndexOf('"');
 		return eval(`"${evalStatement.substr(start, end - start)}"`);
 	};
 
-	it('should generate a valid sourcemap in eval mode', done => {
+	it('should generate a valid sourcemap in eval mode', (done) => {
 		/**
 		 * https://webpack.js.org/configuration/devtool/
 		 * eval - Each module is executed with eval() and //@ sourceURL.
@@ -191,10 +191,7 @@ describe('TsConfigWebpackPlugin sourcemaps', () => {
 			plugins: [new TsConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
-			const distFile = fs.readFileSync(
-				path.resolve(__dirname, 'fixtures/dist/main.js'),
-				'utf8'
-			);
+			const distFile = fs.readFileSync(path.resolve(__dirname, 'fixtures/dist/main.js'), 'utf8');
 			const match = distFile.match(/\# sourceURL=([\:\\\/\.a-z0-9]+)(.)/i) || {
 				1: 'No sourcemap found',
 			};
@@ -204,7 +201,7 @@ describe('TsConfigWebpackPlugin sourcemaps', () => {
 		});
 	});
 
-	it('should generate a valid sourcemap in eval-source-map mode', done => {
+	it('should generate a valid sourcemap in eval-source-map mode', (done) => {
 		/**
 		 * https://webpack.js.org/configuration/devtool/
 		 * eval-source-map - Each module is executed with eval() and a SourceMap is added as a DataUrl to the eval().
@@ -219,22 +216,14 @@ describe('TsConfigWebpackPlugin sourcemaps', () => {
 			plugins: [new TsConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
-			const srcFile = fs.readFileSync(
-				path.resolve(__dirname, 'fixtures/simple/src/index.ts'),
-				'utf8'
-			);
-			const distFile = fs.readFileSync(
-				path.resolve(__dirname, 'fixtures/dist/main.js'),
-				'utf8'
-			);
+			const srcFile = fs.readFileSync(path.resolve(__dirname, 'fixtures/simple/src/index.ts'), 'utf8');
+			const distFile = fs.readFileSync(path.resolve(__dirname, 'fixtures/dist/main.js'), 'utf8');
 			// Webpack wraps the code in eval blocks so it has to be extracted before it can be analyzed
-			const evalSourceMap = extractEval(
-				distFile.substr(distFile.indexOf('eval(')).split('\n', 2)[0]
-			);
+			const evalSourceMap = extractEval(distFile.substr(distFile.indexOf('eval(')).split('\n', 2)[0]);
 			expect(evalSourceMap).not.toBeFalsy();
-			const match = evalSourceMap.match(
-				/\# sourceMappingURL=data\:[^,]+,([\:/a-z0-9+-]+)/i
-			) || { 1: 'No sourcemap found' };
+			const match = evalSourceMap.match(/\# sourceMappingURL=data\:[^,]+,([\:/a-z0-9+-]+)/i) || {
+				1: 'No sourcemap found',
+			};
 			expect(match[0]).not.toBeFalsy();
 			const sourceMapString = Buffer.from(match[1], 'base64').toString();
 			validateSourcemap(evalSourceMap, sourceMapString, srcFile);
@@ -242,7 +231,7 @@ describe('TsConfigWebpackPlugin sourcemaps', () => {
 		});
 	});
 
-	it('should generate a valid sourcemap in cheap-module-eval-source-map mode', done => {
+	it('should generate a valid sourcemap in cheap-module-eval-source-map mode', (done) => {
 		/**
 		 * https://webpack.js.org/configuration/devtool/
 		 * cheap-module-eval-source-map - Similar to cheap-eval-source-map, however,
@@ -256,22 +245,14 @@ describe('TsConfigWebpackPlugin sourcemaps', () => {
 			plugins: [new TsConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
-			const srcFile = fs.readFileSync(
-				path.resolve(__dirname, 'fixtures/simple/src/index.ts'),
-				'utf8'
-			);
-			const distFile = fs.readFileSync(
-				path.resolve(__dirname, 'fixtures/dist/main.js'),
-				'utf8'
-			);
+			const srcFile = fs.readFileSync(path.resolve(__dirname, 'fixtures/simple/src/index.ts'), 'utf8');
+			const distFile = fs.readFileSync(path.resolve(__dirname, 'fixtures/dist/main.js'), 'utf8');
 			// Webpack wraps the code in eval blocks so it has to be extracted before it can be analyzed
-			const evalSourceMap = extractEval(
-				distFile.substr(distFile.indexOf('eval(')).split('\n', 2)[0]
-			);
+			const evalSourceMap = extractEval(distFile.substr(distFile.indexOf('eval(')).split('\n', 2)[0]);
 			expect(evalSourceMap).not.toBeFalsy();
-			const match = evalSourceMap.match(
-				/\# sourceMappingURL=data\:[^,]+,([\:/a-z0-9+-]+)/i
-			) || { 1: 'No sourcemap found' };
+			const match = evalSourceMap.match(/\# sourceMappingURL=data\:[^,]+,([\:/a-z0-9+-]+)/i) || {
+				1: 'No sourcemap found',
+			};
 			expect(match[0]).not.toBeFalsy();
 			const sourceMapString = Buffer.from(match[1], 'base64').toString();
 			validateSourcemap(evalSourceMap, sourceMapString, srcFile);

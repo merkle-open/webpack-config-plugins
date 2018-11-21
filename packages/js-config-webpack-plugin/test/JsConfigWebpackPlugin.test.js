@@ -8,11 +8,11 @@ const jsDomWindowContext = require('./jsDomWindowContext');
 // Allow tests to run 10s
 jest.setTimeout(10000);
 
-beforeAll(done => {
+beforeAll((done) => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
 
-beforeEach(done => {
+beforeEach((done) => {
 	process.chdir(path.join(__dirname, 'fixtures'));
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
@@ -44,7 +44,7 @@ describe('JsConfigWebpackPlugin standalone (without context)', () => {
 
 describe('JsConfigWebpackPlugin inside context', () => {
 	// 'done' used for testing async compiler method run
-	it('should compile without errors', done => {
+	it('should compile without errors', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new JsConfigWebpackPlugin()],
@@ -59,7 +59,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		});
 	});
 
-	it('should compile without errors in development mode', done => {
+	it('should compile without errors in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -72,7 +72,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		});
 	});
 
-	it('should allow to add the production mode within the js-config-webpack-plugin', done => {
+	it('should allow to add the production mode within the js-config-webpack-plugin', (done) => {
 		const referenceCompiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -93,7 +93,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		done();
 	});
 
-	it('should allow to add the development mode within the js-config-webpack-plugin', done => {
+	it('should allow to add the development mode within the js-config-webpack-plugin', (done) => {
 		const referenceCompiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -111,7 +111,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		done();
 	});
 
-	it('should have the correct babelConfigFile option in development mode', done => {
+	it('should have the correct babelConfigFile option in development mode', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/babel');
 		const babelConfigFileContext = path.join(__dirname, '../config');
 		const babelConfigFileName = '.babelrc.base.json';
@@ -125,13 +125,11 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		const ruleToTest = instance.options.module.rules[0];
 		const ruleOptions = ruleToTest.use[1].options;
 
-		expect(ruleOptions.extends).toEqual(
-			path.resolve(babelConfigFileContext, babelConfigFileName)
-		);
+		expect(ruleOptions.extends).toEqual(path.resolve(babelConfigFileContext, babelConfigFileName));
 		done();
 	});
 
-	it('should have the correct babelConfigFile option in production mode', done => {
+	it('should have the correct babelConfigFile option in production mode', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/babel');
 		const babelConfigFileContext = path.join(__dirname, '../config');
 		const babelConfigFileName = '.babelrc.base.json';
@@ -145,13 +143,11 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		const ruleToTest = instance.options.module.rules[0];
 		const ruleOptions = ruleToTest.use[1].options;
 
-		expect(ruleOptions.extends).toEqual(
-			path.resolve(babelConfigFileContext, babelConfigFileName)
-		);
+		expect(ruleOptions.extends).toEqual(path.resolve(babelConfigFileContext, babelConfigFileName));
 		done();
 	});
 
-	it('should allow to pass the babelConfigFile option in development mode', done => {
+	it('should allow to pass the babelConfigFile option in development mode', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/babel');
 		const babelConfigFilePath = path.join(webpackContext, '.babelrc');
 
@@ -168,7 +164,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		done();
 	});
 
-	it('should allow to pass the babelConfigFile option in production mode', done => {
+	it('should allow to pass the babelConfigFile option in production mode', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/babel');
 		const babelConfigFilePath = path.join(webpackContext, '.babelrc');
 
@@ -185,7 +181,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		done();
 	});
 
-	it('the correct .babelrc file should be registered', done => {
+	it('the correct .babelrc file should be registered', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/babel');
 		const babelConfigFilePath = path.join(__dirname, '.babelrc');
 
@@ -206,7 +202,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		});
 	});
 
-	it('the correct base .babelrc file should be registered and invoked', done => {
+	it('the correct base .babelrc file should be registered and invoked', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/babel');
 		const babelConfigFileContext = path.join(__dirname, '../config');
 		const babelConfigFileName = '.babelrc.base.json';
@@ -222,15 +218,13 @@ describe('JsConfigWebpackPlugin inside context', () => {
 
 		// should not fail because base-file of babelrc has no errors
 		compiler.run((_, stats) => {
-			expect(ruleOptions.extends).toBe(
-				path.resolve(babelConfigFileContext, babelConfigFileName)
-			);
+			expect(ruleOptions.extends).toBe(path.resolve(babelConfigFileContext, babelConfigFileName));
 			expect(stats.compilation.errors).toEqual([]);
 			done();
 		});
 	});
 
-	it('the correct custom babelrc file should be registered and invoked', done => {
+	it('the correct custom babelrc file should be registered and invoked', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/babel-custom/');
 		const babelConfigFilePath = path.resolve(webpackContext, '.custom.babelrc');
 
@@ -253,7 +247,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		});
 	});
 
-	it('the correct babelrc file should be found witihin the context, registered and then invoked (production)', done => {
+	it('the correct babelrc file should be found witihin the context, registered and then invoked (production)', (done) => {
 		const webpackContextSrc = path.resolve(__dirname, 'fixtures/babel/src');
 
 		// the resolveRelativeConfigFile method searches for following files:
@@ -290,7 +284,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		});
 	});
 
-	it('the correct babelrc file should be found witihin the context, registered and then invoked (development)', done => {
+	it('the correct babelrc file should be found witihin the context, registered and then invoked (development)', (done) => {
 		const webpackContextSrc = path.resolve(__dirname, 'fixtures/babel/src');
 
 		// the resolveRelativeConfigFile method searches for following files:
@@ -327,7 +321,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		});
 	});
 
-	it('should generate one file called main.js in development mode', done => {
+	it('should generate one file called main.js in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -344,7 +338,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		});
 	});
 
-	it('should generate one file called main.js in production mode', done => {
+	it('should generate one file called main.js in production mode', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -361,7 +355,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		});
 	});
 
-	it('should have rules matching all extensions', done => {
+	it('should have rules matching all extensions', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new JsConfigWebpackPlugin()],
@@ -375,7 +369,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		done();
 	});
 
-	it('file in production mode should have the correct code and should be executed correctly inside window-context', done => {
+	it('file in production mode should have the correct code and should be executed correctly inside window-context', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/window-context');
 
 		const compiler = webpack({
@@ -400,7 +394,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		});
 	});
 
-	it('file in development mode should have the correct code and should be executed correctly inside window-context', done => {
+	it('file in development mode should have the correct code and should be executed correctly inside window-context', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/window-context/');
 
 		const compiler = webpack({
@@ -423,7 +417,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		});
 	});
 
-	it('file in production mode should manipulate the DOM correctly', done => {
+	it('file in production mode should manipulate the DOM correctly', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/dom-manipulation/');
 		const compiler = webpack({
 			mode: 'production',
@@ -445,7 +439,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		});
 	});
 
-	it('file in development mode should manipulate the DOM correctly', done => {
+	it('file in development mode should manipulate the DOM correctly', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/dom-manipulation/');
 
 		const compiler = webpack({

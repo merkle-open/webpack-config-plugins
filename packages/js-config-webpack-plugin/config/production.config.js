@@ -5,7 +5,7 @@
  * @param {import("../JsConfigWebpackPlugin.js").JsConfigWebpackPluginOptions} options
  * @returns {{ module: { rules : Array<any> }, plugins: Array<(new (): any)>, optimization: { minimizer: Array<(new (): any)>} }}
  */
-exports = module.exports = options => ({
+exports = module.exports = (options) => ({
 	module: {
 		rules: [
 			{

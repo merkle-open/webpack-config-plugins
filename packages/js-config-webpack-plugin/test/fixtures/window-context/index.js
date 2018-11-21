@@ -1,6 +1,6 @@
 import { getWindowInnerHeight, getWindowInnerWidth } from './src/utils';
 
-(WindowManager => {
+((WindowManager) => {
 	window.WindowManager = WindowManager || {};
 
 	// store innerHeight into WindowManager

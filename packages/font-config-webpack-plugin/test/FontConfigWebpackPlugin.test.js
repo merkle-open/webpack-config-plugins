@@ -7,11 +7,11 @@ const FontConfigWebpackPlugin = require('../src/FontConfigWebpackPlugin');
 // Allow tests to run 30s
 jest.setTimeout(30000);
 
-beforeAll(done => {
+beforeAll((done) => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
 
-beforeEach(done => {
+beforeEach((done) => {
 	process.chdir(path.join(__dirname, 'fixtures'));
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
@@ -34,7 +34,7 @@ describe('FontConfigWebpackPlugin standalone', () => {
 });
 
 describe('FontConfigWebpackPlugin inside webpack context', () => {
-	it('should compile without errors', done => {
+	it('should compile without errors', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new FontConfigWebpackPlugin()],
@@ -45,7 +45,7 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should compile without errors in development mode', done => {
+	it('should compile without errors in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -57,7 +57,7 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should compile without errors in production mode', done => {
+	it('should compile without errors in production mode', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -69,7 +69,7 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should allow to set the production mode mode', done => {
+	it('should allow to set the production mode mode', (done) => {
 		const referenceCompiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -86,7 +86,7 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should allow to set the development mode mode', done => {
+	it('should allow to set the development mode mode', (done) => {
 		const referenceCompiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -103,7 +103,7 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should generate the correct WOFF files in development mode', done => {
+	it('should generate the correct WOFF files in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -113,14 +113,12 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 			const generatedFiles = glob.sync('./fixtures/dist/**/*.woff', {
 				cwd: __dirname,
 			});
-			expect(generatedFiles).toEqual([
-				'./fixtures/dist/static/media/OpenSans-Regular-webfont.c8ffdeb3.woff',
-			]);
+			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/OpenSans-Regular-webfont.c8ffdeb3.woff']);
 			done();
 		});
 	});
 
-	it('should generate the correct WOFF files in production mode', done => {
+	it('should generate the correct WOFF files in production mode', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -130,14 +128,12 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 			const generatedFiles = glob.sync('./fixtures/dist/**/*.woff', {
 				cwd: __dirname,
 			});
-			expect(generatedFiles).toEqual([
-				'./fixtures/dist/static/media/OpenSans-Regular-webfont.c8ffdeb3.woff',
-			]);
+			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/OpenSans-Regular-webfont.c8ffdeb3.woff']);
 			done();
 		});
 	});
 
-	it('should set rules correctly', done => {
+	it('should set rules correctly', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new FontConfigWebpackPlugin()],
@@ -146,7 +142,7 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should have rules matching woff files', done => {
+	it('should have rules matching woff files', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new FontConfigWebpackPlugin()],

@@ -10,7 +10,7 @@ const safeParser = require('postcss-safe-parser');
  * @param {import("../src/ScssConfigWebpackPlugin.js").ScssConfigWebpackPluginOptions} options
  * @returns {{ module: { rules : Array<any> }, plugins: Array<(new (): any)> }}
  */
-exports = module.exports = options => ({
+exports = module.exports = (options) => ({
 	module: {
 		rules: [
 			{
@@ -36,7 +36,7 @@ exports = module.exports = options => ({
 					{
 						loader: require.resolve('postcss-loader'),
 						options: {
-							plugins: loader => [
+							plugins: (loader) => [
 								require('postcss-flexbugs-fixes'),
 								autoprefixer({
 									// flexbox: "no-2009" will add prefixes only for final and IE versions of specification.
@@ -78,7 +78,7 @@ exports = module.exports = options => ({
 					{
 						loader: require.resolve('postcss-loader'),
 						options: {
-							plugins: loader => [
+							plugins: (loader) => [
 								require('postcss-flexbugs-fixes'),
 								autoprefixer({
 									// flexbox: "no-2009" will add prefixes only for final and IE versions of specification.

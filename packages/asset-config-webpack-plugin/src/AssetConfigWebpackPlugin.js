@@ -21,7 +21,7 @@ class AssetConfigWebpackPlugin {
 	apply(compiler) {
 		const config = require('../config/shared.config.js')(this.options);
 		// Merge config
-		config.plugins.forEach(plugin => plugin.apply(compiler));
+		config.plugins.forEach((plugin) => plugin.apply(compiler));
 		compiler.hooks.afterEnvironment.tap('AssetConfigWebpackPlugin', () => {
 			compiler.options.module.rules.push(...config.module.rules);
 		});

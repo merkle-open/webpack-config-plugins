@@ -30,7 +30,7 @@ function jsDomWindowContext(options = {}) {
 		let dom;
 		try {
 			const styles = cssFiles
-				.map(fileName => {
+				.map((fileName) => {
 					const fileContents = fs.readFileSync(fileName, 'utf-8');
 					return `<style>${fileContents}</style>`;
 				})
@@ -38,7 +38,7 @@ function jsDomWindowContext(options = {}) {
 			dom = new JSDOM(`<html><head>${styles}</head><body>${html}</body></html>`, {
 				runScripts: 'outside-only',
 			});
-			jsFiles.forEach(fileName => {
+			jsFiles.forEach((fileName) => {
 				evalJsFile(dom, fileName);
 			});
 		} catch (e) {

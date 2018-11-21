@@ -18,7 +18,7 @@ const main = () => {
 main();
 
 //map with pow
-[1, 2, 3].map(number => number ** 2);
+[1, 2, 3].map((number) => number ** 2);
 
 // shorthand Object method
 var obj = {

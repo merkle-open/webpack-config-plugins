@@ -7,11 +7,11 @@ const ImageConfigWebpackPlugin = require('../src/ImageConfigWebpackPlugin');
 // Allow tests to run 30s
 jest.setTimeout(30000);
 
-beforeAll(done => {
+beforeAll((done) => {
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
 
-beforeEach(done => {
+beforeEach((done) => {
 	process.chdir(path.join(__dirname, 'fixtures'));
 	rimraf(path.join(__dirname, 'fixtures/dist'), done);
 });
@@ -34,7 +34,7 @@ describe('ImageConfigWebpackPlugin standalone', () => {
 });
 
 describe('ImageConfigWebpackPlugin inside webpack context', () => {
-	it('should compile without errors', done => {
+	it('should compile without errors', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new ImageConfigWebpackPlugin()],
@@ -45,7 +45,7 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should compile without errors in development mode', done => {
+	it('should compile without errors in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -57,7 +57,7 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should compile without errors in production mode', done => {
+	it('should compile without errors in production mode', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -69,7 +69,7 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should allow to set the production mode mode', done => {
+	it('should allow to set the production mode mode', (done) => {
 		const referenceCompiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -86,7 +86,7 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should allow to set the development mode mode', done => {
+	it('should allow to set the development mode mode', (done) => {
 		const referenceCompiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -103,7 +103,7 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should generate the correct SVG files in development mode', done => {
+	it('should generate the correct SVG files in development mode', (done) => {
 		const compiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -113,14 +113,12 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 			const generatedFiles = glob.sync('./fixtures/dist/**/*.png', {
 				cwd: __dirname,
 			});
-			expect(generatedFiles).toEqual([
-				'./fixtures/dist/static/media/webpack-logo.81da10d7.png',
-			]);
+			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/webpack-logo.81da10d7.png']);
 			done();
 		});
 	});
 
-	it('should generate the correct SVG files in production mode', done => {
+	it('should generate the correct SVG files in production mode', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -130,14 +128,12 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 			const generatedFiles = glob.sync('./fixtures/dist/**/*.png', {
 				cwd: __dirname,
 			});
-			expect(generatedFiles).toEqual([
-				'./fixtures/dist/static/media/webpack-logo.81da10d7.png',
-			]);
+			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/webpack-logo.81da10d7.png']);
 			done();
 		});
 	});
 
-	it('should set rules correctly', done => {
+	it('should set rules correctly', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new ImageConfigWebpackPlugin()],
@@ -146,7 +142,7 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should have rules matching svg files', done => {
+	it('should have rules matching svg files', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new ImageConfigWebpackPlugin()],
@@ -157,7 +153,7 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should have rules matching png files', done => {
+	it('should have rules matching png files', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new ImageConfigWebpackPlugin()],
@@ -168,7 +164,7 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should have rules matching jpg files', done => {
+	it('should have rules matching jpg files', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new ImageConfigWebpackPlugin()],
@@ -179,7 +175,7 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should have rules matching jpeg files', done => {
+	it('should have rules matching jpeg files', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new ImageConfigWebpackPlugin()],
@@ -190,7 +186,7 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should have rules matching gif files', done => {
+	it('should have rules matching gif files', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
 			plugins: [new ImageConfigWebpackPlugin()],
