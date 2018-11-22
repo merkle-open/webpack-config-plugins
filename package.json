@@ -7,7 +7,7 @@
   "homepage": "https://github.com/namics/webpack-config-plugins",
   "repository": "https://github.com/namics/webpack-config-plugins.git",
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist",
+    "bootstrap": "lerna bootstrap --no-ci --hoist",
     "clean": "npx npm-run-all clean:*",
     "clean:lerna": "lerna clean --yes",
     "clean:lock": "rimraf **/package-lock.json",
