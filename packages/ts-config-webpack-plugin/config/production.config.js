@@ -2,6 +2,11 @@ const os = require('os');
 const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
+const cpus = os.cpus().length;
+
+// we use <max> - 1 workers for tricore cpus and higher, one cpu will be preserved
+const tsLoaderWorkers = cpus > 2 ? cpus - 1 : 1;
+
 /**
  *
  * Common Production Config
@@ -31,7 +36,7 @@ exports = module.exports = (options) => ({
 						loader: require.resolve('thread-loader'),
 						options: {
 							// there should be 1 cpu for the fork-ts-checker-webpack-plugin
-							workers: os.cpus().length - 1,
+							workers: tsLoaderWorkers,
 						},
 					},
 					{
@@ -56,6 +61,8 @@ exports = module.exports = (options) => ({
 	plugins: [
 		// Webpack plugin that runs typescript type checker on a separate process.
 		new ForkTsCheckerWebpackPlugin({
+			// do not perform in separation to compile process in prod mode
+			async: false,
 			// checkSyntacticErrors is required as we use happyPackMode and the thread-loader to parallelise the builds
 			checkSyntacticErrors: true,
 			// Set the tsconfig.json path
