@@ -61,7 +61,8 @@ exports = module.exports = (options) => ({
 	plugins: [
 		// Webpack plugin that runs typescript type checker on a separate process.
 		new ForkTsCheckerWebpackPlugin({
-			// do not perform in separation to compile process in prod mode
+			// block webpack's emit to wait for type checker/linter and to add errors to the webpack's compilation
+			// also required for the the overlay functionality of webpack-dev-server
 			async: false,
 			// checkSyntacticErrors is required as we use happyPackMode and the thread-loader to parallelise the builds
 			checkSyntacticErrors: true,

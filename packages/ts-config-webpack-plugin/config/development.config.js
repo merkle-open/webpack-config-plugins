@@ -63,8 +63,7 @@ exports = module.exports = (options) => ({
 	plugins: [
 		// Webpack plugin that runs typescript type checker on a separate process.
 		new ForkTsCheckerWebpackPlugin({
-			// block webpack's emit to wait for type checker/linter and to add errors to the webpack's compilation
-			// also required for the the overlay functionality of webpack-dev-server
+			// don't block webpack's emit to wait for type checker, errors only visible inside CLI
 			async: true,
 			// increase performance on multicore systems
 			workers: forkTsCheckerWorkers,
