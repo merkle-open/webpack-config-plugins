@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/namics/webpack-config-plugins/compare/v0.4.4...v1.0.0) (2018-11-29)
+
+
+### Features
+
+* **scss-config-webpack-plugin:** Use webpack output configuration for css files ([#17](https://github.com/namics/webpack-config-plugins/issues/17)) ([2a29524](https://github.com/namics/webpack-config-plugins/commit/2a29524)), closes [#15](https://github.com/namics/webpack-config-plugins/issues/15)
+
+
+### BREAKING CHANGES
+
+* **scss-config-webpack-plugin:** The generated css files will have the same basenames like the js files.
+
+
+
+
+
 <a name="0.4.4"></a>
 ## [0.4.4](https://github.com/namics/webpack-config-plugins/compare/v0.4.3...v0.4.4) (2018-10-22)
 
