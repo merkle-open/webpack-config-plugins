@@ -37,6 +37,35 @@ module.exports = {
 }
 ```
 
+## Output filename
+
+Webpack allows to configure the ouput file name for `javascript` files with `output.filename`.
+By default the ScssConfigWebpackPlugin will reuse this option but will replace .js to .css and /js/ to /css/.
+
+```js
+const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
+module.exports = {
+    output: {
+        filename: 'js/app.js' 
+    },
+    plugins: [
+        new ScssConfigWebpackPlugin() // Generates a new file called css/app.css
+    ]
+}
+```
+
+If this behaviour doesn't fit your needs you can set a different name using the `filename` option:
+
+```js
+const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
+module.exports = {
+    plugins: [
+        new ScssConfigWebpackPlugin({ filename: 'css/main.min.css' })
+    ]
+}
+```
+
+
 ### css modules
 
  Just as create-react-app the scss-config-webpack-plugin supports CSS Modules with the extension `.module.css` or `.module.scss`.

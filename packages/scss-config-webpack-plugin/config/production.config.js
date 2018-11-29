@@ -2,12 +2,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const safeParser = require('postcss-safe-parser');
+const path = require('path');
 
 /**
  *
  * Common Production Config
  *
- * @param {import("../src/ScssConfigWebpackPlugin.js").ScssConfigWebpackPluginOptions} options
+ * @param {Required<import("../src/ScssConfigWebpackPlugin.js").ScssConfigWebpackPluginOptions>} options
  * @returns {{ module: { rules : Array<any> }, plugins: Array<(new (): any)> }}
  */
 exports = module.exports = (options) => ({
@@ -20,10 +21,12 @@ exports = module.exports = (options) => ({
 					{
 						loader: MiniCssExtractPlugin.loader,
 						options: {
-							// The css file will be placed in a sub directory called 'css'
-							// to prevent invalid ressource urls this additional sub folder
+							// The css file will be probably be placed in a sub directory.
+							// To prevent invalid ressource urls this additional sub folder
 							// has to be taken into account for the relative path calculation
-							publicPath: '../',
+							publicPath: (
+								path.relative(path.dirname(options.filename), '.') + path.sep
+							).replace(/^[\\\/]$/, ''),
 						},
 					},
 					{
@@ -66,6 +69,14 @@ exports = module.exports = (options) => ({
 				use: [
 					{
 						loader: MiniCssExtractPlugin.loader,
+						options: {
+							// The css file will be probably be placed in a sub directory.
+							// To prevent invalid ressource urls this additional sub folder
+							// has to be taken into account for the relative path calculation
+							publicPath: (
+								path.relative(path.dirname(options.filename), '.') + path.sep
+							).replace(/^[\\\/]$/, ''),
+						},
 					},
 					{
 						loader: require.resolve('css-loader'),
@@ -108,8 +119,8 @@ exports = module.exports = (options) => ({
 	plugins: [
 		// Extract css to a custom file
 		new MiniCssExtractPlugin({
-			filename: 'css/[name].min.css',
-			chunkFilename: '[id].css',
+			filename: options.filename,
+			chunkFilename: options.chunkFilename,
 		}),
 		// Minify css - but use only safe css-nano transformations
 		// https://github.com/facebook/create-react-app/pull/4706
