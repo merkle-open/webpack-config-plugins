@@ -354,7 +354,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should generate a valid font path', done => {
+	it('should generate a valid font path', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/assets'),
@@ -386,7 +386,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should generate a valid font path for subfolders', done => {
+	it('should generate a valid font path for subfolders', (done) => {
 		const compiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/assets'),
@@ -411,10 +411,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 			plugins: [new ScssConfigWebpackPlugin()],
 		});
 		compiler.run((err, stats) => {
-			const cssFilePath = path.resolve(
-				__dirname,
-				'./fixtures/dist/font-example/css/main.css'
-			);
+			const cssFilePath = path.resolve(__dirname, './fixtures/dist/font-example/css/main.css');
 			const contents = removeSourceMapComment(fs.readFileSync(cssFilePath).toString());
 			expect(contents).toMatchSnapshot();
 			done();

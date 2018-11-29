@@ -34,14 +34,8 @@ class ScssConfigWebpackPlugin {
 		// Use compiler.options.output configuration also for css
 		// Replace folder names called js and extends called js to css
 		// E.g. 'js/x.[id].js' -> 'css/x.[id].css'
-		const filename = compiler.options.output.filename.replace(
-			/(^|\/|\\|\.)js($|\/|\\)/g,
-			'$1css$2'
-		);
-		const chunkFilename = compiler.options.output.chunkFilename.replace(
-			/(^|\/|\\|\.)js($|\/|\\)/g,
-			'$1css$2'
-		);
+		const filename = compiler.options.output.filename.replace(/(^|\/|\\|\.)js($|\/|\\)/g, '$1css$2');
+		const chunkFilename = compiler.options.output.chunkFilename.replace(/(^|\/|\\|\.)js($|\/|\\)/g, '$1css$2');
 
 		const config = isProductionLikeMode
 			? require('../config/production.config')(

@@ -24,9 +24,10 @@ exports = module.exports = (options) => ({
 							// The css file will be probably be placed in a sub directory.
 							// To prevent invalid ressource urls this additional sub folder
 							// has to be taken into account for the relative path calculation
-							publicPath: (
-								path.relative(path.dirname(options.filename), '.') + path.sep
-							).replace(/^[\\\/]$/, ''),
+							publicPath: (path.relative(path.dirname(options.filename), '.') + path.sep).replace(
+								/^[\\\/]$/,
+								''
+							),
 						},
 					},
 					{
@@ -73,9 +74,10 @@ exports = module.exports = (options) => ({
 							// The css file will be probably be placed in a sub directory.
 							// To prevent invalid ressource urls this additional sub folder
 							// has to be taken into account for the relative path calculation
-							publicPath: (
-								path.relative(path.dirname(options.filename), '.') + path.sep
-							).replace(/^[\\\/]$/, ''),
+							publicPath: (path.relative(path.dirname(options.filename), '.') + path.sep).replace(
+								/^[\\\/]$/,
+								''
+							),
 						},
 					},
 					{
