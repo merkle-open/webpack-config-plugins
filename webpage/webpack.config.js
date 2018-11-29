@@ -26,5 +26,6 @@ module.exports = (_, { mode }) => ({
 					],
 			  })
 			: EmptyPlugin,
+		new HtmlWebpackPlugin({ template: 'CNAME', inject: false, filename: 'CNAME' }),
 	],
 });
