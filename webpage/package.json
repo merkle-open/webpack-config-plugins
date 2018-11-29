@@ -1,0 +1,36 @@
+{
+  "name": "webpage",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production --devtool sourcemap ",
+    "deploy": "node node_modules/.bin/deploy-gh-pages"
+  },
+  "devDependencies": {
+    "@types/webpack-env": "1.13.6",
+    "clean-webpack-plugin": "1.0.0",
+    "ts-config-webpack-plugin": "0.4.4",
+    "deploy-gh-pages": "1.0.0",
+    "html-webpack-plugin": "3.2.0",
+    "offline-plugin": "5.0.6",
+    "raw-loader": "0.5.1",
+    "react-copy-to-clipboard": "5.0.1",
+    "typescript": "3.1.6",
+    "webpack": "4.26.1",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.10"
+  },
+  "dependencies": {
+    "@material-ui/core": "3.6.0",
+    "@types/react": "16.7.7",
+    "@types/react-dom": "16.0.11",
+    "downloadjs": "1.4.7",
+    "mobx": "5.6.0",
+    "mobx-react": "5.4.2",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "react-markdown-renderer": "1.4.0",
+    "react-syntax-highlighter": "10.1.1"
+  }
+}
