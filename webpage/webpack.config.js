@@ -19,12 +19,7 @@ module.exports = (_, { mode }) => ({
 		new TsConfigWebpackPlugin(),
 		// Offline Caching
 		mode === 'production'
-			? new OfflinePlugin({
-					externals: [
-						'https://github.com/namics/webpack-config-plugins/raw/master/logo.png',
-						'https://github.com/namics/webpack-config-plugins/raw/master/plug.png',
-					],
-			  })
+			? new OfflinePlugin()
 			: EmptyPlugin,
 		new HtmlWebpackPlugin({ template: 'CNAME', inject: false, filename: 'CNAME' }),
 	],
