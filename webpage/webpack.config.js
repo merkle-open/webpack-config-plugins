@@ -21,8 +21,8 @@ module.exports = (_, { mode }) => ({
 		mode === 'production'
 			? new OfflinePlugin({
 					externals: [
-						'https://raw.githubusercontent.com/namics/webpack-config-plugins/master/logo.png',
-						'https://raw.githubusercontent.com/namics/webpack-config-plugins/master/plug.png',
+						'https://github.com/namics/webpack-config-plugins/raw/master/logo.png',
+						'https://github.com/namics/webpack-config-plugins/raw/master/plug.png',
 					],
 			  })
 			: EmptyPlugin,
