@@ -41,8 +41,8 @@ autorun(() => {
 export const Configurator = () => (
 	<div style={{ width: '100%', display: 'flex' }}>
 		<Grid container spacing={24}>
-			<Grid item xs={3} />
-			<Grid item xs={9}>
+			<Grid item xs="auto" sm={3} />
+			<Grid item xs={12} sm={9}>
 				<ConfiguratorForm store={configuratorStore} />
 			</Grid>
 			<Grid item xs={12}>
