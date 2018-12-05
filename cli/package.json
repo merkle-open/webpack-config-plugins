@@ -1,0 +1,68 @@
+{
+  "name": "generate-webpack-config",
+  "description": "Generate a base webpack config",
+  "bugs": "https://github.com/namics/webpack-config-plugins/issues",
+  "homepage": "https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin",
+  "repository": "https://github.com/namics/webpack-config-plugins.git",
+  "version": "1.0.0",
+  "author": "Namics AG - Technology & Application",
+  "license": "MIT",
+  "bin": {"generate-webpack-config": "dist/main.js"},
+  "files" : [
+    "dist"
+  ],
+  "main": "dist/config-generator.js",
+  "contributors": [
+    {
+      "name": "Jan Biasi",
+      "email": "biasijan@gmail.com",
+      "url": "https://github.com/janbiasi"
+    },
+    {
+      "name": "Matthias Giger",
+      "email": "matthias.giger@namics.com",
+      "url": "https://github.com/naminho"
+    },
+    {
+      "name": "Davide De Giorgio",
+      "email": "dave_degiorgio@hotmail.com",
+      "url": "https://github.com/degiorgioo"
+    },
+    {
+      "name": "Ernst Ammann",
+      "email": "ernscht@gmail.com",
+      "url": "https://github.com/ernscht"
+    },
+    {
+      "name": "Jan Nicklas",
+      "email": "j.nicklas@me.com",
+      "url": "https://github.com/jantimon"
+    }
+  ],
+  "keywords": [
+    "webpack",
+    "cli"
+  ],
+  "scripts": {
+    "prepublishOnly": "npx npm-run-all prepublishOnly:*",
+    "prepublishOnly:cli": "webpack",
+    "prepublishOnly:api": "tsc src/config-generator.ts --declaration --outDir dist/ --lib ES2018",
+    "test": "tsc"
+  },
+  "peerDependencies": {
+    "webpack": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "10.12.10",
+    "@types/webpack": "4.4.19",
+    "inquirer": "6.2.1",
+    "ts-config-webpack-plugin": "1.0.0",
+    "typescript": "3.1.6",
+    "webpack": "4.21.0",
+    "webpack-cli": "3.1.2"
+  },
+  "engines": {
+    "npm": ">=5",
+    "node": ">=6"
+  }
+}

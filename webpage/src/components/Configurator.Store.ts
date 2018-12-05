@@ -1,5 +1,5 @@
 import { observable, computed } from 'mobx';
-import { ConfigLoaderTypeOptions, getConfigurations } from '../lib/config-generator';
+import { ConfigLoaderTypeOptions, generateConfigurations } from '../../../cli/src/config-generator';
 
 export class ConfiguratorStore implements ConfigLoaderTypeOptions {
 	@observable useJs: boolean = false;
@@ -19,6 +19,6 @@ export class ConfiguratorStore implements ConfigLoaderTypeOptions {
 
 	@computed
 	get generatedUserConfigurations() {
-		return getConfigurations(this);
+		return generateConfigurations(this);
 	}
 }

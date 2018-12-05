@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import { ConfiguratorStore } from './Configurator.Store';
 import { ConfiguratorForm } from './ConfiguratorForm';
 import { autorun } from 'mobx';
-import { configOptionKeys } from '../lib/config-generator';
+import { configOptionKeys } from '../../../cli/src/config-generator';
 
 const LazyConfiguratorResult = React.lazy(() =>
 	import('./ConfiguratorResult' /* webpackChunkName: 'ConfiguratorResult' */).then(({ ConfiguratorResult }) => ({
