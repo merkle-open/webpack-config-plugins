@@ -9,7 +9,8 @@
  */
 
 'use strict';
-const tsconfig = require('tsconfig');
+const typescript = require('typescript');
+const fs = require('fs');
 const path = require('path');
 
 class TsConfigWebpackPlugin {
@@ -27,7 +28,7 @@ class TsConfigWebpackPlugin {
 	 */
 	resolveTsConfigFilePath(contextPath) {
 		// Try to locate a tsconfig relative to the cwd
-		const resolvedFile = tsconfig.resolveSync(contextPath);
+		const resolvedFile = typescript.findConfigFile(contextPath, fs.existsSync);
 		if (resolvedFile) {
 			return resolvedFile;
 		}
@@ -37,6 +38,36 @@ class TsConfigWebpackPlugin {
 			"Couldn't find a tsconfig.json in the current working directory.\nYou can either set the configFile path explicitly or create a new config:\n  npx tsc --init"
 		);
 		return path.resolve(__dirname, '../config/tsconfig.base.json');
+	}
+
+	/**
+	 * Check for known TSConfig issues and output warnings
+	 * @param {string} configFilePath
+	 */
+	verifiyTsConfig(configFilePath) {
+		const createConfigFileHost = {
+			onUnRecoverableConfigFileDiagnostic() {},
+			useCaseSensitiveFileNames: false,
+			readDirectory: typescript.sys.readDirectory,
+			fileExists: typescript.sys.fileExists,
+			readFile: typescript.sys.readFile,
+			getCurrentDirectory: typescript.sys.getCurrentDirectory,
+		};
+		const tsconfig = typescript.getParsedCommandLineOfConfigFile(configFilePath, {}, createConfigFileHost);
+		if (!tsconfig) {
+			console.warn(`Warning: could not parse "${configFilePath}".`);
+			return;
+		}
+		if (tsconfig.options.skipLibCheck === undefined) {
+			console.warn(
+				'Warning: skipLibCheck option was NOT specified\n' +
+					'By default the fork-ts-checker-webpack-plugin will check all types inside the node_modules directory\n' +
+					'even for unused dependencies and slow down the type checking a lot.\n' +
+					'To skip that checking add the following line to your tsconfig.json compilerOptions configuration:\n' +
+					'"skipLibCheck": true\n' +
+					'To keep the default behaviour with possible performance penalties set skipLibCheck to false to hide this warning.'
+			);
+		}
 	}
 
 	/**
@@ -52,7 +83,8 @@ class TsConfigWebpackPlugin {
 			options.mode !== undefined
 				? options.mode === 'production'
 				: compiler.options.mode === 'production' || !compiler.options.mode;
-
+		// Verify Config for common tsconfig issues
+		this.verifiyTsConfig(options.configFile);
 		// Get Typescript config
 		const config = isProductionLikeMode
 			? require('../config/production.config')(options)

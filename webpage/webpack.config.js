@@ -18,9 +18,7 @@ module.exports = (_, { mode }) => ({
 		// see https://github.com/namics/webpack-config-plugins/tree/master/packages/ts-config-webpack-plugin/config
 		new TsConfigWebpackPlugin(),
 		// Offline Caching
-		mode === 'production'
-			? new OfflinePlugin()
-			: EmptyPlugin,
+		mode === 'production' ? new OfflinePlugin() : EmptyPlugin,
 		new HtmlWebpackPlugin({ template: 'CNAME', inject: false, filename: 'CNAME' }),
 	],
 });

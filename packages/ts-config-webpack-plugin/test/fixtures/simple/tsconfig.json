@@ -2,6 +2,7 @@
 	"extends": "../../../tsconfig.json",
 	"compilerOptions": {
 		"declaration": true,
-		"rootDir": "./"
+		"rootDir": "./",
+		"skipLibCheck": true
 	}
 }

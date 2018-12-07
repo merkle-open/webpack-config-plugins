@@ -168,6 +168,22 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		expect(ruleToTest.test.test('testingts')).toBe(false);
 		done();
 	});
+
+	it('should warn if --skipLibCheck is not specified', (done) => {
+		const origWarn = console.warn;
+		let warnMessage;
+		console.warn = (msg) => (warnMessage = msg);
+		const compiler = webpack({
+			context: path.join(__dirname, 'fixtures/no-lib-check'),
+			plugins: [new TsConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			console.warn = origWarn;
+			expect(Boolean(warnMessage)).toEqual(true);
+			expect(warnMessage).toMatchSnapshot();
+			done();
+		});
+	});
 });
 
 describe('TsConfigWebpackPlugin sourcemaps', () => {

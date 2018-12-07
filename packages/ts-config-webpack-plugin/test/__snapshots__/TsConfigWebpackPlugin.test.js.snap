@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TsConfigWebpackPlugin inside webpack context should warn if --skipLibCheck is not specified 1`] = `
+"Warning: skipLibCheck option was NOT specified
+By default the fork-ts-checker-webpack-plugin will check all types inside the node_modules directory
+even for unused dependencies and slow down the type checking a lot.
+To skip that checking add the following line to your tsconfig.json compilerOptions configuration:
+\\"skipLibCheck\\": true
+To keep the default behaviour with possible performance penalties set skipLibCheck to false to hide this warning."
+`;
