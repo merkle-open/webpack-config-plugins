@@ -36,9 +36,9 @@ module.exports = {
 }
 ```
 
-### Changing the fonts file name
+### Changing the image file name
 
-By default the `image-config-webpack-plugin` adds a md5 hash of the font files content to the file name
+By default the `image-config-webpack-plugin` adds a md5 hash of the image files content to the file name
 to allow [long-term-caching](https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching).
 
 For example: `static/media/burger.c8ffdeb3.png` 
@@ -50,7 +50,7 @@ The `name` option supports different [placeholders](https://github.com/webpack-c
 const ImageConfigWebpackPlugin = require('image-config-webpack-plugin');
 module.exports = {
     plugins: [
-        new ImageConfigWebpackPlugin({ name: 'fonts/[name].[ext]' })
+        new ImageConfigWebpackPlugin({ name: 'media/[ext]/[name].[hash:7].[ext]' })
     ]
 }
 ```
