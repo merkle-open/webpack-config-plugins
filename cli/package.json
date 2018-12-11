@@ -2,13 +2,13 @@
   "name": "generate-webpack-config",
   "description": "Generate a base webpack config",
   "bugs": "https://github.com/namics/webpack-config-plugins/issues",
-  "homepage": "https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin",
+  "homepage": "https://github.com/namics/webpack-config-plugins/",
   "repository": "https://github.com/namics/webpack-config-plugins.git",
   "version": "1.0.0",
   "author": "Namics AG - Technology & Application",
   "license": "MIT",
   "bin": {
-    "generate-webpack-config": "dist/main.js"
+    "generate-webpack-config": "dist/generate-webpack-config.js"
   },
   "files": [
     "dist"
@@ -50,9 +50,6 @@
     "prepublishOnly:cli": "webpack",
     "prepublishOnly:api": "tsc src/config-generator.ts --declaration --outDir dist/ --lib ES2018",
     "test": "tsc"
-  },
-  "peerDependencies": {
-    "webpack": ">=4.0.0"
   },
   "devDependencies": {
     "@types/node": "10.12.10",
