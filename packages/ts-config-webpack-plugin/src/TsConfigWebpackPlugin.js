@@ -55,17 +55,17 @@ class TsConfigWebpackPlugin {
 		};
 		const tsconfig = typescript.getParsedCommandLineOfConfigFile(configFilePath, {}, createConfigFileHost);
 		if (!tsconfig) {
-			console.warn(`Warning: could not parse "${configFilePath}".`);
+			console.warn(`⚠️ Warning: could not parse "${configFilePath}".`);
 			return;
 		}
 		if (tsconfig.options.skipLibCheck === undefined) {
 			console.warn(
-				'Warning: skipLibCheck option was NOT specified\n' +
+				'⚠️ Warning: skipLibCheck option was NOT specified\n' +
 					'By default the fork-ts-checker-webpack-plugin will check all types inside the node_modules directory\n' +
 					'even for unused dependencies and slow down the type checking a lot.\n' +
 					'To skip that checking add the following line to your tsconfig.json compilerOptions configuration:\n' +
 					'"skipLibCheck": true\n' +
-					'To keep the default behaviour with possible performance penalties set skipLibCheck to false to hide this warning.'
+					'To keep the default behaviour with possible performance penalties set skipLibCheck to false to hide this warning.\n'
 			);
 		}
 	}
