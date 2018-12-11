@@ -2,8 +2,8 @@ import React from 'react';
 import MarkdownRenderer from 'react-markdown-renderer';
 import { withStyles, Theme } from '@material-ui/core';
 
-const link = '[webpack-config-plugins Github](https://github.com/namics/webpack-config-plugins)';
-const readme = require('!!raw-loader!../../../README.md') + '\n\n' + link;
+const link = '[Fork on Github](https://github.com/namics/webpack-config-plugins/tree/master/cli)';
+const readme = require('!!raw-loader!../../../cli/README.md') + '\n\n' + link;
 
 const styles = (theme: Theme) => ({
 	root: {
@@ -16,7 +16,7 @@ const styles = (theme: Theme) => ({
 	},
 });
 
-export const Readme = withStyles(styles)((props: { classes: any }) => (
+export const CliReadme = withStyles(styles)((props: { classes: any }) => (
 	<div className={props.classes.root}>
 		<MarkdownRenderer markdown={readme} options={{ html: true }} />
 	</div>

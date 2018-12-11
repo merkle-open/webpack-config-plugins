@@ -6,6 +6,11 @@ import { ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typograph
 const LazyReadme = React.lazy(() =>
 	import('./components/Readme' /* webpackChunkName: 'Readme' */).then(({ Readme }) => ({ default: Readme }))
 );
+const LazyCliReadme = React.lazy(() =>
+	import('./components/CliReadme' /* webpackChunkName: 'CliReadme' */).then(({ CliReadme }) => ({
+		default: CliReadme,
+	}))
+);
 
 export const App = () => (
 	<React.Fragment>
@@ -26,6 +31,16 @@ export const App = () => (
 			</ExpansionPanelSummary>
 			<ExpansionPanelDetails>
 				<Configurator />
+			</ExpansionPanelDetails>
+		</ExpansionPanel>
+		<ExpansionPanel>
+			<ExpansionPanelSummary>
+				<Typography>Cli</Typography>
+			</ExpansionPanelSummary>
+			<ExpansionPanelDetails>
+				<Suspense fallback={'Loading Readme'}>
+					<LazyCliReadme />
+				</Suspense>
 			</ExpansionPanelDetails>
 		</ExpansionPanel>
 	</React.Fragment>
