@@ -85,7 +85,7 @@ import { configOptionLabels, configOptionKeys, ConfigOptionKeys, generateConfigu
 			}).on('close', resolve)
 		);
 	} else {
-		console.log(`To install the dependencies run:\n\nnpm install -save-dev ${result.npmInstall}`);
+		console.log(`To install the dependencies run:\n\nnpm install --save-dev ${result.npmInstall}`);
 	}
 })().catch((err) => {
 	console.error(err);

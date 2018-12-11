@@ -230,13 +230,13 @@ export function generateConfigurations(configOptions: ConfigLoaderTypeOptions): 
 	return {
 		npmInstall: uniqueDependencsToInstall.length ? `${[''].concat(uniqueDependencsToInstall).join(' ')}` : '',
 		webpackConfig: pluginImports.length
-			? `${pluginImports.join('\n')}
+			? `${pluginImports.join(';\n')};
 
 module.exports = {
   plugins: [
-    ${pluginConfigurations.join(',\n    ')}
-  ]
-}
+    ${pluginConfigurations.join(',\n    ')},
+  ],
+};
 `
 			: '',
 	};

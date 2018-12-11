@@ -7,8 +7,10 @@
   "version": "1.0.0",
   "author": "Namics AG - Technology & Application",
   "license": "MIT",
-  "bin": {"generate-webpack-config": "dist/main.js"},
-  "files" : [
+  "bin": {
+    "generate-webpack-config": "dist/main.js"
+  },
+  "files": [
     "dist"
   ],
   "main": "dist/config-generator.js",
