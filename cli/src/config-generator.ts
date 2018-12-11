@@ -16,7 +16,7 @@ export type GeneratedConfigs = {
 	webpackConfig: string;
 };
 
-type ConfigOptionKeys = keyof ConfigLoaderTypeOptions;
+export type ConfigOptionKeys = keyof ConfigLoaderTypeOptions;
 
 type PluginName =
 	| 'js-config-webpack-plugin'
@@ -140,6 +140,19 @@ const webpackPluginExplanation: { [option in PluginName]: Array<string> | false 
 	'webpack-cli': false,
 };
 
+export const configOptionLabels: { [fieldName in keyof ConfigLoaderTypeOptions]: string } = {
+	useJs: 'Load ES6 (.js .jsx)',
+	useTs: 'Load Typescript (.ts tsx)',
+	useScss: 'Load Scss (.scss)',
+	useCss: 'Load Css (.css)',
+	useFonts: 'Load Fonts (.woff .woff2)',
+	useImages: 'Load Images',
+	useHtml: 'Use Html Plugin',
+	useClean: 'Use Clean Plugin',
+	useDevServer: 'webpack-dev-server',
+	useCli: 'webpack-cli',
+};
+
 /**
  * Returns the module names for the given config
  *
@@ -154,9 +167,9 @@ const webpackPluginExplanation: { [option in PluginName]: Array<string> | false 
  *     └── image-config-webpack-plugin
  */
 function getModuleNamesForConfiguration(configOptions: ConfigLoaderTypeOptions): Array<PluginName> {
-	return Object.entries(configOptions)
-		.filter(([key, value]) => value)
-		.map(([key]) => moduleNames[key]);
+	return (Object.keys(configOptions) as Array<keyof typeof configOptions>)
+		.filter((key) => configOptions[key])
+		.map((key) => moduleNames[key]);
 }
 
 /**
@@ -165,21 +178,21 @@ function getModuleNamesForConfiguration(configOptions: ConfigLoaderTypeOptions):
 function combinePluginsToWrappers(moduleNamesForConfiguration: Array<PluginName>): Array<PluginName> {
 	// Use Asset Plugin
 	const useAssetConfigWebpackPlugin = !assetConfigWebpackPluginChildren.some(
-		(moduleName) => !moduleNamesForConfiguration.includes(moduleName)
+		(moduleName) => moduleNamesForConfiguration.indexOf(moduleName) === -1
 	);
 	if (useAssetConfigWebpackPlugin) {
 		moduleNamesForConfiguration = moduleNamesForConfiguration.filter(
-			(moduleName) => !assetConfigWebpackPluginChildren.includes(moduleName)
+			(moduleName) => assetConfigWebpackPluginChildren.indexOf(moduleName) === -1
 		);
 		moduleNamesForConfiguration.push('asset-config-webpack-plugin');
 	}
 	// Use common config plugin
 	const useCommonConfigWebpackPlugin = !commonConfigWebpackPluginChildren.some(
-		(moduleName) => !moduleNamesForConfiguration.includes(moduleName)
+		(moduleName) => moduleNamesForConfiguration.indexOf(moduleName) === -1
 	);
 	if (useCommonConfigWebpackPlugin) {
 		moduleNamesForConfiguration = moduleNamesForConfiguration.filter(
-			(moduleName) => !commonConfigWebpackPluginChildren.includes(moduleName)
+			(moduleName) => commonConfigWebpackPluginChildren.indexOf(moduleName) === -1
 		);
 		moduleNamesForConfiguration.push('common-config-webpack-plugin');
 	}
@@ -190,7 +203,7 @@ function unqiue<U extends string, T extends Array<any> = Array<U>>(array: T): T 
 	return Array.from(new Set(array).keys()) as T;
 }
 
-export function getConfigurations(configOptions: ConfigLoaderTypeOptions): GeneratedConfigs {
+export function generateConfigurations(configOptions: ConfigLoaderTypeOptions): GeneratedConfigs {
 	const moduleNames = unqiue(combinePluginsToWrappers(getModuleNamesForConfiguration(configOptions)));
 	moduleNames.sort();
 	const dependencsToInstall: Array<string> = [];
@@ -217,13 +230,13 @@ export function getConfigurations(configOptions: ConfigLoaderTypeOptions): Gener
 	return {
 		npmInstall: uniqueDependencsToInstall.length ? `${[''].concat(uniqueDependencsToInstall).join(' ')}` : '',
 		webpackConfig: pluginImports.length
-			? `${pluginImports.join('\n')}
+			? `${pluginImports.join(';\n')};
 
 module.exports = {
   plugins: [
-    ${pluginConfigurations.join(',\n    ')}
-  ]
-}
+    ${pluginConfigurations.join(',\n    ')},
+  ],
+};
 `
 			: '',
 	};
