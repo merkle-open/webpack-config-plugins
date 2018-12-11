@@ -8,10 +8,14 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) 
 [![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-green.svg)](https://github.com/prettier/prettier)
 
-Generator for a basic webpack environment
+CLI version of https://webpack-config-plugins.js.org/
+
+Will generate a tiny flexible webpack base configuration.
 
 ## Run
 
 ```bash
 npx generate-webpack-config
 ```
+
+For details on the project take a look at https://github.com/namics/webpack-config-plugins
