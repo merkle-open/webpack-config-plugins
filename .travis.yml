@@ -1,10 +1,109 @@
 language: node_js
 sudo: false
+
 node_js:
   - '10'
   - '8'
   - '6'
-before_install:
-- npm i -g npm@6.4.1
-install:
-- travis_retry npm install
+
+os:
+  - linux
+
+stages:
+  - test
+  - performance
+
+jobs:
+  include:
+
+    - stage: test
+      before_install:
+      - npm i -g npm@6.4.1
+      install:
+      - travis_retry npm install
+
+    - stage: performance
+      name: "webpack-dev-server typescript"
+      env:
+        - transpiler="typescript"
+      sudo: false
+      node_js:
+        - '10'
+      install:
+        - travis_retry npm install
+        - cd performance
+        - travis_retry npm install
+      script:
+        - node measure-dev-server.js
+
+    - stage: performance
+      name: "webpack-dev-server babel"
+      env:
+        - transpiler="babel"
+      sudo: false
+      node_js:
+        - '10'
+      install:
+        - travis_retry npm install
+        - cd performance
+        - travis_retry npm install
+      script:
+        - node measure-dev-server.js
+
+    - stage: performance
+      name: "webpack-dev-server typescript - components x 10"
+      env:
+        - transpiler="typescript"
+        - moduleMultiplier="10"
+      sudo: false
+      node_js:
+        - '10'
+      install:
+        - travis_retry npm install
+        - cd performance
+        - travis_retry npm install
+      script:
+        - node measure-dev-server.js
+
+    - stage: performance
+      name: "webpack-dev-server babel - components x 10"
+      env:
+        - transpiler="babel"
+        - moduleMultiplier="10"
+      sudo: false
+      node_js:
+        - '10'
+      install:
+        - travis_retry npm install
+        - cd performance
+        - travis_retry npm install
+      script:
+        - node measure-dev-server.js
+
+    - stage: performance
+      name: "webpack-cli typescript"
+      env:
+        - transpiler="typescript"
+      sudo: false
+      node_js:
+        - '10'
+      install:
+        - travis_retry npm install
+        - cd performance
+        - travis_retry npm install
+      script:
+        - node measure-cli-build.js
+
+    - stage: performance
+      name: "webpack-cli babel"
+      env:
+        - transpiler="babel"
+      sudo: false
+      node_js:
+        - '10'
+      install:
+        - travis_retry npm install
+        - cd performance
+        - travis_retry npm install
+      script:
+        - node measure-cli-build.js
