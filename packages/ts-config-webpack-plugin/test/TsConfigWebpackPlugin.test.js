@@ -180,7 +180,8 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		compiler.run((err, stats) => {
 			console.warn = origWarn;
 			expect(Boolean(warnMessage)).toEqual(true);
-			expect(warnMessage).toMatchSnapshot();
+			const rootPath = path.resolve(__dirname, '..');
+			expect(warnMessage.replace(rootPath, './')).toMatchSnapshot();
 			done();
 		});
 	});

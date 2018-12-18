@@ -12,6 +12,7 @@
 const typescript = require('typescript');
 const fs = require('fs');
 const path = require('path');
+const { getTsConfigWarnings } = require('./TsConfigValidator');
 
 class TsConfigWebpackPlugin {
 	/**
@@ -41,36 +42,6 @@ class TsConfigWebpackPlugin {
 	}
 
 	/**
-	 * Check for known TSConfig issues and output warnings
-	 * @param {string} configFilePath
-	 */
-	verifiyTsConfig(configFilePath) {
-		const createConfigFileHost = {
-			onUnRecoverableConfigFileDiagnostic() {},
-			useCaseSensitiveFileNames: false,
-			readDirectory: typescript.sys.readDirectory,
-			fileExists: typescript.sys.fileExists,
-			readFile: typescript.sys.readFile,
-			getCurrentDirectory: typescript.sys.getCurrentDirectory,
-		};
-		const tsconfig = typescript.getParsedCommandLineOfConfigFile(configFilePath, {}, createConfigFileHost);
-		if (!tsconfig) {
-			console.warn(`⚠️ Warning: could not parse "${configFilePath}".`);
-			return;
-		}
-		if (tsconfig.options.skipLibCheck === undefined) {
-			console.warn(
-				'⚠️ Warning: skipLibCheck option was NOT specified\n' +
-					'By default the fork-ts-checker-webpack-plugin will check all types inside the node_modules directory\n' +
-					'even for unused dependencies and slow down the type checking a lot.\n' +
-					'To skip that checking add the following line to your tsconfig.json compilerOptions configuration:\n' +
-					'"skipLibCheck": true\n' +
-					'To keep the default behaviour with possible performance penalties set skipLibCheck to false to hide this warning.\n'
-			);
-		}
-	}
-
-	/**
 	 * @param {WebpackCompiler} compiler
 	 */
 	apply(compiler) {
@@ -84,7 +55,10 @@ class TsConfigWebpackPlugin {
 				? options.mode === 'production'
 				: compiler.options.mode === 'production' || !compiler.options.mode;
 		// Verify Config for common tsconfig issues
-		this.verifiyTsConfig(options.configFile);
+		const warnings = getTsConfigWarnings(options.configFile);
+		if (warnings) {
+			console.warn(warnings);
+		}
 		// Get Typescript config
 		const config = isProductionLikeMode
 			? require('../config/production.config')(options)
