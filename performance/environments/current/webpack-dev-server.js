@@ -10,7 +10,7 @@ session.connect();
 
 session.post('Profiler.enable', () => {
 	session.post('Profiler.start', () => {
-		require('../node_modules/.bin/webpack-dev-server');
+		require('./node_modules/.bin/webpack-dev-server');
 	});
 });
 

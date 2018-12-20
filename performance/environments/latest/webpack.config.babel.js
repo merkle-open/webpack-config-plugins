@@ -1,8 +1,9 @@
-const ImagesConfigWebpackPlugin = require('image-config-webpack-plugin-current');
-const JsConfigWebpackPlugin = require('js-config-webpack-plugin-current');
-const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin-current');
+const ImagesConfigWebpackPlugin = require('image-config-webpack-plugin');
+const JsConfigWebpackPlugin = require('js-config-webpack-plugin');
+const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
 
 module.exports = {
+	context: __dirname,
 	plugins: [
 		// File loader configuration for .gif .jpg .jpeg .png and .svg files
 		// see https://github.com/namics/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin/config

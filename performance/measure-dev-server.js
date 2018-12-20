@@ -3,7 +3,8 @@ const { exec } = require('child_process');
 const fs = require('fs');
 const { promisify } = require('util');
 const rimrafAsync = promisify(rimraf);
-const { generateProject, copyPlugins } = require('./libs/project-generator');
+const { generateProject } = require('./libs/project-generator');
+const { installPackages } = require('./libs/install-environment');
 const { outputTimings, calculateTimings } = require('./libs/time-calculations');
 
 const transpilerSettings = {
@@ -41,19 +42,16 @@ async function sleep(time) {
 	Sleep --> TriggerBuild(Modify a watched file)
 	TriggerBuild --> |Incremental compile| Wait
  */
-async function launchWebpackDevServer(args, onReady) {
+
+async function launchWebpackDevServer(args, environmentName, onReady) {
 	let runs = 0;
 	let startTime;
-	const commands = {
-		profiling: 'node libs/webpack-dev-server.js',
-		direct: 'node_modules/.bin/webpack-dev-server',
-	};
 	// Workaround for Travis to forward kill commands
 	const shell = require('path').sep === '\\' ? undefined : '/bin/bash';
 	return new Promise((resolve, reject) => {
 		const timings = [];
 		const webpackDevServerProcess = exec(
-			commands.profiling + ' ' + args,
+			`node environments/${environmentName}/webpack-dev-server ${args}`,
 			{
 				maxBuffer: 1024 * 1000,
 				detached: false,
@@ -87,35 +85,35 @@ async function launchWebpackDevServer(args, onReady) {
 (async () => {
 	process.cwd(__dirname);
 
-	await copyPlugins();
-
 	await rimrafAsync('./profiles');
 
 	// Configs as in webpack.config.NAME.js
-	const configs = ['current', 'latest'];
+	const environments = ['current', 'latest'];
 	const results = {};
 	let generatedComponentCount;
 
-	for (let i = 0; i < configs.length; i++) {
-		const configName = configs[i];
+	for (let i = 0; i < environments.length; i++) {
+		const environmentName = environments[i];
+		await installPackages(environmentName);
 		// DEV Server
 		console.log('\n------------------------------');
-		console.log('🚀 Start ' + configName);
+		console.log('🚀 Start ' + environmentName);
 		console.log('------------------------------\n');
-		generatedComponentCount = await generateProject(transpiler, projectModuleCountMultiplier);
+		generatedComponentCount = await generateProject(transpiler, environmentName, projectModuleCountMultiplier);
 		const timings = await launchWebpackDevServer(
-			`--mode development --config webpack.config.${configName}.${transpiler}.js`,
+			`--mode development --config environments/${environmentName}/webpack.config.${transpiler}.js`,
+			environmentName,
 			(run) => {
-				if (run > 20) {
+				if (run > 30) {
 					// Kill dev server:
 					return false;
 				}
 				console.log('\n------------------------------');
-				console.log('🎬  Run ' + configName, run);
+				console.log('🎬  Run ' + environmentName, run);
 				console.log('------------------------------\n');
 				fs.writeFileSync(
-					`src/index.${transpilerExt}`,
-					fs.readFileSync(`src/index.${transpilerExt}`) + '\n// ' + run
+					`environments/${environmentName}/src/index.${transpilerExt}`,
+					fs.readFileSync(`environments/${environmentName}/src/index.${transpilerExt}`) + '\n// ' + run
 				);
 				// Keep dev server alive:
 				return true;
@@ -123,9 +121,9 @@ async function launchWebpackDevServer(args, onReady) {
 		);
 
 		console.log('\n------------------------------');
-		outputTimings('DevServer ' + configName, timings.slice(1));
+		outputTimings('DevServer ' + environmentName, timings.slice(1));
 		console.log('------------------------------\n');
-		results[configName] = calculateTimings(timings.slice(1));
+		results[environmentName] = calculateTimings(timings.slice(1));
 	}
 
 	console.log('\n------------------------------');

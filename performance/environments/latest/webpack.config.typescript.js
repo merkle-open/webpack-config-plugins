@@ -3,6 +3,7 @@ const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
 const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');
 
 module.exports = {
+	context: __dirname,
 	plugins: [
 		// File loader configuration for .gif .jpg .jpeg .png and .svg files
 		// see https://github.com/namics/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin/config
