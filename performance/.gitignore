@@ -1,4 +1,5 @@
-src
+environments/*/src
 profiles
 tsconfig.json
 package-lock.json
+packages

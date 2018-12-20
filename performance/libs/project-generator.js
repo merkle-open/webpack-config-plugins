@@ -9,24 +9,23 @@ const { promisify } = require('util');
 const execAsync = promisify(exec);
 const rimrafAsync = promisify(rimraf);
 const writeFileAsync = promisify(fs.writeFile);
-const mkDirAsync = promisify(fs.mkdir);
 const path = require('path');
-var copy = require('copy');
-const copyAsync = promisify(copy);
 
 /**
  * Generate 100 components (multiplied by the `projectModuleCountMultiplier`)
  * to the src folder
  *
  * @param {"babel" | "typescript"} transpiler
+ * @param {"current" | "latest"} environmentName
  * @param {number} [projectModuleCountMultiplier]
  *
  * Returns the amount of generated components
  */
-async function generateProject(transpiler, projectModuleCountMultiplier = 1) {
+async function generateProject(transpiler, environmentName, projectModuleCountMultiplier = 1) {
+	const cwdBefore = process.cwd();
 	// create-react-component-folder works only with relative paths
 	// there fore we set it to the project root
-	process.cwd(path.resolve(__dirname, '..'));
+	process.chdir(path.resolve(__dirname, '..', 'environments', environmentName));
 
 	const baseAtoms = [
 		'Address',
@@ -242,6 +241,7 @@ async function generateProject(transpiler, projectModuleCountMultiplier = 1) {
 		await writeFileAsync('./tsconfig.json', JSON.stringify(tsConfig, null, 2));
 	}
 
+	process.chdir(cwdBefore);
 	return atoms.length + molecules.length;
 }
 
@@ -256,31 +256,6 @@ async function generateComponents(rootPath, componentNames, { typescript, scss }
 	);
 }
 
-/**
- * Copy the webpack-config-plugins without node_modules from
- */
-async function copyPlugins() {
-	const plugins = [
-		'ts-config-webpack-plugin',
-		'js-config-webpack-plugin',
-		'scss-config-webpack-plugin',
-		'image-config-webpack-plugin',
-	];
-	for (let i = 0; i < plugins.length; i++) {
-		const pluginName = plugins[i];
-		const nodeModulesPath = path.resolve(__dirname, '../node_modules/');
-		const newPluginName = path.join(nodeModulesPath, pluginName + '-current');
-		const sourcePluginPath = path.resolve(__dirname, '../../packages/', pluginName);
-		await rimrafAsync(newPluginName);
-		await mkDirAsync(newPluginName);
-		await copyAsync(sourcePluginPath + '/*', newPluginName);
-		await copyAsync(sourcePluginPath + '/src/**', path.join(newPluginName, 'src'));
-		await copyAsync(sourcePluginPath + '/config/**', path.join(newPluginName, 'config'));
-		await copyAsync(sourcePluginPath + '/config/.*', path.join(newPluginName, 'config'));
-	}
-}
-
 module.exports = {
-	copyPlugins,
 	generateProject,
 };

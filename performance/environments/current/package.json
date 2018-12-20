@@ -1,0 +1,31 @@
+{
+  "name": "webpack-performance-current",
+  "private": true,
+  "description": "Test the performance",
+  "engines": {
+    "npm": ">=5",
+    "node": ">=6"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.2",
+    "@babel/preset-env": "7.2.0",
+    "@babel/preset-react": "7.0.0",
+    "copy": "0.3.2",
+    "create-react-component-folder": "0.1.26",
+    "image-config-webpack-plugin": "file:../../packages/image-config-webpack-plugin.tgz",
+    "js-config-webpack-plugin": "file:../../packages/js-config-webpack-plugin.tgz",
+    "rimraf": "2.6.2",
+    "scss-config-webpack-plugin": "file:../../packages/scss-config-webpack-plugin.tgz",
+    "ts-config-webpack-plugin": "file:../../packages/ts-config-webpack-plugin.tgz",
+    "typescript": "3.2.2",
+    "webpack": "4.27.1",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.10"
+  },
+  "dependencies": {
+    "@types/react": "16.7.17",
+    "@types/react-dom": "16.0.11",
+    "react": "16.6.3",
+    "react-dom": "16.6.3"
+  }
+}
