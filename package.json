@@ -18,6 +18,7 @@
     "posttest": "npm run lint",
     "test": "lerna exec --concurrency 1 -- npm test",
     "update-snapshots": "lerna exec -- npm run update-snapshots",
+    "upgrade-interactive": "lerna exec --concurrency 1 -- npx npm-check --update",
     "prettier": "prettier --write \"**/*.*(js|jsx|ts|tsx|json)\"",
     "release": "lerna publish --conventional-commits --reject-cycles --allow-branch master"
   },
