@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "babel-loader": "^8.0.0-beta.4",
-    "thread-loader": "^1.2.0"
+    "thread-loader": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
