@@ -61,7 +61,7 @@
   "dependencies": {
     "cache-loader": "^1.2.2",
     "fork-ts-checker-webpack-plugin": "^0.4.8",
-    "thread-loader": "^1.2.0",
+    "thread-loader": "^2.1.0",
     "ts-loader": "^4.4.2",
     "tslint": "^5.10.0"
   },
