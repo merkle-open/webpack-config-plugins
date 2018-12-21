@@ -32,8 +32,8 @@ describe('TsConfigWebpackPlugin standalone', () => {
 	it('should find a relative located tsconfig.json file', () => {
 		const options = {};
 		const instance = new TsConfigWebpackPlugin(options);
-		const resolvedPath = instance.resolveTsConfigFilePath(__dirname);
-		expect(resolvedPath).toEqual(path.resolve(__dirname, '../tsconfig.json'));
+		const resolvedPath = instance.resolveTsConfigFilePath(__dirname).replace(/\\/g, '/');
+		expect(resolvedPath).toEqual(path.resolve(__dirname, '../tsconfig.json').replace(/\\/g, '/'));
 	});
 });
 
