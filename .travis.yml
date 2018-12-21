@@ -18,7 +18,7 @@ jobs:
 
     - stage: test
       before_install:
-      - npm i -g npm@6.4.1
+      - npm i -g npm@latest
       install:
       - travis_retry npm install
 
