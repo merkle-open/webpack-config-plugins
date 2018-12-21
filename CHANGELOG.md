@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/namics/webpack-config-plugins/compare/v1.1.0...v1.2.0) (2018-12-21)
+
+
+### Bug Fixes
+
+* **js-config-webpack-plugin:** Upgrade thread-loader to improve incremental build speed ([1af6614](https://github.com/namics/webpack-config-plugins/commit/1af6614))
+* **ts-config-webpack-plugin:** Upgrade thread-loader to improve incremental build speed ([f211143](https://github.com/namics/webpack-config-plugins/commit/f211143))
+
+
+### Features
+
+* **ts-config-webpack-plugin:** Add a warning if no moduleResultion is set ([f3a4946](https://github.com/namics/webpack-config-plugins/commit/f3a4946))
+
+
+### Performance Improvements
+
+* Add performance measurements ([ec6baf4](https://github.com/namics/webpack-config-plugins/commit/ec6baf4))
+
+
+
+
+
 # [1.1.0](https://github.com/namics/webpack-config-plugins/compare/v1.0.0...v1.1.0) (2018-12-11)
 
 

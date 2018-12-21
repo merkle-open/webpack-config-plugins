@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/namics/webpack-config-plugins/compare/v1.1.0...v1.2.0) (2018-12-21)
+
+
+### Bug Fixes
+
+* **js-config-webpack-plugin:** Upgrade thread-loader to improve incremental build speed ([1af6614](https://github.com/namics/webpack-config-plugins/commit/1af6614))
+
+
+
+
+
 # [1.0.0](https://github.com/namics/webpack-config-plugins/compare/v0.4.4...v1.0.0) (2018-11-29)
 
 **Note:** Version bump only for package js-config-webpack-plugin
