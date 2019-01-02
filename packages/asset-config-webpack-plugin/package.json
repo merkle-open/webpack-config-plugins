@@ -4,7 +4,7 @@
   "bugs": "https://github.com/namics/webpack-config-plugins/issues",
   "homepage": "https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin",
   "repository": "https://github.com/namics/webpack-config-plugins.git",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Namics AG - Technology & Application",
   "license": "MIT",
   "main": "src/index.js",
@@ -50,8 +50,8 @@
     "webpack": ">=4.0.0"
   },
   "dependencies": {
-    "font-config-webpack-plugin": "^1.0.0",
-    "image-config-webpack-plugin": "^1.2.0"
+    "font-config-webpack-plugin": "^1.2.1",
+    "image-config-webpack-plugin": "^1.2.1"
   },
   "devDependencies": {
     "@types/jest": "23.3.10",

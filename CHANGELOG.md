@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/namics/webpack-config-plugins/compare/v1.2.0...v1.2.1) (2019-01-02)
+
+
+### Bug Fixes
+
+* **ts-config-webpack-plugin:** Add missing module-resolution property ([3dc7b60](https://github.com/namics/webpack-config-plugins/commit/3dc7b60))
+
+
+
+
+
 # [1.2.0](https://github.com/namics/webpack-config-plugins/compare/v1.1.0...v1.2.0) (2018-12-21)
 
 

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/namics/webpack-config-plugins/compare/v1.2.0...v1.2.1) (2019-01-02)
+
+**Note:** Version bump only for package font-config-webpack-plugin
+
+
+
+
+
 # [1.0.0](https://github.com/namics/webpack-config-plugins/compare/v0.4.4...v1.0.0) (2018-11-29)
 
 **Note:** Version bump only for package font-config-webpack-plugin
