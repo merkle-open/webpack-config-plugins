@@ -16,7 +16,6 @@ The injected configurations are based on [create-react-app css part](https://git
 ⚙️[development mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/scss-config-webpack-plugin/config/development.config.js)
 ⚙️[production mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/scss-config-webpack-plugin/config/production.config.js)
 
-
 ## Installation
 
 ```bash
@@ -39,7 +38,7 @@ module.exports = {
 
 ## Output filename
 
-Webpack allows to configure the ouput file name for `javascript` files with `output.filename`.
+Webpack allows to configure the output file name for `javascript` files with `output.filename`.
 By default the ScssConfigWebpackPlugin will reuse this option but will replace .js to .css and /js/ to /css/.
 
 ```js
@@ -65,7 +64,6 @@ module.exports = {
 }
 ```
 
-
 ### css modules
 
- Just as create-react-app the scss-config-webpack-plugin supports CSS Modules with the extension `.module.css` or `.module.scss`.
+Just as create-react-app the scss-config-webpack-plugin supports CSS Modules with the extension `.module.css` or `.module.scss`.

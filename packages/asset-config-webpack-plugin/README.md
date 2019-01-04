@@ -19,7 +19,7 @@ npm i --save-dev asset-config-webpack-plugin
 
 ## Webpack Config
 
-The `asset-config-webpack-plugin` is just a small convince wrapper arround the `image-config-plugin` and the `font-config-plugin` npm packages.  
+The `asset-config-webpack-plugin` is just a small convince wrapper around the `image-config-plugin` and the `font-config-plugin` npm packages.  
 
 ```js
 const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin');

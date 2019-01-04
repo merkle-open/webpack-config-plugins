@@ -67,7 +67,7 @@ webpack-dev-server --plugin common-config-webpack-plugin --plugin html-webpack-p
 
 ## Webpack Config
 
-Many projects will need some project specific options.  The `common-config-webpack-plugin` suite is designed to be plugable so you will be able to pick only what you need and combine it with your configuration. By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
+Many projects will need some project specific options.  The `common-config-webpack-plugin` suite is designed to be pluggable so you will be able to pick only what you need and combine it with your configuration. By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
 
 ```
 common-config-webpack-plugin
@@ -226,7 +226,7 @@ The `common-config-webpack-plugin` suite provides typechecks and integration tes
 
 ## Peer dependencies
 
-The `common-config-webpack-plugin` has a direct dependencies to babel and ts.  
+The `common-config-webpack-plugin` has direct dependencies to babel and ts.  
 However if you need to pick a specific version you can use the `js-config-webpack-plugin` or `ts-config-webpack-plugin` which use peer-dependencies instead.
 
 ## License
