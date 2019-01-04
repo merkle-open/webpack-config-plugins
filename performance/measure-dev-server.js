@@ -1,12 +1,14 @@
 const rimraf = require('rimraf');
-const { exec } = require('child_process');
+const { spawn } = require('child_process');
 const fs = require('fs');
 const { promisify } = require('util');
 const rimrafAsync = promisify(rimraf);
 const { generateProject } = require('./libs/project-generator');
 const { installPackages } = require('./libs/install-environment');
 const { outputTimings, calculateTimings } = require('./libs/time-calculations');
+const path = require('path');
 
+const measurements = 30;
 const transpilerSettings = {
 	babel: {
 		ext: 'js',
@@ -46,21 +48,23 @@ async function sleep(time) {
 async function launchWebpackDevServer(args, environmentName, onReady) {
 	let runs = 0;
 	let startTime;
-	// Workaround for Travis to forward kill commands
-	const shell = require('path').sep === '\\' ? undefined : '/bin/bash';
 	return new Promise((resolve, reject) => {
 		const timings = [];
-		const webpackDevServerProcess = exec(
-			`node environments/${environmentName}/webpack-dev-server ${args}`,
+
+		const webpackDevServerProcess = spawn(
+			'node',
+			[
+				path.resolve(`environments/${environmentName}/node_modules/webpack-dev-server/bin/webpack-dev-server`),
+			].concat(args.split(' ')),
 			{
-				maxBuffer: 1024 * 1000,
-				detached: false,
-				shell,
-			},
-			(err, result) => {
-				err ? reject(err) : resolve(timings);
+				stdio: ['pipe', 'pipe', 'inherit'],
 			}
 		);
+		webpackDevServerProcess.on('err', reject);
+		webpackDevServerProcess.on('close', (exitCode) =>
+			Number(exitCode) !== 0 ? reject(exitCode) : resolve(timings)
+		);
+
 		webpackDevServerProcess.stdout.pipe(process.stdout);
 		webpackDevServerProcess.stdout.on('data', async (data) => {
 			if (String(data).indexOf('Compiled successfully') !== -1) {
@@ -70,11 +74,11 @@ async function launchWebpackDevServer(args, environmentName, onReady) {
 					timings.push(elapsed);
 				}
 				// Wait for a moment to prevent running into thresholds
-				await sleep(2100);
+				await sleep(3500);
 				runs++;
 				const readyHandlerResult = onReady(runs);
 				if (!readyHandlerResult) {
-					webpackDevServerProcess.kill();
+					webpackDevServerProcess.stdin.end();
 				}
 				startTime = process.hrtime();
 			}
@@ -104,7 +108,7 @@ async function launchWebpackDevServer(args, environmentName, onReady) {
 			`--mode development --config environments/${environmentName}/webpack.config.${transpiler}.js`,
 			environmentName,
 			(run) => {
-				if (run > 30) {
+				if (run > measurements) {
 					// Kill dev server:
 					return false;
 				}
