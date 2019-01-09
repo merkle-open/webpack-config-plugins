@@ -66,14 +66,14 @@
     "tslint": "^5.12.0"
   },
   "devDependencies": {
-    "@types/jest": "23.3.10",
+    "@types/jest": "23.3.12",
     "@types/node": "10.12.18",
-    "@types/webpack": "4.4.21",
+    "@types/webpack": "4.4.22",
     "jest": "23.6.0",
-    "rimraf": "2.6.2",
+    "rimraf": "2.6.3",
     "sourcemap-validator": "1.1.0",
     "typescript": "3.2.2",
-    "webpack": "4.21.0"
+    "webpack": "4.28.1"
   },
   "jest": {
     "browser": false,

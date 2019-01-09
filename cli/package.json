@@ -54,12 +54,12 @@
   },
   "devDependencies": {
     "@types/node": "10.12.18",
-    "@types/webpack": "4.4.21",
+    "@types/webpack": "4.4.22",
     "inquirer": "6.2.1",
     "pkg-ok": "2.3.1",
     "ts-config-webpack-plugin": "^1.2.1",
     "typescript": "3.2.2",
-    "webpack": "4.21.0",
+    "webpack": "4.28.1",
     "webpack-cli": "3.1.2"
   },
   "engines": {
