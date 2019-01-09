@@ -14,7 +14,7 @@
     "create-react-component-folder": "0.1.26",
     "image-config-webpack-plugin": "*",
     "js-config-webpack-plugin": "*",
-    "rimraf": "2.6.2",
+    "rimraf": "2.6.3",
     "scss-config-webpack-plugin": "*",
     "ts-config-webpack-plugin": "*",
     "typescript": "3.2.2",

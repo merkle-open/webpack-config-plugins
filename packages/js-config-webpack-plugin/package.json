@@ -52,22 +52,22 @@
     "webpack": ">=4.0.0"
   },
   "dependencies": {
-    "babel-loader": "^8.0.0-beta.4",
-    "thread-loader": "^2.1.0"
+    "babel-loader": "^8.0.5",
+    "thread-loader": "^2.1.1"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
     "@babel/preset-env": "7.2.3",
     "@babel/preset-react": "7.0.0",
-    "@types/jest": "23.3.10",
+    "@types/jest": "23.3.12",
     "@types/node": "10.12.18",
-    "@types/webpack": "4.4.21",
+    "@types/webpack": "4.4.22",
     "jest": "23.6.0",
     "jsdom": "13.1.0",
-    "rimraf": "2.6.2",
+    "rimraf": "2.6.3",
     "sourcemap-validator": "1.1.0",
     "typescript": "3.2.2",
-    "webpack": "4.21.0"
+    "webpack": "4.28.1"
   },
   "jest": {
     "rootDir": "./",
