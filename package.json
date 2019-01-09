@@ -14,7 +14,7 @@
     "clean:modules": "npx rimraf node_modules",
     "commit": "git-cz",
     "lint": "npm run prettier",
-    "postinstall": "npm run bootstrap",
+    "postinstall": "npm rebuild node-sass && npm run bootstrap",
     "posttest": "npm run lint",
     "test": "lerna exec --concurrency 1 -- npm test",
     "update-snapshots": "lerna exec -- npm run update-snapshots",
