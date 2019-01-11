@@ -15,7 +15,7 @@ const transpiler = process.env.transpiler === 'babel' ? 'babel' : 'typescript';
 
 async function measure(name, prepare, execution) {
 	const timings = [];
-	const runCount = 3;
+	const runCount = 10;
 	console.log('🚀 Start ' + name);
 	for (let i = 0; i < runCount; i++) {
 		console.log('🎬 Run ', i);
@@ -71,6 +71,8 @@ async function measure(name, prepare, execution) {
 		}
 	);
 
+	const currentFileSizeInBytes = (await statAsync('dist/main.js')).size;
+
 	await measure(
 		'latest',
 		async () => {
@@ -81,11 +83,13 @@ async function measure(name, prepare, execution) {
 			await execAsync(`node_modules/.bin/webpack-cli --config webpack.config.${transpiler}.js --mode production`);
 		}
 	);
+	const latestFileSizeInBytes = (await statAsync('dist/main.js')).size;
 
-	const stats = await statAsync('dist/main.js');
-	const fileSizeInBytes = stats.size;
-	const fileSizeInMegabytes = fileSizeInBytes / 1000.0;
-	console.log('File Size of "dist/main.js"', fileSizeInMegabytes.toFixed(0), 'KB');
+	const currentFileSizeInMegabytes = (currentFileSizeInBytes / 1000.0).toFixed(0);
+	const latestFileSizeInMegabytes = (latestFileSizeInBytes / 1000.0).toFixed(0);
+
+	console.log('Current file size of "dist/main.js"', currentFileSizeInMegabytes, 'KB');
+	console.log('Latest file size of "dist/main.js"', latestFileSizeInMegabytes, 'KB');
 
 	console.log('done');
 })().catch((e) => {
