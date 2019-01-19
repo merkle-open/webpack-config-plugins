@@ -1,0 +1,420 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useClean","useCli","useCss","useDevServer","useFonts","useHtml","useImages","useJs","useScss","useTs"]} 1`] = `
+"
+✍️  Creating \\"webpack.config.js\\"
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  clean-webpack-plugin common-config-webpack-plugin html-webpack-plugin webpack webpack-cli webpack-dev-server
+
+
+Next steps:
+💡  Webpack will look for \\"src/index.ts\\" or \\"src/index.tsx\\" which you have to create manually.
+💡  Build your bundle with    webpack --mode production
+💡  Start the server with     webpack-dev-server --mode development
+💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+"
+`;
+
+exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useClean","useCli","useCss","useDevServer","useFonts","useHtml","useImages","useScss","useJs"]} 1`] = `
+"
+✍️  Creating \\"webpack.config.js\\"
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react asset-config-webpack-plugin clean-webpack-plugin html-webpack-plugin js-config-webpack-plugin scss-config-webpack-plugin webpack webpack-cli webpack-dev-server
+
+
+Next steps:
+💡  Webpack will look for \\"src/index.js\\" which you have to create manually.
+💡  Build your bundle with    webpack --mode production
+💡  Start the server with     webpack-dev-server --mode development
+💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+"
+`;
+
+exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useClean","useCli","useCss","useDevServer","useFonts","useHtml","useImages","useScss","useTs"]} 1`] = `
+"
+✍️  Creating \\"webpack.config.js\\"
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  asset-config-webpack-plugin clean-webpack-plugin html-webpack-plugin scss-config-webpack-plugin ts-config-webpack-plugin typescript webpack webpack-cli webpack-dev-server
+
+
+Next steps:
+💡  Webpack will look for \\"src/index.ts\\" or \\"src/index.tsx\\" which you have to create manually.
+💡  Build your bundle with    webpack --mode production
+💡  Start the server with     webpack-dev-server --mode development
+💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+"
+`;
+
+exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useCli","useJs"]} 1`] = `
+"
+✍️  Creating \\"webpack.config.js\\"
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react js-config-webpack-plugin webpack webpack-cli
+
+
+Next steps:
+💡  Webpack will look for \\"src/index.js\\" which you have to create manually.
+💡  Build your bundle with    webpack --mode production
+💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+"
+`;
+
+exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useCli","useTs"]} 1`] = `
+"
+✍️  Creating \\"webpack.config.js\\"
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  ts-config-webpack-plugin typescript webpack webpack-cli
+
+
+Next steps:
+💡  Webpack will look for \\"src/index.ts\\" or \\"src/index.tsx\\" which you have to create manually.
+💡  Build your bundle with    webpack --mode production
+💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+"
+`;
+
+exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useDevServer","useJs","useImages","useScss"]} 1`] = `
+"
+✍️  Creating \\"webpack.config.js\\"
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react image-config-webpack-plugin js-config-webpack-plugin scss-config-webpack-plugin webpack webpack-dev-server
+
+
+Next steps:
+💡  Webpack will look for \\"src/index.js\\" which you have to create manually.
+💡  Start the server with     webpack-dev-server --mode development
+💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+"
+`;
+
+exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useDevServer","useJs"]} 1`] = `
+"
+✍️  Creating \\"webpack.config.js\\"
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react js-config-webpack-plugin webpack webpack-dev-server
+
+
+Next steps:
+💡  Webpack will look for \\"src/index.js\\" which you have to create manually.
+💡  Start the server with     webpack-dev-server --mode development
+💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+"
+`;
+
+exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useDevServer","useTs","useImages","useScss"]} 1`] = `
+"
+✍️  Creating \\"webpack.config.js\\"
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  image-config-webpack-plugin scss-config-webpack-plugin ts-config-webpack-plugin typescript webpack webpack-dev-server
+
+
+Next steps:
+💡  Webpack will look for \\"src/index.ts\\" or \\"src/index.tsx\\" which you have to create manually.
+💡  Start the server with     webpack-dev-server --mode development
+💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+"
+`;
+
+exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useDevServer","useTs"]} 1`] = `
+"
+✍️  Creating \\"webpack.config.js\\"
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  ts-config-webpack-plugin typescript webpack webpack-dev-server
+
+
+Next steps:
+💡  Webpack will look for \\"src/index.ts\\" or \\"src/index.tsx\\" which you have to create manually.
+💡  Start the server with     webpack-dev-server --mode development
+💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+"
+`;
+
+exports[`cli it output the correct webpack.config.js content for {"options":["useClean","useCli","useCss","useDevServer","useFonts","useHtml","useImages","useJs","useScss","useTs"]} 1`] = `
+"
+⚠️ Skipping writing webpack.config.js
+💡  Add the following code to your webpack.config.js:
+
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CommonConfigWebpackPlugin = require('common-config-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  plugins: [
+    // Cleans the dist folder before the build starts
+    new CleanWebpackPlugin(['dist']),
+    // Multi threading babel loader configuration with caching for .js and .jsx files
+    // Multi threading typescript loader configuration with caching for .ts and .tsx files
+    // SCSS Configuration for .css .module.css and .scss .module.scss files
+    // File loader configuration for .woff and .woff2 files
+    // File loader configuration for .gif .jpg .jpeg .png and .svg files
+    // https://github.com/namics/webpack-config-plugins/
+    new CommonConfigWebpackPlugin(),
+    // Generate a base html file and injects all generated css and js files
+    new HtmlWebpackPlugin(),
+  ],
+};
+
+
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  clean-webpack-plugin common-config-webpack-plugin html-webpack-plugin webpack webpack-cli webpack-dev-server
+
+"
+`;
+
+exports[`cli it output the correct webpack.config.js content for {"options":["useClean","useCli","useCss","useDevServer","useFonts","useHtml","useImages","useScss","useJs"]} 1`] = `
+"
+⚠️ Skipping writing webpack.config.js
+💡  Add the following code to your webpack.config.js:
+
+const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const JsConfigWebpackPlugin = require('js-config-webpack-plugin');
+const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
+
+module.exports = {
+  plugins: [
+    // File loader configuration for .woff and .woff2 files
+    // File loader configuration for .gif .jpg .jpeg .png and .svg files
+    // https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin
+    new AssetConfigWebpackPlugin(),
+    // Cleans the dist folder before the build starts
+    new CleanWebpackPlugin(['dist']),
+    // Generate a base html file and injects all generated css and js files
+    new HtmlWebpackPlugin(),
+    // Multi threading babel loader configuration with caching for .js and .jsx files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin/config
+    new JsConfigWebpackPlugin(),
+    // SCSS Configuration for .css .module.css and .scss .module.scss files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/scss-config-webpack-plugin/config
+    new ScssConfigWebpackPlugin(),
+  ],
+};
+
+
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react asset-config-webpack-plugin clean-webpack-plugin html-webpack-plugin js-config-webpack-plugin scss-config-webpack-plugin webpack webpack-cli webpack-dev-server
+
+"
+`;
+
+exports[`cli it output the correct webpack.config.js content for {"options":["useClean","useCli","useCss","useDevServer","useFonts","useHtml","useImages","useScss","useTs"]} 1`] = `
+"
+⚠️ Skipping writing webpack.config.js
+💡  Add the following code to your webpack.config.js:
+
+const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
+const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');
+
+module.exports = {
+  plugins: [
+    // File loader configuration for .woff and .woff2 files
+    // File loader configuration for .gif .jpg .jpeg .png and .svg files
+    // https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin
+    new AssetConfigWebpackPlugin(),
+    // Cleans the dist folder before the build starts
+    new CleanWebpackPlugin(['dist']),
+    // Generate a base html file and injects all generated css and js files
+    new HtmlWebpackPlugin(),
+    // SCSS Configuration for .css .module.css and .scss .module.scss files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/scss-config-webpack-plugin/config
+    new ScssConfigWebpackPlugin(),
+    // Multi threading typescript loader configuration with caching for .ts and .tsx files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/ts-config-webpack-plugin/config
+    new TsConfigWebpackPlugin(),
+  ],
+};
+
+
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  asset-config-webpack-plugin clean-webpack-plugin html-webpack-plugin scss-config-webpack-plugin ts-config-webpack-plugin typescript webpack webpack-cli webpack-dev-server
+
+"
+`;
+
+exports[`cli it output the correct webpack.config.js content for {"options":["useCli","useJs"]} 1`] = `
+"
+⚠️ Skipping writing webpack.config.js
+💡  Add the following code to your webpack.config.js:
+
+const JsConfigWebpackPlugin = require('js-config-webpack-plugin');
+
+module.exports = {
+  plugins: [
+    // Multi threading babel loader configuration with caching for .js and .jsx files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin/config
+    new JsConfigWebpackPlugin(),
+  ],
+};
+
+
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react js-config-webpack-plugin webpack webpack-cli
+
+"
+`;
+
+exports[`cli it output the correct webpack.config.js content for {"options":["useCli","useTs"]} 1`] = `
+"
+⚠️ Skipping writing webpack.config.js
+💡  Add the following code to your webpack.config.js:
+
+const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');
+
+module.exports = {
+  plugins: [
+    // Multi threading typescript loader configuration with caching for .ts and .tsx files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/ts-config-webpack-plugin/config
+    new TsConfigWebpackPlugin(),
+  ],
+};
+
+
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  ts-config-webpack-plugin typescript webpack webpack-cli
+
+"
+`;
+
+exports[`cli it output the correct webpack.config.js content for {"options":["useDevServer","useJs","useImages","useScss"]} 1`] = `
+"
+⚠️ Skipping writing webpack.config.js
+💡  Add the following code to your webpack.config.js:
+
+const ImagesConfigWebpackPlugin = require('image-config-webpack-plugin');
+const JsConfigWebpackPlugin = require('js-config-webpack-plugin');
+const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
+
+module.exports = {
+  plugins: [
+    // File loader configuration for .gif .jpg .jpeg .png and .svg files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin/config
+    new ImagesConfigWebpackPlugin(),
+    // Multi threading babel loader configuration with caching for .js and .jsx files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin/config
+    new JsConfigWebpackPlugin(),
+    // SCSS Configuration for .css .module.css and .scss .module.scss files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/scss-config-webpack-plugin/config
+    new ScssConfigWebpackPlugin(),
+  ],
+};
+
+
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react image-config-webpack-plugin js-config-webpack-plugin scss-config-webpack-plugin webpack webpack-dev-server
+
+"
+`;
+
+exports[`cli it output the correct webpack.config.js content for {"options":["useDevServer","useJs"]} 1`] = `
+"
+⚠️ Skipping writing webpack.config.js
+💡  Add the following code to your webpack.config.js:
+
+const JsConfigWebpackPlugin = require('js-config-webpack-plugin');
+
+module.exports = {
+  plugins: [
+    // Multi threading babel loader configuration with caching for .js and .jsx files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin/config
+    new JsConfigWebpackPlugin(),
+  ],
+};
+
+
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react js-config-webpack-plugin webpack webpack-dev-server
+
+"
+`;
+
+exports[`cli it output the correct webpack.config.js content for {"options":["useDevServer","useTs","useImages","useScss"]} 1`] = `
+"
+⚠️ Skipping writing webpack.config.js
+💡  Add the following code to your webpack.config.js:
+
+const ImagesConfigWebpackPlugin = require('image-config-webpack-plugin');
+const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
+const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');
+
+module.exports = {
+  plugins: [
+    // File loader configuration for .gif .jpg .jpeg .png and .svg files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin/config
+    new ImagesConfigWebpackPlugin(),
+    // SCSS Configuration for .css .module.css and .scss .module.scss files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/scss-config-webpack-plugin/config
+    new ScssConfigWebpackPlugin(),
+    // Multi threading typescript loader configuration with caching for .ts and .tsx files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/ts-config-webpack-plugin/config
+    new TsConfigWebpackPlugin(),
+  ],
+};
+
+
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  image-config-webpack-plugin scss-config-webpack-plugin ts-config-webpack-plugin typescript webpack webpack-dev-server
+
+"
+`;
+
+exports[`cli it output the correct webpack.config.js content for {"options":["useDevServer","useTs"]} 1`] = `
+"
+⚠️ Skipping writing webpack.config.js
+💡  Add the following code to your webpack.config.js:
+
+const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');
+
+module.exports = {
+  plugins: [
+    // Multi threading typescript loader configuration with caching for .ts and .tsx files
+    // see https://github.com/namics/webpack-config-plugins/tree/master/packages/ts-config-webpack-plugin/config
+    new TsConfigWebpackPlugin(),
+  ],
+};
+
+
+⚠️  Skipping NPM installation
+💡  To install the dependencies manually run:
+
+npm install --save-dev  ts-config-webpack-plugin typescript webpack webpack-dev-server
+
+"
+`;

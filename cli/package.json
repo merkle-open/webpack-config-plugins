@@ -53,10 +53,15 @@
     "test": "tsc"
   },
   "devDependencies": {
+    "@types/jest": "23.3.13",
     "@types/node": "10.12.18",
     "@types/webpack": "4.4.21",
     "inquirer": "6.2.1",
+    "jest": "23.6.0",
+    "mock-fs" : "4.7.0",
     "pkg-ok": "2.3.1",
+    "rimraf": "2.6.3",
+    "ts-jest": "23.10.5",
     "ts-config-webpack-plugin": "^1.2.1",
     "typescript": "3.2.2",
     "webpack": "4.21.0",
@@ -65,5 +70,8 @@
   "engines": {
     "npm": ">=5",
     "node": ">=6"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }

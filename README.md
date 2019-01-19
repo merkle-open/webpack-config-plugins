@@ -28,6 +28,15 @@ Instead of copying loader configs from github and stackoverflow you could just a
 <br>
 </div>
 
+## Quick overview
+
+```
+npx generate-webpack-config
+```
+
+Alternatively you can also use the [online config tool](https://webpack-config-plugins.js.org/) to get started.
+
+
 ## Zero Config example
 
 Webpack itself provides many defaults so you are able to run the `common-config-webpack-plugin` without a webpack.config file:
