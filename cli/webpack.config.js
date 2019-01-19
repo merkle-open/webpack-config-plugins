@@ -4,6 +4,9 @@ const webpack = require('webpack');
 module.exports = {
 	mode: 'production',
 	target: 'node',
+	entry: {
+		main: './cli/generate-webpack-config.ts',
+	},
 	output: {
 		filename: 'generate-webpack-config.js',
 	},
