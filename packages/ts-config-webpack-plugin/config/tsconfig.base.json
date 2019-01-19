@@ -1,8 +1,10 @@
 {
 	"compilerOptions": {
+		"module": "esnext",
 		"sourceMap": true,
 		"skipLibCheck": true,
 		"suppressOutputPathCheck": true,
-		"moduleResolution": "node"
+		"moduleResolution": "node",
+		"jsx": "react"
 	}
 }
