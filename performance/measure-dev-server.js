@@ -92,7 +92,7 @@ async function launchWebpackDevServer(args, environmentName, onReady) {
 	await rimrafAsync('./profiles');
 
 	// Configs as in webpack.config.NAME.js
-	const environments = ['current', 'latest'];
+	const environments = ['latest', 'current'];
 	const results = {};
 	let generatedComponentCount;
 
