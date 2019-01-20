@@ -54,7 +54,7 @@
     "file-loader": "^2.0.0"
   },
   "devDependencies": {
-    "@types/jest": "23.3.10",
+    "@types/jest": "23.3.13",
     "@types/node": "10.12.18",
     "@types/webpack": "4.4.21",
     "jest": "23.6.0",
