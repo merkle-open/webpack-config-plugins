@@ -4,7 +4,7 @@
   "bugs": "https://github.com/namics/webpack-config-plugins/issues",
   "homepage": "https://github.com/namics/webpack-config-plugins/",
   "repository": "https://github.com/namics/webpack-config-plugins.git",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "author": "Namics AG - Technology & Application",
   "license": "MIT",
   "bin": {
