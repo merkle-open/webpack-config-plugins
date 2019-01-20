@@ -13,7 +13,7 @@ Next steps:
 💡  Webpack will look for \\"src/index.ts\\" or \\"src/index.tsx\\" which you have to create manually.
 💡  Build your bundle with    webpack --mode production
 💡  Start the server with     webpack-dev-server --mode development
-💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+💡  For more information on available modes please go to https://webpack.js.org/concepts/mode/
 "
 `;
 
@@ -30,7 +30,7 @@ Next steps:
 💡  Webpack will look for \\"src/index.js\\" which you have to create manually.
 💡  Build your bundle with    webpack --mode production
 💡  Start the server with     webpack-dev-server --mode development
-💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+💡  For more information on available modes please go to https://webpack.js.org/concepts/mode/
 "
 `;
 
@@ -47,7 +47,7 @@ Next steps:
 💡  Webpack will look for \\"src/index.ts\\" or \\"src/index.tsx\\" which you have to create manually.
 💡  Build your bundle with    webpack --mode production
 💡  Start the server with     webpack-dev-server --mode development
-💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+💡  For more information on available modes please go to https://webpack.js.org/concepts/mode/
 "
 `;
 
@@ -63,7 +63,7 @@ npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react js-con
 Next steps:
 💡  Webpack will look for \\"src/index.js\\" which you have to create manually.
 💡  Build your bundle with    webpack --mode production
-💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+💡  For more information on available modes please go to https://webpack.js.org/concepts/mode/
 "
 `;
 
@@ -79,7 +79,7 @@ npm install --save-dev  ts-config-webpack-plugin typescript webpack webpack-cli
 Next steps:
 💡  Webpack will look for \\"src/index.ts\\" or \\"src/index.tsx\\" which you have to create manually.
 💡  Build your bundle with    webpack --mode production
-💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+💡  For more information on available modes please go to https://webpack.js.org/concepts/mode/
 "
 `;
 
@@ -95,7 +95,7 @@ npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react image-
 Next steps:
 💡  Webpack will look for \\"src/index.js\\" which you have to create manually.
 💡  Start the server with     webpack-dev-server --mode development
-💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+💡  For more information on available modes please go to https://webpack.js.org/concepts/mode/
 "
 `;
 
@@ -111,7 +111,7 @@ npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react js-con
 Next steps:
 💡  Webpack will look for \\"src/index.js\\" which you have to create manually.
 💡  Start the server with     webpack-dev-server --mode development
-💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+💡  For more information on available modes please go to https://webpack.js.org/concepts/mode/
 "
 `;
 
@@ -127,7 +127,7 @@ npm install --save-dev  image-config-webpack-plugin scss-config-webpack-plugin t
 Next steps:
 💡  Webpack will look for \\"src/index.ts\\" or \\"src/index.tsx\\" which you have to create manually.
 💡  Start the server with     webpack-dev-server --mode development
-💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+💡  For more information on available modes please go to https://webpack.js.org/concepts/mode/
 "
 `;
 
@@ -143,7 +143,7 @@ npm install --save-dev  ts-config-webpack-plugin typescript webpack webpack-dev-
 Next steps:
 💡  Webpack will look for \\"src/index.ts\\" or \\"src/index.tsx\\" which you have to create manually.
 💡  Start the server with     webpack-dev-server --mode development
-💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/
+💡  For more information on available modes please go to https://webpack.js.org/concepts/mode/
 "
 `;
 

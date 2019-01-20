@@ -103,14 +103,14 @@ export const generateConfigCli = async (cwd = process.cwd()) => {
 	// we can give him additional guidance on what to do next
 	const isDefaultWebpackConfig = !webpackConfigExist || userAllowsWebackOverwrite || !webpackConfigNeedsUpdateFs;
 	if (isDefaultWebpackConfig) {
-		const defaultSrcPath = path.resolve(process.cwd(), 'src');
+		const defaultSrcPath = path.resolve(cwd, 'src');
 		const doesEntryExist = await hasFile(defaultSrcPath, /^index\.(js|jsx|ts|tsx)$/);
 		const entryName = configOptions.useTs ? '"src/index.ts" or "src/index.tsx"' : '"src/index.js"';
 		console.log('\nNext steps:');
 		if (doesEntryExist) {
-			console.log(`💡  Webpack will look for ${entryName} which you have to create manually.`);
-		} else {
 			console.log(`💡  Webpack will use your ${entryName} for the build.`);
+		} else {
+			console.log(`💡  Webpack will look for ${entryName} which you have to create manually.`);
 		}
 		if (configOptions.useCli) {
 			console.log('💡  Build your bundle with    webpack --mode production');
@@ -120,7 +120,7 @@ export const generateConfigCli = async (cwd = process.cwd()) => {
 		}
 		if (configOptions.useCli || configOptions.useDevServer) {
 			console.log(
-				'💡  For more information on avaialble modes please go to https://webpack.js.org/concepts/mode/'
+				'💡  For more information on available modes please go to https://webpack.js.org/concepts/mode/'
 			);
 		}
 	}
