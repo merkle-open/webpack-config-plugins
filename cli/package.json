@@ -46,7 +46,8 @@
     "cli"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "webpack"
   },
   "devDependencies": {
     "@types/jest": "23.3.13",
