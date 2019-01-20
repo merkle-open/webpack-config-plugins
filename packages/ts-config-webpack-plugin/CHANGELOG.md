@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/namics/webpack-config-plugins/compare/v1.2.1...v1.3.0) (2019-01-20)
+
+
+### Features
+
+* **ts-config-webpack-plugin:** Allow to use .tsx files without creating a custom tsconfig ([e680c20](https://github.com/namics/webpack-config-plugins/commit/e680c20))
+* **ts-config-webpack-plugin:** Update thread-loader ([fca6d8f](https://github.com/namics/webpack-config-plugins/commit/fca6d8f))
+
+
+
+
+
 ## [1.2.1](https://github.com/namics/webpack-config-plugins/compare/v1.2.0...v1.2.1) (2019-01-02)
 
 
