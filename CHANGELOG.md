@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/namics/webpack-config-plugins/compare/v1.3.1...v1.3.2) (2019-01-20)
+
+
+### Bug Fixes
+
+* **cli:** Improve next steps documentation ([4416e02](https://github.com/namics/webpack-config-plugins/commit/4416e02))
+
+
+
+
+
 ## [1.3.1](https://github.com/namics/webpack-config-plugins/compare/v1.3.0...v1.3.1) (2019-01-20)
 
 
