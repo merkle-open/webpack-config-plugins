@@ -7,7 +7,7 @@ import { configOptionKeys, ConfigOptionKeys, configOptionLabels, generateConfigu
 export const generateConfigCli = async (cwd = process.cwd()) => {
 	// Check if we can write to the existing file:
 	const webpackConfigPath = path.resolve(cwd, 'webpack.config.js');
-
+	const defaultOptions: Array<ConfigOptionKeys> = ['useDevServer', 'useCli'];
 	const answers = (await inquirer.prompt([
 		{
 			type: 'checkbox',
@@ -17,6 +17,7 @@ export const generateConfigCli = async (cwd = process.cwd()) => {
 				value: key,
 				name: configOptionLabels[key],
 			})),
+			default: defaultOptions,
 		},
 	])) as { options: Array<ConfigOptionKeys> };
 	const { options } = answers;
@@ -36,7 +37,8 @@ export const generateConfigCli = async (cwd = process.cwd()) => {
 	const webpackConfigEqual = webpackConfigExist && readFileSync(webpackConfigPath, 'utf8') === result.webpackConfig;
 	const webpackConfigNeedsUpdateFs = webpackConfigExist === false || webpackConfigEqual === false;
 	const userAllowsWebackOverwrite =
-		webpackConfigNeedsUpdateFs &&
+		webpackConfigExist === false ||
+		webpackConfigEqual === true ||
 		(await inquirer
 			.prompt([
 				{
@@ -55,7 +57,7 @@ export const generateConfigCli = async (cwd = process.cwd()) => {
 	if (webpackConfigNeedsUpdateFs) {
 		if (userAllowsWebackOverwrite) {
 			console.log(
-				`✍️  ${webpackConfigExist ? 'Overwriting' : 'Creating'} "${path.relative(cwd, webpackConfigPath)}"`
+				`✍️  ${webpackConfigExist ? 'Overwriting' : 'Creating'} "${path.relative(cwd, webpackConfigPath)}"\n`
 			);
 			writeFileSync(webpackConfigPath, result.webpackConfig);
 		} else {
@@ -92,10 +94,10 @@ export const generateConfigCli = async (cwd = process.cwd()) => {
 			...result.npmInstall.split(' '),
 		]);
 		if (installSuceeded) {
-			console.log('✅  All dependencies were installed!');
+			console.log('✅  All dependencies were installed!\n');
 		}
 	} else {
-		console.log('⚠️  Skipping NPM installation');
+		console.log('⚠️  Skipping NPM installation\n');
 		console.log(`💡  To install the dependencies manually run:\n\nnpm install --save-dev ${result.npmInstall}\n`);
 	}
 

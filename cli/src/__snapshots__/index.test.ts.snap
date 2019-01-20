@@ -3,7 +3,9 @@
 exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useClean","useCli","useCss","useDevServer","useFonts","useHtml","useImages","useJs","useScss","useTs"]} 1`] = `
 "
 ✍️  Creating \\"webpack.config.js\\"
+
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  clean-webpack-plugin common-config-webpack-plugin html-webpack-plugin webpack webpack-cli webpack-dev-server
@@ -20,7 +22,9 @@ Next steps:
 exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useClean","useCli","useCss","useDevServer","useFonts","useHtml","useImages","useScss","useJs"]} 1`] = `
 "
 ✍️  Creating \\"webpack.config.js\\"
+
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react asset-config-webpack-plugin clean-webpack-plugin html-webpack-plugin js-config-webpack-plugin scss-config-webpack-plugin webpack webpack-cli webpack-dev-server
@@ -37,7 +41,9 @@ Next steps:
 exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useClean","useCli","useCss","useDevServer","useFonts","useHtml","useImages","useScss","useTs"]} 1`] = `
 "
 ✍️  Creating \\"webpack.config.js\\"
+
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  asset-config-webpack-plugin clean-webpack-plugin html-webpack-plugin scss-config-webpack-plugin ts-config-webpack-plugin typescript webpack webpack-cli webpack-dev-server
@@ -54,7 +60,9 @@ Next steps:
 exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useCli","useJs"]} 1`] = `
 "
 ✍️  Creating \\"webpack.config.js\\"
+
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react js-config-webpack-plugin webpack webpack-cli
@@ -70,7 +78,9 @@ Next steps:
 exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useCli","useTs"]} 1`] = `
 "
 ✍️  Creating \\"webpack.config.js\\"
+
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  ts-config-webpack-plugin typescript webpack webpack-cli
@@ -86,7 +96,9 @@ Next steps:
 exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useDevServer","useJs","useImages","useScss"]} 1`] = `
 "
 ✍️  Creating \\"webpack.config.js\\"
+
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react image-config-webpack-plugin js-config-webpack-plugin scss-config-webpack-plugin webpack webpack-dev-server
@@ -102,7 +114,9 @@ Next steps:
 exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useDevServer","useJs"]} 1`] = `
 "
 ✍️  Creating \\"webpack.config.js\\"
+
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react js-config-webpack-plugin webpack webpack-dev-server
@@ -118,7 +132,9 @@ Next steps:
 exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useDevServer","useTs","useImages","useScss"]} 1`] = `
 "
 ✍️  Creating \\"webpack.config.js\\"
+
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  image-config-webpack-plugin scss-config-webpack-plugin ts-config-webpack-plugin typescript webpack webpack-dev-server
@@ -134,7 +150,9 @@ Next steps:
 exports[`cli it logs a understandable instruction if webpack.config.js content is written {"options":["useDevServer","useTs"]} 1`] = `
 "
 ✍️  Creating \\"webpack.config.js\\"
+
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  ts-config-webpack-plugin typescript webpack webpack-dev-server
@@ -174,6 +192,7 @@ module.exports = {
 
 
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  clean-webpack-plugin common-config-webpack-plugin html-webpack-plugin webpack webpack-cli webpack-dev-server
@@ -213,6 +232,7 @@ module.exports = {
 
 
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react asset-config-webpack-plugin clean-webpack-plugin html-webpack-plugin js-config-webpack-plugin scss-config-webpack-plugin webpack webpack-cli webpack-dev-server
@@ -252,6 +272,7 @@ module.exports = {
 
 
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  asset-config-webpack-plugin clean-webpack-plugin html-webpack-plugin scss-config-webpack-plugin ts-config-webpack-plugin typescript webpack webpack-cli webpack-dev-server
@@ -276,6 +297,7 @@ module.exports = {
 
 
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react js-config-webpack-plugin webpack webpack-cli
@@ -300,6 +322,7 @@ module.exports = {
 
 
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  ts-config-webpack-plugin typescript webpack webpack-cli
@@ -332,6 +355,7 @@ module.exports = {
 
 
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react image-config-webpack-plugin js-config-webpack-plugin scss-config-webpack-plugin webpack webpack-dev-server
@@ -356,6 +380,7 @@ module.exports = {
 
 
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  @babel/core @babel/preset-env @babel/preset-react js-config-webpack-plugin webpack webpack-dev-server
@@ -388,6 +413,7 @@ module.exports = {
 
 
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  image-config-webpack-plugin scss-config-webpack-plugin ts-config-webpack-plugin typescript webpack webpack-dev-server
@@ -412,6 +438,7 @@ module.exports = {
 
 
 ⚠️  Skipping NPM installation
+
 💡  To install the dependencies manually run:
 
 npm install --save-dev  ts-config-webpack-plugin typescript webpack webpack-dev-server
