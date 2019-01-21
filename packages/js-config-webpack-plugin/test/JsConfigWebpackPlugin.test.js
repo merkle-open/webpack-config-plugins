@@ -114,6 +114,42 @@ describe('JsConfigWebpackPlugin inside context', () => {
 	it('should have the correct babelConfigFile option in development mode', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/babel');
 		const babelConfigFileContext = path.join(__dirname, '../config');
+		const babelConfigFileName = '.babelrc';
+
+		const instance = webpack({
+			mode: 'development',
+			context: webpackContext,
+			plugins: [new JsConfigWebpackPlugin()],
+		});
+
+		const ruleToTest = instance.options.module.rules[0];
+		const ruleOptions = ruleToTest.use[1].options;
+
+		expect(ruleOptions.extends).toEqual(path.resolve(webpackContext, babelConfigFileName));
+		done();
+	});
+
+	it('should have the correct babelConfigFile option in production mode', (done) => {
+		const webpackContext = path.join(__dirname, 'fixtures/babel');
+		const babelConfigFileContext = path.join(__dirname, '../config');
+		const babelConfigFileName = '.babelrc';
+
+		const instance = webpack({
+			mode: 'production',
+			context: webpackContext,
+			plugins: [new JsConfigWebpackPlugin()],
+		});
+
+		const ruleToTest = instance.options.module.rules[0];
+		const ruleOptions = ruleToTest.use[1].options;
+
+		expect(ruleOptions.extends).toEqual(path.resolve(webpackContext, babelConfigFileName));
+		done();
+	});
+
+	it('should load the babel fallback config', (done) => {
+		const webpackContext = path.join(__dirname, 'fixtures/babel-no-babel');
+		const babelConfigFileContext = path.join(__dirname, '../config');
 		const babelConfigFileName = '.babelrc.base.json';
 
 		const instance = webpack({
@@ -129,13 +165,13 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		done();
 	});
 
-	it('should have the correct babelConfigFile option in production mode', (done) => {
-		const webpackContext = path.join(__dirname, 'fixtures/babel');
+	it('should load the root babel config', (done) => {
+		const webpackContext = path.join(__dirname, 'fixtures/babel-root-babel');
 		const babelConfigFileContext = path.join(__dirname, '../config');
-		const babelConfigFileName = '.babelrc.base.json';
+		const babelConfigFileName = 'babel.config.js';
 
 		const instance = webpack({
-			mode: 'production',
+			mode: 'development',
 			context: webpackContext,
 			plugins: [new JsConfigWebpackPlugin()],
 		});
@@ -143,7 +179,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 		const ruleToTest = instance.options.module.rules[0];
 		const ruleOptions = ruleToTest.use[1].options;
 
-		expect(ruleOptions.extends).toEqual(path.resolve(babelConfigFileContext, babelConfigFileName));
+		expect(ruleOptions.extends).toEqual(path.resolve(webpackContext, babelConfigFileName));
 		done();
 	});
 
@@ -205,7 +241,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 	it('the correct base .babelrc file should be registered and invoked', (done) => {
 		const webpackContext = path.join(__dirname, 'fixtures/babel');
 		const babelConfigFileContext = path.join(__dirname, '../config');
-		const babelConfigFileName = '.babelrc.base.json';
+		const babelConfigFileName = '.babelrc';
 
 		const compiler = webpack({
 			mode: 'production',
@@ -218,7 +254,7 @@ describe('JsConfigWebpackPlugin inside context', () => {
 
 		// should not fail because base-file of babelrc has no errors
 		compiler.run((_, stats) => {
-			expect(ruleOptions.extends).toBe(path.resolve(babelConfigFileContext, babelConfigFileName));
+			expect(ruleOptions.extends).toBe(path.resolve(webpackContext, babelConfigFileName));
 			expect(stats.compilation.errors).toEqual([]);
 			done();
 		});
