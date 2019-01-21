@@ -10,8 +10,9 @@
 
 'use strict';
 const path = require('path');
-const findRelativeConfig = require('@babel/core/lib/config/files/configuration').findRelativeConfig;
 const findPackageData = require('@babel/core/lib/config/files/package').findPackageData;
+const findRelativeConfig = require('@babel/core/lib/config/files/configuration').findRelativeConfig;
+const findRootConfig = require('@babel/core/lib/config/files/configuration').findRootConfig;
 
 class JsConfigWebpackPlugin {
 	/**
@@ -30,11 +31,20 @@ class JsConfigWebpackPlugin {
 	resolveBabelConfigFilePath(contextPath, environmentName) {
 		// From https://github.com/babel/babel/blob/52a569056c6008c453bf26219461655c7d0322c4/packages/babel-core/src/config/files/package.js#L15
 		const packageData = findPackageData(contextPath);
+		// needed because babels `findRelativeConfig` search just in parent directories
+		packageData.directories.push(packageData.filepath);
 		// From https://github.com/babel/babel/blob/52a569056c6008c453bf26219461655c7d0322c4/packages/babel-core/src/config/files/configuration.js#L26
-		const resolvedFilePath = findRelativeConfig(packageData, environmentName);
+		const resolvedRelativeConfig = findRelativeConfig(packageData, environmentName);
+		const resolvedRootConfig = findRootConfig(packageData.filepath);
 
-		if (resolvedFilePath.config) {
-			return resolvedFilePath.config.filepath;
+		// babel.config.js
+		if (resolvedRootConfig && resolvedRootConfig.filepath) {
+			return resolvedRootConfig.filepath;
+		}
+
+		// .babelrc.js and .babelrc
+		if (resolvedRelativeConfig && resolvedRelativeConfig.config) {
+			return resolvedRelativeConfig.config.filepath;
 		}
 
 		console.warn(
