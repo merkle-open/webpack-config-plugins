@@ -35,7 +35,7 @@ class JsConfigWebpackPlugin {
 		packageData.directories.push(packageData.filepath);
 		// From https://github.com/babel/babel/blob/52a569056c6008c453bf26219461655c7d0322c4/packages/babel-core/src/config/files/configuration.js#L26
 		const resolvedRelativeConfig = findRelativeConfig(packageData, environmentName);
-		const resolvedRootConfig = findRootConfig(packageData.filepath);
+		const resolvedRootConfig = findRootConfig(packageData.filepath, environmentName);
 
 		// babel.config.js
 		if (resolvedRootConfig && resolvedRootConfig.filepath) {
