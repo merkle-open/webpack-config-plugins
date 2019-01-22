@@ -50,16 +50,16 @@
     "webpack": ">=4.0.0"
   },
   "dependencies": {
-    "cache-loader": "^1.2.2",
-    "file-loader": "^2.0.0"
+    "cache-loader": "^2.0.1",
+    "file-loader": "^3.0.1"
   },
   "devDependencies": {
-    "@types/jest": "23.3.12",
+    "@types/jest": "23.3.13",
     "@types/node": "10.12.18",
-    "@types/webpack": "4.4.22",
+    "@types/webpack": "4.4.23",
     "jest": "23.6.0",
     "rimraf": "2.6.3",
-    "typescript": "3.2.2",
+    "typescript": "3.2.4",
     "webpack": "4.29.0"
   },
   "jest": {
