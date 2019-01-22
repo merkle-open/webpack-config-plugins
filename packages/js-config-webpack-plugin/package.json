@@ -57,16 +57,16 @@
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
-    "@babel/preset-env": "7.2.3",
+    "@babel/preset-env": "7.3.1",
     "@babel/preset-react": "7.0.0",
-    "@types/jest": "23.3.12",
+    "@types/jest": "23.3.13",
     "@types/node": "10.12.18",
-    "@types/webpack": "4.4.22",
+    "@types/webpack": "4.4.23",
     "jest": "23.6.0",
     "jsdom": "13.1.0",
     "rimraf": "2.6.3",
     "sourcemap-validator": "1.1.0",
-    "typescript": "3.2.2",
+    "typescript": "3.2.4",
     "webpack": "4.29.0"
   },
   "jest": {
