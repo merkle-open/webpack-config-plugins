@@ -69,7 +69,7 @@
     "@types/webpack": "4.4.22",
     "jest": "23.6.0",
     "rimraf": "2.6.3",
-    "webpack": "4.28.1"
+    "webpack": "4.29.0"
   },
   "jest": {
     "browser": false,
