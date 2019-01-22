@@ -66,10 +66,10 @@
   "devDependencies": {
     "@types/jest": "23.3.13",
     "@types/node": "10.12.18",
-    "@types/webpack": "4.4.23",
+    "@types/webpack": "4.4.21",
     "jest": "23.6.0",
     "rimraf": "2.6.3",
-    "webpack": "4.29.0"
+    "webpack": "4.21.0"
   },
   "jest": {
     "browser": false,
