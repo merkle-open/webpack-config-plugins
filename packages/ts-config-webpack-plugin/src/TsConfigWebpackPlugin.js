@@ -38,7 +38,10 @@ class TsConfigWebpackPlugin {
 		console.warn(
 			"Couldn't find a tsconfig.json in the current working directory.\nYou can either set the configFile path explicitly or create a new config:\n  npx tsc --init"
 		);
-		return path.resolve(__dirname, '../config/tsconfig.base.json');
+		return path.resolve(
+			__dirname,
+			path.join('..', 'config', 'tsconfig.base.json')
+			);
 	}
 
 	/**
