@@ -33,7 +33,12 @@ describe('TsConfigWebpackPlugin standalone', () => {
 		const options = {};
 		const instance = new TsConfigWebpackPlugin(options);
 		const resolvedPath = instance.resolveTsConfigFilePath(__dirname);
-		expect(resolvedPath).toEqual(path.resolve(__dirname, path.join('..', 'tsconfig.json')));
+		expect(resolvedPath).toEqual(
+			path.resolve(
+				__dirname,
+				path.join('..', 'tsconfig.json')
+			)
+		);
 	});
 });
 
