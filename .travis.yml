@@ -3,6 +3,7 @@ sudo: false
 
 os:
   - linux
+  - windows
 
 node_js:
   - 'node'
