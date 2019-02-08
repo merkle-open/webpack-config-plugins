@@ -33,12 +33,7 @@ describe('TsConfigWebpackPlugin standalone', () => {
 		const options = {};
 		const instance = new TsConfigWebpackPlugin(options);
 		const resolvedPath = instance.resolveTsConfigFilePath(__dirname);
-		expect(resolvedPath).toEqual(
-			path.resolve(
-				__dirname,
-				path.join('..', 'tsconfig.json')
-			)
-		);
+		expect(resolvedPath).toEqual(path.resolve(__dirname, path.join('..', 'tsconfig.json')).replace(/\\/g, '/'));
 	});
 });
 
@@ -185,7 +180,7 @@ describe('TsConfigWebpackPlugin inside webpack context', () => {
 		compiler.run((err, stats) => {
 			console.warn = origWarn;
 			expect(Boolean(warnMessage)).toEqual(true);
-			const rootPath = path.resolve(__dirname, '..');
+			const rootPath = path.resolve(__dirname, '..').replace(/\\/g, '/');
 			expect(warnMessage.replace(rootPath, './')).toMatchSnapshot();
 			done();
 		});
