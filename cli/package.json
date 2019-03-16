@@ -47,6 +47,7 @@
   ],
   "scripts": {
     "test": "jest",
+    "test-update": "jest --updateSnapshot",
     "prepublishOnly": "webpack"
   },
   "devDependencies": {

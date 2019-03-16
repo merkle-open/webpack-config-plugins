@@ -95,7 +95,7 @@ const webpackPluginConfigurations: { [option in PluginName]: string | false } = 
 	'common-config-webpack-plugin': 'new CommonConfigWebpackPlugin()',
 	'asset-config-webpack-plugin': 'new AssetConfigWebpackPlugin()',
 	'html-webpack-plugin': 'new HtmlWebpackPlugin()',
-	'clean-webpack-plugin': `new CleanWebpackPlugin(['dist'])`,
+	'clean-webpack-plugin': `new CleanWebpackPlugin()`,
 	'webpack-dev-server': false,
 	'webpack-cli': false,
 };

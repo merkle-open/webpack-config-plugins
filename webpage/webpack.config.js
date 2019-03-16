@@ -11,7 +11,7 @@ module.exports = (_, { mode }) => ({
 	},
 	plugins: [
 		// Cleans the dist folder before the build starts
-		new CleanWebpackPlugin(['dist']),
+		new CleanWebpackPlugin(),
 		// Generate a base html file and injects all generated css and js files
 		new HtmlWebpackPlugin({ template: 'src/index.html' }),
 		// Multi threading typescript loader configuration with caching for .ts and .tsx files
