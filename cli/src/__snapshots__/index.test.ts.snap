@@ -177,7 +177,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   plugins: [
     // Cleans the dist folder before the build starts
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
     // Multi threading babel loader configuration with caching for .js and .jsx files
     // Multi threading typescript loader configuration with caching for .ts and .tsx files
     // SCSS Configuration for .css .module.css and .scss .module.scss files
@@ -218,7 +218,7 @@ module.exports = {
     // https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin
     new AssetConfigWebpackPlugin(),
     // Cleans the dist folder before the build starts
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
     // Generate a base html file and injects all generated css and js files
     new HtmlWebpackPlugin(),
     // Multi threading babel loader configuration with caching for .js and .jsx files
@@ -258,7 +258,7 @@ module.exports = {
     // https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin
     new AssetConfigWebpackPlugin(),
     // Cleans the dist folder before the build starts
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
     // Generate a base html file and injects all generated css and js files
     new HtmlWebpackPlugin(),
     // SCSS Configuration for .css .module.css and .scss .module.scss files
