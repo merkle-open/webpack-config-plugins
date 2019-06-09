@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/namics/webpack-config-plugins/compare/v1.3.3...v1.3.4) (2019-06-09)
+
+
+### Bug Fixes
+
+* **cli:** update clean-webpack-plugin and remove unneeded argument ([#54](https://github.com/namics/webpack-config-plugins/issues/54)) ([74f0497](https://github.com/namics/webpack-config-plugins/commit/74f0497))
+* **js-config-webpack-plugin:** add environmentName ([58c6ca6](https://github.com/namics/webpack-config-plugins/commit/58c6ca6))
+* **js-config-webpack-plugin:** find, register and invoke correct babel configs ([a01e148](https://github.com/namics/webpack-config-plugins/commit/a01e148))
+* packages/scss-config-webpack-plugin/package.json to reduce vulnerabilities ([296c2b6](https://github.com/namics/webpack-config-plugins/commit/296c2b6))
+
+
+
+
+
 ## [1.3.3](https://github.com/namics/webpack-config-plugins/compare/v1.3.2...v1.3.3) (2019-01-20)
 
 
