@@ -47,7 +47,9 @@
     "test": "jest --runInBand --verbose",
     "posttest": "tsc",
     "update-snapshots": "jest -u --runInBand",
-    "test-watch": "jest --watch --runInBand"
+    "test-watch": "jest --watch --runInBand",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "peerDependencies": {
     "webpack": ">=4.0.0"
@@ -64,7 +66,8 @@
     "postcss-safe-parser": "^4.0.1",
     "resolve-url-loader": "^2.3.0",
     "sass-loader": "^7.0.3",
-    "style-loader": "^0.23.1"
+    "style-loader": "^0.23.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@types/jest": "23.3.13",
@@ -91,5 +94,6 @@
   "engines": {
     "npm": ">=5",
     "node": ">=6"
-  }
+  },
+  "snyk": true
 }
