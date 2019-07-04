@@ -1,0 +1,34 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - scss-config-webpack-plugin > optimize-css-assets-webpack-plugin > last-call-webpack-plugin > lodash:
+        patched: '2019-07-04T08:59:39.200Z'
+    - '@babel/core > lodash':
+        patched: '2019-07-04T08:59:39.200Z'
+    - '@babel/core > @babel/types > lodash':
+        patched: '2019-07-04T08:59:39.200Z'
+    - scss-config-webpack-plugin > node-sass > lodash:
+        patched: '2019-07-04T08:59:39.200Z'
+    - '@babel/core > @babel/traverse > @babel/types > lodash':
+        patched: '2019-07-04T08:59:39.200Z'
+    - scss-config-webpack-plugin > node-sass > sass-graph > lodash:
+        patched: '2019-07-04T08:59:39.200Z'
+    - scss-config-webpack-plugin > iconfont-webpack-plugin > svg2ttf > lodash:
+        patched: '2019-07-04T08:59:39.200Z'
+    - scss-config-webpack-plugin > css-loader > lodash:
+        patched: '2019-07-04T08:59:39.200Z'
+    - '@babel/preset-env > @babel/plugin-transform-classes > @babel/helper-function-name > @babel/types > lodash':
+        patched: '2019-07-04T08:59:39.200Z'
+    - scss-config-webpack-plugin > node-sass > gaze > globule > lodash:
+        patched: '2019-07-04T08:59:39.200Z'
+    - '@babel/preset-env > @babel/plugin-transform-async-to-generator > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/types > lodash':
+        patched: '2019-07-04T08:59:39.200Z'
+    - '@babel/preset-env > @babel/plugin-transform-parameters > @babel/helper-call-delegate > @babel/traverse > @babel/generator > @babel/types > lodash':
+        patched: '2019-07-04T08:59:39.200Z'
+    - '@babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash':
+        patched: '2019-07-04T08:59:39.200Z'
+    - '@babel/preset-env > @babel/plugin-transform-async-to-generator > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash':
+        patched: '2019-07-04T08:59:39.200Z'
