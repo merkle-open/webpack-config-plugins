@@ -81,7 +81,7 @@ const webpackPluginImports: { [option in PluginName]: string | false } = {
 	'common-config-webpack-plugin': `const CommonConfigWebpackPlugin = require('common-config-webpack-plugin')`,
 	'asset-config-webpack-plugin': `const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin')`,
 	'html-webpack-plugin': `const HtmlWebpackPlugin = require('html-webpack-plugin')`,
-	'clean-webpack-plugin': `const CleanWebpackPlugin = require('clean-webpack-plugin')`,
+	'clean-webpack-plugin': `const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin`,
 	'webpack-dev-server': false,
 	'webpack-cli': false,
 };

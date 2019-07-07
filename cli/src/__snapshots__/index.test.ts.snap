@@ -170,7 +170,7 @@ exports[`cli it output the correct webpack.config.js content for {"options":["us
 ⚠️ Skipping writing webpack.config.js
 💡  Add the following code to your webpack.config.js:
 
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const CommonConfigWebpackPlugin = require('common-config-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -206,7 +206,7 @@ exports[`cli it output the correct webpack.config.js content for {"options":["us
 💡  Add the following code to your webpack.config.js:
 
 const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const JsConfigWebpackPlugin = require('js-config-webpack-plugin');
 const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
@@ -246,7 +246,7 @@ exports[`cli it output the correct webpack.config.js content for {"options":["us
 💡  Add the following code to your webpack.config.js:
 
 const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
 const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');
