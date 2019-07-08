@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "cleanup": "npx rimraf .publish",
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production --devtool sourcemap ",
-    "deploy": "npx npm-run-all build deploy:github",
+    "build": "webpack --mode production --devtool sourcemap",
+    "deploy": "npx npm-run-all cleanup build deploy:github",
     "deploy:github": "node node_modules/.bin/deploy-gh-pages"
   },
   "devDependencies": {
