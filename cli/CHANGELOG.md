@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/namics/webpack-config-plugins/compare/v1.3.4...v1.4.0) (2019-07-08)
+
+
+### Bug Fixes
+
+* **cli:** Adjust cli to match the latest CleanWebpackPlugin syntax ([e9dd9cf](https://github.com/namics/webpack-config-plugins/commit/e9dd9cf))
+
+
+
+
+
 ## [1.3.4](https://github.com/namics/webpack-config-plugins/compare/v1.3.3...v1.3.4) (2019-06-09)
 
 
