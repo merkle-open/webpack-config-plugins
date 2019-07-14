@@ -2,7 +2,7 @@ language: node_js
 sudo: false
 
 os:
-  - linux
+  - osx
 
 node_js:
   - 'node'

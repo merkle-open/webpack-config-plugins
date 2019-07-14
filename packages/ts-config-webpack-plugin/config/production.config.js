@@ -68,6 +68,9 @@ exports = module.exports = (options) => ({
 			checkSyntacticErrors: true,
 			// Set the tsconfig.json path
 			tsconfig: options.configFile,
+			// To allow using this plugin even if there is no .ts or .tsx file
+			// ignore "TS18003: No inputs were found in config file"
+			ignoreDiagnostics: [18003],
 		}),
 	],
 });

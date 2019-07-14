@@ -4,10 +4,8 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const cpus = os.cpus().length;
 
-// we use <max> - 2 workers for quadcore cpus and higher, two cpus are reserved
-// for the ts checker plugin (which at least needs one).
-const tsLoaderWorkers = cpus > 3 ? cpus - 2 : 1;
-const forkTsCheckerWorkers = Math.max(1, cpus - tsLoaderWorkers);
+// we use <max> - 1 workers for tricore cpus and higher, one cpu will be preserved
+const tsLoaderWorkers = cpus > 2 ? cpus - 1 : 1;
 
 /**
  * Common Development Config
@@ -65,12 +63,17 @@ exports = module.exports = (options) => ({
 		new ForkTsCheckerWebpackPlugin({
 			// don't block webpack's emit to wait for type checker, errors only visible inside CLI
 			async: true,
-			// increase performance on multicore systems
-			workers: forkTsCheckerWorkers,
 			// checkSyntacticErrors is required as we use happyPackMode and the thread-loader to parallelise the builds
 			checkSyntacticErrors: true,
 			// Set the tsconfig.json path
 			tsconfig: options.configFile,
+			// Make use of a new API comming with TypeScript 2.7
+			// which allows to speed up the type checking
+			// https://github.com/namics/webpack-config-plugins/issues/39
+			useTypescriptIncrementalApi: true,
+			// To allow using this plugin even if there is no .ts or .tsx file
+			// ignore "TS18003: No inputs were found in config file"
+			ignoreDiagnostics: [18003],
 		}),
 	],
 });

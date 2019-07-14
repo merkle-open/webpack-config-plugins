@@ -73,6 +73,11 @@ async function launchWebpackDevServer(args, environmentName, onReady) {
 						process.hrtime(startTime)[0] + Math.round(process.hrtime(startTime)[1] / 1000000) / 1000;
 					timings.push(elapsed);
 				}
+				if (runs === 0) {
+					// Wait for the initial build to be done
+					// including garbage collection
+					await sleep(10000);
+				}
 				// Wait for a moment to prevent running into thresholds
 				await sleep(3500);
 				runs++;
@@ -92,7 +97,7 @@ async function launchWebpackDevServer(args, environmentName, onReady) {
 	await rimrafAsync('./profiles');
 
 	// Configs as in webpack.config.NAME.js
-	const environments = ['current', 'latest'];
+	const environments = ['latest', 'current'];
 	const results = {};
 	let generatedComponentCount;
 
