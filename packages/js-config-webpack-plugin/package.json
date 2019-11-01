@@ -65,7 +65,7 @@
     "@babel/preset-env": "7.2.3",
     "@babel/preset-react": "7.0.0",
     "@types/jest": "23.3.13",
-    "@types/node": "10.12.18",
+    "@types/node": "10.12.30",
     "@types/webpack": "4.4.21",
     "jest": "23.6.0",
     "jsdom": "13.1.0",
