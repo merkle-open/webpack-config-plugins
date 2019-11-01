@@ -133,6 +133,36 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
+	it('should generate the correct TTF files in development mode', (done) => {
+		const compiler = webpack({
+			mode: 'development',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new FontConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			const generatedFiles = glob.sync('./fixtures/dist/**/*.ttf', {
+				cwd: __dirname,
+			});
+			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/OpenSans-Regular-webfont.488d5cc1.ttf']);
+			done();
+		});
+	});
+
+	it('should generate the correct EOT files in production mode', (done) => {
+		const compiler = webpack({
+			mode: 'production',
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new FontConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			const generatedFiles = glob.sync('./fixtures/dist/**/*.eot', {
+				cwd: __dirname,
+			});
+			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/OpenSans-Regular-webfont.c4d82460.eot']);
+			done();
+		});
+	});
+
 	it('should set rules correctly', (done) => {
 		const compiler = webpack({
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -150,6 +180,28 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 		const ruleToTest = compiler.options.module.rules[0];
 		expect(ruleToTest.test.test('test.woff')).toBe(true);
 		expect(ruleToTest.test.test('testingwoff')).toBe(false);
+		done();
+	});
+
+	it('should have rules matching ttf files', (done) => {
+		const compiler = webpack({
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new FontConfigWebpackPlugin()],
+		});
+		const ruleToTest = compiler.options.module.rules[0];
+		expect(ruleToTest.test.test('test.ttf')).toBe(true);
+		expect(ruleToTest.test.test('testingttf')).toBe(false);
+		done();
+	});
+
+	it('should have rules matching eot files', (done) => {
+		const compiler = webpack({
+			context: path.join(__dirname, 'fixtures/simple'),
+			plugins: [new FontConfigWebpackPlugin()],
+		});
+		const ruleToTest = compiler.options.module.rules[0];
+		expect(ruleToTest.test.test('test.eot')).toBe(true);
+		expect(ruleToTest.test.test('testingeot')).toBe(false);
 		done();
 	});
 });

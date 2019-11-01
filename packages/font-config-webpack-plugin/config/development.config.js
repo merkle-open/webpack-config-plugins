@@ -8,7 +8,7 @@ exports = module.exports = (options) => ({
 	module: {
 		rules: [
 			{
-				test: /\.(woff2?)(\?v=\d+\.\d+\.\d+)?$/,
+				test: /\.(woff2?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
 				use: [
 					{
 						loader: require.resolve('file-loader'),

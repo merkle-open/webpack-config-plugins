@@ -191,7 +191,7 @@ module.exports = {
 };
 ```
 
-### Use only fonts (.woff & .woff2)
+### Use only fonts (.woff & .woff2 & .ttf & .eot)
 
 [![NPM version](https://badge.fury.io/js/font-config-webpack-plugin.svg)](https://www.npmjs.com/package/font-config-webpack-plugin)
 [![Travis](https://img.shields.io/travis/namics/webpack-config-plugins/master.svg)](https://travis-ci.org/namics/webpack-config-plugins)
@@ -200,7 +200,7 @@ module.exports = {
 ⚙️[development `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/font-config-webpack-plugin/config/development.config.js)  
 ⚙️[production `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/font-config-webpack-plugin/config/production.config.js)
 
-The `font-config-webpack-plugin` will allow you to use [woff-fonts](https://caniuse.com/#feat=woff).
+The `font-config-webpack-plugin` will allow you to use [woff](https://caniuse.com/#feat=woff), [ttf](https://caniuse.com/#feat=ttf), [eot (IE only)](https://caniuse.com/#feat=eot) font formats.
 
 ```js
 const FontConfigWebpackPlugin = require('font-config-webpack-plugin');
