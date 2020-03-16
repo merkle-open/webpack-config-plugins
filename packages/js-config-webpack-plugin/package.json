@@ -65,13 +65,13 @@
     "@babel/preset-env": "7.2.3",
     "@babel/preset-react": "7.0.0",
     "@types/jest": "23.3.13",
-    "@types/node": "10.12.18",
+    "@types/node": "13.9.1",
     "@types/webpack": "4.4.21",
     "jest": "23.6.0",
     "jsdom": "13.1.0",
     "rimraf": "2.6.2",
     "sourcemap-validator": "1.1.0",
-    "typescript": "3.5.2",
+    "typescript": "3.8.3",
     "webpack": "4.21.0"
   },
   "jest": {

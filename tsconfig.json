@@ -4,7 +4,7 @@
 		"noEmit": true,
 		"target": "es6",
 		"lib": ["es6"],
-		"rootDir": "src",
+		"rootDir": "./",
 		"module": "commonjs",
 		"moduleResolution": "node",
 		"strict": true,
@@ -12,8 +12,8 @@
 		"sourceMap": true,
 		"inlineSources": true,
 		"types": ["node", "jest"],
-		"maxNodeModuleJsDepth": 2
+		"maxNodeModuleJsDepth": 2,
+		"skipLibCheck": true
 	},
-	"lib": ["es6", "es7"],
-	"exclude": ["**/node_modules/**/*", "**/test/**/*", "webpage/**", "performance/src/**"]
+	"exclude": ["node_modules/", "**/test/**/*", "webpage/**", "performance/src/**"]
 }
