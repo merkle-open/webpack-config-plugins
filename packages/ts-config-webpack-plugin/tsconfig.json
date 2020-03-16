@@ -1,7 +1,18 @@
 {
-	"extends": "../../tsconfig.json",
 	"compilerOptions": {
+		"allowJs": true,
+		"noEmit": true,
+		"target": "es6",
+		"lib": ["ES2017"],
+		"rootDir": "./",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"strict": true,
 		"declaration": true,
-		"rootDir": "./"
-	}
+		"sourceMap": true,
+		"inlineSources": true,
+		"types": ["node", "jest"],
+		"maxNodeModuleJsDepth": 2
+	},
+	"exclude": ["**/test/**/*"]
 }
