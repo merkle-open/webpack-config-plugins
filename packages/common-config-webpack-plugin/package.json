@@ -51,7 +51,7 @@
     "test-watch": "jest --watch --runInBand"
   },
   "peerDependencies": {
-    "webpack": ">=4.0.0"
+    "webpack": ">=4.36.0"
   },
   "dependencies": {
     "@babel/core": "^7.2.2",
@@ -66,10 +66,10 @@
   "devDependencies": {
     "@types/jest": "23.3.13",
     "@types/node": "13.9.1",
-    "@types/webpack": "4.4.21",
+    "@types/webpack": "4.41.7",
     "jest": "23.6.0",
     "rimraf": "2.6.2",
-    "webpack": "4.21.0"
+    "webpack": "4.36.0"
   },
   "jest": {
     "browser": false,
