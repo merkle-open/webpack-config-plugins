@@ -15,9 +15,7 @@ exports = module.exports = (options) => ({
 				use: [
 					{
 						loader: require.resolve('style-loader'),
-						options: {
-							sourceMap: true,
-						},
+						options: {},
 					},
 					{
 						loader: require.resolve('css-loader'),
@@ -59,9 +57,7 @@ exports = module.exports = (options) => ({
 				use: [
 					{
 						loader: require.resolve('style-loader'),
-						options: {
-							sourceMap: false,
-						},
+						options: {},
 					},
 					{
 						loader: require.resolve('css-loader'),
