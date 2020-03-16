@@ -64,7 +64,7 @@
     "postcss-safe-parser": "^4.0.1",
     "resolve-url-loader": "^2.3.0",
     "sass-loader": "^7.0.3",
-    "style-loader": "^0.23.1"
+    "style-loader": "^1.0.2"
   },
   "devDependencies": {
     "@types/jest": "23.3.13",
