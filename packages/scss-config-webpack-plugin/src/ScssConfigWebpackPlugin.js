@@ -1,5 +1,9 @@
 // @ts-check
-/** @typedef {import("webpack/lib/Compiler.js")} WebpackCompiler */
+// webpack compiler options properties are marked as optional
+// although most of them are not optional
+// as a temporary work around this this is fixed with
+// `import('ts-essentials').DeepRequired`
+/** @typedef {import('ts-essentials').DeepRequired<import("webpack").Compiler>} WebpackCompiler */
 /**
  * Plugin Options
  * @typedef {{
@@ -34,7 +38,9 @@ class ScssConfigWebpackPlugin {
 		// Use compiler.options.output configuration also for css
 		// Replace folder names called js and extends called js to css
 		// E.g. 'js/x.[id].js' -> 'css/x.[id].css'
-		const filename = compiler.options.output.filename.replace(/(^|\/|\\|\.)js($|\/|\\)/g, '$1css$2');
+		const jsFilename = compiler.options.output.filename;
+		const filename =
+			typeof jsFilename !== 'string' ? '[id].css' : jsFilename.replace(/(^|\/|\\|\.)js($|\/|\\)/g, '$1css$2');
 		const chunkFilename = compiler.options.output.chunkFilename.replace(/(^|\/|\\|\.)js($|\/|\\)/g, '$1css$2');
 
 		const config = isProductionLikeMode

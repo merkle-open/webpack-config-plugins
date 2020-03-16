@@ -50,7 +50,7 @@
     "test-watch": "jest --watch --runInBand"
   },
   "peerDependencies": {
-    "webpack": ">=4.0.0"
+    "webpack": ">=4.36.0"
   },
   "dependencies": {
     "autoprefixer": "^9.4.3",
@@ -63,17 +63,18 @@
     "postcss-loader": "^3.0.0",
     "postcss-safe-parser": "^4.0.1",
     "resolve-url-loader": "^2.3.0",
-    "sass-loader": "^7.0.3",
+    "sass-loader": "8.0.2",
     "style-loader": "^1.0.2"
   },
   "devDependencies": {
     "@types/jest": "23.3.13",
     "@types/node": "13.9.1",
-    "@types/webpack": "4.4.21",
+    "@types/webpack": "4.41.7",
     "jest": "23.6.0",
     "rimraf": "2.6.2",
+    "ts-essentials": "6.0.2",
     "typescript": "3.8.3",
-    "webpack": "4.21.0"
+    "webpack": "4.36.0"
   },
   "jest": {
     "browser": false,

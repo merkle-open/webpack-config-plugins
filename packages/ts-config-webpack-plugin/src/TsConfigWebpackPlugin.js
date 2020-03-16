@@ -1,5 +1,11 @@
 // @ts-check
-/** @typedef {import("webpack/lib/Compiler.js")} WebpackCompiler */
+// webpack compiler options properties are marked as optional
+// although most of them are not optional
+// as a temporary work around this this is fixed with
+// `import('ts-essentials').DeepRequired`
+/** @typedef {import('ts-essentials').DeepRequired<import("webpack").Compiler>} WebpackCompiler */
+/// <reference types="webpack" />
+
 /**
  * Plugin Options
  * @typedef {{

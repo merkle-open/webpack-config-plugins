@@ -54,7 +54,7 @@
     "@babel/core": ">=7.0.0",
     "@babel/preset-env": ">=7.0.0",
     "@babel/preset-react": ">=7.0.0",
-    "webpack": ">=4.0.0"
+    "webpack": ">=4.36.0"
   },
   "dependencies": {
     "babel-loader": "^8.0.0-beta.4",
@@ -66,13 +66,14 @@
     "@babel/preset-react": "7.0.0",
     "@types/jest": "23.3.13",
     "@types/node": "13.9.1",
-    "@types/webpack": "4.4.21",
+    "@types/webpack": "4.41.7",
     "jest": "23.6.0",
     "jsdom": "13.1.0",
     "rimraf": "2.6.2",
     "sourcemap-validator": "1.1.0",
+    "ts-essentials": "6.0.2",
     "typescript": "3.8.3",
-    "webpack": "4.21.0"
+    "webpack": "4.36.0"
   },
   "jest": {
     "rootDir": "./",

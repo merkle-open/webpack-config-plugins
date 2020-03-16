@@ -12,7 +12,7 @@
 		"sourceMap": true,
 		"inlineSources": true,
 		"types": ["node", "jest"],
-		"maxNodeModuleJsDepth": 2
+		"maxNodeModuleJsDepth": 0
 	},
-	"exclude": ["**/test/**/*"]
+	"exclude": ["**/test/**/*", "**/node_modules/"]
 }
