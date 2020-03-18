@@ -33,7 +33,6 @@ exports = module.exports = (options) => ({
 					{
 						loader: require.resolve('css-loader'),
 						options: {
-							sourceMap: true,
 							importLoaders: 3,
 						},
 					},
@@ -83,7 +82,6 @@ exports = module.exports = (options) => ({
 					{
 						loader: require.resolve('css-loader'),
 						options: {
-							sourceMap: true,
 							importLoaders: 3,
 							modules: true,
 						},

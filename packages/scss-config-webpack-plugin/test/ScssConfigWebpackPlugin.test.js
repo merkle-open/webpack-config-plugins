@@ -159,7 +159,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 		compiler.run((err, stats) => {
 			const cssFilePath = path.resolve(__dirname, './fixtures/dist/css/main.min.css');
-			const contents = removeSourceMapComment(fs.readFileSync(cssFilePath).toString());
+			const contents = fs.readFileSync(cssFilePath).toString();
 			expect(contents).toMatchSnapshot();
 			done();
 		});
@@ -213,7 +213,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 			const cssSourceFilePath = path.resolve(__dirname, './fixtures/simple/src/regular.css');
 			const contentsSource = fs.readFileSync(cssSourceFilePath).toString();
 			const cssDistFilePath = path.resolve(__dirname, './fixtures/dist/css/main.min.css');
-			const contentsMinified = removeSourceMapComment(fs.readFileSync(cssDistFilePath).toString());
+			const contentsMinified = fs.readFileSync(cssDistFilePath).toString();
 			// Original source should include white spaces
 			expect(contentsSource).toMatch(/\s+/);
 			// Minified source should not include white spaces
@@ -288,7 +288,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 		compiler.run((err, stats) => {
 			const cssFilePath = path.resolve(__dirname, './fixtures/dist/main.css');
-			const contents = removeSourceMapComment(fs.readFileSync(cssFilePath).toString());
+			const contents = fs.readFileSync(cssFilePath).toString();
 			expect(contents).toMatchSnapshot();
 			done();
 		});
@@ -380,7 +380,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 		compiler.run((err, stats) => {
 			const cssFilePath = path.resolve(__dirname, './fixtures/dist/main.css');
-			const contents = removeSourceMapComment(fs.readFileSync(cssFilePath).toString());
+			const contents = fs.readFileSync(cssFilePath).toString();
 			expect(contents).toMatchSnapshot();
 			done();
 		});
@@ -412,7 +412,7 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 		});
 		compiler.run((err, stats) => {
 			const cssFilePath = path.resolve(__dirname, './fixtures/dist/font-example/css/main.css');
-			const contents = removeSourceMapComment(fs.readFileSync(cssFilePath).toString());
+			const contents = fs.readFileSync(cssFilePath).toString();
 			expect(contents).toMatchSnapshot();
 			done();
 		});
