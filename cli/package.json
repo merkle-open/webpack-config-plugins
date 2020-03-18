@@ -4,7 +4,7 @@
   "bugs": "https://github.com/namics/webpack-config-plugins/issues",
   "homepage": "https://github.com/namics/webpack-config-plugins/",
   "repository": "https://github.com/namics/webpack-config-plugins.git",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "author": "Namics AG - Technology & Application",
   "license": "MIT",
   "bin": {
@@ -59,7 +59,7 @@
     "mock-fs": "4.7.0",
     "pkg-ok": "2.3.1",
     "rimraf": "2.6.3",
-    "ts-config-webpack-plugin": "^1.4.0",
+    "ts-config-webpack-plugin": "^2.0.0",
     "ts-jest": "23.10.5",
     "typescript": "3.8.3",
     "webpack": "4.36.0",

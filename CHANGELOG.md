@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/namics/webpack-config-plugins/compare/v1.4.0...v2.0.0) (2020-03-18)
+
+
+### Bug Fixes
+
+* **scss-config-webpack-plugin:** Remove sourcemaps for production ([2f43c2e](https://github.com/namics/webpack-config-plugins/commit/2f43c2ecd5b9ec30765ed8db309e0238abfdd183))
+* **ts-config-webpack-plugin:** Move tslint to devDependencies ([5f21775](https://github.com/namics/webpack-config-plugins/commit/5f21775bc73d61a92051a195edba836df453be52))
+
+
+### Features
+
+* Update dependencies ([19642f2](https://github.com/namics/webpack-config-plugins/commit/19642f28ef1f400ca615467ad60117737349bb6a))
+* **scss-config-webpack-plugin:** Upgrade mini-css-extract-plugin ([4f24b8d](https://github.com/namics/webpack-config-plugins/commit/4f24b8d84751d4891d5f95658bc5a6c0b8b5974f))
+* Upgrade webpack to 4.36 ([d61386f](https://github.com/namics/webpack-config-plugins/commit/d61386f44026595efbbef8aa5b7ddd2463eaf4be))
+* **scss-config-webpack-plugin:** Upgrade style-loader ([7599502](https://github.com/namics/webpack-config-plugins/commit/75995027676d93d923e850295e216495c3524b02))
+* **scss-config-webpack-plugin:** Upgrade style-loader ([4114dbd](https://github.com/namics/webpack-config-plugins/commit/4114dbd607cce8da932a87b66d847bc9a4595226))
+* **ts-config-webpack-plugin:** Upgrade ts-loader ([a632447](https://github.com/namics/webpack-config-plugins/commit/a632447e6681ec7fdc9c702d754867b93f084b72))
+
+
+### BREAKING CHANGES
+
+* **scss-config-webpack-plugin:** CSS production sourcemaps have been removed for now
+* **ts-config-webpack-plugin:** Drop support for node 6
+* Requires webpack 4.36.0 or higher
+
+
+
+
+
 # [1.4.0](https://github.com/namics/webpack-config-plugins/compare/v1.3.4...v1.4.0) (2019-07-08)
 
 

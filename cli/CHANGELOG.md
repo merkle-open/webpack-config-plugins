@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/namics/webpack-config-plugins/compare/v1.4.0...v2.0.0) (2020-03-18)
+
+
+### Features
+
+* Update dependencies ([19642f2](https://github.com/namics/webpack-config-plugins/commit/19642f28ef1f400ca615467ad60117737349bb6a))
+* Upgrade webpack to 4.36 ([d61386f](https://github.com/namics/webpack-config-plugins/commit/d61386f44026595efbbef8aa5b7ddd2463eaf4be))
+* **ts-config-webpack-plugin:** Upgrade ts-loader ([a632447](https://github.com/namics/webpack-config-plugins/commit/a632447e6681ec7fdc9c702d754867b93f084b72))
+
+
+### BREAKING CHANGES
+
+* **ts-config-webpack-plugin:** Drop support for node 6
+* Requires webpack 4.36.0 or higher
+
+
+
+
+
 # [1.4.0](https://github.com/namics/webpack-config-plugins/compare/v1.3.4...v1.4.0) (2019-07-08)
 
 
