@@ -33,13 +33,40 @@ class JsConfigWebpackPlugin {
 	 * @returns {string}
 	 */
 	resolveBabelConfigFilePath(contextPath, environmentName) {
+		/**
+		 * Return the value, unless its an interator, in which case get the last value.
+		 * Works around differences in return values of @babel/core functions between versions.
+		 * @template T
+		 * @param {Generator<T, T> | T} valueOrIterator
+		 * @returns {T}
+		 */
+		function getResult(valueOrIterator) {
+			if (!isGenerator(valueOrIterator)) {
+				return valueOrIterator;
+			}
+			let result = valueOrIterator.next();
+			while (!result.done) {
+				result = valueOrIterator.next();
+			}
+			return result.value;
+		}
+
+		/**
+		 * Returns true if the value looks like a generator.
+		 * @param {any} val
+		 * @returns {val is Generator}
+		 */
+		function isGenerator(val) {
+			return val && typeof val === 'object' && typeof val.next === 'function';
+		}
+
 		// From https://github.com/babel/babel/blob/52a569056c6008c453bf26219461655c7d0322c4/packages/babel-core/src/config/files/package.js#L15
-		const packageData = findPackageData(contextPath);
+		const packageData = getResult(findPackageData(contextPath));
 		// needed because babels `findRelativeConfig` search just in parent directories
 		packageData.directories.push(packageData.filepath);
 		// From https://github.com/babel/babel/blob/52a569056c6008c453bf26219461655c7d0322c4/packages/babel-core/src/config/files/configuration.js#L26
-		const resolvedRelativeConfig = findRelativeConfig(packageData, environmentName);
-		const resolvedRootConfig = findRootConfig(packageData.filepath, environmentName);
+		const resolvedRelativeConfig = getResult(findRelativeConfig(packageData, environmentName));
+		const resolvedRootConfig = getResult(findRootConfig(packageData.filepath, environmentName));
 
 		// babel.config.js
 		if (resolvedRootConfig && resolvedRootConfig.filepath) {
