@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/namics/webpack-config-plugins/compare/v2.0.0...v2.0.1) (2020-04-27)
+
+
+### Bug Fixes
+
+* **js-config-webpack-plugin:** Fix babel internal API call failing for newer bable versions ([7ea99eb](https://github.com/namics/webpack-config-plugins/commit/7ea99eb7a8268bf7e5c44de0488f654bf92a8746))
+
+
+
+
+
 # [2.0.0](https://github.com/namics/webpack-config-plugins/compare/v1.4.0...v2.0.0) (2020-03-18)
 
 

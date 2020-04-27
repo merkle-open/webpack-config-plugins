@@ -4,7 +4,7 @@
   "bugs": "https://github.com/namics/webpack-config-plugins/issues",
   "homepage": "https://github.com/namics/webpack-config-plugins",
   "repository": "https://github.com/namics/webpack-config-plugins.git",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Namics AG - Technology & Application",
   "license": "MIT",
   "main": "src/index.js",
@@ -58,7 +58,7 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "asset-config-webpack-plugin": "^2.0.0",
-    "js-config-webpack-plugin": "^2.0.0",
+    "js-config-webpack-plugin": "^2.0.1",
     "scss-config-webpack-plugin": "^2.0.0",
     "ts-config-webpack-plugin": "^2.0.0",
     "typescript": "^3.8.3"
