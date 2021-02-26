@@ -5,17 +5,16 @@ os:
   - linux
 
 node_js:
-  - 'node'
+  - '14'
+  - '12'
   - '10'
-  - '8'
 
 before_install:
-  - npm i -g npm@6.4.1
+  - npm i -g npm@6.14.11
 
 install:
   - travis_retry npm install
   - travis_retry npm run bootstrap
-
 
 stages:
   - test
@@ -34,7 +33,7 @@ jobs:
         - transpiler="typescript"
       sudo: false
       node_js:
-        - '10'
+        - '14'
       install:
         - travis_retry npm install
         - travis_retry npm run bootstrap
@@ -49,7 +48,7 @@ jobs:
         - transpiler="babel"
       sudo: false
       node_js:
-        - '10'
+        - '14'
       install:
         - travis_retry npm install
         - travis_retry npm run bootstrap
@@ -65,7 +64,7 @@ jobs:
         - moduleMultiplier="10"
       sudo: false
       node_js:
-        - '10'
+        - '14'
       install:
         - travis_retry npm install
         - travis_retry npm run bootstrap
@@ -81,7 +80,7 @@ jobs:
         - moduleMultiplier="10"
       sudo: false
       node_js:
-        - '10'
+        - '14'
       install:
         - travis_retry npm install
         - travis_retry npm run bootstrap
@@ -96,7 +95,7 @@ jobs:
         - transpiler="typescript"
       sudo: false
       node_js:
-        - '10'
+        - '14'
       install:
         - travis_retry npm install
         - travis_retry npm run bootstrap
@@ -111,7 +110,7 @@ jobs:
         - transpiler="babel"
       sudo: false
       node_js:
-        - '10'
+        - '14'
       install:
         - travis_retry npm install
         - travis_retry npm run bootstrap
