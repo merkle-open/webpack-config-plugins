@@ -46,7 +46,6 @@ npx webpack --plugin common-config-webpack-plugin
 
 </div>
 
-
 ## Zero Config [webpack-dev-server](https://github.com/webpack/webpack-dev-server) example
 
 You can even setup an entire development server without configuration:
@@ -63,11 +62,9 @@ webpack-dev-server --plugin common-config-webpack-plugin --plugin html-webpack-p
 
 </div>
 
-
-
 ## Webpack Config
 
-Many projects will need some project specific options.  The `common-config-webpack-plugin` suite is designed to be pluggable so you will be able to pick only what you need and combine it with your configuration. By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
+Many projects will need some project specific options. The `common-config-webpack-plugin` suite is designed to be pluggable so you will be able to pick only what you need and combine it with your configuration. By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
 
 ```
 common-config-webpack-plugin
@@ -87,7 +84,7 @@ To get started you can just add all `common-config-webpack-plugin` parts at once
 const CommonConfigWebpackPlugin = require('common-config-webpack-plugin');
 
 module.exports = {
-    plugins: [new CommonConfigWebpackPlugin()],
+  plugins: [new CommonConfigWebpackPlugin()],
 };
 ```
 
@@ -101,13 +98,13 @@ const FontConfigWebpackPlugin = require('font-config-webpack-plugin');
 const ImageConfigWebpackPlugin = require('image-config-webpack-plugin');
 
 module.exports = {
-    plugins: [
-        new JsConfigWebpackPlugin(),
-        new TsConfigWebpackPlugin(),
-        new ScssConfigWebpackPlugin(),
-        new FontConfigWebpackPlugin(),
-        new ImageConfigWebpackPlugin(),
-    ],
+  plugins: [
+    new JsConfigWebpackPlugin(),
+    new TsConfigWebpackPlugin(),
+    new ScssConfigWebpackPlugin(),
+    new FontConfigWebpackPlugin(),
+    new ImageConfigWebpackPlugin(),
+  ],
 };
 ```
 
@@ -126,7 +123,7 @@ By default the plugin configuration will adjust depending on your [webpack mode]
 ```js
 const JsConfigWebpackPlugin = require('js-config-webpack-plugin');
 module.exports = {
-    plugins: [new JsConfigWebpackPlugin()],
+  plugins: [new JsConfigWebpackPlugin()],
 };
 ```
 
@@ -145,7 +142,7 @@ By default the plugin configuration will adjust depending on your [webpack mode]
 ```js
 const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');
 module.exports = {
-    plugins: [new TsConfigWebpackPlugin()],
+  plugins: [new TsConfigWebpackPlugin()],
 };
 ```
 
@@ -164,7 +161,7 @@ By default the plugin configuration will adjust depending on your [webpack mode]
 ```js
 const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin');
 module.exports = {
-    plugins: [new ScssConfigWebpackPlugin()],
+  plugins: [new ScssConfigWebpackPlugin()],
 };
 ```
 
@@ -180,7 +177,7 @@ The `asset-config-webpack-plugin` is just a wrapper around the `font-config-webp
 ```js
 const AssetConfigWebpackPlugin = require('asset-config-webpack-plugin');
 module.exports = {
-    plugins: [new AssetConfigWebpackPlugin()],
+  plugins: [new AssetConfigWebpackPlugin()],
 };
 ```
 
@@ -198,7 +195,7 @@ The `font-config-webpack-plugin` will allow you to use [woff-fonts](https://cani
 ```js
 const FontConfigWebpackPlugin = require('font-config-webpack-plugin');
 module.exports = {
-    plugins: [new FontConfigWebpackPlugin()],
+  plugins: [new FontConfigWebpackPlugin()],
 };
 ```
 
@@ -216,7 +213,7 @@ The `image-config-webpack-plugin` will allow you to use images from within js an
 ```js
 const ImageConfigWebpackPlugin = require('image-config-webpack-plugin');
 module.exports = {
-    plugins: [new ImageConfigWebpackPlugin()],
+  plugins: [new ImageConfigWebpackPlugin()],
 };
 ```
 
