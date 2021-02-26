@@ -69,12 +69,12 @@
   "devDependencies": {
     "@types/jest": "23.3.13",
     "@types/node": "13.9.1",
-    "@types/webpack": "4.41.7",
+    "@types/webpack": "4.41.26",
     "jest": "23.6.0",
-    "rimraf": "2.6.2",
+    "rimraf": "3.0.2",
     "ts-essentials": "6.0.2",
     "typescript": "3.8.3",
-    "webpack": "4.36.0"
+    "webpack": "4.46.0"
   },
   "jest": {
     "browser": false,
@@ -90,7 +90,7 @@
     ]
   },
   "engines": {
-    "npm": ">=5",
-    "node": ">=8"
+    "npm": ">=6",
+    "node": ">=10"
   }
 }

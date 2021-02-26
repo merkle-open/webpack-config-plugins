@@ -2,12 +2,11 @@
 // Generate a boilerplate project to test
 //
 
-const rimraf = require('rimraf');
 const { exec } = require('child_process');
 const fs = require('fs');
 const { promisify } = require('util');
 const execAsync = promisify(exec);
-const rimrafAsync = promisify(rimraf);
+const rimrafAsync = promisify(require('rimraf'));
 const writeFileAsync = promisify(fs.writeFile);
 const path = require('path');
 
@@ -140,11 +139,11 @@ async function generateProject(transpiler, environmentName, projectModuleCountMu
 		molecules.push(...baseMolecules.map((molecule) => molecule + i));
 	}
 
-	const rootPath = 'src/';
+	const rootPath = 'src';
 	const options = { typescript: transpiler === 'typescript' };
 
-	await rimrafAsync('./' + rootPath);
-	await rimrafAsync('./tsconfig.json');
+	await rimrafAsync(rootPath);
+	await rimrafAsync('tsconfig.json');
 
 	await Promise.all([
 		generateComponents(rootPath + '/components/atoms', atoms, options),

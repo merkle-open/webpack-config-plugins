@@ -41,8 +41,8 @@
     }
   ],
   "engines": {
-    "node": ">=8",
-    "npm": ">=5"
+    "npm": ">=6",
+    "node": ">=10"
   },
   "scripts": {
     "test": "jest --runInBand --verbose",
@@ -57,23 +57,23 @@
     "webpack": ">=4.36.0"
   },
   "dependencies": {
-    "babel-loader": "^8.0.0-beta.4",
-    "thread-loader": "^2.1.1"
+    "babel-loader": "^8.2.2",
+    "thread-loader": "^3.0.1"
   },
   "devDependencies": {
-    "@babel/core": "7.9.0",
-    "@babel/preset-env": "7.2.3",
-    "@babel/preset-react": "7.0.0",
+    "@babel/core": "7.12.17",
+    "@babel/preset-env": "7.12.17",
+    "@babel/preset-react": "7.12.13",
     "@types/jest": "23.3.13",
     "@types/node": "13.9.1",
-    "@types/webpack": "4.41.7",
+    "@types/webpack": "4.41.26",
     "jest": "23.6.0",
     "jsdom": "13.1.0",
-    "rimraf": "2.6.2",
+    "rimraf": "3.0.2",
     "sourcemap-validator": "1.1.0",
     "ts-essentials": "6.0.2",
     "typescript": "3.8.3",
-    "webpack": "4.36.0"
+    "webpack": "4.46.0"
   },
   "jest": {
     "rootDir": "./",

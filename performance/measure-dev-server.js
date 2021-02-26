@@ -1,8 +1,7 @@
-const rimraf = require('rimraf');
 const { spawn } = require('child_process');
 const fs = require('fs');
 const { promisify } = require('util');
-const rimrafAsync = promisify(rimraf);
+const rimrafAsync = promisify(require('rimraf'));
 const { generateProject } = require('./libs/project-generator');
 const { installPackages } = require('./libs/install-environment');
 const { outputTimings, calculateTimings } = require('./libs/time-calculations');

@@ -2,13 +2,12 @@
 // Generate a boilerplate project to test
 //
 
-const rimraf = require('rimraf');
 const { exec } = require('child_process');
 const fs = require('fs');
 const { promisify } = require('util');
 const execAsync = promisify(exec);
 const renameAsync = promisify(fs.rename);
-const rimrafAsync = promisify(rimraf);
+const rimrafAsync = promisify(require('rimraf'));
 const path = require('path');
 const mkdirAsync = promisify(fs.mkdir);
 

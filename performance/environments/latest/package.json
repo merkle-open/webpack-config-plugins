@@ -3,25 +3,25 @@
   "private": true,
   "description": "Test the performance",
   "engines": {
-    "npm": ">=5",
-    "node": ">=8"
+    "npm": ">=6",
+    "node": ">=10"
   },
   "devDependencies": {
-    "@babel/core": "7.2.2",
-    "@babel/preset-env": "7.2.3",
-    "@babel/preset-react": "7.0.0",
+    "@babel/core": "7.12.17",
+    "@babel/preset-env": "7.12.17",
+    "@babel/preset-react": "7.12.13",
     "cpuprofile-webpack-plugin": "1.9.0",
     "copy": "0.3.2",
     "create-react-component-folder": "0.1.26",
     "image-config-webpack-plugin": "*",
     "js-config-webpack-plugin": "*",
-    "rimraf": "2.6.3",
+    "rimraf": "3.0.2",
     "scss-config-webpack-plugin": "*",
     "ts-config-webpack-plugin": "*",
     "typescript": "3.8.3",
-    "webpack": "4.28.1",
-    "webpack-cli": "3.2.1",
-    "webpack-dev-server": "3.1.14"
+    "webpack": "4.46.0",
+    "webpack-cli": "4.5.0",
+    "webpack-dev-server": "3.11.2"
   },
   "dependencies": {
     "@types/react": "16.7.18",
