@@ -17,7 +17,6 @@ install:
 - ps: Install-Product node $env:nodejs_version
 - set PATH=%APPDATA%\npm;%PATH%
 - npm install
-- npm run bootstrap
 
 test_script:
 - node --version

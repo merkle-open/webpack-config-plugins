@@ -14,7 +14,6 @@ before_install:
 
 install:
   - travis_retry npm install
-  - travis_retry npm run bootstrap
 
 stages:
   - test
@@ -36,7 +35,6 @@ jobs:
         - '14'
       install:
         - travis_retry npm install
-        - travis_retry npm run bootstrap
         - cd performance
         - travis_retry npm install
       script:
@@ -51,7 +49,6 @@ jobs:
         - '14'
       install:
         - travis_retry npm install
-        - travis_retry npm run bootstrap
         - cd performance
         - travis_retry npm install
       script:
@@ -67,7 +64,6 @@ jobs:
         - '14'
       install:
         - travis_retry npm install
-        - travis_retry npm run bootstrap
         - cd performance
         - travis_retry npm install
       script:
@@ -83,7 +79,6 @@ jobs:
         - '14'
       install:
         - travis_retry npm install
-        - travis_retry npm run bootstrap
         - cd performance
         - travis_retry npm install
       script:
@@ -98,7 +93,6 @@ jobs:
         - '14'
       install:
         - travis_retry npm install
-        - travis_retry npm run bootstrap
         - cd performance
         - travis_retry npm install
       script:
@@ -113,7 +107,6 @@ jobs:
         - '14'
       install:
         - travis_retry npm install
-        - travis_retry npm run bootstrap
         - cd performance
         - travis_retry npm install
       script:
