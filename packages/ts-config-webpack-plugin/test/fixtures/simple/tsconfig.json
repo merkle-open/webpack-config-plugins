@@ -4,5 +4,6 @@
 		"declaration": true,
 		"rootDir": "./",
 		"skipLibCheck": true
-	}
+	},
+	"exclude": ["**/node_modules/"]
 }
