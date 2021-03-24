@@ -62,7 +62,7 @@
     "cache-loader": "^4.1.0",
     "fork-ts-checker-webpack-plugin": "^6.2.0",
     "thread-loader": "^3.0.1",
-    "ts-loader": "^8.0.17"
+    "ts-loader": "^8.0.18"
   },
   "devDependencies": {
     "@types/jest": "23.3.14",
