@@ -37,7 +37,7 @@ async function sleep(time) {
  * https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcblx0U3Bhd25bU3Bhd24gd2VicGFjay1kZXYtc2VydmVyXSAtLT58SW5pdGlhbCBDb21waWxlfCBXYWl0KFdhaXQgZm9yOiAnQ29tcGlsZWQgc3VjY2Vzc2Z1bGx5Jylcblx0V2FpdCAtLT4gTWVhc3VyZShNZWFzdXJlIHRpbWUpXG5cdE1lYXN1cmUgLS0-IFNsZWVwKFdhaXQgZm9yIDE1MDBtcylcblx0U2xlZXAgLS0-IFRyaWdnZXJCdWlsZChNb2RpZnkgYSB3YXRjaGVkIGZpbGUpXG5cdFRyaWdnZXJCdWlsZCAtLT4gfEluY3JlbWVudGFsIGNvbXBpbGV8IFdhaXRcbiIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19
  *
  * graph TD
-	Spawn[Spawn webpack-dev-server] -->|Initial Compile| Wait(Wait for: 'Compiled successfully')
+	Spawn[Spawn webpack serve] -->|Initial Compile| Wait(Wait for: 'Compiled successfully')
 	Wait --> Measure(Measure time)
 	Measure --> Sleep(Wait for 1500ms)
 	Sleep --> TriggerBuild(Modify a watched file)
@@ -53,7 +53,8 @@ async function launchWebpackDevServer(args, environmentName, onReady) {
 		const webpackDevServerProcess = spawn(
 			'node',
 			[
-				path.resolve(`environments/${environmentName}/node_modules/webpack-dev-server/bin/webpack-dev-server`),
+				path.resolve(`environments/${environmentName}/node_modules/webpack/bin/webpack`),
+				'serve',
 			].concat(args.split(' ')),
 			{
 				stdio: ['pipe', 'pipe', 'inherit'],

@@ -118,7 +118,7 @@ export const generateConfigCli = async (cwd = process.cwd()) => {
 			console.log('💡  Build your bundle with    webpack --mode production');
 		}
 		if (configOptions.useDevServer) {
-			console.log('💡  Start the server with     webpack-dev-server --mode development');
+			console.log('💡  Start the server with     webpack serve --mode development');
 		}
 		if (configOptions.useCli || configOptions.useDevServer) {
 			console.log(

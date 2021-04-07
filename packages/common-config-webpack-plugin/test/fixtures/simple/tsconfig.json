@@ -2,7 +2,6 @@
 	"compilerOptions": {
 		"sourceMap": true,
 		"skipLibCheck": true,
-		"suppressOutputPathCheck": true,
 		"moduleResolution": "node"
 	}
 }
