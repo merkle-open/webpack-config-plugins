@@ -1,6 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const autoprefixer = require('autoprefixer');
 const safeParser = require('postcss-safe-parser');
 const path = require('path');
 
@@ -41,7 +40,7 @@ exports = module.exports = (options) => ({
 						options: {
 							plugins: (loader) => [
 								require('postcss-flexbugs-fixes'),
-								autoprefixer({
+								require('autoprefixer')({
 									// flexbox: "no-2009" will add prefixes only for final and IE versions of specification.
 									// @see https://github.com/postcss/autoprefixer#disabling
 									flexbox: 'no-2009',
@@ -50,7 +49,6 @@ exports = module.exports = (options) => ({
 									resolve: loader.resolve,
 								}),
 							],
-							sourceMap: true,
 						},
 					},
 					{
@@ -59,6 +57,7 @@ exports = module.exports = (options) => ({
 					{
 						loader: require.resolve('sass-loader'),
 						options: {
+							implementation: require('node-sass'),
 							sourceMap: true,
 						},
 					},
@@ -70,6 +69,10 @@ exports = module.exports = (options) => ({
 					{
 						loader: MiniCssExtractPlugin.loader,
 						options: {
+							esModule: true,
+							modules: {
+								namedExport: true,
+							},
 							// The css file will be probably be placed in a sub directory.
 							// To prevent invalid ressource urls this additional sub folder
 							// has to be taken into account for the relative path calculation
@@ -83,7 +86,10 @@ exports = module.exports = (options) => ({
 						loader: require.resolve('css-loader'),
 						options: {
 							importLoaders: 3,
-							modules: true,
+							esModule: true,
+							modules: {
+								namedExport: true,
+							},
 						},
 					},
 					{
@@ -91,7 +97,7 @@ exports = module.exports = (options) => ({
 						options: {
 							plugins: (loader) => [
 								require('postcss-flexbugs-fixes'),
-								autoprefixer({
+								require('autoprefixer')({
 									// flexbox: "no-2009" will add prefixes only for final and IE versions of specification.
 									// @see https://github.com/postcss/autoprefixer#disabling
 									flexbox: 'no-2009',
@@ -100,7 +106,6 @@ exports = module.exports = (options) => ({
 									resolve: loader.resolve,
 								}),
 							],
-							sourceMap: true,
 						},
 					},
 					{
@@ -109,6 +114,7 @@ exports = module.exports = (options) => ({
 					{
 						loader: require.resolve('sass-loader'),
 						options: {
+							implementation: require('node-sass'),
 							sourceMap: true,
 						},
 					},

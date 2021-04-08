@@ -1,5 +1,3 @@
-const autoprefixer = require('autoprefixer');
-
 /**
  * Common Development Config
  *
@@ -15,12 +13,10 @@ exports = module.exports = (options) => ({
 				use: [
 					{
 						loader: require.resolve('style-loader'),
-						options: {},
 					},
 					{
 						loader: require.resolve('css-loader'),
 						options: {
-							sourceMap: true,
 							importLoaders: 3,
 						},
 					},
@@ -29,7 +25,7 @@ exports = module.exports = (options) => ({
 						options: {
 							plugins: (loader) => [
 								require('postcss-flexbugs-fixes'),
-								autoprefixer({
+								require('autoprefixer')({
 									// flexbox: "no-2009" will add prefixes only for final and IE versions of specification.
 									// @see https://github.com/postcss/autoprefixer#disabling
 									flexbox: 'no-2009',
@@ -38,7 +34,6 @@ exports = module.exports = (options) => ({
 									resolve: loader.resolve,
 								}),
 							],
-							sourceMap: true,
 						},
 					},
 					{
@@ -47,7 +42,7 @@ exports = module.exports = (options) => ({
 					{
 						loader: require.resolve('sass-loader'),
 						options: {
-							sourceMap: true,
+							implementation: require('node-sass'),
 						},
 					},
 				],
@@ -57,14 +52,21 @@ exports = module.exports = (options) => ({
 				use: [
 					{
 						loader: require.resolve('style-loader'),
-						options: {},
+						options: {
+							esModule: true,
+							modules: {
+								namedExport: true,
+							},
+						},
 					},
 					{
 						loader: require.resolve('css-loader'),
 						options: {
-							sourceMap: false,
 							importLoaders: 3,
-							modules: true,
+							esModule: true,
+							modules: {
+								namedExport: true,
+							},
 						},
 					},
 					{
@@ -72,7 +74,7 @@ exports = module.exports = (options) => ({
 						options: {
 							plugins: (loader) => [
 								require('postcss-flexbugs-fixes'),
-								autoprefixer({
+								require('autoprefixer')({
 									// flexbox: "no-2009" will add prefixes only for final and IE versions of specification.
 									// @see https://github.com/postcss/autoprefixer#disabling
 									flexbox: 'no-2009',
@@ -81,7 +83,6 @@ exports = module.exports = (options) => ({
 									resolve: loader.resolve,
 								}),
 							],
-							sourceMap: true,
 						},
 					},
 					{
@@ -90,7 +91,7 @@ exports = module.exports = (options) => ({
 					{
 						loader: require.resolve('sass-loader'),
 						options: {
-							sourceMap: true,
+							implementation: require('node-sass'),
 						},
 					},
 				],
