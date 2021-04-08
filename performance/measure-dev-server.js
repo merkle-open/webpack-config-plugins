@@ -52,10 +52,9 @@ async function launchWebpackDevServer(args, environmentName, onReady) {
 
 		const webpackDevServerProcess = spawn(
 			'node',
-			[
-				path.resolve(`environments/${environmentName}/node_modules/webpack/bin/webpack`),
-				'serve',
-			].concat(args.split(' ')),
+			[path.resolve(`environments/${environmentName}/node_modules/webpack/bin/webpack`), 'serve'].concat(
+				args.split(' ')
+			),
 			{
 				stdio: ['pipe', 'pipe', 'inherit'],
 			}
