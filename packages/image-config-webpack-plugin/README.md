@@ -1,7 +1,7 @@
 # image-config-webpack-plugin
 
 [![NPM version](https://badge.fury.io/js/image-config-webpack-plugin.svg)](https://www.npmjs.com/package/image-config-webpack-plugin)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/namics/webpack-config-plugins/Node.js%20CI/master)](https://github.com/namics/webpack-config-plugins/actions?query=branch%3Amaster)
+[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)

@@ -7,7 +7,7 @@
     <br>
 
 [![NPM version](https://badge.fury.io/js/common-config-webpack-plugin.svg)](https://www.npmjs.com/package/common-config-webpack-plugin)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/namics/webpack-config-plugins/Node.js%20CI/master)](https://github.com/namics/webpack-config-plugins/actions?query=branch%3Amaster)
+[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
@@ -116,7 +116,7 @@ module.exports = {
 ### Use only javascript (.js & .jsx & .mjs)
 
 [![NPM version](https://badge.fury.io/js/js-config-webpack-plugin.svg)](https://www.npmjs.com/package/js-config-webpack-plugin)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/namics/webpack-config-plugins/Node.js%20CI/master)](https://github.com/namics/webpack-config-plugins/actions?query=branch%3Amaster)
+[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
 
 🗒️[`js-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin)  
 ⚙️[development `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/js-config-webpack-plugin/config/development.config.js)  
@@ -135,7 +135,7 @@ module.exports = {
 ### Use only typescript (.ts & .tsx)
 
 [![NPM version](https://badge.fury.io/js/ts-config-webpack-plugin.svg)](https://www.npmjs.com/package/ts-config-webpack-plugin)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/namics/webpack-config-plugins/Node.js%20CI/master)](https://github.com/namics/webpack-config-plugins/actions?query=branch%3Amaster)
+[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
 
 🗒️[`ts-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/ts-config-webpack-plugin)  
 ⚙️[development `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/ts-config-webpack-plugin/config/development.config.js)  
@@ -154,7 +154,7 @@ module.exports = {
 ### Use only styles (.css & .scss)
 
 [![NPM version](https://badge.fury.io/js/scss-config-webpack-plugin.svg)](https://www.npmjs.com/package/scss-config-webpack-plugin)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/namics/webpack-config-plugins/Node.js%20CI/master)](https://github.com/namics/webpack-config-plugins/actions?query=branch%3Amaster)
+[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
 
 🗒️[`scss-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/scss-config-webpack-plugin)  
 ⚙️[development `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/scss-config-webpack-plugin/config/development.config.js)  
@@ -173,7 +173,7 @@ module.exports = {
 ### Use only assets (Font & Images)
 
 [![NPM version](https://badge.fury.io/js/asset-config-webpack-plugin.svg)](https://www.npmjs.com/package/asset-config-webpack-plugin)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/namics/webpack-config-plugins/Node.js%20CI/master)](https://github.com/namics/webpack-config-plugins/actions?query=branch%3Amaster)
+[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
 
 🗒️[`asset-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin)
 
@@ -189,7 +189,7 @@ module.exports = {
 ### Use only fonts (.woff & .woff2)
 
 [![NPM version](https://badge.fury.io/js/font-config-webpack-plugin.svg)](https://www.npmjs.com/package/font-config-webpack-plugin)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/namics/webpack-config-plugins/Node.js%20CI/master)](https://github.com/namics/webpack-config-plugins/actions?query=branch%3Amaster)
+[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
 
 🗒️[`font-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/font-config-webpack-plugin)  
 ⚙️[development `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/font-config-webpack-plugin/config/development.config.js)  
@@ -207,7 +207,7 @@ module.exports = {
 ### Use only images (.gif & .jpg & .jpeg & .png & .svg)
 
 [![NPM version](https://badge.fury.io/js/image-config-webpack-plugin.svg)](https://www.npmjs.com/package/image-config-webpack-plugin)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/namics/webpack-config-plugins/Node.js%20CI/master)](https://github.com/namics/webpack-config-plugins/actions?query=branch%3Amaster)
+[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
 
 🗒️[`image-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin)  
 ⚙️[development `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/image-config-webpack-plugin/config/development.config.js)  
