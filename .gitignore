@@ -3,10 +3,5 @@ dist
 build
 tmp
 
-# editors
-.vscode
-.vs
-.idea
-
 # debugging
 *.log
