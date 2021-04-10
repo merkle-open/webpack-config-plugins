@@ -14,33 +14,6 @@
     "dist"
   ],
   "main": "dist/config-generator.js",
-  "contributors": [
-    {
-      "name": "Jan Biasi",
-      "email": "biasijan@gmail.com",
-      "url": "https://github.com/janbiasi"
-    },
-    {
-      "name": "Matthias Giger",
-      "email": "matthias.giger@namics.com",
-      "url": "https://github.com/naminho"
-    },
-    {
-      "name": "Davide De Giorgio",
-      "email": "dave_degiorgio@hotmail.com",
-      "url": "https://github.com/degiorgioo"
-    },
-    {
-      "name": "Ernst Ammann",
-      "email": "ernscht@gmail.com",
-      "url": "https://github.com/ernscht"
-    },
-    {
-      "name": "Jan Nicklas",
-      "email": "j.nicklas@me.com",
-      "url": "https://github.com/jantimon"
-    }
-  ],
   "keywords": [
     "webpack",
     "cli"
