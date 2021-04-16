@@ -21,7 +21,7 @@
     "update-snapshots": "lerna exec -- npm run update-snapshots",
     "update-dependencies": "npm-run-all --parallel update-dependencies:*",
     "update-dependencies:packages": "lerna exec -- npx npm-check-updates -u",
-    "update-dependencies:root": "npx npm-check-updates -u"
+    "update-dependencies:root": "npx npm-check-updates -u -x husky"
   },
   "keywords": [
     "webpack"
