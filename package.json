@@ -7,33 +7,35 @@
   "homepage": "https://github.com/namics/webpack-config-plugins",
   "repository": "https://github.com/namics/webpack-config-plugins.git",
   "scripts": {
-    "bootstrap": "lerna bootstrap --no-ci --hoist",
-    "clean": "npx npm-run-all clean:*",
+    "clean": "npx --ignore-existing --quiet npm-run-all clean:*",
     "clean:lerna": "lerna clean --yes",
     "clean:lock": "rimraf **/package-lock.json",
-    "clean:modules": "npx rimraf node_modules",
+    "clean:modules": "npx --ignore-existing --quiet rimraf node_modules",
     "commit": "git-cz",
     "lint": "npm run prettier",
+    "postinstall": "lerna bootstrap --no-ci --hoist",
     "posttest": "npm run lint",
+    "prettier": "prettier --write \"**/*.*(js|jsx|ts|tsx|json|md)\"",
+    "release": "lerna publish --conventional-commits --reject-cycles --allow-branch master",
     "test": "lerna exec --concurrency 1 -- npm test",
     "update-snapshots": "lerna exec -- npm run update-snapshots",
-    "upgrade-interactive": "lerna exec --concurrency 1 -- npx npm-check --update",
-    "prettier": "prettier --write \"**/*.*(js|jsx|ts|tsx|json)\"",
-    "release": "lerna publish --conventional-commits --reject-cycles --allow-branch master"
+    "update-dependencies": "npm-run-all --parallel update-dependencies:*",
+    "update-dependencies:packages": "lerna exec -- npx npm-check-updates -u",
+    "update-dependencies:root": "npx npm-check-updates -u -x husky"
   },
   "keywords": [
     "webpack"
   ],
   "license": "MIT",
   "devDependencies": {
-    "@namics/prettier-config": "0.2.0",
-    "commitizen": "3.0.5",
-    "cz-conventional-changelog": "2.1.0",
-    "husky": "1.2.0",
-    "lerna": "3.4.3",
-    "lint-staged": "7.3.0",
-    "prettier": "1.15.2",
-    "pretty-quick": "1.10.0"
+    "@namics/prettier-config": "2.0.0",
+    "commitizen": "4.2.3",
+    "cz-conventional-changelog": "3.3.0",
+    "husky": "4.3.8",
+    "lerna": "4.0.0",
+    "lint-staged": "10.5.4",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.2.1"
   },
   "config": {
     "commitizen": {
@@ -46,8 +48,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json}": [
-      "pretty-quick --staged --bail --pattern \"**/*.*(js|jsx|ts|tsx|json)\""
+    "*.{js,jsx,ts,tsx,json,md}": [
+      "prettier --write"
     ]
   }
 }

@@ -307,6 +307,26 @@ describe('ScssConfigWebpackPlugin inside webpack context', () => {
 			})
 				.then(({ window, document }) => {
 					const styleHtml = document.querySelector('style').innerHTML;
+					expect(styleHtml).toMatchSnapshot();
+				})
+				.then(done, done);
+		});
+	});
+
+	it('should avoid common flexbox bugs in older browsers in development mode with sourcemap', (done) => {
+		const compiler = webpack({
+			mode: 'development',
+			devtool: 'eval-source-map',
+			context: path.join(__dirname, 'fixtures/flexbugs'),
+			plugins: [new ScssConfigWebpackPlugin()],
+		});
+		compiler.run((err, stats) => {
+			jsDomWindowContext({
+				html: '<div class="test"></div>',
+				js: path.resolve(__dirname, './fixtures/dist/main.js'),
+			})
+				.then(({ window, document }) => {
+					const styleHtml = document.querySelector('style').innerHTML;
 					// Exclude sourcemap from test, as it includes user specific paths.
 					const styleHTMLWithoutSourcemap = removeSourceMapComment(styleHtml);
 					expect(styleHTMLWithoutSourcemap).toMatchSnapshot();

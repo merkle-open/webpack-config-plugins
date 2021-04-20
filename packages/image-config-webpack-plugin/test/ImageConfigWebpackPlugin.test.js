@@ -113,7 +113,7 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 			const generatedFiles = glob.sync('./fixtures/dist/**/*.png', {
 				cwd: __dirname,
 			});
-			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/webpack-logo.81da10d7.png']);
+			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/webpack-logo.3b7bf087.png']);
 			done();
 		});
 	});
@@ -128,7 +128,7 @@ describe('ImageConfigWebpackPlugin inside webpack context', () => {
 			const generatedFiles = glob.sync('./fixtures/dist/**/*.png', {
 				cwd: __dirname,
 			});
-			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/webpack-logo.81da10d7.png']);
+			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/webpack-logo.3b7bf087.png']);
 			done();
 		});
 	});

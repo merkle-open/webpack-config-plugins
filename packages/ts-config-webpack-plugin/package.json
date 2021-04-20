@@ -8,38 +8,6 @@
   "author": "Namics AG - Technology & Application",
   "license": "MIT",
   "main": "src/index.js",
-  "contributors": [
-    {
-      "name": "Jan Biasi",
-      "email": "biasijan@gmail.com",
-      "url": "https://github.com/janbiasi"
-    },
-    {
-      "name": "Matthias Giger",
-      "email": "matthias.giger@namics.com",
-      "url": "https://github.com/naminho"
-    },
-    {
-      "name": "Davide De Giorgio",
-      "email": "dave_degiorgio@hotmail.com",
-      "url": "https://github.com/degiorgioo"
-    },
-    {
-      "name": "Ernst Ammann",
-      "email": "ernscht@gmail.com",
-      "url": "https://github.com/ernscht"
-    },
-    {
-      "name": "Jan Nicklas",
-      "email": "j.nicklas@me.com",
-      "url": "https://github.com/jantimon"
-    },
-    {
-      "name": "John Reilly",
-      "email": "johnny_reilly@hotmail.com",
-      "url": "https://github.com/johnnyreilly"
-    }
-  ],
   "keywords": [
     "ts-loader",
     "typescript-loader",
@@ -49,7 +17,7 @@
     "ts"
   ],
   "scripts": {
-    "test": "jest --runInBand --verbose",
+    "test": "jest --runInBand --verbose --detectOpenHandles --forceExit",
     "posttest": "tsc",
     "update-snapshots": "jest -u --runInBand",
     "test-watch": "jest --watch --runInBand"
@@ -59,22 +27,22 @@
     "webpack": ">=4.36.0"
   },
   "dependencies": {
-    "cache-loader": "^1.2.2",
-    "fork-ts-checker-webpack-plugin": "^0.5.2",
-    "thread-loader": "^2.1.1",
-    "ts-loader": "^6.2.1"
+    "cache-loader": "^4.1.0",
+    "fork-ts-checker-webpack-plugin": "^6.2.1",
+    "thread-loader": "^3.0.3",
+    "ts-loader": "^8.1.0"
   },
   "devDependencies": {
-    "@types/jest": "23.3.13",
-    "@types/node": "13.9.1",
-    "@types/webpack": "4.41.7",
+    "@types/jest": "23.3.14",
+    "@types/node": "14.14.41",
+    "@types/webpack": "4.41.27",
     "jest": "23.6.0",
-    "rimraf": "2.6.2",
-    "sourcemap-validator": "1.1.0",
-    "ts-essentials": "6.0.2",
-    "tslint": "^5.12.0",
-    "typescript": "3.8.3",
-    "webpack": "4.36.0"
+    "rimraf": "3.0.2",
+    "sourcemap-validator": "2.1.0",
+    "ts-essentials": "7.0.1",
+    "tslint": "6.1.3",
+    "typescript": "4.2.4",
+    "webpack": "4.46.0"
   },
   "jest": {
     "browser": false,
@@ -90,7 +58,7 @@
     ]
   },
   "engines": {
-    "npm": ">=5",
-    "node": ">=8"
+    "npm": ">=6",
+    "node": ">=10"
   }
 }

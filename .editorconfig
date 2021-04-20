@@ -12,25 +12,29 @@ root = true
 charset = utf-8
 # Force Unix-style newlines with a newline ending every file & trim trailing whitespace
 end_of_line = lf
+# Force newline ending every file & trim trailing whitespace
+insert_final_newline = true
+trim_trailing_whitespace = true
 # Indentation
 indent_style = tab
 indent_size = 4
 
-insert_final_newline = true
-trim_trailing_whitespace = true
-
 ### Frontend files
-[*.{css,scss,less,js,json,ts,sass,php,html,hbs,mustache,phtml,html.twig}]
-
+[*.{css,scss,less,js,json,jsx,ts,tsx,sass,php,hbs,mustache,phtml,html,twig}]
 
 ### Markdown
-[*.md]
+[*.{md,mdx}]
 indent_style = space
-indent_size = 4
+indent_size = 2
 trim_trailing_whitespace = false
 
 ### YAML
-[*.yml]
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+### Storybook stories
+[*.stories.{ts,tsx}]
 indent_style = space
 indent_size = 2
 

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "cleanup": "npx rimraf .publish",
-    "start": "webpack-dev-server --mode development",
+    "start": "webpack serve --mode development",
     "build": "webpack --mode production --devtool sourcemap",
     "deploy": "npx npm-run-all cleanup build deploy:github",
     "deploy:github": "node node_modules/.bin/deploy-gh-pages"
@@ -15,13 +15,14 @@
     "ts-config-webpack-plugin": "1.0.0",
     "deploy-gh-pages": "1.0.0",
     "html-webpack-plugin": "3.2.0",
+    "npm-run-all": "4.1.5",
     "offline-plugin": "5.0.6",
     "raw-loader": "0.5.1",
     "react-copy-to-clipboard": "5.0.1",
-    "typescript": "3.8.3",
-    "webpack": "4.26.1",
-    "webpack-cli": "3.1.2",
-    "webpack-dev-server": "3.1.11"
+    "typescript": "4.2.4",
+    "webpack": "4.46.0",
+    "webpack-cli": "4.6.0",
+    "webpack-dev-server": "3.11.2"
   },
   "dependencies": {
     "@material-ui/core": "3.6.0",

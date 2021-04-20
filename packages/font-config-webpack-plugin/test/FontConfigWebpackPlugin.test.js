@@ -69,7 +69,7 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 		});
 	});
 
-	it('should allow to set the production mode mode', (done) => {
+	it('should allow to set the production mode', (done) => {
 		const referenceCompiler = webpack({
 			mode: 'production',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -86,7 +86,7 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 		done();
 	});
 
-	it('should allow to set the development mode mode', (done) => {
+	it('should allow to set the development mode', (done) => {
 		const referenceCompiler = webpack({
 			mode: 'development',
 			context: path.join(__dirname, 'fixtures/simple'),
@@ -113,7 +113,7 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 			const generatedFiles = glob.sync('./fixtures/dist/**/*.woff', {
 				cwd: __dirname,
 			});
-			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/OpenSans-Regular-webfont.c8ffdeb3.woff']);
+			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/OpenSans-Regular-webfont.ab6e9d5d.woff']);
 			done();
 		});
 	});
@@ -128,7 +128,7 @@ describe('FontConfigWebpackPlugin inside webpack context', () => {
 			const generatedFiles = glob.sync('./fixtures/dist/**/*.woff', {
 				cwd: __dirname,
 			});
-			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/OpenSans-Regular-webfont.c8ffdeb3.woff']);
+			expect(generatedFiles).toEqual(['./fixtures/dist/static/media/OpenSans-Regular-webfont.ab6e9d5d.woff']);
 			done();
 		});
 	});

@@ -7,12 +7,14 @@
 		"rootDir": "./",
 		"module": "commonjs",
 		"moduleResolution": "node",
+		"esModuleInterop": true,
 		"strict": true,
 		"declaration": true,
 		"sourceMap": true,
 		"inlineSources": true,
 		"types": ["node", "jest"],
-		"maxNodeModuleJsDepth": 0
+		"maxNodeModuleJsDepth": 0,
+		"incremental": true
 	},
 	"exclude": ["**/test/**/*", "**/node_modules/"]
 }
