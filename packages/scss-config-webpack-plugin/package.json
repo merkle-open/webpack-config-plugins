@@ -27,9 +27,9 @@
   },
   "dependencies": {
     "autoprefixer": "^10.2.5",
-    "css-loader": "^5.2.1",
+    "css-loader": "^5.2.4",
     "iconfont-webpack-plugin": "^5.0.1",
-    "mini-css-extract-plugin": "^1.4.1",
+    "mini-css-extract-plugin": "^1.5.0",
     "node-sass": "^5.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss": "^8.2.10",
