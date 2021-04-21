@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/namics/webpack-config-plugins/compare/v2.0.1...v2.0.2) (2021-04-21)
+
+### Bug Fixes
+
+- **scss-config-webpack-plugin:** update dependencies ([5ef2bb5](https://github.com/namics/webpack-config-plugins/commit/5ef2bb57ce42a3a335d63e125ac17b52cacc4f4d))
+- **scss-config-webpack-plugin:** update dependencies ([22ee31a](https://github.com/namics/webpack-config-plugins/commit/22ee31a88669cf4d6eec0368a84651895dd2e29c))
+- **scss-config-webpack-plugin:** update postcss dependencies ([f4a4e11](https://github.com/namics/webpack-config-plugins/commit/f4a4e1160eec9768be5fa27676e26a2715c6fd53))
+- bump deps and cleanup package.json ([ed1f792](https://github.com/namics/webpack-config-plugins/commit/ed1f7923a4b7258fa8d174c0a5fdef5ed2476aa0))
+- update dependencies ([632a08d](https://github.com/namics/webpack-config-plugins/commit/632a08d97e6e4db1a74483bab60534781415b0f9))
+
 # [2.0.0](https://github.com/namics/webpack-config-plugins/compare/v1.4.0...v2.0.0) (2020-03-18)
 
 ### Bug Fixes

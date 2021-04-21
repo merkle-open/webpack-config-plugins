@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/namics/webpack-config-plugins/compare/v2.0.1...v2.0.2) (2021-04-21)
+
+### Bug Fixes
+
+- **font-config-webpack-plugin:** update dependencies ([4b3584b](https://github.com/namics/webpack-config-plugins/commit/4b3584b3180fd85d06442d75728244b64a90b55b))
+- bump deps and cleanup package.json ([ed1f792](https://github.com/namics/webpack-config-plugins/commit/ed1f7923a4b7258fa8d174c0a5fdef5ed2476aa0))
+
 # [2.0.0](https://github.com/namics/webpack-config-plugins/compare/v1.4.0...v2.0.0) (2020-03-18)
 
 ### Features
