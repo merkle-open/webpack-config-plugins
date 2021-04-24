@@ -1,8 +1,8 @@
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsConfigWebpackPlugin = require('ts-config-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 const EmptyPlugin = { apply: () => {} };
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (_, { mode }) => ({
 	output: {
