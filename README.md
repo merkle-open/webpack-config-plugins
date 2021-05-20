@@ -1,13 +1,13 @@
 <div align="center">
     <br>
     <br>
-    <img width="200" height="200" src="https://github.com/namics/webpack-config-plugins/raw/master/logo.png" />
-    <img width="200" height="200" src="https://github.com/namics/webpack-config-plugins/raw/master/plug.png" />
+    <img width="200" height="200" src="https://github.com/merkle-open/webpack-config-plugins/raw/master/logo.png" />
+    <img width="200" height="200" src="https://github.com/merkle-open/webpack-config-plugins/raw/master/plug.png" />
     <br>
     <br>
 
 [![NPM version](https://badge.fury.io/js/common-config-webpack-plugin.svg)](https://www.npmjs.com/package/common-config-webpack-plugin)
-[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
+[![Build Status](https://github.com/merkle-open/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/merkle-open/webpack-config-plugins/actions)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
@@ -47,7 +47,7 @@ npx webpack --plugin common-config-webpack-plugin
 
 <div align="center">
 
-![Demo](https://github.com/namics/webpack-config-plugins/raw/master/preview.gif)
+![Demo](https://github.com/merkle-open/webpack-config-plugins/raw/master/preview.gif)
 
 </div>
 
@@ -63,7 +63,7 @@ webpack-dev-server --plugin common-config-webpack-plugin --plugin html-webpack-p
 
 <div align="center">
 
-![Demo](https://github.com/namics/webpack-config-plugins/raw/master/preview-dev-server.gif)
+![Demo](https://github.com/merkle-open/webpack-config-plugins/raw/master/preview-dev-server.gif)
 
 </div>
 
@@ -116,11 +116,11 @@ module.exports = {
 ### Use only javascript (.js & .jsx & .mjs)
 
 [![NPM version](https://badge.fury.io/js/js-config-webpack-plugin.svg)](https://www.npmjs.com/package/js-config-webpack-plugin)
-[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
+[![Build Status](https://github.com/merkle-open/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/merkle-open/webpack-config-plugins/actions)
 
-🗒️[`js-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin)  
-⚙️[development `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/js-config-webpack-plugin/config/development.config.js)  
-⚙️[production `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/js-config-webpack-plugin/config/production.config.js)
+🗒️[`js-config-webpack-plugin` Readme](https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin)  
+⚙️[development `webpack.config.js`](https://github.com/merkle-open/webpack-config-plugins/raw/master/packages/js-config-webpack-plugin/config/development.config.js)  
+⚙️[production `webpack.config.js`](https://github.com/merkle-open/webpack-config-plugins/raw/master/packages/js-config-webpack-plugin/config/production.config.js)
 
 The `js-config-webpack-plugin` is a modified version of the [create-react-app best practices](https://github.com/facebook/create-react-app/tree/52449c34eedc53e50a2a159d38604ea7df5bd997/packages/react-scripts/config).  
 By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
@@ -135,11 +135,11 @@ module.exports = {
 ### Use only typescript (.ts & .tsx)
 
 [![NPM version](https://badge.fury.io/js/ts-config-webpack-plugin.svg)](https://www.npmjs.com/package/ts-config-webpack-plugin)
-[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
+[![Build Status](https://github.com/merkle-open/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/merkle-open/webpack-config-plugins/actions)
 
-🗒️[`ts-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/ts-config-webpack-plugin)  
-⚙️[development `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/ts-config-webpack-plugin/config/development.config.js)  
-⚙️[production `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/ts-config-webpack-plugin/config/production.config.js)
+🗒️[`ts-config-webpack-plugin` Readme](https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/ts-config-webpack-plugin)  
+⚙️[development `webpack.config.js`](https://github.com/merkle-open/webpack-config-plugins/raw/master/packages/ts-config-webpack-plugin/config/development.config.js)  
+⚙️[production `webpack.config.js`](https://github.com/merkle-open/webpack-config-plugins/raw/master/packages/ts-config-webpack-plugin/config/production.config.js)
 
 The `ts-config-webpack-plugin` is a modified version of the [ts-loader best practices](https://github.com/TypeStrong/ts-loader/blob/master/examples/thread-loader/webpack.config.js).  
 By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
@@ -154,11 +154,11 @@ module.exports = {
 ### Use only styles (.css & .scss)
 
 [![NPM version](https://badge.fury.io/js/scss-config-webpack-plugin.svg)](https://www.npmjs.com/package/scss-config-webpack-plugin)
-[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
+[![Build Status](https://github.com/merkle-open/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/merkle-open/webpack-config-plugins/actions)
 
-🗒️[`scss-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/scss-config-webpack-plugin)  
-⚙️[development `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/scss-config-webpack-plugin/config/development.config.js)  
-⚙️[production `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/scss-config-webpack-plugin/config/production.config.js)
+🗒️[`scss-config-webpack-plugin` Readme](https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/scss-config-webpack-plugin)  
+⚙️[development `webpack.config.js`](https://github.com/merkle-open/webpack-config-plugins/raw/master/packages/scss-config-webpack-plugin/config/development.config.js)  
+⚙️[production `webpack.config.js`](https://github.com/merkle-open/webpack-config-plugins/raw/master/packages/scss-config-webpack-plugin/config/production.config.js)
 
 The `scss-config-webpack-plugin` is a modified version of the [create-react-app best practices](https://github.com/facebook/create-react-app/tree/52449c34eedc53e50a2a159d38604ea7df5bd997/packages/react-scripts/config).  
 By default the plugin configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.
@@ -173,9 +173,9 @@ module.exports = {
 ### Use only assets (Font & Images)
 
 [![NPM version](https://badge.fury.io/js/asset-config-webpack-plugin.svg)](https://www.npmjs.com/package/asset-config-webpack-plugin)
-[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
+[![Build Status](https://github.com/merkle-open/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/merkle-open/webpack-config-plugins/actions)
 
-🗒️[`asset-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin)
+🗒️[`asset-config-webpack-plugin` Readme](https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin)
 
 The `asset-config-webpack-plugin` is just a wrapper around the `font-config-webpack-plugin` and the `image-config-webpack-plugin`.
 
@@ -189,11 +189,11 @@ module.exports = {
 ### Use only fonts (.woff & .woff2)
 
 [![NPM version](https://badge.fury.io/js/font-config-webpack-plugin.svg)](https://www.npmjs.com/package/font-config-webpack-plugin)
-[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
+[![Build Status](https://github.com/merkle-open/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/merkle-open/webpack-config-plugins/actions)
 
-🗒️[`font-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/font-config-webpack-plugin)  
-⚙️[development `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/font-config-webpack-plugin/config/development.config.js)  
-⚙️[production `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/font-config-webpack-plugin/config/production.config.js)
+🗒️[`font-config-webpack-plugin` Readme](https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/font-config-webpack-plugin)  
+⚙️[development `webpack.config.js`](https://github.com/merkle-open/webpack-config-plugins/raw/master/packages/font-config-webpack-plugin/config/development.config.js)  
+⚙️[production `webpack.config.js`](https://github.com/merkle-open/webpack-config-plugins/raw/master/packages/font-config-webpack-plugin/config/production.config.js)
 
 The `font-config-webpack-plugin` will allow you to use [woff-fonts](https://caniuse.com/#feat=woff).
 
@@ -207,11 +207,11 @@ module.exports = {
 ### Use only images (.gif & .jpg & .jpeg & .png & .svg)
 
 [![NPM version](https://badge.fury.io/js/image-config-webpack-plugin.svg)](https://www.npmjs.com/package/image-config-webpack-plugin)
-[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
+[![Build Status](https://github.com/merkle-open/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/merkle-open/webpack-config-plugins/actions)
 
-🗒️[`image-config-webpack-plugin` Readme](https://github.com/namics/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin)  
-⚙️[development `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/image-config-webpack-plugin/config/development.config.js)  
-⚙️[production `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/image-config-webpack-plugin/config/production.config.js)
+🗒️[`image-config-webpack-plugin` Readme](https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin)  
+⚙️[development `webpack.config.js`](https://github.com/merkle-open/webpack-config-plugins/raw/master/packages/image-config-webpack-plugin/config/development.config.js)  
+⚙️[production `webpack.config.js`](https://github.com/merkle-open/webpack-config-plugins/raw/master/packages/image-config-webpack-plugin/config/production.config.js)
 
 The `image-config-webpack-plugin` will allow you to use images from within js and css files.
 

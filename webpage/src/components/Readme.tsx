@@ -2,7 +2,7 @@ import React from 'react';
 import MarkdownRenderer from 'react-markdown-renderer';
 import { withStyles, Theme } from '@material-ui/core';
 
-const link = '[webpack-config-plugins Github](https://github.com/namics/webpack-config-plugins)';
+const link = '[webpack-config-plugins Github](https://github.com/merkle-open/webpack-config-plugins)';
 const readme = require('!!raw-loader!../../../README.md') + '\n\n' + link;
 
 const styles = (theme: Theme) => ({
