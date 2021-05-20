@@ -10,31 +10,31 @@
     "deploy:github": "node node_modules/.bin/deploy-gh-pages"
   },
   "devDependencies": {
-    "@types/webpack-env": "1.13.6",
-    "clean-webpack-plugin": "2.0.1",
-    "ts-config-webpack-plugin": "1.0.0",
+    "@types/webpack-env": "1.16.0",
+    "clean-webpack-plugin": "2.0.2",
+    "ts-config-webpack-plugin": "2.0.3",
     "deploy-gh-pages": "1.0.0",
-    "html-webpack-plugin": "3.2.0",
+    "html-webpack-plugin": "4.5.2",
     "npm-run-all": "4.1.5",
-    "offline-plugin": "5.0.6",
+    "offline-plugin": "5.0.7",
     "raw-loader": "0.5.1",
-    "react-copy-to-clipboard": "5.0.1",
+    "react-copy-to-clipboard": "5.0.3",
     "typescript": "4.2.4",
     "webpack": "4.46.0",
-    "webpack-cli": "4.6.0",
+    "webpack-cli": "4.7.0",
     "webpack-dev-server": "3.11.2"
   },
   "dependencies": {
-    "@material-ui/core": "3.6.0",
-    "@types/react": "16.7.7",
-    "@types/react-dom": "16.0.11",
+    "@material-ui/core": "3.9.4",
+    "@types/react": "16.14.6",
+    "@types/react-dom": "16.9.13",
     "downloadjs": "1.4.7",
-    "inquirer": "6.2.1",
-    "mobx": "5.6.0",
-    "mobx-react": "5.4.2",
-    "react": "16.6.3",
-    "react-dom": "16.6.3",
+    "inquirer": "6.5.2",
+    "mobx": "5.15.7",
+    "mobx-react": "5.4.4",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
     "react-markdown-renderer": "1.4.0",
-    "react-syntax-highlighter": "10.1.1"
+    "react-syntax-highlighter": "10.3.5"
   }
 }
