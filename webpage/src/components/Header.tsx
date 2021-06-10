@@ -20,7 +20,7 @@ export const Header = () => (
 			<Typography variant="h6" color="inherit" style={{ flexGrow: 1 }}>
 				webpack-config-plugins
 			</Typography>
-			<a style={{ color: '#fff' }} href="https://github.com/namics/webpack-config-plugins">
+			<a style={{ color: '#fff' }} href="https://github.com/merkle-open/webpack-config-plugins">
 				<GithubLogo />
 			</a>
 		</Toolbar>

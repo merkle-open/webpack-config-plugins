@@ -1,11 +1,11 @@
 {
   "name": "common-config-webpack-plugin",
   "description": "A suite of common webpack loader configurations",
-  "bugs": "https://github.com/namics/webpack-config-plugins/issues",
-  "homepage": "https://github.com/namics/webpack-config-plugins",
-  "repository": "https://github.com/namics/webpack-config-plugins.git",
-  "version": "2.0.1",
-  "author": "Namics AG - Technology & Application",
+  "bugs": "https://github.com/merkle-open/webpack-config-plugins/issues",
+  "homepage": "https://github.com/merkle-open/webpack-config-plugins",
+  "repository": "https://github.com/merkle-open/webpack-config-plugins.git",
+  "version": "2.0.3",
+  "author": "Merkle Inc",
   "license": "MIT",
   "main": "src/index.js",
   "keywords": [
@@ -30,10 +30,10 @@
     "@babel/core": "^7.13.15",
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
-    "asset-config-webpack-plugin": "^2.0.0",
-    "js-config-webpack-plugin": "^2.0.1",
-    "scss-config-webpack-plugin": "^2.0.0",
-    "ts-config-webpack-plugin": "^2.0.0",
+    "asset-config-webpack-plugin": "^2.0.3",
+    "js-config-webpack-plugin": "^2.0.3",
+    "scss-config-webpack-plugin": "^2.0.3",
+    "ts-config-webpack-plugin": "^2.0.3",
     "typescript": "^4.2.4"
   },
   "devDependencies": {

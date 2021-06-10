@@ -1,18 +1,18 @@
 # image-config-webpack-plugin
 
 [![NPM version](https://badge.fury.io/js/image-config-webpack-plugin.svg)](https://www.npmjs.com/package/image-config-webpack-plugin)
-[![Build Status](https://github.com/namics/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/namics/webpack-config-plugins/actions)
+[![Build Status](https://github.com/merkle-open/webpack-config-plugins/workflows/ci/badge.svg?branch=master)](https://github.com/merkle-open/webpack-config-plugins/actions)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-green.svg)](https://github.com/prettier/prettier)
 
 Creating a webpack _loader_ configurations can be quite time consuming.  
-The `image-config-webpack-plugin` is part of the [`common-config-webpack-plugin` suite](https://github.com/namics/webpack-config-plugins) which tries to provide best practices for the most common **loader** requirements.
+The `image-config-webpack-plugin` is part of the [`common-config-webpack-plugin` suite](https://github.com/merkle-open/webpack-config-plugins) which tries to provide best practices for the most common **loader** requirements.
 
 If no mode is explicitly set for the plugin the configuration will adjust depending on your [webpack mode](https://webpack.js.org/concepts/mode/) setting.  
-⚙️[development mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/image-config-webpack-plugin/config/development.config.js)
-⚙️[production mode `webpack.config.js`](https://github.com/namics/webpack-config-plugins/raw/master/packages/image-config-webpack-plugin/config/production.config.js)
+⚙️[development mode `webpack.config.js`](https://github.com/merkle-open/webpack-config-plugins/raw/master/packages/image-config-webpack-plugin/config/development.config.js)
+⚙️[production mode `webpack.config.js`](https://github.com/merkle-open/webpack-config-plugins/raw/master/packages/image-config-webpack-plugin/config/production.config.js)
 
 ## Installation
 

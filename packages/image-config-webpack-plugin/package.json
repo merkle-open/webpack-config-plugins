@@ -1,11 +1,11 @@
 {
   "name": "image-config-webpack-plugin",
   "description": "Preset for image webpack configuration",
-  "bugs": "https://github.com/namics/webpack-config-plugins/issues",
-  "homepage": "https://github.com/namics/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin",
-  "repository": "https://github.com/namics/webpack-config-plugins.git",
-  "version": "2.0.0",
-  "author": "Namics AG - Technology & Application",
+  "bugs": "https://github.com/merkle-open/webpack-config-plugins/issues",
+  "homepage": "https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin",
+  "repository": "https://github.com/merkle-open/webpack-config-plugins.git",
+  "version": "2.0.3",
+  "author": "Merkle Inc",
   "license": "MIT",
   "main": "src/index.js",
   "keywords": [

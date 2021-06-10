@@ -103,23 +103,23 @@ const webpackPluginConfigurations: { [option in PluginName]: string | false } = 
 const webpackPluginExplanation: { [option in PluginName]: Array<string> | false } = {
 	'js-config-webpack-plugin': [
 		'Multi threading babel loader configuration with caching for .js and .jsx files',
-		'see https://github.com/namics/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin/config',
+		'see https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/js-config-webpack-plugin/config',
 	],
 	'ts-config-webpack-plugin': [
 		'Multi threading typescript loader configuration with caching for .ts and .tsx files',
-		'see https://github.com/namics/webpack-config-plugins/tree/master/packages/ts-config-webpack-plugin/config',
+		'see https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/ts-config-webpack-plugin/config',
 	],
 	'scss-config-webpack-plugin': [
 		'SCSS Configuration for .css .module.css and .scss .module.scss files',
-		'see https://github.com/namics/webpack-config-plugins/tree/master/packages/scss-config-webpack-plugin/config',
+		'see https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/scss-config-webpack-plugin/config',
 	],
 	'font-config-webpack-plugin': [
 		'File loader configuration for .woff and .woff2 files',
-		'see https://github.com/namics/webpack-config-plugins/tree/master/packages/font-config-webpack-plugin/config',
+		'see https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/font-config-webpack-plugin/config',
 	],
 	'image-config-webpack-plugin': [
 		'File loader configuration for .gif .jpg .jpeg .png and .svg files',
-		'see https://github.com/namics/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin/config',
+		'see https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin/config',
 	],
 	'common-config-webpack-plugin': [
 		'Multi threading babel loader configuration with caching for .js and .jsx files',
@@ -127,12 +127,12 @@ const webpackPluginExplanation: { [option in PluginName]: Array<string> | false 
 		'SCSS Configuration for .css .module.css and .scss .module.scss files',
 		'File loader configuration for .woff and .woff2 files',
 		'File loader configuration for .gif .jpg .jpeg .png and .svg files',
-		'https://github.com/namics/webpack-config-plugins/',
+		'https://github.com/merkle-open/webpack-config-plugins/',
 	],
 	'asset-config-webpack-plugin': [
 		'File loader configuration for .woff and .woff2 files',
 		'File loader configuration for .gif .jpg .jpeg .png and .svg files',
-		'https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin',
+		'https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin',
 	],
 	'html-webpack-plugin': ['Generate a base html file and injects all generated css and js files'],
 	'clean-webpack-plugin': ['Cleans the dist folder before the build starts'],

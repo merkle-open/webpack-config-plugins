@@ -1,11 +1,11 @@
 {
   "name": "asset-config-webpack-plugin",
   "description": "Preset for font and image webpack loader configurations",
-  "bugs": "https://github.com/namics/webpack-config-plugins/issues",
-  "homepage": "https://github.com/namics/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin",
-  "repository": "https://github.com/namics/webpack-config-plugins.git",
-  "version": "2.0.0",
-  "author": "Namics AG - Technology & Application",
+  "bugs": "https://github.com/merkle-open/webpack-config-plugins/issues",
+  "homepage": "https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/asset-config-webpack-plugin",
+  "repository": "https://github.com/merkle-open/webpack-config-plugins.git",
+  "version": "2.0.3",
+  "author": "Merkle Inc",
   "license": "MIT",
   "main": "src/index.js",
   "keywords": [
@@ -23,8 +23,8 @@
     "webpack": ">=4.36.0"
   },
   "dependencies": {
-    "font-config-webpack-plugin": "^2.0.0",
-    "image-config-webpack-plugin": "^2.0.0"
+    "font-config-webpack-plugin": "^2.0.3",
+    "image-config-webpack-plugin": "^2.0.3"
   },
   "devDependencies": {
     "@types/jest": "23.3.14",

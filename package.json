@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Simplify webpack loader configuration",
-  "bugs": "https://github.com/namics/webpack-config-plugins/issues",
-  "homepage": "https://github.com/namics/webpack-config-plugins",
-  "repository": "https://github.com/namics/webpack-config-plugins.git",
+  "bugs": "https://github.com/merkle-open/webpack-config-plugins/issues",
+  "homepage": "https://github.com/merkle-open/webpack-config-plugins",
+  "repository": "https://github.com/merkle-open/webpack-config-plugins.git",
   "scripts": {
     "clean": "npx --ignore-existing --quiet npm-run-all clean:*",
     "clean:lerna": "lerna clean --yes",

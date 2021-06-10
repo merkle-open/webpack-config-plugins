@@ -15,7 +15,7 @@ module.exports = (_, { mode }) => ({
 		// Generate a base html file and injects all generated css and js files
 		new HtmlWebpackPlugin({ template: 'src/index.html' }),
 		// Multi threading typescript loader configuration with caching for .ts and .tsx files
-		// see https://github.com/namics/webpack-config-plugins/tree/master/packages/ts-config-webpack-plugin/config
+		// see https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/ts-config-webpack-plugin/config
 		new TsConfigWebpackPlugin(),
 		// Offline Caching
 		mode === 'production' ? new OfflinePlugin() : EmptyPlugin,

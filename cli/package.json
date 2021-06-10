@@ -1,11 +1,11 @@
 {
   "name": "generate-webpack-config",
   "description": "Generate a base webpack config",
-  "bugs": "https://github.com/namics/webpack-config-plugins/issues",
-  "homepage": "https://github.com/namics/webpack-config-plugins/",
-  "repository": "https://github.com/namics/webpack-config-plugins.git",
-  "version": "2.0.0",
-  "author": "Namics AG - Technology & Application",
+  "bugs": "https://github.com/merkle-open/webpack-config-plugins/issues",
+  "homepage": "https://github.com/merkle-open/webpack-config-plugins/",
+  "repository": "https://github.com/merkle-open/webpack-config-plugins.git",
+  "version": "2.0.3",
+  "author": "Merkle Inc",
   "license": "MIT",
   "bin": {
     "generate-webpack-config": "dist/generate-webpack-config.js"
@@ -31,7 +31,7 @@
     "jest": "23.6.0",
     "mock-fs": "4.13.0",
     "rimraf": "3.0.2",
-    "ts-config-webpack-plugin": "^2.0.0",
+    "ts-config-webpack-plugin": "^2.0.3",
     "ts-jest": "23.10.5",
     "typescript": "4.2.4",
     "webpack": "4.46.0",
