@@ -14,6 +14,7 @@ exports = module.exports = (options) => ({
 						loader: require.resolve('file-loader'),
 						options: {
 							name: options.name,
+							esModule: options.esModule,
 						},
 					},
 				],
