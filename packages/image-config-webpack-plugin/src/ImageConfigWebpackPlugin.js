@@ -8,14 +8,15 @@
  * Plugin Options
  * @typedef {{
 	 mode?: 'production' | 'development'
-	 name: string,
+	 esModule?: boolean
+	 name: string
 }} ImageConfigWebpackPluginOptions */
 
 'use strict';
 /**
  * @type {ImageConfigWebpackPluginOptions}
  */
-const defaultOptions = { name: 'static/media/[name].[hash:8].[ext]' };
+const defaultOptions = { name: 'static/media/[name].[hash:8].[ext]', esModule: false };
 
 class ImageConfigWebpackPlugin {
 	/**

@@ -52,3 +52,21 @@ module.exports = {
   ],
 };
 ```
+
+### Enable ES module syntax
+
+By default the `image-config-webpack-plugin` uses the CommonJS modules syntax (`require` statements).
+You can enable the ES module syntax (`import` statements) syntax using: `esModule: true` in the options.
+
+For more information see [file-loader documentation](https://v4.webpack.js.org/loaders/file-loader/#esmodule)
+
+```js
+const ImageConfigWebpackPlugin = require('image-config-webpack-plugin');
+module.exports = {
+  plugins: [
+    new ImageConfigWebpackPlugin({
+      esModule: true,
+    }),
+  ],
+};
+```

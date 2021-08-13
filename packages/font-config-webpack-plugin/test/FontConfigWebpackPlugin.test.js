@@ -26,7 +26,7 @@ describe('FontConfigWebpackPlugin standalone', () => {
 	});
 
 	it('should return an instance with the options assigned to it', () => {
-		const options = { name: '[hash]-[name].[ext]' };
+		const options = { name: '[hash]-[name].[ext]', esModule: false };
 		const instance = new FontConfigWebpackPlugin(options);
 
 		expect(instance.options).toEqual(options);
