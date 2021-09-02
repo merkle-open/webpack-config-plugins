@@ -19,7 +19,7 @@ function getInitialState() {
 		configOptionKeys.forEach((key) => {
 			result[key] = initial[key] === true;
 		});
-		return initial;
+		return result;
 	} catch {
 		return {};
 	}
