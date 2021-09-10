@@ -14,7 +14,7 @@ exports = module.exports = (options) => ({
 		rules: [
 			{
 				// .ts, .tsx, .d.ts
-				test: /\.(tsx?|d.ts)$/,
+				test: /\.(tsx?|d\.ts)$/,
 				use: [
 					{
 						// enable file based cache
