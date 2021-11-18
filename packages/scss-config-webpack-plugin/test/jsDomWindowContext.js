@@ -12,6 +12,7 @@ const fs = require('fs');
   jsDomWindowContext({
     js: require.resolve('./frontend.js'),
     css: require.resolve('./styles.css'),
+	html: '<div class="test"></div>',
    }).then(({window, document} => {
      expect(document.titlte).toBe('Demo');
    }))
