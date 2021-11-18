@@ -20,7 +20,7 @@
     "test-watch": "jest --watch --runInBand"
   },
   "peerDependencies": {
-    "webpack": ">=4.36.0"
+    "webpack": ">=4.36.0 < 5"
   },
   "dependencies": {
     "file-loader": "^6.2.0",

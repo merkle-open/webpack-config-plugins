@@ -22,7 +22,7 @@
     "@babel/core": ">=7.0.0",
     "@babel/preset-env": ">=7.0.0",
     "@babel/preset-react": ">=7.0.0",
-    "webpack": ">=4.36.0"
+    "webpack": ">=4.36.0 < 5"
   },
   "dependencies": {
     "babel-loader": "^8.2.2",

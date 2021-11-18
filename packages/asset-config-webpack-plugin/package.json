@@ -20,7 +20,7 @@
     "test": "jest --runInBand --verbose"
   },
   "peerDependencies": {
-    "webpack": ">=4.36.0"
+    "webpack": ">=4.36.0 < 5"
   },
   "dependencies": {
     "font-config-webpack-plugin": "^2.0.3",

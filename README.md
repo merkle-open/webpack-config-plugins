@@ -27,6 +27,10 @@ Instead of copying loader configs from github and stackoverflow you could just a
 <br>
 </div>
 
+## Required Webpack Version
+
+The compatible version of webpack to each plugin may vary and is documented in each `package.json` file under the `peerDependencies` property.
+
 ## Quick overview
 
 ```
