@@ -24,7 +24,7 @@
   },
   "peerDependencies": {
     "typescript": ">=3.1.0",
-    "webpack": ">=4.36.0"
+    "webpack": ">=4.36.0 < 5"
   },
   "dependencies": {
     "cache-loader": "^4.1.0",
