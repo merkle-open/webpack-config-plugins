@@ -9,9 +9,18 @@
   "license": "MIT",
   "author": "Merkle Inc",
   "engines": {
-    "npm": ">=6",
-    "node": ">=10"
+    "node": ">=16.13.0",
+    "npm": ">=8.1.0"
   },
+  "keywords": [
+    "babel-loader",
+    "webpack",
+    "javascript",
+    "babel",
+    "js",
+    "loader",
+    "webpack-plugin"
+  ],
   "scripts": {
     "test": "jest --runInBand --verbose",
     "posttest": "tsc",
@@ -55,14 +64,5 @@
       "fixtures",
       "dist"
     ]
-  },
-  "keywords": [
-    "babel-loader",
-    "webpack",
-    "javascript",
-    "babel",
-    "js",
-    "loader",
-    "webpack-plugin"
-  ]
+  }
 }

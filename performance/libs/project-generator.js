@@ -175,10 +175,8 @@ async function generateProject(transpiler, environmentName, projectModuleCountMu
 	const tsConfig = {
 		compilerOptions: {
 			/* Basic Options */
-			target:
-				'es5' /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */,
-			module:
-				'ESNext' /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
+			target: 'es5' /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */,
+			module: 'ESNext' /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
 			lib: ['dom', 'es2017'] /* Specify library files to be included in the compilation. */,
 			// "allowJs": true,                       /* Allow javascript files to be compiled. */
 			// "checkJs": true,                       /* Report errors in .js files. */

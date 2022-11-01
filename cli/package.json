@@ -5,15 +5,19 @@
   "homepage": "https://github.com/merkle-open/webpack-config-plugins/",
   "repository": "https://github.com/merkle-open/webpack-config-plugins.git",
   "version": "2.0.3",
-  "author": "Merkle Inc",
+  "main": "dist/config-generator.js",
   "license": "MIT",
+  "author": "Merkle Inc",
+  "engines": {
+    "node": ">=16.13.0",
+    "npm": ">=8.1.0"
+  },
   "bin": {
     "generate-webpack-config": "dist/generate-webpack-config.js"
   },
   "files": [
     "dist"
   ],
-  "main": "dist/config-generator.js",
   "keywords": [
     "webpack",
     "cli"
@@ -37,9 +41,5 @@
     "webpack": "4.46.0",
     "webpack-cli": "4.6.0",
     "webpack-dev-server": "3.11.2"
-  },
-  "engines": {
-    "npm": ">=6",
-    "node": ">=10"
   }
 }
