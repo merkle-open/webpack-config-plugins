@@ -15,6 +15,7 @@ exports = module.exports = (options) => ({
 						options: {
 							name: options.name,
 							limit: 512,
+							esModule: options.esModule,
 						},
 					},
 				],
