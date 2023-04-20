@@ -4,15 +4,16 @@ exports[`ScssConfigWebpackPlugin inside webpack context should avoid common flex
 ".foo {
   display: flex;
   flex-direction: row;
-  flex: 1 1; }
-"
+  flex: 1 1;
+}"
 `;
 
 exports[`ScssConfigWebpackPlugin inside webpack context should avoid common flexbox bugs in older browsers in development mode with sourcemap 1`] = `
 ".foo {
   display: flex;
   flex-direction: row;
-  flex: 1 1; }"
+  flex: 1 1;
+}"
 `;
 
 exports[`ScssConfigWebpackPlugin inside webpack context should avoid common flexbox bugs in older browsers in production mode 1`] = `".foo{display:flex;flex-direction:row;flex:1 1}"`;
