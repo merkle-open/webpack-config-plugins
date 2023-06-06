@@ -46,7 +46,7 @@ exports = module.exports = (options) => ({
 					{
 						loader: require.resolve('sass-loader'),
 						options: {
-							implementation: require('node-sass'),
+							implementation: require('sass'),
 						},
 					},
 				],
@@ -99,7 +99,7 @@ exports = module.exports = (options) => ({
 					{
 						loader: require.resolve('sass-loader'),
 						options: {
-							implementation: require('node-sass'),
+							implementation: require('sass'),
 						},
 					},
 				],
