@@ -18,8 +18,8 @@ exports[`ScssConfigWebpackPlugin inside webpack context should avoid common flex
 
 exports[`ScssConfigWebpackPlugin inside webpack context should avoid common flexbox bugs in older browsers in production mode 1`] = `".foo{display:flex;flex-direction:row;flex:1 1}"`;
 
-exports[`ScssConfigWebpackPlugin inside webpack context should generate a valid font path 1`] = `"@font-face{font-family:OpenSans;src:url(ab6e9d5d7db5dfffc24d3b8c57d5619c.woff)}"`;
+exports[`ScssConfigWebpackPlugin inside webpack context should generate a valid font path 1`] = `"@font-face{font-family:OpenSans;src:url(724ffca6332d70f4cbb540b05753e0e5d59a9b25a0eefd2e46fbf841ad41889b.woff)}"`;
 
-exports[`ScssConfigWebpackPlugin inside webpack context should generate a valid font path for subfolders 1`] = `"@font-face{font-family:OpenSans;src:url(../../ab6e9d5d7db5dfffc24d3b8c57d5619c.woff)}"`;
+exports[`ScssConfigWebpackPlugin inside webpack context should generate a valid font path for subfolders 1`] = `"@font-face{font-family:OpenSans;src:url(../../724ffca6332d70f4cbb540b05753e0e5d59a9b25a0eefd2e46fbf841ad41889b.woff)}"`;
 
 exports[`ScssConfigWebpackPlugin inside webpack context should generate separate CSS files with the correct contents 1`] = `".test{height:5px}"`;

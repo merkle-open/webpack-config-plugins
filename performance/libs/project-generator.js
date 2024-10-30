@@ -249,7 +249,7 @@ async function generateComponents(rootPath, componentNames, { typescript, scss }
 		`node ${require.resolve('create-react-component-folder')} ${options} "${rootPath}/${
 			componentNames[0]
 		}" ${components}`,
-		{ maxBuffer: 1024 * 1000 }
+		{ maxBuffer: 1024 * 1000 },
 	);
 }
 

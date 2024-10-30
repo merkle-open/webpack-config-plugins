@@ -4,7 +4,10 @@ export interface IEntry<T> {
 }
 
 export class Entry<T> implements IEntry<T> {
-	constructor(private $key: string, private $value: T) {}
+	constructor(
+		private $key: string,
+		private $value: T,
+	) {}
 
 	get key(): string {
 		return this.$key;

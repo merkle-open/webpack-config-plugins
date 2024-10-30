@@ -51,8 +51,8 @@ function jsDomWindowContext(options = {}) {
 					window: dom.window,
 					document: dom.window.document,
 					evalJsFile: evalJsFile.bind(null, dom),
-				})
-			)
+				}),
+			),
 		);
 	});
 }

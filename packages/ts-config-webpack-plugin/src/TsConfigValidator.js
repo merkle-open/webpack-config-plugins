@@ -41,7 +41,7 @@ function verifyTsConfig(configFilePath) {
 				'even for unused dependencies and slow down the type checking a lot.\n' +
 				'To skip that checking add the following line to your tsconfig.json compilerOptions configuration:\n' +
 				'"skipLibCheck": true\n' +
-				'To keep the default behaviour with possible performance penalties set skipLibCheck to false to hide this warning.\n'
+				'To keep the default behaviour with possible performance penalties set skipLibCheck to false to hide this warning.\n',
 		);
 	}
 	if (tsconfig.options.moduleResolution === undefined) {
@@ -50,7 +50,7 @@ function verifyTsConfig(configFilePath) {
 				'This will result in typescript warnings like "module not found".\n' +
 				'To fix that add the following line to your tsconfig.json compilerOptions configuration:\n' +
 				'"moduleResolution": "node"\n' +
-				'To keep the default behaviour with possible type checking errors set moduleResolution to "classic" to hide this warning.\n'
+				'To keep the default behaviour with possible type checking errors set moduleResolution to "classic" to hide this warning.\n',
 		);
 	}
 

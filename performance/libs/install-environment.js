@@ -26,7 +26,7 @@ async function buildUnreleasedPackages() {
 		fs
 			.readdirSync(unreleasedPackagesSourceFolder)
 			.filter((packageName) => fs.statSync(path.join(unreleasedPackagesSourceFolder, packageName)).isDirectory())
-			.map((packageName) => execAsync(`npm pack "${path.resolve(__dirname, '../../packages/' + packageName)}"`))
+			.map((packageName) => execAsync(`npm pack "${path.resolve(__dirname, '../../packages/' + packageName)}"`)),
 	);
 	// Remove version number from file name
 	await Promise.all(
@@ -36,9 +36,9 @@ async function buildUnreleasedPackages() {
 			.map((tarPackageName) =>
 				renameAsync(
 					path.join(unreleasedPackagesDistFolder, tarPackageName),
-					path.join(unreleasedPackagesDistFolder, tarPackageName.replace(/\-\d[^-]+$/, '.tgz'))
-				)
-			)
+					path.join(unreleasedPackagesDistFolder, tarPackageName.replace(/\-\d[^-]+$/, '.tgz')),
+				),
+			),
 	);
 
 	process.chdir(cwdBefore);

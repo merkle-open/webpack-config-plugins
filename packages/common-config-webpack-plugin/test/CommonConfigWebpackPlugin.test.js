@@ -6,7 +6,7 @@ const CommonConfigWebpackPlugin = require('../src/CommonConfigWebpackPlugin');
 // hack: OpenSSL 3 does not support md4 anymore, but legacy webpack 4 hardcoded it: https://github.com/webpack/webpack/issues/13572
 const crypto = require('crypto');
 const crypto_orig_createHash = crypto.createHash;
-crypto.createHash = algorithm => crypto_orig_createHash(algorithm === 'md4' ? 'sha256' : algorithm);
+crypto.createHash = (algorithm) => crypto_orig_createHash(algorithm === 'md4' ? 'sha256' : algorithm);
 
 // Allow tests to run 30s
 jest.setTimeout(30000);

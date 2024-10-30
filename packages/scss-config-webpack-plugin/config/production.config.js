@@ -25,7 +25,7 @@ exports = module.exports = (options) => ({
 							// has to be taken into account for the relative path calculation
 							publicPath: (path.relative(path.dirname(options.filename), '.') + path.sep).replace(
 								/^[\\\/]$/,
-								''
+								'',
 							),
 						},
 					},
@@ -82,7 +82,7 @@ exports = module.exports = (options) => ({
 							// has to be taken into account for the relative path calculation
 							publicPath: (path.relative(path.dirname(options.filename), '.') + path.sep).replace(
 								/^[\\\/]$/,
-								''
+								'',
 							),
 						},
 					},

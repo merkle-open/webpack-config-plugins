@@ -22,7 +22,7 @@ exports = module.exports = (options) => ({
 						options: {
 							cacheDirectory: path.resolve(
 								path.dirname(require.resolve('cache-loader')),
-								'../.cache-loader'
+								'../.cache-loader',
 							),
 						},
 					},

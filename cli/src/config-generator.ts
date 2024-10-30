@@ -178,21 +178,21 @@ function getModuleNamesForConfiguration(configOptions: ConfigLoaderTypeOptions):
 function combinePluginsToWrappers(moduleNamesForConfiguration: Array<PluginName>): Array<PluginName> {
 	// Use Asset Plugin
 	const useAssetConfigWebpackPlugin = !assetConfigWebpackPluginChildren.some(
-		(moduleName) => moduleNamesForConfiguration.indexOf(moduleName) === -1
+		(moduleName) => moduleNamesForConfiguration.indexOf(moduleName) === -1,
 	);
 	if (useAssetConfigWebpackPlugin) {
 		moduleNamesForConfiguration = moduleNamesForConfiguration.filter(
-			(moduleName) => assetConfigWebpackPluginChildren.indexOf(moduleName) === -1
+			(moduleName) => assetConfigWebpackPluginChildren.indexOf(moduleName) === -1,
 		);
 		moduleNamesForConfiguration.push('asset-config-webpack-plugin');
 	}
 	// Use common config plugin
 	const useCommonConfigWebpackPlugin = !commonConfigWebpackPluginChildren.some(
-		(moduleName) => moduleNamesForConfiguration.indexOf(moduleName) === -1
+		(moduleName) => moduleNamesForConfiguration.indexOf(moduleName) === -1,
 	);
 	if (useCommonConfigWebpackPlugin) {
 		moduleNamesForConfiguration = moduleNamesForConfiguration.filter(
-			(moduleName) => commonConfigWebpackPluginChildren.indexOf(moduleName) === -1
+			(moduleName) => commonConfigWebpackPluginChildren.indexOf(moduleName) === -1,
 		);
 		moduleNamesForConfiguration.push('common-config-webpack-plugin');
 	}
