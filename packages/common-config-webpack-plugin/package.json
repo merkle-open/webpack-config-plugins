@@ -5,9 +5,13 @@
   "homepage": "https://github.com/merkle-open/webpack-config-plugins",
   "repository": "https://github.com/merkle-open/webpack-config-plugins.git",
   "version": "2.0.3",
-  "author": "Merkle Inc",
-  "license": "MIT",
   "main": "src/index.js",
+  "license": "MIT",
+  "author": "Merkle Inc",
+  "engines": {
+    "node": ">=16.13.0",
+    "npm": ">=8.1.0"
+  },
   "keywords": [
     "webpack",
     "loader",
@@ -56,9 +60,5 @@
       "fixtures",
       "dist"
     ]
-  },
-  "engines": {
-    "npm": ">=6",
-    "node": ">=10"
   }
 }

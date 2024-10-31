@@ -5,9 +5,13 @@
   "homepage": "https://github.com/merkle-open/webpack-config-plugins/tree/master/packages/image-config-webpack-plugin",
   "repository": "https://github.com/merkle-open/webpack-config-plugins.git",
   "version": "2.0.3",
-  "author": "Merkle Inc",
-  "license": "MIT",
   "main": "src/index.js",
+  "license": "MIT",
+  "author": "Merkle Inc",
+  "engines": {
+    "node": ">=16.13.0",
+    "npm": ">=8.1.0"
+  },
   "keywords": [
     "image",
     "webpack",
@@ -48,9 +52,5 @@
       "fixtures",
       "dist"
     ]
-  },
-  "engines": {
-    "npm": ">=6",
-    "node": ">=10"
   }
 }

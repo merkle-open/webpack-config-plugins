@@ -45,11 +45,11 @@ class ScssConfigWebpackPlugin {
 
 		const config = isProductionLikeMode
 			? require('../config/production.config')(
-					Object.assign({ filename, chunkFilename, mode: 'production' }, this.options)
-			  )
+					Object.assign({ filename, chunkFilename, mode: 'production' }, this.options),
+				)
 			: require('../config/development.config')(
-					Object.assign({ filename, chunkFilename, mode: 'development' }, this.options)
-			  );
+					Object.assign({ filename, chunkFilename, mode: 'development' }, this.options),
+				);
 		// Merge config
 		compiler.options.plugins.push(...config.plugins);
 		compiler.hooks.afterEnvironment.tap('ScssConfigWebpackPlugin', () => {

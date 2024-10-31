@@ -44,7 +44,7 @@ async function measure(name, prepare, execution) {
 		},
 		async () => {
 			await execAsync(`node_modules/.bin/webpack-cli --config webpack.config.${transpiler}.js --mode production`);
-		}
+		},
 	);
 
 	await measure(
@@ -56,7 +56,7 @@ async function measure(name, prepare, execution) {
 		},
 		async () => {
 			await execAsync(`node_modules/.bin/webpack-cli --config webpack.config.${transpiler}.js --mode production`);
-		}
+		},
 	);
 
 	// Build with a clean project generation before each run
@@ -68,7 +68,7 @@ async function measure(name, prepare, execution) {
 		},
 		async () => {
 			await execAsync(`node_modules/.bin/webpack-cli --config webpack.config.${transpiler}.js --mode production`);
-		}
+		},
 	);
 
 	await measure(
@@ -79,7 +79,7 @@ async function measure(name, prepare, execution) {
 		},
 		async () => {
 			await execAsync(`node_modules/.bin/webpack-cli --config webpack.config.${transpiler}.js --mode production`);
-		}
+		},
 	);
 
 	const stats = await statAsync('dist/main.js');

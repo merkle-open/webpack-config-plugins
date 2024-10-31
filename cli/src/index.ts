@@ -26,7 +26,7 @@ export const generateConfigCli = async (cwd = process.cwd()) => {
 		{},
 		...configOptionKeys.map((configOption) => ({
 			[configOption]: options.indexOf(configOption) !== -1,
-		}))
+		})),
 	) as { [key in ConfigOptionKeys]: boolean };
 
 	const result = generateConfigurations(configOptions);
@@ -57,14 +57,14 @@ export const generateConfigCli = async (cwd = process.cwd()) => {
 	if (webpackConfigNeedsUpdateFs) {
 		if (userAllowsWebackOverwrite) {
 			console.log(
-				`✍️  ${webpackConfigExist ? 'Overwriting' : 'Creating'} "${path.relative(cwd, webpackConfigPath)}"\n`
+				`✍️  ${webpackConfigExist ? 'Overwriting' : 'Creating'} "${path.relative(cwd, webpackConfigPath)}"\n`,
 			);
 			writeFileSync(webpackConfigPath, result.webpackConfig);
 		} else {
 			console.log(
 				'⚠️ Skipping writing webpack.config.js\n💡  Add the following code to your webpack.config.js:\n\n' +
 					result.webpackConfig +
-					'\n'
+					'\n',
 			);
 		}
 	} else {
@@ -122,7 +122,7 @@ export const generateConfigCli = async (cwd = process.cwd()) => {
 		}
 		if (configOptions.useCli || configOptions.useDevServer) {
 			console.log(
-				'💡  For more information on available modes please go to https://webpack.js.org/concepts/mode/'
+				'💡  For more information on available modes please go to https://webpack.js.org/concepts/mode/',
 			);
 		}
 	}
@@ -140,7 +140,7 @@ async function spawnInheritAsync(cmd: string, args: Array<string>): Promise<bool
 				// Any exit code other than 0 is considered to be an error.
 				code ? resolve(false) : resolve(true);
 			})
-			.on('error', () => resolve(false))
+			.on('error', () => resolve(false)),
 	);
 }
 

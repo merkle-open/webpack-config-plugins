@@ -53,15 +53,15 @@ async function launchWebpackDevServer(args, environmentName, onReady) {
 		const webpackDevServerProcess = spawn(
 			'node',
 			[path.resolve(`environments/${environmentName}/node_modules/webpack/bin/webpack`), 'serve'].concat(
-				args.split(' ')
+				args.split(' '),
 			),
 			{
 				stdio: ['pipe', 'pipe', 'inherit'],
-			}
+			},
 		);
 		webpackDevServerProcess.on('err', reject);
 		webpackDevServerProcess.on('close', (exitCode) =>
-			Number(exitCode) !== 0 ? reject(exitCode) : resolve(timings)
+			Number(exitCode) !== 0 ? reject(exitCode) : resolve(timings),
 		);
 
 		webpackDevServerProcess.stdout.pipe(process.stdout);
@@ -116,11 +116,11 @@ async function launchWebpackDevServer(args, environmentName, onReady) {
 				console.log('------------------------------\n');
 				fs.writeFileSync(
 					`environments/${environmentName}/src/index.${transpilerExt}`,
-					fs.readFileSync(`environments/${environmentName}/src/index.${transpilerExt}`) + '\n// ' + run
+					fs.readFileSync(`environments/${environmentName}/src/index.${transpilerExt}`) + '\n// ' + run,
 				);
 				// Keep dev server alive:
 				return true;
-			}
+			},
 		);
 
 		console.log('\n------------------------------');
@@ -160,8 +160,8 @@ async function launchWebpackDevServer(args, environmentName, onReady) {
 	if (Math.round((results.current.average / results.latest.average) * 100 - 100) > slowdownThresholdInPercent) {
 		throw new Error(
 			`💣 Failed because the current build is over ${slowdownThresholdInPercent}% slower than the last build. (${Math.round(
-				(results.current.average / results.latest.average) * 100 - 100
-			)}%)`
+				(results.current.average / results.latest.average) * 100 - 100,
+			)}%)`,
 		);
 	}
 	console.log('done');

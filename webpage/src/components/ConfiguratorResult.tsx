@@ -20,8 +20,12 @@ export const ConfiguratorResult = observer(({ store }: ResultProps) => (
 		{store.generatedUserConfigurations.npmInstall && (
 			<Card style={{ padding: 20 }}>
 				<div
-					style={{ background: theme.hljs.background, color: theme.hljs.color, padding: 5, marginBottom: 10 }}
-				>
+					style={{
+						background: theme.hljs.background,
+						color: theme.hljs.color,
+						padding: 5,
+						marginBottom: 10,
+					}}>
 					<p style={{ fontFamily: 'monospace', margin: 0, paddingLeft: 20, textIndent: -20, width: 0 }}>
 						<span style={{ whiteSpace: 'nowrap' }}>
 							npm<span style={{ color: theme['hljs-keyword'].color }}> i </span>--save-dev
@@ -57,8 +61,7 @@ export const ConfiguratorResult = observer(({ store }: ResultProps) => (
 				<Button
 					onClick={() =>
 						lazyDownload(store.generatedUserConfigurations.webpackConfig, 'webpack.config.js', 'text/plain')
-					}
-				>
+					}>
 					Download
 				</Button>
 			</Card>

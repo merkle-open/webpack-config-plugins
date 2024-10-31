@@ -81,7 +81,7 @@ class JsConfigWebpackPlugin {
 		console.warn(
 			`Couldn't find an appropriate babel configuration file in the current directory.
 			Please check if the name of the file is correct and if it's in the correct directory.
-			For further information please check the documentation: https://babeljs.io/docs/en/babelrc.html`
+			For further information please check the documentation: https://babeljs.io/docs/en/babelrc.html`,
 		);
 
 		return path.resolve(__dirname, '../config/.babelrc.base.json');
@@ -115,7 +115,7 @@ class JsConfigWebpackPlugin {
 		});
 
 		const javascriptExtensions = ['.js', '.jsx', '.mjs'].filter(
-			(ext) => !compiler.options.resolve.extensions.includes(ext)
+			(ext) => !compiler.options.resolve.extensions.includes(ext),
 		);
 
 		compiler.options.resolve.extensions.unshift(...javascriptExtensions);

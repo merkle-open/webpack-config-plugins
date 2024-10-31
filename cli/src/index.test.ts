@@ -65,7 +65,7 @@ describe('cli', () => {
 			mockInquirer({ options, overwrite: 'no', install: 'no' });
 			await generateConfigCli(process.cwd());
 			expect(logger.mock.calls.length).not.toBe(0);
-		}
+		},
 	);
 
 	test.each(combinations as any)(
@@ -76,7 +76,7 @@ describe('cli', () => {
 			mockInquirer({ options, overwrite: 'no', install: 'no' });
 			await generateConfigCli(process.cwd());
 			expect(mergeLoggerMockCalls(logger)).toMatchSnapshot();
-		}
+		},
 	);
 
 	test.each(combinations as any)(
@@ -88,6 +88,6 @@ describe('cli', () => {
 			mockInquirer({ options, overwrite: 'yes', install: 'no' });
 			await generateConfigCli(tmpSubFolder);
 			expect(mergeLoggerMockCalls(logger)).toMatchSnapshot();
-		}
+		},
 	);
 });

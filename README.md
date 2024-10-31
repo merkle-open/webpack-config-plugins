@@ -232,7 +232,7 @@ The `common-config-webpack-plugin` suite provides typechecks and integration tes
 
 ## Peer dependencies
 
-The `common-config-webpack-plugin` has a direct dependencies to babel and ts.  
+The `common-config-webpack-plugin` has direct dependencies to babel and ts.  
 However if you need to pick a specific version you can use the `js-config-webpack-plugin` or `ts-config-webpack-plugin` which use peer-dependencies instead.
 
 ## License

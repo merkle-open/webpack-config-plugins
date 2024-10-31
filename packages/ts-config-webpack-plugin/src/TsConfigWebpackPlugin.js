@@ -42,7 +42,7 @@ class TsConfigWebpackPlugin {
 		// If no tsconfig can be found fallback to the tsconfig.base.json
 		// Based on ts-loaders default tsconfig.json: https://github.com/TypeStrong/ts-loader/blob/002c0f651cf1a8e27b0e232b7fe4a982ddce6323/src/compilerSetup.ts#L57
 		console.warn(
-			"Couldn't find a tsconfig.json in the current working directory.\nYou can either set the configFile path explicitly or create a new config:\n  npx tsc --init"
+			"Couldn't find a tsconfig.json in the current working directory.\nYou can either set the configFile path explicitly or create a new config:\n  npx tsc --init",
 		);
 		return path.resolve(__dirname, '../config/tsconfig.base.json');
 	}
@@ -76,7 +76,7 @@ class TsConfigWebpackPlugin {
 		});
 		// Prepend missing typescript file extensions (high priority)
 		const typescriptPreExtensions = ['.ts', '.tsx'].filter(
-			(ext) => !compiler.options.resolve.extensions.includes(ext)
+			(ext) => !compiler.options.resolve.extensions.includes(ext),
 		);
 		compiler.options.resolve.extensions.unshift(...typescriptPreExtensions);
 		// Append missing definition type extensions (low priority)

@@ -5,23 +5,25 @@ name: ci
 on:
   push:
     branches:
+      - main
       - master
       - develop
   pull_request:
     branches:
+      - main
       - master
       - develop
 jobs:
   test:
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
-        platform: [ubuntu-latest, windows-latest]
+        node-version: [16.x, 18.x, 20.x]
+        platform: [ubuntu-latest]
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm i

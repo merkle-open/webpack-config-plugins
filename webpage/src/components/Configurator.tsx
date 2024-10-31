@@ -8,7 +8,7 @@ import { configOptionKeys } from '../../../cli/src/config-generator';
 const LazyConfiguratorResult = React.lazy(() =>
 	import('./ConfiguratorResult' /* webpackChunkName: 'ConfiguratorResult' */).then(({ ConfiguratorResult }) => ({
 		default: ConfiguratorResult,
-	}))
+	})),
 );
 
 // Get initial state from LocalStorage
